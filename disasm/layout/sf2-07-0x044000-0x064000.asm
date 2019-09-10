@@ -161,11 +161,10 @@ j_ClearEntities:
                 include "code\gameflow\battle\regionactivatedcutscenes.asm"    ; Region-activated cutscenes functions
                 include "data\battles\global\regionactivatedcutscenes.asm"    ; Region-activated cutscenes data
                 include "code\common\tech\graphics\flashwhite.asm"    ; Flash white function and script
+      					include "code\common\scripting\scrollingtext.asm"         ; SCROLLING TEXT INSERTION 
+      					include "code\gameflow\start\textintro.asm"         ; TEXT INTRO INSERTION 
                 include "data\scripting\map\cs_introendroutine.asm"    ; Subroutine launching intro and end cutscenes
-                include "data\scripting\map\cs_intro1.asm"    ; Intro cutscene 1
-                include "data\scripting\map\cs_intro2.asm"    ; Intro cutscene 2
-                include "data\scripting\map\cs_intro3.asm"    ; Intro cutscene 3
-                include "data\scripting\map\cs_intro4.asm"    ; Intro cutscene 4
+                include "data\scripting\map\cs_intro.asm"    ; Intro cutscene 
                 include "data\scripting\map\cs_intro_stormeffect.asm"    ; Storm Effect
                 include "data\scripting\map\cs_end.asm"    ; End cutscene
                 include data\battles\entries\battlecutscenesstorage.asm

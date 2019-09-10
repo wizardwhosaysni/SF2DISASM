@@ -28,6 +28,7 @@ GameIntro:
                 move.l  sp,(GAME_INTRO_SP_OFFSET).l
                 move.l  #loc_71EC,((AFTER_INTRO_JUMP_OFFSET-$1000000)).w
                 jsr     (EnableDisplayAndInterrupts).w
+                jsr   PlayTextIntro      ; TEXT INTRO CALL
                 clr.w   d0
                 jsr     j_PlayIntroOrEndCutscene
                 clr.l   ((AFTER_INTRO_JUMP_OFFSET-$1000000)).w
