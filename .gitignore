@@ -1,6 +1,7 @@
 
 # No rom files or game content on the repository
 *.bin
+!cubesfx.bin
 
 # No log files
 *.log

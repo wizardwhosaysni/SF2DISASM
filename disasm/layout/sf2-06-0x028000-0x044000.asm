@@ -78,7 +78,9 @@ TextBankTreeData:
                 alignIfExpandedRom $38000
                 includeIfExpandedRom "data\graphics\battles\weapons\entries.asm"    ; Weapons
                 includeIfVanillaRom "code\specialscreens\credits\gamestaff.asm"    ; Game Staff
-                alignIfExpandedRom $43800
+					      align $43000
+					      incbin "data\sound\cubesfx.bin"
+                ;alignIfExpandedRom $43800
                 includeIfExpandedRom "data\battles\global\battlemapcoords.asm"    ; Battle map coords
                 includeIfExpandedRom "data\maps\global\savepointmapcoords.asm"    ; Save point map coords
                 includeIfExpandedRom "data\maps\global\raftresetmapcoords.asm"    ; Raft reset map coords
