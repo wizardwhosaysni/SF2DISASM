@@ -4,6 +4,7 @@
 !cubesfx.bin
 !**/bookreader/*.bin
 !**/suspendscreen/sffc-suspendstringtiles.bin
+!**/sffc-*
 
 # No log files
 *.log

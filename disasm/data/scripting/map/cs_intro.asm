@@ -2,9 +2,10 @@
 ; export coordinates shift X=+1, Y=+1
 
 IntroCutscene:     
-    ; executeSubroutine 0x57d6
-    ; command c c0 5 ff df 10 1d c9
+    ; executeSubroutine 0x57D6
+    ; command C C0 5 FF DF 10 1D C9
     ; command 38
+    ;playSound $7
     newEntity $80,63,63,DOWN,73
     newEntity $81,63,63,DOWN,53
     newEntity $82,63,63,DOWN,56
@@ -15,13 +16,13 @@ IntroCutscene:
     newEntity $87,63,63,DOWN,83
     newEntity $88,63,63,DOWN,83
     newEntity $89,63,63,DOWN,83
-    newEntity $8a,63,63,DOWN,82
-    newEntity $8b,63,63,DOWN,85
-    newEntity $8c,63,63,DOWN,85
-    newEntity $8d,63,63,DOWN,85
-    newEntity $8e,63,63,DOWN,84
+    newEntity $8A,63,63,DOWN,82
+    newEntity $8B,63,63,DOWN,85
+    newEntity $8C,63,63,DOWN,85
+    newEntity $8D,63,63,DOWN,85
+    newEntity $8E,63,63,DOWN,84
     newEntity $11,1,1,DOWN,17
-    newEntity $f,1,3,DOWN,15
+    newEntity $F,1,3,DOWN,15
     newEntity $1,1,4,DOWN,1
     newEntity $2,1,5,DOWN,2
     newEntity $5,1,6,DOWN,5
@@ -35,21 +36,21 @@ IntroCutscene:
     setPos $87,1,1,DOWN
     setPos $88,1,1,DOWN
     setPos $89,1,1,DOWN
-    setPos $8a,1,1,DOWN
-    setPos $8b,1,1,DOWN
-    setPos $8c,1,1,DOWN
-    setPos $8d,1,1,DOWN
-    setPos $8e,1,1,DOWN
+    setPos $8A,1,1,DOWN
+    setPos $8B,1,1,DOWN
+    setPos $8C,1,1,DOWN
+    setPos $8D,1,1,DOWN
+    setPos $8E,1,1,DOWN
     setFacing $85,DOWN
     setFacing $86,DOWN
     setFacing $87,DOWN
     setFacing $88,DOWN
     setFacing $89,DOWN
-    setFacing $8a,UP
-    setFacing $8b,DOWN
-    setFacing $8c,DOWN
-    setFacing $8d,DOWN
-    setFacing $8e,LEFT
+    setFacing $8A,UP
+    setFacing $8B,DOWN
+    setFacing $8C,DOWN
+    setFacing $8D,DOWN
+    setFacing $8E,LEFT
     mapLoad 12,7,19
     setBlocks 5,3,5,7,1,26
     setBlocks 25,9,5,7,5,3
@@ -64,7 +65,7 @@ IntroCutscene:
     ; command 53
     ; command  54 0
     textCursor $293
-    playSound $15
+    ;playSound $7
     fadeInB
     ; command  51 1
     ; command 53
@@ -90,13 +91,13 @@ IntroCutscene:
     setFacing $84,DOWN
     setPos $11,12,30,DOWN
     setPos $80,11,31,DOWN
-    setPos $f,13,31,DOWN
+    setPos $F,13,31,DOWN
     setPos $1,11,32,DOWN
     setPos $2,12,32,DOWN
     setPos $5,13,32,DOWN
     setFacing $11,UP
     setFacing $80,UP
-    setFacing $f,UP
+    setFacing $F,UP
     ; command 53
     setCamDest 7,23
     ; command  51 1
@@ -106,7 +107,7 @@ IntroCutscene:
     entityActions $80
       moveUp 4
     endActions
-    entityActions $f
+    entityActions $F
       moveUp 4
     endActions
     entityActions $1
@@ -208,14 +209,14 @@ IntroCutscene:
     nextSingleText $0,17
     nextSingleText $80,15
     ; command  51 2
-    entityActionsWait $f
+    entityActionsWait $F
       moveUp 2
       moveRight 6
     endActions
     setFacing $11,RIGHT
     csWait 40
-    setPos $f,20,17,UP
-    setFacing $f,LEFT
+    setPos $F,20,17,UP
+    setFacing $F,LEFT
     setFacing $11,UP
     csWait 40
     setCamDest 7,19
@@ -327,7 +328,7 @@ IntroCutscene:
       moveLeft 1
       faceRight 20
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       faceLeft 20
       moveLeft 1
       faceLeft 20
@@ -339,7 +340,7 @@ IntroCutscene:
       faceRight 40
       moveUp 1
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       moveLeft 3
     endActions
     setQuake 1
@@ -350,7 +351,7 @@ IntroCutscene:
     entityActions $81
       moveUp 1
       moveLeft 2
-      ; unknownMoveCommand 10 4e
+      ; unknownMoveCommand 10 4E
       moveDown 1
     endActions
     entityActionsWait $11
@@ -371,11 +372,11 @@ IntroCutscene:
     setCamDest 9,15
     csWait 40
     ; rotate to implement here
-    setFacing $f,DOWN
-    setActscript $f,eas_Jump
+    setFacing $F,DOWN
+    setActscript $F,eas_Jump
     csWait 30
     ; command  51 1
-    entityActionsWait $f
+    entityActionsWait $F
       moveDown 2
       faceLeft 20
     endActions
@@ -386,18 +387,18 @@ IntroCutscene:
     entityActions $11
       moveLeft 6
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       moveLeft 7
     endActions
     csWait 30
     setPos $11,1,1,RIGHT
-    setPos $f,1,1,DOWN
+    setPos $F,1,1,DOWN
     setCamDest 1,7
     csWait 60
     nextSingleText $0,26
     nextSingleText $0,26
-    ; command 8 3 8d 5b
-    setPos $8a,5,10,UP
+    ; command 8 3 8D 5B
+    setPos $8A,5,10,UP
     flashScreenWhite 10
     csWait 2
     csWait 23
@@ -405,9 +406,9 @@ IntroCutscene:
     csWait 12
     ; command  51 4
     ; command 53
-    entityActions $8a
+    entityActions $8A
       moveUp 5
-      ; unknownMoveCommand 10 4b
+      ; unknownMoveCommand 10 4B
     endActions
     entityActions $82
       faceDown 20
@@ -421,7 +422,7 @@ IntroCutscene:
       faceDown 20
       moveRight 7
     endActions
-    ; command 3c 8 1e
+    ; command 3C 8 1E
     setBlocks 25,1,5,7,5,3
     setPos $82,11,9,DOWN
     setPos $83,13,8,DOWN
@@ -446,7 +447,7 @@ IntroCutscene:
     endActions
     nextText $80,20
     nextSingleText $80,20
-    playSound $4b
+    playSound $4B
     flashScreenWhite 10
     csWait 2
     flashScreenWhite 10
@@ -455,17 +456,17 @@ IntroCutscene:
     csWait 2
     csWait 30
     playSound $75
-    setPos $8b,7,4,DOWN
-    setPos $8c,8,1,DOWN
-    setPos $8d,9,3,DOWN
+    setPos $8B,7,4,DOWN
+    setPos $8C,8,1,DOWN
+    setPos $8D,9,3,DOWN
     ; command  51 4
-    entityActions $8b
+    entityActions $8B
       moveDown 6
     endActions
-    entityActions $8c
+    entityActions $8C
       moveDown 7
     endActions
-    entityActions $8d
+    entityActions $8D
       moveDown 6
     endActions
     entityActionsWait $80
@@ -474,30 +475,30 @@ IntroCutscene:
       faceLeft 20
       faceRight 20
     endActions
-    playSound $6b
+    playSound $6B
     setQuake 1
-    setPos $8e,7,10,LEFT
+    setPos $8E,7,10,LEFT
     csWait 20
-    playSound $6b
-    setPos $8e,9,9,LEFT
+    playSound $6B
+    setPos $8E,9,9,LEFT
     csWait 20
-    playSound $6b
-    setPos $8e,8,8,LEFT
+    playSound $6B
+    setPos $8E,8,8,LEFT
     csWait 20
-    setPos $8e,1,1,LEFT
+    setPos $8E,1,1,LEFT
     playSound $75
-    setPos $8b,7,2,DOWN
-    setPos $8c,8,2,DOWN
-    setPos $8d,9,4,DOWN
+    setPos $8B,7,2,DOWN
+    setPos $8C,8,2,DOWN
+    setPos $8D,9,4,DOWN
     setQuake 0
     ; command  51 4
-    entityActions $8b
+    entityActions $8B
       moveDown 6
     endActions
-    entityActions $8c
+    entityActions $8C
       moveDown 6
     endActions
-    entityActions $8d
+    entityActions $8D
       moveDown 6
     endActions
     entityActionsWait $80
@@ -506,17 +507,17 @@ IntroCutscene:
       faceRight 20
       faceLeft 20
     endActions
-    playSound $6b
+    playSound $6B
     setQuake 1
-    setPos $8e,9,10,LEFT
+    setPos $8E,9,10,LEFT
     csWait 20
-    playSound $6b
-    setPos $8e,7,8,LEFT
+    playSound $6B
+    setPos $8E,7,8,LEFT
     csWait 10
-    playSound $6b
-    setPos $8e,8,8,LEFT
+    playSound $6B
+    setPos $8E,8,8,LEFT
     csWait 20
-    setPos $8e,1,1,LEFT
+    setPos $8E,1,1,LEFT
     setBlocks 25,9,5,6,5,3
     setQuake 0
     ; command  51 1
@@ -524,7 +525,7 @@ IntroCutscene:
       ; unknownMoveCommand 4 1
     endActions
     setFacing $80,DOWN
-    playSound $b
+    playSound $12
     ; rotate + shrink to implement here
     csWait 6
     ; rotate + shrink to implement here
@@ -533,6 +534,7 @@ IntroCutscene:
     csWait 6
     ; rotate + shrink to implement here
     csWait 150
+    playSound $7
     shiver $83
     nextSingleText $80,20
     setFacing $82,RIGHT
@@ -562,7 +564,7 @@ IntroCutscene:
     endActions
     nextSingleText $0,17
     setPos $11,5,9,RIGHT
-    setPos $f,4,9,DOWN
+    setPos $F,4,9,DOWN
     setPos $1,3,9,UP
     setPos $2,2,9,UP
     setPos $5,1,9,UP
@@ -573,7 +575,7 @@ IntroCutscene:
       moveRight 1
       faceUp 20
     endActions
-    entityActions $f
+    entityActions $F
       moveRight 4
       moveDown 1
       faceUp 20
@@ -610,7 +612,7 @@ IntroCutscene:
     entityActions $11
       moveRight 3
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       moveRight 3
     endActions
     ; command  51 2
@@ -622,11 +624,11 @@ IntroCutscene:
     setFacing $5,RIGHT
     nextSingleText $0,1
     setFacing $11,DOWN
-    setFacing $f,DOWN
+    setFacing $F,DOWN
     nextSingleText $0,17
     nextSingleText $0,2
     setFacing $11,LEFT
-    setFacing $f,LEFT
+    setFacing $F,LEFT
     nextSingleText $0,15
     ; command  51 1
     entityActionsWait $5
@@ -639,7 +641,7 @@ IntroCutscene:
       faceLeft 20
       moveLeft 1
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       faceLeft 20
       moveUp 1
     endActions
@@ -662,7 +664,7 @@ IntroCutscene:
       moveUp 1
       faceRight 20
     endActions
-    entityActions $f
+    entityActions $F
       faceRight 40
       moveRight 4
     endActions
@@ -689,7 +691,7 @@ IntroCutscene:
     csWait 30
     shiver $82
     nextSingleText $80,23
-    playSound $4b
+    playSound $4B
     flashScreenWhite 10
     csWait 2
     flashScreenWhite 10
@@ -701,7 +703,7 @@ IntroCutscene:
       faceRight 20
       moveUp 1
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       faceRight 20
       moveDown 1
     endActions
@@ -721,12 +723,12 @@ IntroCutscene:
     setPos $88,1,1,DOWN
     setPos $89,1,1,DOWN
     setPos $11,15,7,LEFT
-    setPos $f,15,10,LEFT
+    setPos $F,15,10,LEFT
     ; command  51 1
     entityActions $11
       ; unknownMoveCommand 84 1
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       ; unknownMoveCommand 87 1
     endActions
     setQuake 0
@@ -747,7 +749,7 @@ IntroCutscene:
     endActions
     nextSingleText $80,19
     setCamDest 15,4
-    playSound $4b
+    playSound $4B
     flashScreenWhite 10
     csWait 2
     flashScreenWhite 10
@@ -755,30 +757,30 @@ IntroCutscene:
     flashScreenWhite 10
     csWait 2
     playSound $75
-    setPos $8b,18,3,DOWN
-    setPos $8c,19,2,DOWN
-    setPos $8d,20,1,DOWN
+    setPos $8B,18,3,DOWN
+    setPos $8C,19,2,DOWN
+    setPos $8D,20,1,DOWN
     ; command  51 2
-    entityActions $8b
+    entityActions $8B
       moveDown 3
     endActions
-    entityActions $8c
+    entityActions $8C
       moveDown 4
     endActions
-    entityActionsWait $8d
+    entityActionsWait $8D
       moveDown 5
     endActions
     setQuake 1
-    playSound $6b
-    setPos $8e,18,6,LEFT
+    playSound $6B
+    setPos $8E,18,6,LEFT
     csWait 10
-    playSound $6b
-    setPos $8e,19,6,LEFT
+    playSound $6B
+    setPos $8E,19,6,LEFT
     csWait 10
-    playSound $6b
-    setPos $8e,20,6,LEFT
+    playSound $6B
+    setPos $8E,20,6,LEFT
     csWait 10
-    setPos $8e,1,1,LEFT
+    setPos $8E,1,1,LEFT
     setBlocks 25,23,3,6,18,2
     setQuake 0
     csWait 60
@@ -793,7 +795,7 @@ IntroCutscene:
     entityActions $82
       moveRight 1
       moveUp 1
-      ; unknownMoveCommand 10 4e
+      ; unknownMoveCommand 10 4E
       moveUp 3
       moveDown 1
       moveUp 4
@@ -803,7 +805,7 @@ IntroCutscene:
       moveUp 1
       moveRight 1
       moveUp 1
-      ; unknownMoveCommand 10 4e
+      ; unknownMoveCommand 10 4E
       moveUp 3
       moveDown 1
       moveUp 4
@@ -811,7 +813,7 @@ IntroCutscene:
     entityActions $83
       faceUp 160
       moveUp 2
-      ; unknownMoveCommand 10 4e
+      ; unknownMoveCommand 10 4E
       moveUp 3
       moveDown 1
       moveUp 4
@@ -820,7 +822,7 @@ IntroCutscene:
       faceLeft 240
       moveLeft 1
       moveUp 1
-      ; unknownMoveCommand 10 4e
+      ; unknownMoveCommand 10 4E
       moveUp 3
       moveDown 1
       moveUp 4
@@ -829,13 +831,13 @@ IntroCutscene:
     ; rotate to implement here
     shiver $11
     ; rotate to implement here
-    shiver $f
+    shiver $F
     ; command  51 2
     entityActionsWait $11
       moveDown 1
     endActions
     ; command  51 2
-    entityActionsWait $f
+    entityActionsWait $F
       moveUp 1
     endActions
     nextText $0,17
@@ -845,23 +847,24 @@ IntroCutscene:
     entityActions $11
       moveRight 4
       moveUp 1
-      ; unknownMoveCommand 10 4e
+      ; unknownMoveCommand 10 4E
       moveUp 3
       moveDown 1
       moveUp 3
     endActions
-    entityActionsWait $f
+    entityActionsWait $F
       faceRight 60
       moveRight 4
       moveUp 2
-      ; unknownMoveCommand 10 4e
+      ; unknownMoveCommand 10 4E
       moveUp 3
       moveDown 1
       moveUp 3
     endActions
     csWait 60
-    ; command 8 3 8d 5f
-    playSound $fd
+    ; command 8 3 8D 5F
+    playSound $FD
     fadeOutB
     csWait 150
     csc_end
+
