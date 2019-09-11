@@ -70,9 +70,9 @@ TitleScreenPalettes:
                 incbin "data/graphics/specialscreens/titlescreen/titlescreenpalettes.bin"
                 include "code\common\scripting\text\decoding.asm"    ; Text decoding functions
 TextBankTreeOffsets:
-                incbin "data/scripting/text/huffmantreeoffsets.bin"
+                incbin "data/scripting/text/sffc-huffmantreeoffsets.bin"
 TextBankTreeData:
-                incbin "data/scripting/text/huffmantrees.bin"
+                incbin "data/scripting/text/sffc-huffmantrees.bin"
                 includeIfVanillaRom "data\scripting\text\entries.asm"    ; Textbank entries
                 alignIfExpandedRom $30000
                 includeIfExpandedRom "data\graphics\battles\grounds\entries.asm"    ; Grounds
