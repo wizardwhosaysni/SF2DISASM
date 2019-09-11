@@ -288,3 +288,6 @@ loc_27D6A:
 loc_27D8A:
                 
                 unlk    a6
+                rts
+
+	; End of function VInt_WitchEndBlink

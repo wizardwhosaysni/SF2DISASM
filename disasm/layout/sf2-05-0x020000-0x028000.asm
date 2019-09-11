@@ -51,7 +51,8 @@ j_LoadSpecialSprite:
 sub_20058:                
                 jmp     sub_25CB6(pc)
 j_EndGame:                
-                jmp     EndGame(pc)
+                ;jmp     EndGame(pc)
+                rts
 j_SuspendGame:                
                 jmp     SuspendGame(pc)
                 include "code\common\menus\shop\shopactions.asm"    ; Shop functions
@@ -83,9 +84,6 @@ j_SuspendGame:
                 includeIfVanillaRom "code\common\tech\graphics\specialspritesentries.asm"    ; Special Sprites Entries
                 include "code\common\tech\graphics\specialspritesanims.asm"    ; Special Sprites Animations
                 include "code\specialscreens\suspend\suspend.asm"    ; Suspend functions
-                include "code\specialscreens\witchend\witchend.asm"    ; Witch end functions
-                rts
-
-	; End of function VInt_WitchEndBlink
+                ;include "code\specialscreens\witchend\witchend.asm"    ; Witch end functions
 
                 align $28000

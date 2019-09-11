@@ -32,7 +32,7 @@ Map20_21F_ZoneEvent0:
                 jsr     PlayEndCredits
                 moveq   #$FFFFFFFF,d0
                 jsr     PlayIntroOrEndCutscene
-                jmp     (WitchEnd).w
+                ;jmp     (WitchEnd).w
 byte_632E0:
                 
                 sndCom  SOUND_COMMAND_INIT_DRIVER

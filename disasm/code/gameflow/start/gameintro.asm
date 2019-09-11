@@ -28,7 +28,7 @@ GameIntro:
                 move.l  sp,(GAME_INTRO_SP_OFFSET).l
                 move.l  #loc_71EC,((AFTER_INTRO_JUMP_OFFSET-$1000000)).w
                 jsr     (EnableDisplayAndInterrupts).w
-                jsr   PlayTextIntro      ; TEXT INTRO CALL
+                ;jsr   PlayTextIntro      ; TEXT INTRO CALL
                 clr.w   d0
                 jsr     j_PlayIntroOrEndCutscene
                 clr.l   ((AFTER_INTRO_JUMP_OFFSET-$1000000)).w
@@ -61,7 +61,7 @@ loc_71EC:
                 jmp     (a0)            ; reset
 loc_724E:
                 
-                bsr.w   DisableDisplayAndVInt ; title screen -> witch menu
+                bsr.w   DisableDisplayAndVInt ; title screen -> bookreader menu
                 bsr.w   ClearVsramAndSprites
                 bsr.w   EnableDisplayAndInterrupts
                 move.b  #$FF,((DEACTIVATE_WINDOW_HIDING-$1000000)).w
@@ -77,13 +77,13 @@ loc_724E:
                 bsr.w   DisableDisplayAndVInt
                 clr.b   ((byte_FFB198-$1000000)).w
                 move.w  #SFX_DIALOG_BLEEP_4,((SPEECH_SFX-$1000000)).w 
-                                                        ; Witch speech SFX
-                bsr.w   DisplayWitchScreen
+                                                        ; BookReader speech SFX
+                bsr.w   DisplayBookReaderScreen
                 move.w  #$1E,((BLINK_COUNTER-$1000000)).w
                 move.w  #6,((word_FFB07C-$1000000)).w
 loc_729C:
                 
-                move.b  #0,((byte_FFB082-$1000000)).w
+                move.b  #$FF,((byte_FFB082-$1000000)).w
                 jsr     j_ClearEntities
                 movea.l (p_SpeechBalloonTiles).l,a0
                 lea     ($8000).l,a1
@@ -91,7 +91,7 @@ loc_729C:
                 moveq   #2,d1
                 jsr     (ApplyImmediateVramDMAOnCompressedTiles).w
                 bsr.w   EnableDisplayAndInterrupts
-                sndCom  MUSIC_WITCH
+                sndCom  MUSIC_PIANO_THEME
                 bsr.w   FadeInFromBlack
                 trap    #VINT_FUNCTIONS
                 dc.w VINTS_ADD
@@ -100,7 +100,7 @@ loc_729C:
                 bsr.w   WaitForVInt
                 trap    #VINT_FUNCTIONS
                 dc.w VINTS_ADD
-                dc.l VInt_WitchBlink
+                dc.l VInt_BookReaderBlink
                                 enableSram
                 bsr.w   CheckSRAM
                 moveq   #$20,d7 
@@ -132,8 +132,8 @@ loc_734C:
                 bne.w   loc_73AA
                 txt     $D8             ; "{CLEAR}Hee, hee, hee...{N}You're finally here!{W2}"
                 bsr.w   WaitForVInt
-                bsr.w   UpdateWitchHead
-                bsr.w   WaitForVInt
+                ;bsr.w   UpdateBookReaderHead
+                ;bsr.w   WaitForVInt
                 move.w  #$1E,((BLINK_COUNTER-$1000000)).w
                 move.w  #6,((word_FFB07C-$1000000)).w
                 move.b  #$FF,((byte_FFB082-$1000000)).w
@@ -153,8 +153,8 @@ loc_737C:
 loc_73AA:
                 
                 bsr.w   WaitForVInt
-                bsr.w   UpdateWitchHead
-                bsr.w   WaitForVInt
+                ;bsr.w   UpdateBookReaderHead
+                ;bsr.w   WaitForVInt
                 move.w  #$1E,((BLINK_COUNTER-$1000000)).w
                 move.b  #$FF,((byte_FFB082-$1000000)).w
 byte_73C2:
@@ -179,16 +179,16 @@ loc_73E4:
 loc_73E8:
                 
                 clr.w   d1
-                jsr     j_WitchMainMenu
+                jsr     j_BookReaderMainMenu
                 tst.w   d0
                 bmi.s   byte_73C2       
                 add.w   d0,d0
-                move.w  rjt_WitchChoice(pc,d0.w),d0
-                jmp     rjt_WitchChoice(pc,d0.w)
+                move.w  rjt_BookReaderChoice(pc,d0.w),d0
+                jmp     rjt_BookReaderChoice(pc,d0.w)
 
 ; END OF FUNCTION CHUNK FOR InitGame
 
-rjt_WitchChoice:dc.w WitchNew-rjt_WitchChoice
-                dc.w WitchLoad-rjt_WitchChoice
-                dc.w WitchDel-rjt_WitchChoice
-                dc.w WitchCopy-rjt_WitchChoice
+rjt_BookReaderChoice:dc.w BookReaderNew-rjt_BookReaderChoice
+                dc.w BookReaderLoad-rjt_BookReaderChoice
+                dc.w BookReaderDel-rjt_BookReaderChoice
+                dc.w BookReaderCopy-rjt_BookReaderChoice

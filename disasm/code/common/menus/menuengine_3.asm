@@ -1318,7 +1318,7 @@ TimerWindowLayout:
 
 ; =============== S U B R O U T I N E =======================================
 
-WitchMainMenu:
+BookReaderMainMenu:
                 
                 movem.l d1-a1,-(sp)
                 link    a6,#-$10
@@ -1333,7 +1333,7 @@ WitchMainMenu:
                 jsr     (CreateWindow).l
                 move.w  d0,-6(a6)
                 move.l  a1,-4(a6)
-                movea.l (p_plt_WitchChoice).l,a0
+                movea.l (p_plt_BookReaderChoice).l,a0
                 lea     (PALETTE_2_CURRENT).l,a1
                 move.w  #$20,d7 
                 jsr     (CopyBytes).w   
@@ -1411,7 +1411,7 @@ byte_1675A:
                 movem.l (sp)+,d1-a1
                 rts
 
-	; End of function WitchMainMenu
+	; End of function BookReaderMainMenu
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1446,7 +1446,7 @@ loc_167A6:
                 move.w  #0,d3
                 move.w  #0,d2
                 move.w  #$188,d1
-                bsr.w   DrawWitchMenuBubble
+                bsr.w   DrawBookReaderMenuBubble
 loc_167C6:
                 
                 btst    #1,d6
@@ -1454,7 +1454,7 @@ loc_167C6:
                 move.w  #1,d3
                 move.w  #$F0,d2 
                 move.w  #4,d1
-                bsr.w   DrawWitchMenuBubble
+                bsr.w   DrawBookReaderMenuBubble
 loc_167DC:
                 
                 btst    #2,d6
@@ -1462,7 +1462,7 @@ loc_167DC:
                 move.w  #2,d3
                 move.w  #$1E0,d2
                 move.w  #$24,d1 
-                bsr.w   DrawWitchMenuBubble
+                bsr.w   DrawBookReaderMenuBubble
 loc_167F2:
                 
                 btst    #3,d6
@@ -1470,7 +1470,7 @@ loc_167F2:
                 move.w  #3,d3
                 move.w  #$2D0,d2
                 move.w  #$1B0,d1
-                bsr.w   DrawWitchMenuBubble
+                bsr.w   DrawBookReaderMenuBubble
 return_16808:
                 
                 rts
@@ -1480,9 +1480,9 @@ return_16808:
 
 ; =============== S U B R O U T I N E =======================================
 
-DrawWitchMenuBubble:
+DrawBookReaderMenuBubble:
                 
-                movea.l (p_WitchBubbleAnimation).l,a0
+                movea.l (p_BookReaderBubbleAnimation).l,a0
                 movea.l -4(a6),a1
                 cmp.b   d0,d3
                 bne.s   loc_1683A
@@ -1526,11 +1526,11 @@ loc_16864:
                 bne.w   loc_168A4
                 adda.w  #$72,a1 
                 lsl.w   #2,d3
-                movea.l pt_s_WitchMenu(pc,d3.w),a0
+                movea.l pt_s_BookReaderMenu(pc,d3.w),a0
                 moveq   #5,d7
                 bsr.w   sub_1697C
                 rts
-pt_s_WitchMenu:
+pt_s_BookReaderMenu:
                 
                 dc.l aStart             
                 dc.l aCont_             
@@ -1559,7 +1559,7 @@ loc_168A4:
                 bsr.w   sub_1697C
                 rts
 
-	; End of function DrawWitchMenuBubble
+	; End of function DrawBookReaderMenuBubble
 
 pt_s_DataMenu:  dc.l aData1             
                 dc.l aData1             

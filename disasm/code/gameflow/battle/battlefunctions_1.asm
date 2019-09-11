@@ -2237,7 +2237,7 @@ byte_252E6:
                 
                 sndCom  SOUND_COMMAND_FADE_OUT
                 jsr     (FadeOutToBlack).w
-                jmp     (WitchSuspend).w
+                jmp     (BookReaderSuspend).w
 byte_252F2:
                 
                 clrFlg  $58             ; checks if a game has been saved for copying purposes ? (or if saved from battle?)

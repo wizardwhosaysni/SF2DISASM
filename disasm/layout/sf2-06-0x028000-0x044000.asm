@@ -26,10 +26,10 @@ p_MenuTiles_Depot:
                 dc.l MenuTiles_Depot
 p_MenuTiles_YesNo:
                 dc.l MenuTiles_YesNo
-p_plt_WitchChoice:
-                dc.l plt_WitchChoice
-p_WitchBubbleAnimation:
-                dc.l WitchBubbleAnimation
+p_plt_BookReaderChoice:
+                dc.l plt_BookReaderChoice
+p_BookReaderBubbleAnimation:
+                dc.l BookReaderBubbleAnimation
 p_SpeechBalloonTiles:
                 dc.l SpeechBalloonTiles
 j_DisplaySegaLogo:                
@@ -55,8 +55,9 @@ MenuTiles_Caravan:
 MenuTiles_Depot:incbin "data/graphics/tech/menus/menutilesdepot.bin"
 MenuTiles_YesNo:incbin "data/graphics/tech/menus/menutilesyesno.bin"
 plt_WitchChoice:incbin "data/graphics/specialscreens/witchscreen/witchchoicepalette.bin"
-WitchBubbleAnimation:
-                incbin "data/graphics/specialscreens/witchscreen/witchbubbleanimation.bin"
+plt_BookReaderChoice:incbin "data/graphics/specialscreens/bookreader/bookreaderchoicepalette.bin"
+BookReaderBubbleAnimation:
+                incbin "data/graphics/specialscreens/bookreader/bookreaderbubbleanimation.bin"
 SpeechBalloonTiles:
                 incbin "data/graphics/specialscreens/witchscreen/speechballoontiles.bin"
                 include "code\specialscreens\endkiss\endkissfunctions_0.asm"    ; End kiss function

@@ -1,6 +1,6 @@
 
 ; GAME SECTION 01 :
-; 0x000000..0x008000 : Technical Layer, Low Level Game Engine, Map/Exploration Engine, Entity Script Commands, Witch Functions
+; 0x000000..0x008000 : Technical Layer, Low Level Game Engine, Map/Exploration Engine, Entity Script Commands, bookreader Functions
 ; FREE SPACE : 90 bytes.
 
 
@@ -31,12 +31,14 @@
                 include "code\common\scripting\entity\entityscriptengine.asm"    ; Entity script engine
                 include "code\common\scripting\text\textfunctions.asm"    ; Text functions
                 include "code\common\tech\sram\sramfunctions.asm"    ; SRAM functions
-                include "code\specialscreens\suspend\witchsuspend.asm"    ; Witch suspend function
-                include "code\specialscreens\witchend\witchendinit.asm"    ; Witch end function
+                include "code\specialscreens\suspend\bookreadersuspend.asm"    ; Bookreader suspend function
+                ;include "code\specialscreens\suspend\witchsuspend.asm"    ; Witch suspend function
+                ;include "code\specialscreens\witchend\witchendinit.asm"    ; Witch end function
                 include "code\gameflow\start\gameinit.asm"    ; Game init
                 include "data\maps\global\debugmodemaps.asm"    ; Debug mode maps
                 include "code\gameflow\start\gameintro.asm"    ; Game intro
-                include "code\specialscreens\witch\witchactions.asm"    ; Witch actions
+                include "code\specialscreens\bookreader\bookreaderactions.asm"    ; bookreader actions
+                ;include "code\specialscreens\witch\witchactions.asm"    ; Witch actions
                 include "code\gameflow\mainloop.asm"    ; Main loop
                 include "code\common\maps\egressinit.asm"    ; Egress map init function
                 include "code\gameflow\start\basetiles.asm"    ; Base tiles loading
@@ -48,7 +50,8 @@
                 includeIfVanillaRom "data\battles\global\battlemapcoords.asm"    ; Battle map coords
                 includeIfVanillaRom "data\maps\global\savepointmapcoords.asm"    ; Save point map coords
                 includeIfVanillaRom "data\maps\global\raftresetmapcoords.asm"    ; Raft reset map coords
-                include "code\specialscreens\witch\witchfunctions.asm"    ; Witch functions
+                include "code\specialscreens\bookreader\bookreaderfunctions.asm"    ; bookreader functions
+                ;include "code\specialscreens\witch\witchfunctions.asm"    ; Witch functions
                 include "code\gameflow\special\configurationmode.asm"    ; Configuration mode function
                 include "code\gameflow\start\regioncheck.asm"    ; Region check function
 nullsub_7FA4:                

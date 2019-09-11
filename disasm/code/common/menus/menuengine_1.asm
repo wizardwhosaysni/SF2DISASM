@@ -350,11 +350,11 @@ j_VintFunc_16588:
 
 ; =============== S U B R O U T I N E =======================================
 
-j_WitchMainMenu:
+j_BookReaderMainMenu:
                 
-                jmp     WitchMainMenu(pc)
+                jmp     BookReaderMainMenu(pc)
 
-	; End of function j_WitchMainMenu
+	; End of function j_BookReaderMainMenu
 
 
 ; =============== S U B R O U T I N E =======================================
