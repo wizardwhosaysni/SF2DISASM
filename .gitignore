@@ -5,6 +5,7 @@
 !**/bookreader/*.bin
 !**/suspendscreen/sffc-suspendstringtiles.bin
 !**/sffc-*
+!**/sffc-*/*.bin
 
 # No log files
 *.log
