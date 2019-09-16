@@ -5,6 +5,8 @@ IntroCutscene:
     ; executeSubroutine 0x57D6
     ; command C C0 5 FF DF 10 1D C9
     ; command 38
+    playSound $7
+    cameraSpeed $30
     newEntity $80,63,63,DOWN,73
     newEntity $81,63,63,DOWN,53
     newEntity $82,63,63,DOWN,56
@@ -24,7 +26,7 @@ IntroCutscene:
     newEntity $F,1,3,DOWN,15
     newEntity $1,1,4,DOWN,1
     newEntity $2,1,5,DOWN,2
-    newEntity $5,1,6,DOWN,5
+    newEntity $5,1,6,DOWN,5   
     setPos $80,1,2,DOWN
     setPos $81,12,30,DOWN
     setPos $82,13,29,DOWN
@@ -49,8 +51,88 @@ IntroCutscene:
     setFacing $8B,DOWN
     setFacing $8C,DOWN
     setFacing $8D,DOWN
-    setFacing $8E,LEFT
-    mapLoad 0,7,19
+    setFacing $8E,LEFT          
+    mapLoad 0,7,18   
+    customActscript $80
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle  
+    ac_end             
+    customActscript $81
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $82
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $83
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $84
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $85
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $86
+     ac_setSpeed $30,$30    
+     ac_jump eas_Idle  
+    ac_end             
+    customActscript $87
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $88
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $89
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $8A
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $8B
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $8C
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $8D
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $8E
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $11
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript $F
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end
+    customActscript 1
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript 2
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end             
+    customActscript 5
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end
     ;setBlocks 5,3,5,7,1,26
     ;setBlocks 25,9,5,7,5,3
     ;setBlocks 1,26,5,7,25,9
@@ -60,11 +142,13 @@ IntroCutscene:
     ;setBlocks 18,2,3,6,1,26
     ;setBlocks 25,23,3,6,18,2
     ;setBlocks 1,26,3,6,25,23
+    setBlocks 50,0,5,5,10,14
+    setBlocks 57,0,7,7,3,3
+    setBlocks 50,12,6,8,16,3
     ; command  51 1
     ; command 53
     ; command  54 0
     textCursor $293           ; "Mishaela!{N}It's taken a long time. At last I've found you!{D3}{D1}"
-    playSound $21
     fadeInB
     ; command  51 1
     ; command 53
@@ -81,7 +165,11 @@ IntroCutscene:
       moveLeft 1
     endActions
     entityActionsWait $84
-      moveUp 14
+      moveUp 9
+    endActions
+    setCameraEntity $81
+    entityActionsWait $84
+      moveUp 5
     endActions
     nextSingleText $0,17      ; "Mishaela!{N}It's taken a long time. At last I've found you!{D3}{D1}"
     setFacing $81,DOWN
@@ -98,7 +186,7 @@ IntroCutscene:
     setFacing $80,UP
     setFacing $F,UP
     ; command 53
-    setCamDest 7,23
+    setCamDest 7,22
     ; command  51 1
     entityActions $11
       moveUp 4
@@ -121,7 +209,7 @@ IntroCutscene:
     csWait 40
     nextText $0,23            ; "What are you saying, Max?{N}If that's the case, it's time to finish me, don't you think?{D3}{D1}"
     nextSingleText $0,23      ; "Too bad I'm not the same old Mishaela you defeated before!{D3}{D1}"
-    setCamDest 7,17
+    setCamDest 7,16
     entityActionsWait $81
      moveLeft 1
     endActions
@@ -155,7 +243,7 @@ IntroCutscene:
     setFacing $83,DOWN
     setFacing $84,DOWN
     nextSingleText $80,21     ; "Well, Shining Force!{N}Show me what you've got!{D3}{D1}"
-    setCamDest 7,23
+    setCamDest 7,22
     csWait 44
     nextSingleText $0,17      ; "Ridion, we can't let Mishaela escape!{D3}{D1}"
     setFacing $11,DOWN
@@ -218,7 +306,7 @@ IntroCutscene:
     setFacing $F,LEFT
     setFacing $11,UP
     csWait 40
-    setCamDest 7,19
+    setCamDest 7,17
     ; command  51 1
     csWait 30
     entityActionsWait $11
@@ -235,6 +323,7 @@ IntroCutscene:
     entityActionsWait $11
      moveUp 1
     endActions
+    setCameraEntity $81
     csWait 30
     entityActionsWait $11
      moveUp 1
@@ -317,7 +406,7 @@ IntroCutscene:
     endActions
     nextSingleText $0,15      ; "Hold it, Lynx! You'll have to get past me first.{D3}{D1}"
     ; command 53
-    setCamDest 12,14
+    setCamDest 11,13
     setActscript $81,eas_Jump
     csWait 60
     ; command  51 1
@@ -344,7 +433,7 @@ IntroCutscene:
     endActions
     setQuake 1
     playSound $64
-    setBlocks 25,17,4,5,11,15
+    setBlocks 50,6,5,5,10,14
     ; rotate to implement here
     ; command  51 2
     entityActions $81
@@ -368,7 +457,7 @@ IntroCutscene:
     setPos $81,13,9,UP
     setFacing $81,LEFT
     csWait 60
-    setCamDest 9,15
+    setCamDest 9,14
     csWait 40
     ; rotate to implement here
     setFacing $F,DOWN
@@ -392,7 +481,7 @@ IntroCutscene:
     csWait 30
     setPos $11,1,1,RIGHT
     setPos $F,1,1,DOWN
-    setCamDest 1,7
+    setCamDest 0,6
     csWait 60
     nextSingleText $0,26      ; "With this, Mishaela, it's time for you to die.{N}Your anger is useless. This is the end.{D3}{D1}"
     nextSingleText $0,26      ; "Adam fires his laser cannon.{D3}{D1}"
@@ -405,6 +494,7 @@ IntroCutscene:
     csWait 12
     ; command  51 4
     ; command 53
+    setBlocks 57,8,7,7,3,3
     entityActions $8A
       moveUp 5
       ; unknownMoveCommand 10 4B
@@ -422,7 +512,7 @@ IntroCutscene:
       moveRight 7
     endActions
     ; command 3C 8 1E
-    setBlocks 25,1,5,7,5,3
+    ;setBlocks 25,1,5,7,5,3
     setPos $82,11,9,DOWN
     setPos $83,13,8,DOWN
     setPos $84,12,10,DOWN
@@ -430,7 +520,7 @@ IntroCutscene:
     setFacing $83,LEFT
     setFacing $84,LEFT
     csWait 45
-    setCamDest 6,5
+    setCamDest 6,4
     csWait 60
     ; command  51 2
     entityActionsWait $80
@@ -517,7 +607,8 @@ IntroCutscene:
     setPos $8E,8,8,LEFT
     csWait 20
     setPos $8E,1,1,LEFT
-    setBlocks 25,9,5,6,5,3
+    ;setBlocks 25,9,5,6,5,3
+    setBlocks 57,16,7,7,3,3
     setQuake 0
     ; command  51 1
     entityActionsWait $80
@@ -534,6 +625,7 @@ IntroCutscene:
     ; rotate + shrink to implement here
     csWait 150
     shiver $83
+    playSound $7
     nextSingleText $80,20     ; "Hah hah hah ha!{N}You'd do well to realise just how much power I have.{D3}{D1}"
     setFacing $82,RIGHT
     nextSingleText $80,23     ; "Now Lynx, Eiku, Magus - let's GO!{D3}{D1}"
@@ -561,11 +653,11 @@ IntroCutscene:
       moveRight 4
     endActions
     nextSingleText $0,17      ; "A.. Adaaaam!{D3}{D1}"
-    setPos $11,5,9,RIGHT
-    setPos $F,4,9,DOWN
-    setPos $1,3,9,UP
-    setPos $2,2,9,UP
-    setPos $5,1,9,UP
+    setPos $11,4,9,RIGHT
+    setPos $F,3,9,DOWN
+    setPos $1,2,9,UP
+    setPos $2,1,9,UP
+    setPos $5,0,9,UP
     ; command  51 2
     entityActions $11
       moveRight 3
@@ -596,7 +688,7 @@ IntroCutscene:
       moveRight 1
       faceUp 20
     endActions
-    setCamDest 5,7
+    setCamDest 4,5
     shiver $11
     nextSingleText $0,17      ; "...{N}Adam, are you alright?!{D3}{D1}"
     nextSingleText $0,26      ; "...{N}Master{D2} Max...{D3}{D1}"
@@ -679,13 +771,13 @@ IntroCutscene:
       faceRight 20
     endActions
     ; command 53
-    setCamDest 12,5
+    setCamDest 12,4
     nextSingleText $0,17      ; "Just you wait, Mishaela!{D3}{D1}"
     setFacing $82,LEFT
     setFacing $84,LEFT
     setFacing $83,LEFT
     setFacing $81,LEFT
-    setCamDest 13,5
+    setCamDest 13,4
     csWait 30
     shiver $82
     nextSingleText $80,23     ; "Ho ho ho!{N}You're not going to stop me here!{N}I'll cast Spark level 3!{D3}{D1}"
@@ -746,7 +838,7 @@ IntroCutscene:
       faceUp 20
     endActions
     nextSingleText $80,19     ; "Alright!{N}*guffaws*{N}Blaze level 2!{D3}{D1}"
-    setCamDest 15,4
+    setCamDest 14,3
     playSound $4B
     flashScreenWhite 10
     csWait 2
@@ -779,7 +871,8 @@ IntroCutscene:
     setPos $8E,20,6,LEFT
     csWait 10
     setPos $8E,1,1,LEFT
-    setBlocks 25,23,3,6,18,2
+    ;setBlocks 25,23,3,6,18,2
+    setBlocks 50,21,6,8,16,3
     setQuake 0
     csWait 60
     setFacing $82,LEFT
@@ -825,7 +918,7 @@ IntroCutscene:
       moveDown 1
       moveUp 4
     endActions
-    setCamDest 12,5
+    setCamDest 12,4
     ; rotate to implement here
     shiver $11
     ; rotate to implement here
