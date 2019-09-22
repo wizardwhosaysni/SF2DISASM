@@ -67,7 +67,7 @@ UnusedCloudTiles:
 StaticWidthFont:incbin "data/graphics/tech/fonts/staticwidthfont.bin" 
                                                         ; used for title screen
 TitleScreenPalettes:
-                incbin "data/graphics/specialscreens/titlescreen/titlescreenpalettes.bin"
+                incbin "data/graphics/specialscreens/titlescreen/sffc-titlescreenpalettes.bin"
                 include "code\common\scripting\text\decoding.asm"    ; Text decoding functions
 TextBankTreeOffsets:
                 incbin "data/scripting/text/sffc-huffmantreeoffsets.bin"

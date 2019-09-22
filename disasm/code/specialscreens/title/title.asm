@@ -31,12 +31,12 @@ TitleScreen:
                 lea     (PLANE_A_MAP_LAYOUT).l,a1
                 move.w  #$700,d7
                 jsr     (CopyBytes).w   
-                conditionalPc lea,TitleScreenLayoutA,a0
-                lea     (byte_FFC358).l,a1
-                moveq   #$10,d7
-                jsr     (CopyBytes).w   
-                lea     (byte_FFC398).l,a1
-                jsr     (CopyBytes).w   
+                ;conditionalPc lea,TitleScreenLayoutA,a0
+                ;lea     (byte_FFC358).l,a1
+                ;moveq   #$10,d7
+                ;jsr     (CopyBytes).w   
+                ;lea     (byte_FFC398).l,a1
+                ;jsr     (CopyBytes).w   
                 lea     (byte_FFC480).l,a1
                 moveq   #$40,d7 
                 jsr     (CopyBytes).w   
@@ -67,7 +67,7 @@ loc_1000BC:
                 bra.w   loc_100104
 loc_1000DE:
                 
-                move.w  #$E,d0
+                move.w  #$F,d0			; sprite layer Y offset
                 sub.w   d7,d0
                 lsl.w   #3,d0
                 addi.w  #$80,d0 
@@ -91,8 +91,8 @@ loc_100104:
                 move.w  #$80,d7 
                 jsr     (CopyBytes).w   
                 jsr     j_LoadTitleScreenFont
-                move.l  #$AE0405,(SPRITE_04).l
-                move.l  #$C062014E,(SPRITE_04_TILE_FLAGS).l
+                ;move.l  #$AE0405,(SPRITE_04).l
+                ;move.l  #$C062014E,(SPRITE_04_TILE_FLAGS).l ; removed the "TM" sprite
                 jsr     (EnableDisplayAndInterrupts).w
                 move.w  #$18,d6
                 jsr     (UpdateBackgroundVScrollData).w
@@ -111,23 +111,28 @@ loc_100104:
                 moveq   #$64,d0 
                 bsr.w   WaitForPlayer1InputStart
                 moveq   #$20,d0 
-                bsr.w   TitleScreenLoop1
-                move.b  #1,((FADING_SETTING-$1000000)).w
-                clr.w   ((FADING_TIMER-$1000000)).w
-                clr.b   ((FADING_POINTER-$1000000)).w
-                move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
-                move.b  #2,((FADING_PALETTE_BITMAP-$1000000)).w
+                bsr.w   TitleScreenLoop1                                                   ; "SHINING FORCE" VScroll phase 1
                 moveq   #$10,d0
-                bsr.w   TitleScreenLoop1
-                moveq   #$32,d0 
-                bsr.w   WaitForPlayer1InputStart
-                move.b  #1,((FADING_SETTING-$1000000)).w
+                bsr.w   TitleScreenLoop1                                                   ; "SHINING FORCE" VScroll phase 2
+                move.b  #1,((FADING_SETTING-$1000000)).w                                   ; "Gaiden" fade in
                 clr.w   ((FADING_TIMER-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
                 move.b  #4,((FADING_PALETTE_BITMAP-$1000000)).w
-                move.w  #$78,d0 
+                moveq   #$32,d0 
                 bsr.w   WaitForPlayer1InputStart
+                move.b  #1,((FADING_SETTING-$1000000)).w                                   ; Copyright fade in
+                clr.w   ((FADING_TIMER-$1000000)).w
+                clr.b   ((FADING_POINTER-$1000000)).w
+                move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
+                move.b  #8,((FADING_PALETTE_BITMAP-$1000000)).w
+                move.w  #$78,d0 
+                bsr.w   WaitForPlayer1InputStart                                           ; Sub-title fade in removed from here
+                move.b  #1,((FADING_SETTING-$1000000)).w                                   ; New "Final conflict" subtitle fade in
+                clr.w   ((FADING_TIMER-$1000000)).w
+                clr.b   ((FADING_POINTER-$1000000)).w
+                move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
+                move.b  #2,((FADING_PALETTE_BITMAP-$1000000)).w
                 move.w  #$12C,d0
                 bsr.w   WaitForPlayer1InputStart
                 move.w  #$258,d0
