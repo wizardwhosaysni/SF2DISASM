@@ -15,6 +15,7 @@ bbcs_01:        textCursor $8F4
                 nextText $0,135         ; "There you are, {LEADER}.{N}Stay here.{W2}"
                 nextSingleText $0,135   ; "I'll take a look inside the{N}tower.{W1}"
                 setCameraEntity 135
+                csc_end                
                 entityActionsWait 135
                  moveUp 1
                 endActions

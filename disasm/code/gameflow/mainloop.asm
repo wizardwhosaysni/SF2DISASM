@@ -23,6 +23,7 @@ loc_75C8:
                 beq.w   loc_75E4        ; If battle index available, enter battle loop
                 move.w  d7,d1
                 jsr     j_BattleLoop    ; Return when battle ends
+                bra.s   loc_75C8        ; Added return to loop start for sequential battles with no exploration or camp phases.
 loc_75E0:
                 
                 bsr.w   CheckMapSwitch  ; Check table "FlagSwitchedMaps" for possible flag-triggered map switch
