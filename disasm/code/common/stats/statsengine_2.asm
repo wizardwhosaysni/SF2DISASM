@@ -2979,6 +2979,14 @@ loc_9740:
                 bsr.w   SetGold
                 moveq   #ALLY_BOWIE,d0  ; starting character
                 bsr.w   JoinForce
+                moveq   #ALLY_SARAH,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_CHESTER,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_JAHA,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_KAZIN,d0  ; starting character
+                bsr.w   JoinForce
                 movem.w (sp)+,d0-d1/d7
                 rts
 

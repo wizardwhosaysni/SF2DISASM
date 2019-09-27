@@ -14,12 +14,8 @@ bbcs_01:        textCursor $8F4
                 setFacing 135,DOWN
                 nextText $0,135         ; "There you are, {LEADER}.{N}Stay here.{W2}"
                 nextSingleText $0,135   ; "I'll take a look inside the{N}tower.{W1}"
-								join 1
-								join 2
-								join 3
-								join 4
                 setCameraEntity 135
-                csc_end                
+                csc_end                    
                 entityActionsWait 135
                  moveUp 1
                 endActions
