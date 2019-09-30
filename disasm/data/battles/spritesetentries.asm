@@ -52,7 +52,7 @@ BattleSpriteSet00:
 BattleSpriteSet01:
                 incbin "data/battles/entries/sffc-battle01/spriteset.bin"
 BattleSpriteSet02:
-                incbin "data/battles/entries/battle02/spriteset.bin"
+                incbin "data/battles/entries/sffc-battle02/spriteset.bin"
 BattleSpriteSet03:
                 incbin "data/battles/entries/battle03/spriteset.bin"
 BattleSpriteSet04:

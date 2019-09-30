@@ -13,7 +13,7 @@ abcs_battle01:  textCursor $901
                 nextSingleText $0,129   ; "Well done, {LEADER}!{N}What should I do with this{N}devil?{W1}"
                 setFacing 129,UP
                 setF $192
-                warp 66,30,40,DOWN
+                warp 1,5,5,DOWN
                 yesNo
                 csc_end        
                 csWait 40
