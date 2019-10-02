@@ -12,16 +12,16 @@ IntroCutscene:
     newEntity $82,63,63,DOWN,56
     newEntity $83,63,63,DOWN,51
     newEntity $84,63,63,DOWN,50
-    newEntity $85,63,63,DOWN,83
-    newEntity $86,63,63,DOWN,83
-    newEntity $87,63,63,DOWN,83
-    newEntity $88,63,63,DOWN,83
-    newEntity $89,63,63,DOWN,83
+    newEntity $85,63,63,UP,61
+    newEntity $86,63,63,UP,61
+    newEntity $87,63,63,UP,61
+    newEntity $88,63,63,UP,61
+    newEntity $89,63,63,UP,61
     newEntity $8A,63,63,DOWN,82
-    newEntity $8B,63,63,DOWN,85
-    newEntity $8C,63,63,DOWN,85
-    newEntity $8D,63,63,DOWN,85
-    newEntity $8E,63,63,DOWN,84
+    newEntity $8B,63,63,DOWN,60
+    newEntity $8C,63,63,DOWN,60
+    newEntity $8D,63,63,DOWN,60
+    newEntity $8E,63,63,DOWN,60
     newEntity $11,1,1,DOWN,17
     newEntity $F,1,3,DOWN,15
     newEntity $1,1,4,DOWN,1
@@ -576,9 +576,9 @@ IntroCutscene:
     csWait 20
     setPos $8E,1,1,LEFT
     playSound $75
-    setPos $8B,7,2,DOWN
-    setPos $8C,8,2,DOWN
-    setPos $8D,9,4,DOWN
+    setPos $8B,7,2,UP
+    setPos $8C,8,2,UP
+    setPos $8D,9,4,UP
     setQuake 0
     ; command  51 4
     entityActions $8B
@@ -609,6 +609,9 @@ IntroCutscene:
     setPos $8E,1,1,LEFT
     ;setBlocks 25,9,5,6,5,3
     setBlocks 57,16,7,7,3,3
+    setFacing $8B,UP
+    setFacing $8C,UP
+    setFacing $8D,UP    
     setQuake 0
     ; command  51 1
     entityActionsWait $80
@@ -799,19 +802,19 @@ IntroCutscene:
     endActions
     setQuake 1
     playSound $64
-    setPos $85,15,5,DOWN
-    setPos $86,15,6,DOWN
-    setPos $87,15,7,DOWN
-    setPos $88,15,8,DOWN
-    setPos $89,15,9,DOWN
+    setPos $85,15,5,UP
+    setPos $86,15,6,UP
+    setPos $87,15,7,UP
+    setPos $88,15,8,UP
+    setPos $89,15,9,UP
     flashScreenWhite 10
     csWait 2
     csWait 30
-    setPos $85,1,1,DOWN
-    setPos $86,1,1,DOWN
-    setPos $87,1,1,DOWN
-    setPos $88,1,1,DOWN
-    setPos $89,1,1,DOWN
+    setPos $85,1,1,UP
+    setPos $86,1,1,UP
+    setPos $87,1,1,UP
+    setPos $88,1,1,UP
+    setPos $89,1,1,UP
     setPos $11,15,7,LEFT
     setPos $F,15,10,LEFT
     ; command  51 1
@@ -862,6 +865,9 @@ IntroCutscene:
     endActions
     setQuake 1
     playSound $6B
+    setFacing $8B,UP
+    setFacing $8C,UP
+    setFacing $8D,UP        
     setPos $8E,18,6,LEFT
     csWait 10
     playSound $6B
