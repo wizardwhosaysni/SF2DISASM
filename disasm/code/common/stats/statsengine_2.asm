@@ -2987,6 +2987,8 @@ loc_9740:
                 bsr.w   JoinForce
                 moveq   #ALLY_KAZIN,d0  ; starting character
                 bsr.w   JoinForce
+                moveq   #ALLY_SLADE,d0  ; starting character
+                bsr.w   JoinForce
                 movem.w (sp)+,d0-d1/d7
                 rts
 

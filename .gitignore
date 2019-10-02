@@ -5,11 +5,14 @@
 !**/bookreader/*.bin
 !**/suspendscreen/sffc-suspendstringtiles.bin
 !**/sffc-*
+!**/sffc/*.bin
 !**/sffc-*/*.bin
 
 *.png
+!**/sffc/*.png
 !**/sffc-*.png
 *.gif
+!**/sffc/*.gif
 !**/sffc-*.gif
 
 # No log files
