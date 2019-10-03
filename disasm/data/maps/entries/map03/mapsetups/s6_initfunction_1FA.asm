@@ -7,7 +7,7 @@
 ms_map3_flag1FA_InitFunction:
                 
                  
-                chkFlg  $6              ; Kiwi joined
+                chkFlg  $6              ; CYNTHIA joined
                 beq.s   byte_5136C
                 script  cs_51374
 byte_5136C:
@@ -17,7 +17,7 @@ byte_5136C:
 
 	; End of function ms_map3_flag1FA_InitFunction
 
-cs_51374:       hide ALLY_KIWI
+cs_51374:       hide ALLY_CYNTHIA
                 csc_end
 cs_5137A:       playSound MUSIC_SAD_THEME_2
                 fadeInB

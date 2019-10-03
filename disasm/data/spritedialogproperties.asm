@@ -6,196 +6,120 @@ SpriteDialogProperties:
                 ; portrait    enum Portraits : PORTRAIT_*
                 ; speechSound enum Sfx : SFX_*
                     
-                mapSprite BOWIE_BASE
-                portrait BOWIE_BASE
+                mapSprite IAN_BASE
+                portrait IAN_BASE
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite BOWIE_PROMO
-                portrait BOWIE_PROMO
+                mapSprite IAN_PROMO
+                portrait IAN_PROMO
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite SARAH_BASE
-                portrait SARAH
+                mapSprite MEAD_BASE
+                portrait MEAD
                 speechSound DIALOG_BLEEP_2
                     
-                mapSprite SARAH_PROMO
-                portrait SARAH
+                mapSprite MEAD_PROMO
+                portrait MEAD
                 speechSound DIALOG_BLEEP_2
                     
-                mapSprite SARAH_SPECIAL
-                portrait SARAH
-                speechSound DIALOG_BLEEP_2
-                    
-                mapSprite CHESTER_BASE
-                portrait CHESTER
+                mapSprite PAIGE_BASE
+                portrait PAIGE
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite CHESTER_PROMO
-                portrait CHESTER
+                mapSprite PAIGE_PROMO
+                portrait PAIGE
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite CHESTER_SPECIAL
-                portrait CHESTER
+                mapSprite HAWEL_BASE
+                portrait HAWEL
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite JAHA_BASE
-                portrait JAHA
+                mapSprite HAWEL_PROMO
+                portrait HAWEL
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite JAHA_PROMO
-                portrait JAHA
+                mapSprite KNUCKLES_BASE
+                portrait KNUCKLES
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite JAHA_SPECIAL
-                portrait JAHA
+                mapSprite KNUCKLES_PROMO
+                portrait KNUCKLES
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite KAZIN_BASE
-                portrait KAZIN
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite KAZIN_PROMO
-                portrait KAZIN
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite KAZIN_SPECIAL
-                portrait KAZIN
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite SLADE_BASE
-                portrait SLADE_BASE
+                mapSprite SONETTE_BASE
+                portrait SONETTE_BASE
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite SLADE_PROMO
-                portrait SLADE_PROMO
+                mapSprite SONETTE_PROMO
+                portrait SONETTE_PROMO
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite KIWI_BASE
-                portrait KIWI_BASE
+                mapSprite CYNTHIA_BASE
+                portrait CYNTHIA_BASE
                 speechSound DIALOG_BLEEP_1
                     
-                mapSprite KIWI_PROMO
-                portrait KIWI_BASE
+                mapSprite CYNTHIA_PROMO
+                portrait CYNTHIA_BASE
                 speechSound DIALOG_BLEEP_7
                     
-                mapSprite PETER_BASE
-                portrait PETER_BASE
+                mapSprite RUBURAN_BASE
+                portrait RUBURAN_BASE
                 speechSound DIALOG_BLEEP_4
                     
-                mapSprite PETER_PROMO
-                portrait PETER_PROMO
+                mapSprite RUBURAN_PROMO
+                portrait RUBURAN_PROMO
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite MAY_BASE
-                portrait MAY
+                mapSprite KIDDO_BASE
+                portrait KIDDO
                 speechSound DIALOG_BLEEP_3
                     
-                mapSprite MAY_PROMO
-                portrait MAY
+                mapSprite KIDDO_PROMO
+                portrait KIDDO
                 speechSound DIALOG_BLEEP_3
                     
-                mapSprite GERHALT_BASE
-                portrait GERHALT_BASE
+                mapSprite SYLVIA_BASE
+                portrait SYLVIA_BASE
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite GERHALT_PROMO
-                portrait GERHALT_PROMO
+                mapSprite SYLVIA_PROMO
+                portrait SYLVIA_PROMO
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite LUKE_BASE
-                portrait LUKE
+                mapSprite JULIA_BASE
+                portrait JULIA
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite LUKE_PROMO
-                portrait LUKE
+                mapSprite JULIA_PROMO
+                portrait JULIA
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite ROHDE_SPECIAL
-                portrait ROHDE
+                mapSprite MINTO_PROMO
+                portrait MINTO
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite RICK_BASE
-                portrait RICK
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite RICK_PROMO
-                portrait RICK
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite RICK_SPECIAL
-                portrait RICK
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite ELRIC_BASE
-                portrait ELRIC
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite ELRIC_PROMO
-                portrait ELRIC
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite ELRIC_SPECIAL
-                portrait ELRIC
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite ERIC_BASE
-                portrait ERIC
+                mapSprite MORTON_PROMO
+                portrait MORTON
                 speechSound DIALOG_BLEEP_5
                     
                 mapSprite ERIC_PROMO
                 portrait ERIC
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite ERIC_SPECIAL
-                portrait ERIC
+                mapSprite RIDION_PROMO
+                portrait RIDION
                 speechSound DIALOG_BLEEP_5
                     
-                mapSprite KARNA_BASE
-                portrait KARNA
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite KARNA_PROMO
-                portrait KARNA
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite KARNA_SPECIAL
-                portrait KARNA
-                speechSound DIALOG_BLEEP_5
-                    
-                mapSprite RANDOLF_BASE
-                portrait RANDOLF
+                mapSprite KOJIROU_PROMO
+                portrait KOJIROU
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite RANDOLF_PROMO
-                portrait RANDOLF
+                mapSprite MAX_PROMO
+                portrait MAX
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite RANDOLF_SPECIAL
-                portrait RANDOLF
-                speechSound DIALOG_BLEEP_6
-                    
-                mapSprite TYRIN_BASE
-                portrait TYRIN
-                speechSound DIALOG_BLEEP_6
-                    
-                mapSprite TYRIN_PROMO
-                portrait TYRIN
-                speechSound DIALOG_BLEEP_6
-                    
-                mapSprite TYRIN_SPECIAL
-                portrait TYRIN
-                speechSound DIALOG_BLEEP_6
-                    
-                mapSprite JANET_BASE
-                portrait JANET
-                speechSound DIALOG_BLEEP_4
-                    
-                mapSprite JANET_PROMO
-                portrait JANET
-                speechSound DIALOG_BLEEP_4
-                    
-                mapSprite JANET_SPECIAL
-                portrait JANET
+                mapSprite ODDEYE_PROMO
+                portrait ODDEYE
                 speechSound DIALOG_BLEEP_4
                     
                 mapSprite HIGINS_PROMO
@@ -246,8 +170,8 @@ SpriteDialogProperties:
                 portrait NONE
                 speechSound DIALOG_BLEEP_6
                     
-                mapSprite NPC_ROHDE
-                portrait ROHDE
+                mapSprite NPC_ERIC
+                portrait ERIC
                 speechSound DIALOG_BLEEP_5
                     
                 mapSprite POSE4
@@ -255,7 +179,7 @@ SpriteDialogProperties:
                 speechSound DIALOG_BLEEP_2
                     
                 mapSprite EFFECT6
-                portrait SLADE_BASE
+                portrait SONETTE_BASE
                 speechSound DIALOG_BLEEP_6
                     
                 mapSprite GALAM_ZEON

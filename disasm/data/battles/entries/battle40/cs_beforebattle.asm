@@ -4,9 +4,9 @@
 bbcs_40:        textCursor $BDC
                 loadMapFadeIn 54,11,34
                 loadMapEntities ce_4E878
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,15,40,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,15,40,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,16,40,UP
                 setActscriptWait ALLY_LEMON,eas_Init
@@ -21,10 +21,10 @@ cs_4E544:       setBlocks 11,6,11,29,44,0
                 playSound MUSIC_STOP
                 fadeInB
                 cameraSpeed $30
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 3
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 3
                 endActions
                 entityActions FOLLOWER_B
@@ -37,12 +37,12 @@ cs_4E544:       setBlocks 11,6,11,29,44,0
                  moveUp 3
                 endActions
                 nextSingleText $C0,129  ; "{LEADER}, you're finally{N}here.{W1}"
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                entityActions ALLY_BOWIE
+                setActscript ALLY_IAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                entityActions ALLY_IAN
                  moveUp 1
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 2
                 endActions
                 entityActions FOLLOWER_B
@@ -61,17 +61,17 @@ cs_4E544:       setBlocks 11,6,11,29,44,0
                 csWait 30
                 setCamDest 11,2
                 playSound MUSIC_BATTLE_THEME_3
-                nextSingleText $0,ALLY_PETER ; "Is that...?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Is that...?{W1}"
                 nextSingleText $C0,129  ; "Did you forget about me,{N}{LEADER} and {NAME;7}!{W1}"
-                nextSingleText $0,ALLY_PETER ; "Oddler, are you Odd Eye?{N}Zalbard said...{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Oddler, are you Odd Eye?{N}Zalbard said...{W1}"
                 nextSingleText $C0,129  ; "Yes, I am he.{W1}"
                 nextSingleText $0,FOLLOWER_B ; "You're the leader of the Devil{N}Army who attacked Bedoe...{W1}"
                 nextSingleText $C0,129  ; "Yes I am, Sir Astral.{W1}"
                 nextSingleText $0,FOLLOWER_B ; "How do you know me?{W1}"
                 nextSingleText $C0,129  ; "{LEADER} told me about{N}you repeatedly.{W1}"
-                nextSingleText $0,ALLY_PETER ; "What do YOU want?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "What do YOU want?{W1}"
                 nextSingleText $C0,129  ; "Don't talk to me like that.{N}I'm very sad.{W1}"
-                nextSingleText $0,ALLY_PETER ; "Sad?{N}You've got to be joking!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Sad?{N}You've got to be joking!{W1}"
                 setFacing 129,LEFT
                 nextSingleText $C0,129  ; "Well, yes I am.{N}I'm really quite evil.{W1}"
                 setFacing 129,DOWN
@@ -83,11 +83,11 @@ cs_4E544:       setBlocks 11,6,11,29,44,0
                 nextText $C0,129        ; "Anyway, I came here to{N}deliver an ultimatum.{W2}"
                 nextText $C0,129        ; "Think long and well before{N}answering me.{W2}"
                 nextSingleText $C0,129  ; "Leave the jewel, your{N}weapons, and your items{N}here...or DIE!{W1}"
-                nextSingleText $0,ALLY_PETER ; "That means...we don't have{N}to fight him.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "That means...we don't have{N}to fight him.{W1}"
                 nextSingleText $0,FOLLOWER_B ; "True, but we can't take the{N}easy way out.  We mustn't{N}give him the jewel.{W1}"
                 nextSingleText $C0,129  ; "You know how strong I am.{N}I think you had better{N}accept the offer.{W1}"
-                nextSingleText $0,ALLY_BOWIE ; "Hmmm....{W1}"
-                nextSingleText $0,ALLY_PETER ; "Oh, what should we do?!{W1}"
+                nextSingleText $0,ALLY_IAN ; "Hmmm....{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Oh, what should we do?!{W1}"
                 nextSingleText $0,FOLLOWER_B ; "We have to fight!{W1}"
                 nextSingleText $C0,129  ; "Times up!  We need space{N}to battle.{W1}"
                 entityFlashWhite 129,$1E
@@ -196,9 +196,9 @@ cs_4E544:       setBlocks 11,6,11,29,44,0
                 setBlocks 44,0,11,29,11,6
                 nextSingleText $C0,129  ; "I'm very sorry, {LEADER},{N}but I must kill you!{W1}"
                 setCamDest 11,31
-                setFacing ALLY_PETER,RIGHT
-                setFacing ALLY_BOWIE,LEFT
-                nextSingleText $0,ALLY_PETER ; "{LEADER}, are we really{N}going to fight Oddler?{W1}"
+                setFacing ALLY_RUBURAN,RIGHT
+                setFacing ALLY_IAN,LEFT
+                nextSingleText $0,ALLY_RUBURAN ; "{LEADER}, are we really{N}going to fight Oddler?{W1}"
                 entityActionsWait FOLLOWER_B
                  moveLeft 1
                 endActions
@@ -209,13 +209,13 @@ cs_4E544:       setBlocks 11,6,11,29,44,0
                  moveRight 1
                 endActions
                 setFacing FOLLOWER_B,UP
-                setFacing ALLY_BOWIE,DOWN
+                setFacing ALLY_IAN,DOWN
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, let's do it!{W1}"
-                setActscript ALLY_PETER,eas_Jump
-                nod ALLY_BOWIE
+                setActscript ALLY_RUBURAN,eas_Jump
+                nod ALLY_IAN
                 csc_end
 ce_4E878:       mainEntity 16,39,UP
-                entity 15,40,UP,ALLY_PETER,eas_Init
+                entity 15,40,UP,ALLY_RUBURAN,eas_Init
                 entity 15,41,UP,ALLY_LEMON,eas_Init
                 entity 16,41,UP,MAPSPRITE_CARAVAN,eas_Init
                 entity 16,4,DOWN,MAPSPRITE_ODD_EYE,eas_Init

@@ -61,7 +61,7 @@ cs_5A256:       shiver 130
 Map30_EntityEvent3:
                 
                  
-                chkFlg  $2F9            ; Set after the dwarf gives Bowie the cannon
+                chkFlg  $2F9            ; Set after the dwarf gives IAN the cannon
                 bne.s   byte_5A26C      
                 txt     $6AC            ; "One of us went to look for{N}the fairy.{W2}{N}I hope he's alright.{W1}"
                 setFlg  $2F7            ; Set after talking to one of the dwarves in the mine near the Fairy Woods
@@ -113,7 +113,7 @@ loc_5A296:
                 moveq   #$64,d0 
                 jsr     (Sleep).w       
                 clsTxt
-                setFlg  $2F9            ; Set after the dwarf gives Bowie the cannon
+                setFlg  $2F9            ; Set after the dwarf gives IAN the cannon
                 sndCom  SOUND_COMMAND_PLAY_PREVIOUS_MUSIC
                 script  cs_5A4FE
 return_5A2C0:

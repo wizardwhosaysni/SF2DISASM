@@ -47,12 +47,12 @@ return_5827A:
 Map13_ZoneEvent1:
                 
                  
-                chkFlg  $2CC            ; Set after your raft-giving conversation with the mayor in Polca
+                chkFlg  $2CC            ; Set after your raft-giving conversation with the KIDDOor in Polca
                 beq.s   return_58292
-                chkFlg  $2CD            ; Set after the mayor first tries to have you take Oddler with you (Peter declines)
+                chkFlg  $2CD            ; Set after the KIDDOor first tries to have you take Oddler with you (RUBURAN declines)
                 bne.s   return_58292
                 script  cs_58AE2
-                setFlg  $2CD            ; Set after the mayor first tries to have you take Oddler with you (Peter declines)
+                setFlg  $2CD            ; Set after the KIDDOor first tries to have you take Oddler with you (RUBURAN declines)
 return_58292:
                 
                 rts
@@ -65,7 +65,7 @@ return_58292:
 Map13_ZoneEvent2:
                 
                  
-                chkFlg  $2CC            ; Set after your raft-giving conversation with the mayor in Polca
+                chkFlg  $2CC            ; Set after your raft-giving conversation with the KIDDOor in Polca
                 beq.s   Map13_DefaultZoneEvent
                 chkFlg  $2CE            ; Set after Oddler runs after you as you leave Polca, and tags along
                 bne.s   Map13_DefaultZoneEvent

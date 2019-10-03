@@ -19,7 +19,7 @@ ms_map44_flag1FB_EntityEvents:
 Map44_EntityEvent0:
                 
                  
-                txt     $271            ; "My husband rushed out{N}of here when he saw the{N}sun rise.{W2}{N}Yeah, maybe he'll make{N}a good haul today.{W1}"
+                txt     $271            ; "My husband rushed out{N}of here when he saw the{N}sun rise.{W2}{N}Yeah, KIDDObe he'll make{N}a good haul today.{W1}"
                 rts
 
 	; End of function Map44_EntityEvent0

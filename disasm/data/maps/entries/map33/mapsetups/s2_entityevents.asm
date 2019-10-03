@@ -74,7 +74,7 @@ Map33_EntityEvent1:
                 bra.s   return_5A7EE
 byte_5A7E2:
                 
-                txt     $76A            ; "Maybe the Jewel of Evil has{N}a secret.{W2}"
+                txt     $76A            ; "KIDDObe the Jewel of Evil has{N}a secret.{W2}"
                 txt     $76B            ; "Storytellers in Tristan might{N}know something.{W2}"
                 txt     $76C            ; "Tristan is in North Parmecia.{W1}"
 return_5A7EE:
@@ -234,14 +234,14 @@ cs_5A8CA:       textCursor $773
                 csc_end
 cs_5A8E6:       join ALLY_ERIC
                 setF $313               ; ???
-                setActscript ALLY_RANDOLF,eas_463AE
-                setActscript ALLY_TYRIN,eas_463AE
-                setActscriptWait ALLY_KARNA,eas_463AE
+                setActscript ALLY_KOJIROU,eas_463AE
+                setActscript ALLY_MAX,eas_463AE
+                setActscriptWait ALLY_RIDION,eas_463AE
                 addNewFollower ALLY_ERIC
                 csc_end
 cs_5A90E:       textCursor $780
                 nextText $0,ALLY_ERIC   ; "I really want to find the{N}legendary magic sword....{W2}"
-                nextText $0,ALLY_ERIC   ; "But I can't do that if I'm{N}stuck here.{W2}{N}May I join your force?{W1}"
+                nextText $0,ALLY_ERIC   ; "But I can't do that if I'm{N}stuck here.{W2}{N}KIDDO I join your force?{W1}"
                 yesNo
                 jumpIfFlagSet $59,cs_5A92A ; YES/NO prompt answer
                 nextSingleText $0,ALLY_ERIC ; "No?  Then I'll continue my{N}search for the legendary{N}magic sword alone.{W1}"
@@ -251,77 +251,77 @@ cs_5A92A:       join ALLY_ERIC
                 addNewFollower ALLY_ERIC
                 csc_end
 cs_5A93A:       textCursor $776
-                nextText $0,ALLY_RANDOLF ; "Hee, hee...I'm not only a{N}dwarf, I'm {NAME;16}.{W2}"
-                nextText $0,ALLY_RANDOLF ; "I'm known as the strongest{N}warrior of my people.{W1}"
+                nextText $0,ALLY_KOJIROU ; "Hee, hee...I'm not only a{N}dwarf, I'm {NAME;16}.{W2}"
+                nextText $0,ALLY_KOJIROU ; "I'm known as the strongest{N}warrior of my people.{W1}"
                 yesNo
                 jumpIfFlagSet $59,cs_5A956 ; YES/NO prompt answer
-                nextSingleText $0,ALLY_RANDOLF ; "Tut!  OK, I have a{N}comfortable life here.{W1}"
+                nextSingleText $0,ALLY_KOJIROU ; "Tut!  OK, I have a{N}comfortable life here.{W1}"
                 csc_end
-cs_5A956:       join ALLY_RANDOLF
+cs_5A956:       join ALLY_KOJIROU
                 setF $313               ; ???
                 setActscript ALLY_ERIC,eas_463AE
-                setActscript ALLY_TYRIN,eas_463AE
-                setActscriptWait ALLY_KARNA,eas_463AE
-                addNewFollower ALLY_RANDOLF
+                setActscript ALLY_MAX,eas_463AE
+                setActscriptWait ALLY_RIDION,eas_463AE
+                addNewFollower ALLY_KOJIROU
                 csc_end
 cs_5A97E:       textCursor $783
-                nextText $0,ALLY_RANDOLF ; "I was surprised to find I{N}had returned to my original{N}size!{W2}"
-                nextText $0,ALLY_RANDOLF ; "What should I do now?{N}I can go anywhere...{N}maybe...with you?{W1}"
+                nextText $0,ALLY_KOJIROU ; "I was surprised to find I{N}had returned to my original{N}size!{W2}"
+                nextText $0,ALLY_KOJIROU ; "What should I do now?{N}I can go anywhere...{N}KIDDObe...with you?{W1}"
                 yesNo
                 jumpIfFlagSet $59,cs_5A99A ; YES/NO prompt answer
-                nextSingleText $0,ALLY_RANDOLF ; "Fine!  I'll stay in this{N}mansion then.{W1}"
+                nextSingleText $0,ALLY_KOJIROU ; "Fine!  I'll stay in this{N}mansion then.{W1}"
                 csc_end
-cs_5A99A:       join ALLY_RANDOLF
+cs_5A99A:       join ALLY_KOJIROU
                 setF $313               ; ???
-                addNewFollower ALLY_RANDOLF
+                addNewFollower ALLY_KOJIROU
                 csc_end
 cs_5A9AA:       textCursor $779
-                nextText $0,ALLY_TYRIN  ; "I'm {NAME;17}, a mage.{N}I studied magic in Ponpei.{W2}"
-                nextText $0,ALLY_TYRIN  ; "I'll miss my friends, but if{N}I can be of help, I'll go{N}with you!{W1}"
+                nextText $0,ALLY_MAX  ; "I'm {NAME;17}, a mage.{N}I studied magic in Ponpei.{W2}"
+                nextText $0,ALLY_MAX  ; "I'll miss my friends, but if{N}I can be of help, I'll go{N}with you!{W1}"
                 yesNo
                 jumpIfFlagSet $59,cs_5A9C6 ; YES/NO prompt answer
-                nextSingleText $0,ALLY_TYRIN ; "My magic could've been a{N}great help to you.{W1}"
+                nextSingleText $0,ALLY_MAX ; "My magic could've been a{N}great help to you.{W1}"
                 csc_end
-cs_5A9C6:       join ALLY_TYRIN
+cs_5A9C6:       join ALLY_MAX
                 setF $313               ; ???
                 setActscript ALLY_ERIC,eas_463AE
-                setActscript ALLY_RANDOLF,eas_463AE
-                setActscriptWait ALLY_KARNA,eas_463AE
-                addNewFollower ALLY_TYRIN
+                setActscript ALLY_KOJIROU,eas_463AE
+                setActscriptWait ALLY_RIDION,eas_463AE
+                addNewFollower ALLY_MAX
                 csc_end
 cs_5A9EE:       textCursor $786
-                nextText $0,ALLY_TYRIN  ; "I'm not sure why, but I'm{N}free.{W2}"
-                nextText $0,ALLY_TYRIN  ; "Can I join your force?{W1}"
+                nextText $0,ALLY_MAX  ; "I'm not sure why, but I'm{N}free.{W2}"
+                nextText $0,ALLY_MAX  ; "Can I join your force?{W1}"
                 yesNo
                 jumpIfFlagSet $59,cs_5AA0A ; YES/NO prompt answer
-                nextSingleText $0,ALLY_TYRIN ; "You may regret refusing me.{W1}"
+                nextSingleText $0,ALLY_MAX ; "You KIDDO regret refusing me.{W1}"
                 csc_end
-cs_5AA0A:       join ALLY_TYRIN
+cs_5AA0A:       join ALLY_MAX
                 setF $313               ; ???
-                addNewFollower ALLY_TYRIN
+                addNewFollower ALLY_MAX
                 csc_end
 cs_5AA1A:       textCursor $77C
-                nextText $0,ALLY_KARNA  ; "I'm {NAME;15}, a priest.{N}I think I'm rather young{N}for my profession....{W2}"
-                nextText $0,ALLY_KARNA  ; "I don't want to stay in this{N}awful place forever.{N}Choose me!{W1}"
+                nextText $0,ALLY_RIDION  ; "I'm {NAME;15}, a priest.{N}I think I'm rather young{N}for my profession....{W2}"
+                nextText $0,ALLY_RIDION  ; "I don't want to stay in this{N}awful place forever.{N}Choose me!{W1}"
                 yesNo
                 jumpIfFlagSet $59,cs_5AA36 ; YES/NO prompt answer
-                nextSingleText $0,ALLY_KARNA ; "You...snot nose!{W1}"
+                nextSingleText $0,ALLY_RIDION ; "You...snot nose!{W1}"
                 csc_end
-cs_5AA36:       join ALLY_KARNA
+cs_5AA36:       join ALLY_RIDION
                 setF $313               ; ???
                 setActscript ALLY_ERIC,eas_463AE
-                setActscript ALLY_RANDOLF,eas_463AE
-                setActscriptWait ALLY_TYRIN,eas_463AE
-                addNewFollower ALLY_KARNA
+                setActscript ALLY_KOJIROU,eas_463AE
+                setActscriptWait ALLY_MAX,eas_463AE
+                addNewFollower ALLY_RIDION
                 csc_end
 cs_5AA5E:       textCursor $789
-                nextText $0,ALLY_KARNA  ; "I'm free!  Fresh air smells{N}so good!{W2}"
-                nextText $0,ALLY_KARNA  ; "Where should I go?{N}Hey, may I go with you?{W1}"
+                nextText $0,ALLY_RIDION  ; "I'm free!  Fresh air smells{N}so good!{W2}"
+                nextText $0,ALLY_RIDION  ; "Where should I go?{N}Hey, KIDDO I go with you?{W1}"
                 yesNo
                 jumpIfFlagSet $59,cs_5AA7A ; YES/NO prompt answer
-                nextSingleText $0,ALLY_KARNA ; "Why, how rude!{W1}"
+                nextSingleText $0,ALLY_RIDION ; "Why, how rude!{W1}"
                 csc_end
-cs_5AA7A:       join ALLY_KARNA
+cs_5AA7A:       join ALLY_RIDION
                 setF $313               ; ???
-                addNewFollower ALLY_KARNA
+                addNewFollower ALLY_RIDION
                 csc_end

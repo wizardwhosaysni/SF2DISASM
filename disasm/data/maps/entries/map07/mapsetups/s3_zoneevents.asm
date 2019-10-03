@@ -16,13 +16,13 @@ Map7_ZoneEvent0:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_557D8      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 beq.s   loc_557D6
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   loc_557D6
                 script  cs_55A36
-                setFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
-                setFlg  $43             ; Peter is a follower
+                setFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
+                setFlg  $43             ; RUBURAN is a follower
 loc_557D6:
                 
                 bra.s   Map7_DefaultZoneEvent

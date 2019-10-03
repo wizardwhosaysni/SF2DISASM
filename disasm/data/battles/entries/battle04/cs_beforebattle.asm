@@ -4,18 +4,18 @@
 bbcs_04:        textCursor $907
                 loadMapFadeIn 66,1,5
                 loadMapEntities ce_4989E
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setPos ALLY_KAZIN,6,9,DOWN
+                setActscriptWait ALLY_IAN,eas_Init
+                setPos ALLY_KNUCKLES,6,9,DOWN
                 fadeInB
-                setActscriptWait ALLY_KAZIN,eas_Jump
-                nextSingleText $0,ALLY_KAZIN ; "Who are they?{W1}"
+                setActscriptWait ALLY_KNUCKLES,eas_Jump
+                nextSingleText $0,ALLY_KNUCKLES ; "Who are they?{W1}"
                 setCamDest 7,13
-                nextSingleText $0,ALLY_KAZIN ; "Galam soldiers!{W1}"
+                nextSingleText $0,ALLY_KNUCKLES ; "Galam soldiers!{W1}"
                 nextSingleText $C0,ALLY_LEMON ; "Greetings, Granseal scum!{W1}"
-                nextSingleText $0,ALLY_KAZIN ; "Why did you kill Sir{N}Hawel?  How could you be{N}so mean?{W1}"
+                nextSingleText $0,ALLY_KNUCKLES ; "Why did you kill Sir{N}Hawel?  How could you be{N}so mean?{W1}"
                 nextSingleText $C0,ALLY_LEMON ; "Ummm....{W1}"
-                nextText $0,ALLY_KAZIN  ; "Answer me!{W1}"
-                nextSingleText $0,ALLY_KAZIN ; "{LEADER}, we must{N}defeat them so we can learn{N}the truth!{W1}"
+                nextText $0,ALLY_KNUCKLES  ; "Answer me!{W1}"
+                nextSingleText $0,ALLY_KNUCKLES ; "{LEADER}, we must{N}defeat them so we can learn{N}the truth!{W1}"
                 setFacing ALLY_LEMON,DOWN
                 csWait 30
                 setFacing ALLY_LEMON,RIGHT
@@ -36,10 +36,10 @@ bbcs_04:        textCursor $907
                 endActions
                 csc_end
 ce_4989E:       mainEntity 5,9,DOWN
-                entity 6,9,DOWN,ALLY_KAZIN,eas_Init
-                entity 5,8,DOWN,ALLY_SARAH,eas_Init
-                entity 5,7,DOWN,ALLY_CHESTER,eas_Init
-                entity 6,8,DOWN,ALLY_JAHA,eas_Init
+                entity 6,9,DOWN,ALLY_KNUCKLES,eas_Init
+                entity 5,8,DOWN,ALLY_MEAD,eas_Init
+                entity 5,7,DOWN,ALLY_PAIGE,eas_Init
+                entity 6,8,DOWN,ALLY_HAWEL,eas_Init
                 entity 13,17,UP,ALLY_LEMON,eas_Init
                 entity 14,17,UP,MAPSPRITE_GALAM_ARCHER,eas_Init
                 entity 11,18,UP,MAPSPRITE_GALAM_SOLDIER,eas_Init

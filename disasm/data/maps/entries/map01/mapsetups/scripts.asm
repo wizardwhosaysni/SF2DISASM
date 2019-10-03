@@ -3,9 +3,9 @@
 ; 0x5E772..0x5E86C : 
 cs_5E772:       textCursor $E41
                 csWait 30
-                setFacing ALLY_BOWIE,UP
-                setDest ALLY_BOWIE,44,27
-                setActscriptWait ALLY_PETER,eas_Init
+                setFacing ALLY_IAN,UP
+                setDest ALLY_IAN,44,27
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 flashScreenWhite $1E
                 csWait 30
@@ -16,37 +16,37 @@ cs_5E772:       textCursor $E41
                 csWait 30
                 flashScreenWhite $1E
                 csWait 30
-                setDest ALLY_PETER,43,27
+                setDest ALLY_RUBURAN,43,27
                 setDest FOLLOWER_B,45,27
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
                 nextSingleText $80,ALLY_TAYA ; "I feel...a power returning{N}me to human.{W2}"
                 nextSingleText $80,ALLY_TAYA ; "Hey!  The evil is gone!{N}Did you chase them away?{W1}"
                 startEntity ALLY_TAYA
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                setFacing ALLY_PETER,RIGHT
-                nextSingleText $0,ALLY_PETER ; "{LEADER}, who is she?{W1}"
+                setFacing ALLY_RUBURAN,RIGHT
+                nextSingleText $0,ALLY_RUBURAN ; "{LEADER}, who is she?{W1}"
                 setFacing ALLY_TAYA,LEFT
                 nextSingleText $80,ALLY_TAYA ; "Did you say {LEADER}?{N}Oh, you're from Granseal!{W1}"
-                nextSingleText $0,ALLY_PETER ; "Yes, we are, but who are{N}you?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Yes, we are, but who are{N}you?{W1}"
                 shiver ALLY_TAYA
                 nextSingleText $80,ALLY_TAYA ; "Do you know how long I've{N}been here as a stone statue?{W1}"
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveDown 1
                 endActions
                 entityActionsWait FOLLOWER_B
                  moveLeft 1
                 endActions
                 setFacing FOLLOWER_B,UP
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveRight 1
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 1
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 nextSingleText $0,FOLLOWER_B ; "How do you know {LEADER}?{W1}"
                 setFacing ALLY_TAYA,DOWN
                 nextSingleText $80,ALLY_TAYA ; "Oh, I'm sorry.{W2}"
@@ -59,7 +59,7 @@ cs_5E772:       textCursor $E41
                 join ALLY_TAYA
                 nextSingleText $80,ALLY_TAYA ; "You want to go to Grans,{N}right?  Then, I think we{N}can use the ancient ship.{W2}"
                 nextSingleText $80,ALLY_TAYA ; "Let's go to Nazca.{W1}"
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 addNewFollower ALLY_TAYA
                 csc_end

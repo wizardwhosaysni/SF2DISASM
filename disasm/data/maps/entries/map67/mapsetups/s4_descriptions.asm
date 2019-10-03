@@ -43,7 +43,7 @@ loc_4FD22:
                 tst.w   d1
                 bne.s   loc_4FD3A
                 jsr     LoadAndDisplayCurrentPortrait
-                txt     $A20            ; "Maybe {NAME;13} can{N}help us.{W1}"
+                txt     $A20            ; "KIDDObe {NAME;13} can{N}help us.{W1}"
 loc_4FD3A:
                 
                 bra.s   return_4FD40

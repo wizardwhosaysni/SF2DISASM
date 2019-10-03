@@ -4,9 +4,9 @@
 abcs_battle40:  textCursor $BF9
                 loadMapFadeIn 54,10,4
                 loadMapEntities ce_4ECD6
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,13,8,RIGHT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,13,8,RIGHT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,15,6,DOWN
                 setActscriptWait ALLY_LEMON,eas_Init
@@ -34,23 +34,23 @@ cs_4EAEE:       setBlocks 11,6,11,29,44,0
                 csWait 60
                 nextText $0,131         ; "{LEADER}, you won?{N}You've become so strong.{W2}"
                 nextSingleText $0,131   ; "I knew you would....{W1}"
-                nextSingleText $C0,ALLY_BOWIE ; "Oh, really?{W1}"
+                nextSingleText $C0,ALLY_IAN ; "Oh, really?{W1}"
                 nextText $0,131         ; "Your friends are very good.{N}I knew that when I was{N}traveling with you.{W2}"
                 nextSingleText $0,131   ; "Yes, it was interesting...{N}I miss that time....{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $C0,ALLY_PETER ; "Odd Eye...no, Oddler!{N}Did you...?{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $C0,ALLY_RUBURAN ; "Odd Eye...no, Oddler!{N}Did you...?{W1}"
                 nextSingleText $0,131   ; "No, {NAME;7}.  I did my{N}best.  You were just better{N}than me.{W1}"
-                nextSingleText $C0,ALLY_BOWIE ; "We had to be.{W1}"
+                nextSingleText $C0,ALLY_IAN ; "We had to be.{W1}"
                 nextText $0,131         ; "I wouldn't have had to{N}fight if I never had gotten{N}my memory back.{W2}"
                 nextSingleText $0,131   ; "It's funny, fighting was{N}everything to me.{W1}"
-                shiver ALLY_PETER
-                nextSingleText $C0,ALLY_PETER ; "Oddler, please don't die!{W1}"
+                shiver ALLY_RUBURAN
+                nextSingleText $C0,ALLY_RUBURAN ; "Oddler, please don't die!{W1}"
                 nextText $0,131         ; "Thank you, {NAME;7}.{N}I learned a lot from you.{W2}"
                 nextSingleText $0,131   ; "Oh, the pain!{N}Let me say good-bye.{W1}"
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 1
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
                 nextSingleText $0,131   ; "If possible, I want to{N}relive my life...not as{N}a devil...next time....{W1}"
@@ -110,9 +110,9 @@ cs_4EAEE:       setBlocks 11,6,11,29,44,0
                 playSound $FD
                 csWait 120
                 playSound MUSIC_SAD_THEME_3
-                shiver ALLY_PETER
-                setFacing ALLY_PETER,UP
-                nextSingleText $0,ALLY_PETER ; "(Sob, sob)...how sad.{N}{LEADER}, Sir Astral...{W1}"
+                shiver ALLY_RUBURAN
+                setFacing ALLY_RUBURAN,UP
+                nextSingleText $0,ALLY_RUBURAN ; "(Sob, sob)...how sad.{N}{LEADER}, Sir Astral...{W1}"
                 setFacing ALLY_LEMON,DOWN
                 nextSingleText $0,ALLY_LEMON ; "Oddler had a pure spirit...{N}I'll miss him.{W1}"
                 setFacing FOLLOWER_B,UP
@@ -127,24 +127,24 @@ cs_4EAEE:       setBlocks 11,6,11,29,44,0
                 entityActionsWait FOLLOWER_B
                  moveDown 2
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                 endActions
-                setFacing ALLY_PETER,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
                 csWait 40
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_IAN,RIGHT
                 csWait 40
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_IAN,LEFT
                 csWait 40
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 csWait 30
-                nod ALLY_BOWIE
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                nod ALLY_IAN
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 followEntity ALLY_LEMON,FOLLOWER_B,2
                 csc_end
 ce_4ECD6:       mainEntity 15,10,UP
-                entity 13,8,RIGHT,ALLY_PETER,eas_Init
+                entity 13,8,RIGHT,ALLY_RUBURAN,eas_Init
                 entity 17,8,LEFT,ALLY_LEMON,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_OBJECT1,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_OBJECT1,eas_Init

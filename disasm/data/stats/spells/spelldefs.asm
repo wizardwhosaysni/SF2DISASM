@@ -756,7 +756,7 @@ SpellDefs:      ; index      enum Spells : SPELL_*
                 radius 0
                 power 15
                     
-                index KIWI              ; KIWI 1
+                index CYNTHIA              ; CYNTHIA 1
                 mpCost 0
                 animation FLAME_BREATH|LV3
                 properties &
@@ -765,7 +765,7 @@ SpellDefs:      ; index      enum Spells : SPELL_*
                 radius 0
                 power 28
                     
-                index KIWI|LV2          ; KIWI 2
+                index CYNTHIA|LV2          ; CYNTHIA 2
                 mpCost 0
                 animation FLAME_BREATH|LV3
                 properties &
@@ -774,7 +774,7 @@ SpellDefs:      ; index      enum Spells : SPELL_*
                 radius 0
                 power 36
                     
-                index KIWI|LV3          ; KIWI 3
+                index CYNTHIA|LV3          ; CYNTHIA 3
                 mpCost 0
                 animation FLAME_BREATH|LV3
                 properties &
@@ -783,7 +783,7 @@ SpellDefs:      ; index      enum Spells : SPELL_*
                 radius 0
                 power 45
                     
-                index KIWI|LV4          ; KIWI 4
+                index CYNTHIA|LV4          ; CYNTHIA 4
                 mpCost 0
                 animation FLAME_BREATH|LV3
                 properties &

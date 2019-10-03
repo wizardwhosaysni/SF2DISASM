@@ -37,10 +37,10 @@ return_56FAC:
 Map10_ZoneEvent1:
                 
                  
-                chkFlg  $2D1            ; Set after you approach the King of Bedoe, starts with Luke speaking to Peter
+                chkFlg  $2D1            ; Set after you approach the King of Bedoe, starts with JULIA speaking to RUBURAN
                 bne.s   return_56FBE
                 script  cs_574A6
-                setFlg  $2D1            ; Set after you approach the King of Bedoe, starts with Luke speaking to Peter
+                setFlg  $2D1            ; Set after you approach the King of Bedoe, starts with JULIA speaking to RUBURAN
 return_56FBE:
                 
                 rts

@@ -7,7 +7,7 @@
 ms_map3_flag261_InitFunction:
                 
                  
-                chkFlg  $3              ; Jaha joined
+                chkFlg  $3              ; HAWEL joined
                 beq.s   return_513CC
                 script  cs_513CE
 return_513CC:
@@ -16,7 +16,7 @@ return_513CC:
 
 	; End of function ms_map3_flag261_InitFunction
 
-cs_513CE:       hide ALLY_JAHA
+cs_513CE:       hide ALLY_HAWEL
                 csc_end
 
 ; =============== S U B R O U T I N E =======================================

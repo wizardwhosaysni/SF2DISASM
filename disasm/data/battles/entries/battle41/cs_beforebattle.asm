@@ -4,8 +4,8 @@
 bbcs_41:        textCursor $C0B
                 loadMapFadeIn 56,12,21
                 loadMapEntities ce_4ED76
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setPos ALLY_PETER,16,24,RIGHT
+                setActscriptWait ALLY_IAN,eas_Init
+                setPos ALLY_RUBURAN,16,24,RIGHT
                 setPos FOLLOWER_B,15,24,RIGHT
                 setPos ALLY_LEMON,14,24,RIGHT
                 jumpIfFlagClear $4C,cs_4ED48 ; Zynk is a follower
@@ -13,7 +13,7 @@ bbcs_41:        textCursor $C0B
 cs_4ED48:       playSound MUSIC_BATTLE_THEME_3
                 fadeInB
                 nextSingleText $0,128   ; "Who are you?!{N}Oh, are you from Granseal?{W1}"
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 setCamDest 12,4
                 nextSingleText $0,128   ; "But, Odd Eye went to...{W2}"
                 entityActionsWait 128
@@ -24,6 +24,6 @@ cs_4ED48:       playSound MUSIC_BATTLE_THEME_3
                 nextSingleText $0,128   ; "You shall die now!{W1}"
                 csc_end
 ce_4ED76:       mainEntity 17,24,RIGHT
-                entity 16,24,RIGHT,ALLY_PETER,eas_Init
+                entity 16,24,RIGHT,ALLY_RUBURAN,eas_Init
                 entity 16,6,DOWN,MAPSPRITE_REAPER,eas_Init
                 dc.w $FFFF

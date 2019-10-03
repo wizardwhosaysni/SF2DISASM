@@ -3,20 +3,20 @@
 ; 0x5C4EE..0x5C638 : 
 cs_5C4EE:       textCursor $575
                 cameraSpeed $30
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setDest ALLY_BOWIE,5,23
-                setDest ALLY_PETER,4,22
-                entityActionsWait ALLY_PETER
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setDest ALLY_IAN,5,23
+                setDest ALLY_RUBURAN,4,22
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "Who are they?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Who are they?{W1}"
                 setCamDest 16,4
                 csWait 5
                 setActscript 129,eas_461B6
                 csWait 5
                 setActscript 130,eas_461B6
-                nextSingleText $0,ALLY_PETER ; "They're looking for something.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "They're looking for something.{W1}"
                 csWait 5
                 setActscript 129,eas_461B6
                 csWait 5
@@ -57,8 +57,8 @@ cs_5C4EE:       textCursor $575
                 nextSingleText $0,131   ; "Who's that?{W1}"
                 setFacing 131,DOWN
                 setCamDest 0,17
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,DOWN
                 csWait 50
                 setCamDest 16,7
                 setActscriptWait 131,eas_Init
@@ -79,9 +79,9 @@ cs_5C4EE:       textCursor $575
                 setStoryFlag $C         ; Battle 12 unlocked
                 warp $34,$0,$0,$0
                 csc_end
-cs_5C622:       setPos ALLY_PETER,22,8,RIGHT
+cs_5C622:       setPos ALLY_RUBURAN,22,8,RIGHT
                 textCursor $9BD
                 fadeInB
-                nextText $0,ALLY_PETER  ; "{LEADER}, did you hear{N}that?  He said, he had{N}been waiting for you.{W2}"
-                nextSingleText $0,ALLY_PETER ; "Why do the devils want you?{W1}"
+                nextText $0,ALLY_RUBURAN  ; "{LEADER}, did you hear{N}that?  He said, he had{N}been waiting for you.{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Why do the devils want you?{W1}"
                 csc_end

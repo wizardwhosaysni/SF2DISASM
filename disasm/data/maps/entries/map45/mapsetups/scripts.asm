@@ -3,24 +3,24 @@
 ; 0x600CE..0x603AE : 
 cs_600CE:       textCursor $823
                 setActscriptWait FOLLOWER_B,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait ALLY_ZYNK,eas_Init
                 nextSingleText $0,ALLY_SHEELA ; "Who's there!{W1}"
                 setCamDest 1,1
                 nextSingleText $0,ALLY_SHEELA ; "This is a sacred place!{W1}"
                 setPos ALLY_ZYNK,8,12,LEFT
                 setPos FOLLOWER_B,6,11,UP
-                setPos ALLY_BOWIE,6,13,UP
-                setPos ALLY_PETER,6,14,UP
+                setPos ALLY_IAN,6,13,UP
+                setPos ALLY_RUBURAN,6,14,UP
                 setCamDest 1,9
                 nextSingleText $80,FOLLOWER_B ; "Oops!{W1}"
                 entityActionsWait FOLLOWER_B
                  moveDown 1
                 endActions
                 nextSingleText $80,FOLLOWER_B ; "She's too beautiful for you!{N}Back, back!{W1}"
-                setActscriptWait ALLY_BOWIE,eas_46172
-                setActscriptWait ALLY_PETER,eas_46172
-                customActscriptWait ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_46172
+                setActscriptWait ALLY_RUBURAN,eas_46172
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 4,4        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -28,30 +28,30 @@ cs_600CE:       textCursor $823
                  ac_setSpeed 4,4        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 4,4        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
                 entityActions FOLLOWER_B
                  moveDown 3
                 endActions
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  eaWait 20
                  moveDown 3
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  eaWait 40
                  moveDown 3
                 endActions
                 csWait 50
-                headshake ALLY_BOWIE
-                headshake ALLY_BOWIE
+                headshake ALLY_IAN
+                headshake ALLY_IAN
                 csWait 10
-                headshake ALLY_BOWIE
-                headshake ALLY_BOWIE
+                headshake ALLY_IAN
+                headshake ALLY_IAN
                 csWait 10
-                headshake ALLY_BOWIE
-                waitIdle ALLY_BOWIE
+                headshake ALLY_IAN
+                waitIdle ALLY_IAN
                 nextText $0,ALLY_SHEELA ; "Wait!{W1}"
                 nextSingleText $0,ALLY_SHEELA ; "Is that you...Sir Astral?{W1}"
                 setFacing FOLLOWER_B,UP
@@ -61,14 +61,14 @@ cs_600CE:       textCursor $823
                  moveUp 4
                 endActions
                 nextSingleText $80,FOLLOWER_B ; "Who are you?{N}You know me?{W1}"
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                entityActions ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                entityActions ALLY_IAN
                  moveUp 4
                  moveRight 1
                  moveUp 1
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 4
                  moveLeft 1
                  moveUp 1
@@ -93,12 +93,12 @@ cs_600CE:       textCursor $823
                 nextSingleText $0,ALLY_SHEELA ; "I am sorry I kicked you.{W1}"
                 shiver FOLLOWER_B
                 nextSingleText $80,FOLLOWER_B ; "That OK. How have...{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_BOWIE,DOWN
-                nextSingleText $0,ALLY_PETER ; "Hey, aren't you going to{N}introduce us?{W1}"
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_IAN,DOWN
+                nextSingleText $0,ALLY_RUBURAN ; "Hey, aren't you going to{N}introduce us?{W1}"
                 entityActionsWait FOLLOWER_B
                  moveDown 1
                 endActions
@@ -108,8 +108,8 @@ cs_600CE:       textCursor $823
                 setQuake 0
                 csWait 20
                 setFacing FOLLOWER_B,UP
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_IAN,UP
                 nextText $80,FOLLOWER_B ; "All in good time.{W2}"
                 nextSingleText $80,FOLLOWER_B ; "By the way, what are you{N}doing here?{W1}"
                 shiver ALLY_SHEELA
@@ -147,11 +147,11 @@ cs_600CE:       textCursor $823
                 entityActionsWait ALLY_SHEELA
                  moveDown 2
                 endActions
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
                 startEntity ALLY_SHEELA
                 csWait 30
@@ -166,11 +166,11 @@ cs_600CE:       textCursor $823
                 setActscriptWait FOLLOWER_B,eas_Jump
                 nextSingleText $80,FOLLOWER_B ; "We could always use another{N}well-trained fighter!{W1}"
                 join ALLY_SHEELA
-                nextSingleText $0,ALLY_PETER ; "We've got a strong ally!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "We've got a strong ally!{W1}"
                 setFacing ALLY_SHEELA,LEFT
                 nextSingleText $0,ALLY_SHEELA ; "Many Galam soldiers are in{N}the west.{N}We must be careful.{W1}"
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 followEntity ALLY_ZYNK,FOLLOWER_B,2
-                followEntity ALLY_SHEELA,ALLY_BOWIE,5
+                followEntity ALLY_SHEELA,ALLY_IAN,5
                 csc_end

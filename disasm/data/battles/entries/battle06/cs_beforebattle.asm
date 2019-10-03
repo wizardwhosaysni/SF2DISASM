@@ -4,20 +4,20 @@
 bbcs_06:        textCursor $926
                 loadMapFadeIn 66,25,5
                 loadMapEntities ce_49CBA
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_SLADE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_SONETTE,eas_Init
                 setActscriptWait 128,eas_Init
                 setActscriptWait 129,eas_Init
                 setActscriptWait 130,eas_Init
                 playSound MUSIC_MAIN_THEME
                 fadeInB
                 nextSingleText $0,129   ; "Halt!{W1}"
-                setActscript ALLY_SLADE,eas_Jump
-                setActscriptWait ALLY_BOWIE,eas_Jump
+                setActscript ALLY_SONETTE,eas_Jump
+                setActscriptWait ALLY_IAN,eas_Jump
                 setCamDest 31,9
                 nextSingleText $0,129   ; "How did you get past the{N}Galam guards?{W1}"
                 nextSingleText $0,130   ; "No one is allowed to leave{N}'til we conquer Granseal!{W1}"
-                nextSingleText $C0,ALLY_SLADE ; "I know...ah...but...{N}King Galam...left this{N}behind.{W1}"
+                nextSingleText $C0,ALLY_SONETTE ; "I know...ah...but...{N}King Galam...left this{N}behind.{W1}"
                 setFacing 129,DOWN
                 headshake 130
                 setFacing 129,LEFT
@@ -36,7 +36,7 @@ bbcs_06:        textCursor $926
                 nextSingleText $0,128   ; "But he has not rescinded{N}his orders yet....{N}I had better deliver it.{W1}"
                 setFacing 128,UP
                 nextSingleText $0,128   ; "I'll get the package from{N}them.{W1}"
-                nextSingleText $C0,ALLY_SLADE ; "I think we're in trouble!{W1}"
+                nextSingleText $C0,ALLY_SONETTE ; "I think we're in trouble!{W1}"
                 setCameraEntity 128
                 entityActionsWait 128
                  moveLeft 2
@@ -52,11 +52,11 @@ bbcs_06:        textCursor $926
                 setActscriptWait 128,eas_Init
                 setFacing 128,DOWN
                 nextSingleText $0,128   ; "Hey, these are the Granseal{N}spies!{W1}"
-                nextSingleText $C0,ALLY_SLADE ; "Oops!  That didn't work!{W1}"
+                nextSingleText $C0,ALLY_SONETTE ; "Oops!  That didn't work!{W1}"
                 setStoryFlag $7         ; Battle 7 unlocked
                 csc_end
 ce_49CBA:       mainEntity 30,9,DOWN
-                entity 29,8,DOWN,ALLY_SLADE,eas_Init
+                entity 29,8,DOWN,ALLY_SONETTE,eas_Init
                 entity 32,20,UP,MAPSPRITE_GALAM_SOLDIER,eas_Init
                 entity 36,13,LEFT,MAPSPRITE_GALAM_SOLDIER,eas_Init
                 entity 37,14,UP,MAPSPRITE_GALAM_ARCHER,eas_Init

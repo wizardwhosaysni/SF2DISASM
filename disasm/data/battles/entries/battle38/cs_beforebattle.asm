@@ -4,9 +4,9 @@
 bbcs_38:        textCursor $BBB
                 loadMapFadeIn 66,9,6
                 loadMapEntities ce_4DE74
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,13,8,DOWN
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,13,8,DOWN
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,15,8,DOWN
                 setActscriptWait FOLLOWER_A,eas_Init
@@ -17,10 +17,10 @@ bbcs_38:        textCursor $BBB
 cs_4DDFE:       playSound MUSIC_BATTLE_THEME_1
                 fadeInB
                 cameraSpeed $30
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveDown 2
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveDown 2
                 endActions
                 entityActions FOLLOWER_A
@@ -50,6 +50,6 @@ cs_4DDFE:       playSound MUSIC_BATTLE_THEME_1
                 setQuake 0
                 csc_end
 ce_4DE74:       mainEntity 14,9,DOWN
-                entity 13,8,DOWN,ALLY_PETER,eas_Init
+                entity 13,8,DOWN,ALLY_RUBURAN,eas_Init
                 entity 13,23,UP,MAPSPRITE_GESHP,eas_Init
                 dc.w $FFFF

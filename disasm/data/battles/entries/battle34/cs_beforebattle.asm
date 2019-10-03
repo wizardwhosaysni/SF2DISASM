@@ -4,9 +4,9 @@
 bbcs_34:        textCursor $B4F
                 loadMapFadeIn 55,21,22
                 loadMapEntities ce_4D48E
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,30,28,LEFT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,30,28,LEFT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,30,30,LEFT
                 jumpIfFlagClear $4C,cs_4D38E ; Zynk is a follower
@@ -16,10 +16,10 @@ cs_4D38E:       animEntityFX 129,6
                 playSound MUSIC_BATTLE_THEME_1
                 fadeInB
                 cameraSpeed $30
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveLeft 3
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveLeft 3
                 endActions
                 entityActions 130
@@ -33,7 +33,7 @@ cs_4D3C6:       entityActionsWait FOLLOWER_B
                  moveLeft 3
                 endActions
                 nextSingleText $0,128   ; "Hello, Granseal soldiers.{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 setCamDest 7,5
                 nextText $0,128         ; "Remember?  I promised that I{N}would see you again.{W2}"
                 nextSingleText $0,128   ; "Come on.  Let's party!{W1}"
@@ -81,7 +81,7 @@ cs_4D3C6:       entityActionsWait FOLLOWER_B
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, get her!{W1}"
                 csc_end
 ce_4D48E:       mainEntity 29,29,LEFT
-                entity 30,28,LEFT,ALLY_PETER,eas_Init
+                entity 30,28,LEFT,ALLY_RUBURAN,eas_Init
                 entity 11,10,DOWN,MAPSPRITE_CAMEELA,eas_Init
                 entity 11,6,DOWN,MAPSPRITE_GESHP,eas_Init
                 entity 30,29,LEFT,MAPSPRITE_CARAVAN,eas_Init

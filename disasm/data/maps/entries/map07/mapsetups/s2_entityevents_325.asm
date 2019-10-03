@@ -22,7 +22,7 @@ Map7_EntityEvent11:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   return_555E6
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_555CE      
                 txt     $48A            ; "Time goes by very quickly....{W2}"
                 txt     $48B            ; "Those two jewels around{N}your neck will always{N}remind me of that...!{W2}"
@@ -53,7 +53,7 @@ Map7_EntityEvent1:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_55618      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_55602      
                 txt     $484            ; "I feel Elis is still alive....{W2}"
                 txt     $485            ; "{LEADER}, please prepare{N}a ship for me.{W2}"
@@ -61,7 +61,7 @@ Map7_EntityEvent1:
                 bra.s   loc_55616
 byte_55602:
                 
-                chkFlg  $2BF            ; Set after the scene where Bowie brings the plank above deck, also set after the initial Ribble scene, where the guy runs away
+                chkFlg  $2BF            ; Set after the scene where IAN brings the plank above deck, also set after the initial Ribble scene, where the guy runs away
                 bne.s   byte_55612      
                 txt     $4A7            ; "Gee, Parmecia is full{N}of wonders!{W2}"
                 txt     $4A8            ; "Phoenix, Volcanon...it's{N}like living a myth!{W1}"
@@ -89,7 +89,7 @@ Map7_EntityEvent0:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_5563E      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_55638      
                 txt     $487            ; "Is everything OK,{N}{LEADER}?{W2}"
                 txt     $488            ; "Can these young men guard{N}our new town?{W2}"
@@ -159,9 +159,9 @@ Map7_EntityEvent4:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_556A0      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_5569A      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_55694      
                 txt     $490            ; "I envy you, {LEADER}.{W2}"
                 txt     $491            ; "You can act freely, even{N}in the castle.{W2}"
@@ -202,13 +202,13 @@ Map7_EntityEvent5:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_556DA      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_556C4      
                 txt     $49A            ; "Granseal Castle!{N}Hee, hee...I'm cool!{W1}"
                 bra.s   loc_556D8
 byte_556C4:
                 
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_556D4      
                 txt     $49D            ; "Grans...oh!{W2}"
                 txt     $49E            ; "{LEADER}, you're here!{N}Sir Astral is waiting.{W1}"
@@ -237,7 +237,7 @@ Map7_EntityEvent6:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_556FC      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_556F6      
                 txt     $497            ; "Tactical Base!{N}Ah, you knew that?{W1}"
                 bra.s   loc_556FA
@@ -264,9 +264,9 @@ Map7_EntityEvent7:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_5572A      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_55724      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_5571E      
                 txt     $493            ; "At least there is no danger{N}in the castle.{W2}"
                 txt     $494            ; "I've never seen such strange{N}races!{W1}"
@@ -300,14 +300,14 @@ Map7_EntityEvent8:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_55760      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_55746      
                 txt     $49B            ; "You need permission to enter!{W2}"
                 txt     $49C            ; "I was told to say that,{N}but nobody ever comes!{W1}"
                 bra.s   loc_5575E
 byte_55746:
                 
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_55756      
                 txt     $49F            ; "The Minister and Sir{N}Astral are inside.{W2}"
                 txt     $4A0            ; "They're giving a warm{N}reception to a guest.{W1}"

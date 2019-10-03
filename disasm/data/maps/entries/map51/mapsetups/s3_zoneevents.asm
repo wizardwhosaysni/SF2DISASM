@@ -41,24 +41,24 @@ Map51_DefaultZoneEvent:
 	; End of function Map51_ZoneEvent4
 
 cs_5C312:       textCursor $9FB
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos 128,7,16,UP
                 setPos 129,6,17,UP
                 setPos 130,8,17,UP
-                nextText $0,ALLY_ELRIC  ; "Did you come to help me?{N}Oh, thank you!{W2}"
-                nextSingleText $0,ALLY_ELRIC ; "I might have been eaten by{N}monsters if you hadn't come.{W1}"
+                nextText $0,ALLY_MORTON  ; "Did you come to help me?{N}Oh, thank you!{W2}"
+                nextSingleText $0,ALLY_MORTON ; "I might have been eaten by{N}monsters if you hadn't come.{W1}"
                 nextSingleText $C0,128  ; "My dinner is escaping!{W1}"
                 setActscript FOLLOWER_B,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 csWait 120
-                nextSingleText $0,ALLY_PETER ; "Who said that?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Who said that?{W1}"
                 setCamDest 3,12
                 nextText $C0,128        ; "That pond catches my food.{N}Hey elf boy, good trap, huh?{W2}"
                 nextSingleText $C0,128  ; "Those who get stuck in the{N}pond are mine.  It's my{N}rule.{W1}"
-                nextSingleText $0,ALLY_ELRIC ; "Then, all the missing people{N}were eaten by you?{W1}"
+                nextSingleText $0,ALLY_MORTON ; "Then, all the missing people{N}were eaten by you?{W1}"
                 nextSingleText $C0,128  ; "They were in my pond.{W1}"
                 entityActionsWait 128
                  moveUp 2
@@ -72,9 +72,9 @@ cs_5C312:       textCursor $9FB
                 warp $33,$0,$0,$0
                 csc_end
 cs_5C3AA:       textCursor $A05
-                nextSingleText $0,ALLY_PETER ; "{LEADER}, we have to{N}save him!{W1}"
-                nod ALLY_BOWIE
-                entityActionsWait ALLY_BOWIE
+                nextSingleText $0,ALLY_RUBURAN ; "{LEADER}, we have to{N}save him!{W1}"
+                nod ALLY_IAN
+                entityActionsWait ALLY_IAN
                  moveUp 1
                 endActions
                 csc_end

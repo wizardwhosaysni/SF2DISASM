@@ -12,7 +12,7 @@ ms_map13_InitFunction:
                 script  cs_58310
 byte_582EC:
                 
-                chkFlg  $2CC            ; Set after your raft-giving conversation with the mayor in Polca
+                chkFlg  $2CC            ; Set after your raft-giving conversation with the KIDDOor in Polca
                 beq.s   byte_582FE      
                 move.w  #$89,d0 
                 moveq   #3,d1

@@ -7,7 +7,7 @@
 ms_map30_InitFunction:
                 
                  
-                chkFlg  $2F9            ; Set after the dwarf gives Bowie the cannon
+                chkFlg  $2F9            ; Set after the dwarf gives IAN the cannon
                 beq.s   byte_5A2FE      
                 script  cs_5A30C
 byte_5A2FE:

@@ -15,27 +15,27 @@ GetAllyPortrait:
                 jsr     j_GetClass      
                 cmpi.b  #CLASS_HERO,d1  ; stupid CMP mechanism for alternate portraits, need to improve that one day
                 bne.s   @NotHero        ; HARDCODED promotion classes which trigger new portraits
-                moveq   #PORTRAIT_BOWIE_PROMO,d0
+                moveq   #PORTRAIT_IAN_PROMO,d0
 @NotHero:
                 
                 cmpi.b  #CLASS_PHNX,d1
                 bne.s   @NotPhnx
-                moveq   #PORTRAIT_PETER_PROMO,d0
+                moveq   #PORTRAIT_RUBURAN_PROMO,d0
 @NotPhnx:
                 
                 cmpi.b  #CLASS_WFBR,d1
                 bne.s   @NotWfbr
-                moveq   #PORTRAIT_GERHALT_PROMO,d0
+                moveq   #PORTRAIT_SYLVIA_PROMO,d0
 @NotWfbr:
                 
                 cmpi.b  #CLASS_NINJ,d1
                 bne.s   @NotNinj
-                moveq   #PORTRAIT_SLADE_PROMO,d0
+                moveq   #PORTRAIT_SONETTE_PROMO,d0
 @NotNinj:
                 
                 cmpi.b  #CLASS_MNST,d1
                 bne.s   @Done
-                moveq   #PORTRAIT_KIWI_PROMO,d0
+                moveq   #PORTRAIT_CYNTHIA_PROMO,d0
 @Done:
                 
                 move.w  (sp)+,d1

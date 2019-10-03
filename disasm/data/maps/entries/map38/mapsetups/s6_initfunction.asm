@@ -35,8 +35,8 @@ cs_5DD8E:       newEntity ALLY_ZYNK,11,8,DOWN,MAPSPRITE_TAROS
 cs_5DD9C:       setPos 128,14,26,DOWN
                 textCursor $854
                 csWait 1
-                setPos ALLY_BOWIE,14,28,UP
-                setPos ALLY_PETER,13,29,UP
+                setPos ALLY_IAN,14,28,UP
+                setPos ALLY_RUBURAN,13,29,UP
                 setPos FOLLOWER_B,14,29,UP
                 jumpIfFlagSet $4C,cs_5DE22 ; Zynk is a follower
 cs_5DDC2:       playSound MUSIC_TOWN
@@ -53,10 +53,10 @@ cs_5DDC2:       playSound MUSIC_TOWN
                 entityActionsWait 128
                  moveLeft 2
                 endActions
-                setFacing ALLY_BOWIE,LEFT
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_IAN,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 setFacing FOLLOWER_B,LEFT
-                nextSingleText $0,ALLY_PETER ; "No, wait!  We're not Galam{N}soldiers!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "No, wait!  We're not Galam{N}soldiers!{W1}"
                 setFacing 128,RIGHT
                 nextSingleText $0,128   ; "No...?{W1}"
                 entityActionsWait 128

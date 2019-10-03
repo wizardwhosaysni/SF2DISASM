@@ -12,13 +12,13 @@ cs_53176:       setCameraEntity 65535
                 newEntity 149,30,10,UP,MAPSPRITE_WORKER
                 newEntity 150,30,11,UP,MAPSPRITE_WORKER
                 csWait 1
-                setPos ALLY_BOWIE,26,9,RIGHT
-                setPos ALLY_SARAH,26,10,RIGHT
-                setPos ALLY_CHESTER,26,11,RIGHT
+                setPos ALLY_IAN,26,9,RIGHT
+                setPos ALLY_MEAD,26,10,RIGHT
+                setPos ALLY_PAIGE,26,11,RIGHT
                 setPos 140,63,63,DOWN
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_SARAH,eas_Init
-                setActscriptWait ALLY_CHESTER,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_MEAD,eas_Init
+                setActscriptWait ALLY_PAIGE,eas_Init
                 fadeInB
                 setCamDest 24,5
                 csWait 40
@@ -29,7 +29,7 @@ cs_53176:       setCameraEntity 65535
                 nextSingleText $80,138  ; "So, all we have to do is{N}find the evil Gizmo and{N}kill him.{W1}"
                 nod 138
                 nextSingleText $80,138  ; "That's right.  Kill him{N}before he possesses{N}somebody else.{W2}"
-                nextSingleText $80,138  ; "You may go.{W1}"
+                nextSingleText $80,138  ; "You KIDDO go.{W1}"
                 nextSingleText $0,144   ; "Yes, sir.{W1}"
                 setFacing 144,DOWN
                 nextSingleText $0,144   ; "Let's go and defeat the{N}evil Gizmo.{W1}"
@@ -97,14 +97,14 @@ cs_53176:       setCameraEntity 65535
                 nextSingleText $80,138  ; "The King is upstairs looking{N}in on Sir Astral.{N}I'm worried.{W1}"
                 setFacing 138,LEFT
                 csWait 30
-                entityActionsWait ALLY_SARAH
+                entityActionsWait ALLY_MEAD
                  moveRight 1
                 endActions
-                nextSingleText $0,ALLY_SARAH ; "Is he going to be OK?{W1}"
-                entityActionsWait ALLY_CHESTER
+                nextSingleText $0,ALLY_MEAD ; "Is he going to be OK?{W1}"
+                entityActionsWait ALLY_PAIGE
                  moveRight 1
                 endActions
-                nextSingleText $0,ALLY_CHESTER ; "We...we are...{W1}"
+                nextSingleText $0,ALLY_PAIGE ; "We...we are...{W1}"
                 csWait 20
                 customActscriptWait 138
                  ac_setSpeed 16,16      ;   
@@ -191,7 +191,7 @@ cs_53176:       setCameraEntity 65535
                 endActions
                 setFacing 138,LEFT
                 nextText $80,138        ; "You're the pupils of Astral.{N}I know of you, {LEADER}.{W2}"
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveRight 1
                 endActions
                 csWait 20
@@ -215,8 +215,8 @@ cs_534AC:       entityActionsWait 140
                 setFacing 140,LEFT
                 textCursor $2F6
                 nextSingleText $0,140   ; "Thank you.{N}Depart to fetch Hawel{N}immediately.{W1}"
-                followEntity ALLY_SARAH,ALLY_BOWIE,2
-                followEntity ALLY_CHESTER,ALLY_SARAH,2
+                followEntity ALLY_MEAD,ALLY_IAN,2
+                followEntity ALLY_PAIGE,ALLY_MEAD,2
                 csc_end
 cs_534D2:       textCursor $2B6
                 nextSingleText $0,ALLY_LEMON ; "Stop, please stop!{N}Don't make me use my{N}sword any more!{W1}"
@@ -309,7 +309,7 @@ cs_535FA:       textCursor $2B2
                 nextSingleText $0,129   ; "King Galam took{N}Princess Elis to the{N}Ancient Tower!{W1}"
                 nextSingleText $0,130   ; "Elis is in the tower.{N}I shall go with you and{N}save my daughter.{W1}"
                 nextSingleText $FF,255  ; "King Granseal and the{N}Minister go with {LEADER}.{W1}"
-                followEntity 130,ALLY_BOWIE,2
+                followEntity 130,ALLY_IAN,2
                 followEntity 129,130,2
                 csc_end
 cs_53620:       textCursor $2C9

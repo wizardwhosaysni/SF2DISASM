@@ -1,25 +1,25 @@
 
 ; ASM FILE data\stats\allies\stats\entries.asm :
 ; 0x1EE270..0x1EE2F0 : Ally stats
-pt_AllyStats:   dc.l AllyStats00        ; BOWIE
-                dc.l AllyStats01        ; SARAH
-                dc.l AllyStats02        ; CHESTER
-                dc.l AllyStats03        ; JAHA
-                dc.l AllyStats04        ; KAZIN
-                dc.l AllyStats05        ; SLADE
-                dc.l AllyStats06        ; KIWI
-                dc.l AllyStats07        ; PETER
-                dc.l AllyStats08        ; MAY
-                dc.l AllyStats09        ; GERHALT
-                dc.l AllyStats10        ; LUKE
-                dc.l AllyStats11        ; ROHDE
-                dc.l AllyStats12        ; RICK
-                dc.l AllyStats13        ; ELRIC
+pt_AllyStats:   dc.l AllyStats00        ; IAN
+                dc.l AllyStats01        ; MEAD
+                dc.l AllyStats02        ; PAIGE
+                dc.l AllyStats03        ; HAWEL
+                dc.l AllyStats04        ; KNUCKLES
+                dc.l AllyStats05        ; SONETTE
+                dc.l AllyStats06        ; CYNTHIA
+                dc.l AllyStats07        ; RUBURAN
+                dc.l AllyStats08        ; KIDDO
+                dc.l AllyStats09        ; SYLVIA
+                dc.l AllyStats10        ; JULIA
+                dc.l AllyStats11        ; ERIC
+                dc.l AllyStats12        ; MINTO
+                dc.l AllyStats13        ; MORTON
                 dc.l AllyStats14        ; ERIC
-                dc.l AllyStats15        ; KARNA
-                dc.l AllyStats16        ; RANDOLF
-                dc.l AllyStats17        ; TYRIN
-                dc.l AllyStats18        ; JANET
+                dc.l AllyStats15        ; RIDION
+                dc.l AllyStats16        ; KOJIROU
+                dc.l AllyStats17        ; MAX
+                dc.l AllyStats18        ; ODDEYE
                 dc.l AllyStats19        ; HIGINS
                 dc.l AllyStats20        ; SKREECH
                 dc.l AllyStats21        ; TAYA

@@ -4,13 +4,13 @@
 bbcs_15:        textCursor $9C7
                 loadMapFadeIn 50,9,15
                 loadMapEntities ce_4AE42
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 setActscriptWait FOLLOWER_A,eas_Init
                 setPos FOLLOWER_A,14,19,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,15,20,UP
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,13,20,UP
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,13,20,UP
                 fadeInB
                 cameraSpeed $30
                 nextSingleText $0,FOLLOWER_A ; "This is the Ancient Hall{N}that leads to the Ancient{N}Tunnel...{W1}"

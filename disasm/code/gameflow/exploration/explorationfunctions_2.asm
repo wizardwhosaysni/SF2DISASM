@@ -351,22 +351,22 @@ ProcessMapEventType5_GetOutOfRaft:
 
 ; =============== S U B R O U T I N E =======================================
 
-j_j_ShrinkInBowieAndFollowers:
+j_j_ShrinkInIANAndFollowers:
                 
-                jsr     j_ShrinkInBowieAndFollowers
+                jsr     j_ShrinkInIANAndFollowers
                 rts
 
-	; End of function j_j_ShrinkInBowieAndFollowers
+	; End of function j_j_ShrinkInIANAndFollowers
 
 
 ; =============== S U B R O U T I N E =======================================
 
-j_j_GrowOutBowieAndFollowers:
+j_j_GrowOutIANAndFollowers:
                 
-                jsr     j_GrowOutBowieAndFollowers
+                jsr     j_GrowOutIANAndFollowers
                 rts
 
-	; End of function j_j_GrowOutBowieAndFollowers
+	; End of function j_j_GrowOutIANAndFollowers
 
 
 ; =============== S U B R O U T I N E =======================================

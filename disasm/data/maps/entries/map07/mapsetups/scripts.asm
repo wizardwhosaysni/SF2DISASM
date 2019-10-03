@@ -4,11 +4,11 @@
 cs_55A36:       textCursor $4AE
                 setCamDest 6,2
                 nextSingleText $0,139   ; "Are you a phoenix?{N}The legendary bird?{W1}"
-                nextText $C0,ALLY_PETER ; "Y...yeah, I'm a phoenix.{W2}"
-                nextSingleText $C0,ALLY_PETER ; "But...legendary?{N}I don't know about that.{W1}"
+                nextText $C0,ALLY_RUBURAN ; "Y...yeah, I'm a phoenix.{W2}"
+                nextSingleText $C0,ALLY_RUBURAN ; "But...legendary?{N}I don't know about that.{W1}"
                 nextSingleText $0,129   ; "You are legendary, {NAME;7}!{N}I read that a phoenix serves{N}a god.{W1}"
-                nextText $C0,ALLY_PETER ; "God?  Ah, Volcanon!{N}{NAME;10} calls him a god. {W2}"
-                nextSingleText $C0,ALLY_PETER ; "As long as he watches over{N}us, nothing can break the{N}peace of Parmecia.{W1}"
+                nextText $C0,ALLY_RUBURAN ; "God?  Ah, Volcanon!{N}{NAME;10} calls him a god. {W2}"
+                nextSingleText $C0,ALLY_RUBURAN ; "As long as he watches over{N}us, nothing can break the{N}peace of Parmecia.{W1}"
                 entityActionsWait 139
                  moveUp 1
                 endActions
@@ -19,10 +19,10 @@ cs_55A36:       textCursor $4AE
                 endActions
                 setFacing 139,RIGHT
                 nextSingleText $0,139   ; "Please let me go with you{N}and meet Volcanon!{W1}"
-                nextText $C0,ALLY_PETER ; "Ummm...OK.{W2}"
-                nextText $C0,ALLY_PETER ; "To tell the truth, I hurt{N}my wing during this trip.{W2}"
-                nextText $C0,ALLY_PETER ; "I stopped by here to ask{N}for help.{W2}"
-                nextSingleText $C0,ALLY_PETER ; "But, I don't want to trouble{N}you....{W1}"
+                nextText $C0,ALLY_RUBURAN ; "Ummm...OK.{W2}"
+                nextText $C0,ALLY_RUBURAN ; "To tell the truth, I hurt{N}my wing during this trip.{W2}"
+                nextText $C0,ALLY_RUBURAN ; "I stopped by here to ask{N}for help.{W2}"
+                nextSingleText $C0,ALLY_RUBURAN ; "But, I don't want to trouble{N}you....{W1}"
                 nod 139
                 nextSingleText $0,139   ; "Don't worry.  These lads{N}love trouble.{W1}"
                 entityActionsWait 139
@@ -30,7 +30,7 @@ cs_55A36:       textCursor $4AE
                  moveRight 1
                 endActions
                 setFacing 139,DOWN
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 nextText $0,139         ; "{LEADER}!{W2}"
                 nextText $0,139         ; "Why didn't you tell me you{N}were here?  Did you listen{N}to our conversation?{W2}"
                 nextText $0,139         ; "You know, it's time for us to{N}set out!{W2}"
@@ -60,7 +60,7 @@ cs_55A36:       textCursor $4AE
                  moveLeft 1
                  moveUp 1
                 endActions
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 nextText $0,129         ; "{LEADER}, please take your{N}party and go with{N}{NAME;7}.{W2}"
                 nextSingleText $0,129   ; "Astral, do you agree?{W1}"
                 setFacing 139,DOWN
@@ -69,27 +69,27 @@ cs_55A36:       textCursor $4AE
                 setFacing 139,UP
                 nod 139
                 nextSingleText $0,139   ; "Y...yes.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                nextSingleText $C0,ALLY_PETER ; "Then, they're my companions!{W1}"
+                nextSingleText $C0,ALLY_RUBURAN ; "Then, they're my companions!{W1}"
                 nod 129
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 2
                 endActions
-                nextText $C0,ALLY_PETER ; "I'm {NAME;7}.{W2}"
-                nextText $C0,ALLY_PETER ; "I really appreciate your{N}kindness.{W2}"
-                nextSingleText $C0,ALLY_PETER ; "Mt. Volcano is in the east....{N}It's very far away.{W1}"
+                nextText $C0,ALLY_RUBURAN ; "I'm {NAME;7}.{W2}"
+                nextText $C0,ALLY_RUBURAN ; "I really appreciate your{N}kindness.{W2}"
+                nextSingleText $C0,ALLY_RUBURAN ; "Mt. Volcano is in the east....{N}It's very far away.{W1}"
                 nextSingleText $FF,255  ; "{CLEAR}{LEADER} decides to take{N}{NAME;7} with him.{W1}{CLEAR}"
-                joinForceAI ALLY_PETER,$FFFF ; 0054 JOIN FORCE WITH AI
-                entityActionsWait ALLY_PETER
+                joinForceAI ALLY_RUBURAN,$FFFF ; 0054 JOIN FORCE WITH AI
+                entityActionsWait ALLY_RUBURAN
                  moveDown 2
                 endActions
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity ALLY_SARAH,ALLY_PETER,2
-                followEntity ALLY_CHESTER,ALLY_SARAH,2
-                followEntity ALLY_JAHA,ALLY_BOWIE,5
-                followEntity ALLY_KAZIN,ALLY_BOWIE,6
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity ALLY_MEAD,ALLY_RUBURAN,2
+                followEntity ALLY_PAIGE,ALLY_MEAD,2
+                followEntity ALLY_HAWEL,ALLY_IAN,5
+                followEntity ALLY_KNUCKLES,ALLY_IAN,6
                 csWait 60
                 nextSingleText $0,129   ; "Minister, bring the gift!{W1}"
                 nod 128
@@ -117,22 +117,22 @@ cs_55A36:       textCursor $4AE
                 endActions
                 nextSingleText $0,139   ; "Good luck, {LEADER}.{W2}"
                 nextSingleText $0,139   ; "Find as many friends as you{N}can on your journey with{N}{NAME;7}.{W1}"
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 csWait 60
-                setCameraEntity ALLY_BOWIE
-                entityActionsWait ALLY_BOWIE
+                setCameraEntity ALLY_IAN
+                entityActionsWait ALLY_IAN
                  moveDown 18
                 endActions
                 warp $6,$B,$1,$3
                 csc_end
 cs_55BEE:       textCursor $4E1
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 nextSingleText $0,128   ; "Welcome back, {LEADER}.{W1}"
                 setDest 32768,11,7
-                setDest ALLY_PETER,10,8
+                setDest ALLY_RUBURAN,10,8
                 setCamDest 6,2
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 nextSingleText $0,139   ; "Thanks to you, Granseal has{N}many allies to trade with.{W1}"
                 nextText $0,128         ; "You've also made a lot of{N}new friends!{W2}"
                 nextSingleText $0,128   ; "Great job!{W1}"
@@ -141,7 +141,7 @@ cs_55BEE:       textCursor $4E1
                 nextSingleText $0,139   ; "I understand that Volcanon{N}is angry.{W1}"
                 setFacing 128,LEFT
                 nextSingleText $0,128   ; "So Princess Elis must be...{W1}"
-                nextSingleText $0,ALLY_PETER ; "She's alive.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "She's alive.{W1}"
                 customActscriptWait 129
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
@@ -178,11 +178,11 @@ cs_55BEE:       textCursor $4E1
                  moveLeft 1
                  moveDown 1
                 endActions
-                setActscriptWait ALLY_PETER,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 nextSingleText $C0,129  ; "What did you say?!{N}Is she alive?{W1}"
-                nextSingleText $0,ALLY_PETER ; "Y...yes!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Y...yes!{W1}"
                 nextSingleText $0,139   ; "Is it true?{N}Is it true?!{W1}"
-                nextSingleText $0,ALLY_PETER ; "Yes, it is.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Yes, it is.{W1}"
                 customActscriptWait 129
                  ac_setSpeed 32,32      ;   
                  ac_jump eas_Idle       ;   
@@ -202,63 +202,63 @@ cs_55BEE:       textCursor $4E1
                 endActions
                 setFacing 129,DOWN
                 executeSubroutine csub_55EF4
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                nod ALLY_BOWIE
-                setActscript ALLY_PETER,eas_Jump
+                nod ALLY_IAN
+                setActscript ALLY_RUBURAN,eas_Jump
                 nod 128
-                setFacing ALLY_PETER,RIGHT
-                setActscript ALLY_BOWIE,eas_Jump
+                setFacing ALLY_RUBURAN,RIGHT
+                setActscript ALLY_IAN,eas_Jump
                 nod 139
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 1
                 endActions
-                headshake ALLY_BOWIE
-                setActscriptWait ALLY_PETER,eas_Jump
-                entityActionsWait ALLY_PETER
+                headshake ALLY_IAN
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                entityActionsWait ALLY_RUBURAN
                  moveRight 2
                 endActions
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 nod 128
                 setActscriptWait 139,eas_Jump
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 nextSingleText $FF,255  ; "{LEADER} and {NAME;7}{N}explain in detail.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                  moveUp 1
                 endActions
-                nod ALLY_PETER
+                nod ALLY_RUBURAN
                 setFacing 139,RIGHT
                 setFacing 128,LEFT
                 setActscriptWait 129,eas_Jump
                 nod 129
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveLeft 1
                  moveUp 1
                 endActions
                 setFacing 139,DOWN
-                nod ALLY_BOWIE
-                entityActionsWait ALLY_BOWIE
+                nod ALLY_IAN
+                entityActionsWait ALLY_IAN
                  moveDown 1
                  moveRight 1
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 nextText $FF,255        ; "About the ancient ruins{N}and Creed....{W2}"
                 nextText $FF,255        ; "And Zeon's message through{N}Evil Spilit.{W2}"
                 nextSingleText $FF,255  ; "They explain everything.{W1}"
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveDown 1
                  moveLeft 1
                  moveDown 1
                 endActions
                 setFacing 128,DOWN
-                waitIdle ALLY_PETER
-                setFacing ALLY_PETER,UP
+                waitIdle ALLY_RUBURAN
+                setFacing ALLY_RUBURAN,UP
                 executeSubroutine sub_55F82
                 csWait 10
                 nextSingleText $0,128   ; "Amazing!{N}{LEADER}!  And {NAME;7}...{W1}"
@@ -311,9 +311,9 @@ cs_55BEE:       textCursor $4E1
                 nextText $FF,255        ; "Adviser Astral has joined the{N}force."
                 executeSubroutine j_FadeOut_WaitForP1Input
                 hideText
-                nextSingleText $0,139   ; "We have to remove the rocks{N}blocking the passageway{N}leading to North Parmecia.{W2}{N}Maybe we can use an{N}explosive!{W1}"
-                nod ALLY_BOWIE
-                followEntity ALLY_PETER,ALLY_BOWIE,2
+                nextSingleText $0,139   ; "We have to remove the rocks{N}blocking the passageway{N}leading to North Parmecia.{W2}{N}KIDDObe we can use an{N}explosive!{W1}"
+                nod ALLY_IAN
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
                 addNewFollower 139
                 setF $46                ; Astral is a follower
                 csc_end

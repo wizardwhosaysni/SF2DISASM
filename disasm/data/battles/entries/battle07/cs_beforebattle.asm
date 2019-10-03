@@ -5,7 +5,7 @@ bbcs_07:        textCursor $935
                 clearF $53              ; King + Minister are followers
                 loadMapFadeIn 58,8,29
                 loadMapEntities ce_49F36
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 animEntityFX 133,4
                 fadeInB
                 cameraSpeed $28

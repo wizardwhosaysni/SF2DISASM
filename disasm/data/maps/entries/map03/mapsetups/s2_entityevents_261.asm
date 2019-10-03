@@ -70,7 +70,7 @@ byte_510EE:
 Map3_261_EntityEvent2:
                 
                  
-                txt     $277            ; "He thinks of you as his{N}grandson.{W2}{N}Sometimes he may annoy{N}you, but it's because he{N}loves you.{W1}"
+                txt     $277            ; "He thinks of you as his{N}grandson.{W2}{N}Sometimes he KIDDO annoy{N}you, but it's because he{N}loves you.{W1}"
                 rts
 
 	; End of function Map3_261_EntityEvent2

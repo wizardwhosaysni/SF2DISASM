@@ -20,13 +20,13 @@ cs_5FB30:       textCursor $D25
 cs_5FB6A:       textCursor $D31
                 playSound SFX_BIG_DOOR_RUMBLE
                 setQuake 1
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait 128,eas_Init
                 setActscriptWait ALLY_ZYNK,eas_Init
                 setCamDest 11,6
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $80,ALLY_PETER ; "Wow, the ship is vibrating!{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $80,ALLY_RUBURAN ; "Wow, the ship is vibrating!{W1}"
                 setFacing 128,UP
                 nextSingleText $0,128   ; "What's going on?{W1}"
                 setDest ALLY_ZYNK,11,11
@@ -35,10 +35,10 @@ cs_5FB6A:       textCursor $D31
                 setDest ALLY_ZYNK,16,10
                 setFacing ALLY_ZYNK,DOWN
                 nextSingleText $0,ALLY_ZYNK ; "Don't worry. {W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $80,ALLY_PETER ; "But...but...{N}Woooooow!{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $80,ALLY_RUBURAN ; "But...but...{N}Woooooow!{W1}"
                 setCamDest 4,6
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 playSound $FE
                 playSound SFX_BIG_DOOR_RUMBLE
                 setQuake 3
@@ -53,15 +53,15 @@ cs_5FB6A:       textCursor $D31
                  moveDownLeft 1
                  moveLeft 6
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                  moveLeft 2
                  moveDownLeft 1
                  moveLeft 5
                 endActions
                 setFacing 128,UP
-                setFacing ALLY_PETER,UP
-                nextSingleText $0,ALLY_PETER ; "It's floating!  This big{N}ship is floating!{W1}"
+                setFacing ALLY_RUBURAN,UP
+                nextSingleText $0,ALLY_RUBURAN ; "It's floating!  This big{N}ship is floating!{W1}"
                 setFacing ALLY_ZYNK,LEFT
                 setCamDest 11,6
                 nextSingleText $80,ALLY_ZYNK ; "We're going higher and{N}higher....{W1}"
@@ -70,7 +70,7 @@ cs_5FB6A:       textCursor $D31
                 setCameraEntity 65535
                 mapLoad 75,40,12
                 loadMapEntities ce_5FDD4
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 setBlocks 60,59,4,5,44,15
                 fadeInB
                 executeSubroutine sub_5FD7C
@@ -81,11 +81,11 @@ cs_5FB6A:       textCursor $D31
                 mapLoad 37,4,6
                 loadEntitiesFromMapSetup 9,11,RIGHT
                 csWait 1
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait 128,eas_Init
                 setActscriptWait ALLY_ZYNK,eas_Init
                 setPos 128,9,12,UP
-                setPos ALLY_PETER,10,12,UP
+                setPos ALLY_RUBURAN,10,12,UP
                 setPos ALLY_ZYNK,10,11,LEFT
                 fadeInB
                 nextSingleText $80,ALLY_ZYNK ; "OK, now we'll head to{N}Grans Island.{W1}"
@@ -95,7 +95,7 @@ cs_5FB6A:       textCursor $D31
                 executeSubroutine sub_5FD4C
                 setFacing 128,LEFT
                 nextSingleText $0,128   ; "Oh, we're flying!{W1}"
-                nextSingleText $0,ALLY_PETER ; "The Ancients were greater{N}than we thought!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "The Ancients were greater{N}than we thought!{W1}"
                 setFacing 128,UP
                 setFacing ALLY_ZYNK,DOWN
                 nextSingleText $80,ALLY_ZYNK ; "Oh, thank you very much.{W1}"
@@ -103,7 +103,7 @@ cs_5FB6A:       textCursor $D31
                 fadeOutB
                 mapLoad 75,40,12
                 loadMapEntities ce_5FDD4
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 setBlocks 60,59,4,5,44,15
                 customActscriptWait 128
                  ac_setSpeed 16,16      ;   

@@ -79,9 +79,9 @@ Map13_201_EntityEvent9:
                  
                 chkFlg  $2CE            ; Set after Oddler runs after you as you leave Polca, and tags along
                 bne.s   byte_58212      
-                chkFlg  $2CD            ; Set after the mayor first tries to have you take Oddler with you (Peter declines)
+                chkFlg  $2CD            ; Set after the KIDDOor first tries to have you take Oddler with you (RUBURAN declines)
                 bne.s   byte_5820C      
-                chkFlg  $2CC            ; Set after your raft-giving conversation with the mayor in Polca
+                chkFlg  $2CC            ; Set after your raft-giving conversation with the KIDDOor in Polca
                 bne.s   byte_58206      
                 chkFlg  $104            ; TEMP FLAG #04
                 bne.s   byte_581C4      
@@ -105,7 +105,7 @@ byte_581D4:
 byte_581E4:
                 
                 script  cs_58856
-                setFlg  $2CC            ; Set after your raft-giving conversation with the mayor in Polca
+                setFlg  $2CC            ; Set after your raft-giving conversation with the KIDDOor in Polca
                 setFlg  $40             ; Raft is unlocked
                 move.b  #$48,((RAFT_MAP_INDEX-$1000000)).w 
                 move.b  #$2B,((RAFT_X-$1000000)).w 

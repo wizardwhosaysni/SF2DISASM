@@ -7,26 +7,26 @@ IntroCutscene:
     ; command 38
     playSound $7
     cameraSpeed $30
-    newEntity $80,63,63,DOWN,73
-    newEntity $81,63,63,DOWN,53
-    newEntity $82,63,63,DOWN,56
-    newEntity $83,63,63,DOWN,51
-    newEntity $84,63,63,DOWN,50
+    newEntity $80,63,63,DOWN,31
+    newEntity $81,63,63,DOWN,119
+    newEntity $82,63,63,DOWN,121
+    newEntity $83,63,63,DOWN,116
+    newEntity $84,63,63,DOWN,115
     newEntity $85,63,63,UP,61
     newEntity $86,63,63,UP,61
     newEntity $87,63,63,UP,61
     newEntity $88,63,63,UP,61
     newEntity $89,63,63,UP,61
-    newEntity $8A,63,63,DOWN,82
+    newEntity $8A,63,63,UP,62
     newEntity $8B,63,63,DOWN,60
     newEntity $8C,63,63,DOWN,60
     newEntity $8D,63,63,DOWN,60
     newEntity $8E,63,63,DOWN,60
-    newEntity $11,1,1,DOWN,17
-    newEntity $F,1,3,DOWN,15
-    newEntity $1,1,4,DOWN,1
-    newEntity $2,1,5,DOWN,2
-    newEntity $5,1,6,DOWN,5   
+    newEntity $11,1,1,DOWN,ALLY_MAX
+    newEntity $F,1,3,DOWN,ALLY_RIDION
+    newEntity $1,1,4,DOWN,ALLY_MEAD
+    newEntity $2,1,5,DOWN,ALLY_PAIGE
+    newEntity $5,1,6,DOWN,ALLY_SONETTE   
     setPos $80,1,2,DOWN
     setPos $81,12,30,DOWN
     setPos $82,13,29,DOWN
@@ -511,6 +511,7 @@ IntroCutscene:
       faceDown 20
       moveRight 7
     endActions
+    setPos $8A,1,1,UP
     ; command 3C 8 1E
     ;setBlocks 25,1,5,7,5,3
     setPos $82,11,9,DOWN

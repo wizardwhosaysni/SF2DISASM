@@ -4,9 +4,9 @@
 abcs_battle37:  textCursor $B9C
                 loadMapFadeIn 77,31,54
                 loadMapEntities ce_4DD8C
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,33,59,RIGHT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,33,59,RIGHT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,34,57,DOWN
                 setActscriptWait FOLLOWER_A,eas_Init
@@ -24,40 +24,40 @@ cs_4DBEE:       stopEntity ALLY_LEMON
                 setPriority FOLLOWER_B,$0
                 setPriority ALLY_LEMON,$FFFF
                 fadeInB
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
                 csWait 50
-                setFacing ALLY_PETER,UP
-                nextSingleText $0,ALLY_PETER ; "Sir Astral, he's...crying!{W1}"
+                setFacing ALLY_RUBURAN,UP
+                nextSingleText $0,ALLY_RUBURAN ; "Sir Astral, he's...crying!{W1}"
                 nextSingleText $0,FOLLOWER_B ; "Why would he be crying?{W1}"
                 entityActionsWait FOLLOWER_B
                  moveRight 1
                  moveDown 1
                 endActions
                 csWait 30
-                setFacing ALLY_PETER,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
                 nextSingleText $0,FOLLOWER_B ; "I think I've seen his style{N}of fighting before.{N}Let's see his face.{W1}"
                 nextSingleText $FF,255  ; "Astral removes the mask.{W1}"
                 nextSingleText $C0,ALLY_LEMON ; "Huh?{W1}"
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
                 nextSingleText $0,FOLLOWER_B ; "It's {NAME;28}!{W1}"
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveDown 2
                 endActions
-                setFacing ALLY_BOWIE,LEFT
-                shiver ALLY_PETER
-                nextSingleText $0,ALLY_PETER ; "Let me see him.{W1}"
+                setFacing ALLY_IAN,LEFT
+                shiver ALLY_RUBURAN
+                nextSingleText $0,ALLY_RUBURAN ; "Let me see him.{W1}"
                 shiver ALLY_LEMON
                 stopEntity ALLY_LEMON
                 entityFlashWhite ALLY_LEMON,$39
-                setActscript ALLY_PETER,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
-                nextSingleText $0,ALLY_PETER ; "Wow, he's alive!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Wow, he's alive!{W1}"
                 nextSingleText $0,FOLLOWER_B ; "{NAME;28}!  {NAME;28}!{W1}"
                 nextSingleText $C0,ALLY_LEMON ; "Where?!{W1}"
                 setActscriptWait ALLY_LEMON,eas_Init
@@ -82,8 +82,8 @@ cs_4DBEE:       stopEntity ALLY_LEMON
                  moveDown 2
                 endActions
                 shiver ALLY_LEMON
-                setFacing ALLY_PETER,DOWN
-                setFacing ALLY_BOWIE,DOWN
+                setFacing ALLY_RUBURAN,DOWN
+                setFacing ALLY_IAN,DOWN
                 nextSingleText $C0,ALLY_LEMON ; "What can I do?{N}How can I atone for my sins?{W1}"
                 setFacing ALLY_LEMON,DOWN
                 nextSingleText $C0,ALLY_LEMON ; "Sir Astral, tell me.{W1}"
@@ -98,8 +98,8 @@ cs_4DBEE:       stopEntity ALLY_LEMON
                 shiver ALLY_LEMON
                 setFacing ALLY_LEMON,UP
                 nextSingleText $C0,ALLY_LEMON ; "I have to die for my sins.{N}It will be my atonement.{W2}"
-                setActscript ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_BOWIE,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_IAN,eas_Jump
                 nextSingleText $C0,ALLY_LEMON ; "I have to die!{W1}"
                 setFacing ALLY_LEMON,DOWN
                 csWait 30
@@ -107,15 +107,15 @@ cs_4DBEE:       stopEntity ALLY_LEMON
                  moveDown 3
                 endActions
                 nextSingleText $0,FOLLOWER_B ; "Oh, poor {NAME;28}.{W1}"
-                setFacing ALLY_PETER,RIGHT
-                nextText $0,ALLY_PETER  ; "Sir Astral, {NAME;28} has{N}fled. {W2}"
-                nextSingleText $0,ALLY_PETER ; "Will you let him die?{W1}"
+                setFacing ALLY_RUBURAN,RIGHT
+                nextText $0,ALLY_RUBURAN  ; "Sir Astral, {NAME;28} has{N}fled. {W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Will you let him die?{W1}"
                 nextSingleText $0,FOLLOWER_B ; "{NAME;28} is an immortal{N}vampire now.  He can't die{N}very easily.{W1}"
                 setFacing FOLLOWER_B,RIGHT
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_IAN,LEFT
                 nextSingleText $0,FOLLOWER_B ; "I think we'll meet him again.{N}{LEADER}, let's go.{W1}"
                 csc_end
 ce_4DD8C:       mainEntity 36,57,DOWN
-                entity 33,59,RIGHT,ALLY_PETER,eas_Init
+                entity 33,59,RIGHT,ALLY_RUBURAN,eas_Init
                 entity 35,59,DOWN,ALLY_LEMON,eas_Init
                 dc.w $FFFF

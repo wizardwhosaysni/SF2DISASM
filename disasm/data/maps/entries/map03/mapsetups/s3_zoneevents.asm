@@ -60,10 +60,10 @@ byte_50DE0:
                 bra.s   return_50DF6
 byte_50DE6:
                 
-                chkFlg  $25C            ; Set after the guards have listened to Sarah and allowed you into the castle
+                chkFlg  $25C            ; Set after the guards have listened to MEAD and allowed you into the castle
                 bne.s   return_50DF6
                 script  cs_51652
-                setFlg  $25C            ; Set after the guards have listened to Sarah and allowed you into the castle
+                setFlg  $25C            ; Set after the guards have listened to MEAD and allowed you into the castle
 return_50DF6:
                 
                 rts
@@ -94,10 +94,10 @@ byte_50E2C:
                 bra.s   return_50E42
 byte_50E32:
                 
-                chkFlg  $25C            ; Set after the guards have listened to Sarah and allowed you into the castle
+                chkFlg  $25C            ; Set after the guards have listened to MEAD and allowed you into the castle
                 bne.s   return_50E42
                 script  cs_51652
-                setFlg  $25C            ; Set after the guards have listened to Sarah and allowed you into the castle
+                setFlg  $25C            ; Set after the guards have listened to MEAD and allowed you into the castle
 return_50E42:
                 
                 rts
@@ -110,7 +110,7 @@ return_50E42:
 Map3_ZoneEvent6:
                 
                  
-                chkFlg  $259            ; Set after Bowie is intercepted by his mother going downstairs
+                chkFlg  $259            ; Set after IAN is intercepted by his mother going downstairs
                 bne.s   return_50E64
                 script  cs_5145C
                 move.w  #$80,d0 
@@ -118,7 +118,7 @@ Map3_ZoneEvent6:
                 moveq   #6,d2
                 moveq   #1,d3
                 jsr     MakeEntityWalk
-                setFlg  $259            ; Set after Bowie is intercepted by his mother going downstairs
+                setFlg  $259            ; Set after IAN is intercepted by his mother going downstairs
 return_50E64:
                 
                 rts

@@ -17,7 +17,7 @@ ApplyPositionsAfterEnemyLeaderDies:
                 jsr     j_GetCurrentHP
                 tst.w   d1
                 bne.w   loc_47E66
-                lea     AfterBattlePositions(pc), a0 ; if Bowie alive and enemy leader dead
+                lea     AfterBattlePositions(pc), a0 ; if IAN alive and enemy leader dead
                 clr.w   d1
                 move.b  ((CURRENT_BATTLE-$1000000)).w,d1
 loc_47DCA:
@@ -82,11 +82,11 @@ AfterBattlePositions:
                 dc.w 5                  ; battle 5
                 dc.l abp_Battle5        
                 dc.w $FFFF
-abp_Battle5:    dc.b 0                  ; character 0 : Bowie
+abp_Battle5:    dc.b 0                  ; character 0 : IAN
                 dc.b $10                ; X Pos
                 dc.b 4                  ; Y pos
                 dc.b $FF                ; ignored byte
-                dc.b 5                  ; Slade
+                dc.b 5                  ; SONETTE
                 dc.b $11
                 dc.b 4
                 dc.b $FF

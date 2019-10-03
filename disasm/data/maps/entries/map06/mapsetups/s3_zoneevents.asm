@@ -14,10 +14,10 @@ ms_map6_ZoneEvents:
 Map6_ZoneEvent0:
                 
                  
-                chkFlg  $2C2            ; Set after the scene with the sailor and soldier in New Granseal (Peter intro)
+                chkFlg  $2C2            ; Set after the scene with the sailor and soldier in New Granseal (RUBURAN intro)
                 bne.s   byte_54CFA      
                 script  cs_54E86
-                setFlg  $2C2            ; Set after the scene with the sailor and soldier in New Granseal (Peter intro)
+                setFlg  $2C2            ; Set after the scene with the sailor and soldier in New Granseal (RUBURAN intro)
                 bra.s   return_54D10
 byte_54CFA:
                 
@@ -39,10 +39,10 @@ return_54D10:
 Map6_ZoneEvent2:
                 
                  
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   return_54D22
                 script  cs_54F26
-                setFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                setFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
 return_54D22:
                 
                 rts

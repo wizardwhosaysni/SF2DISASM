@@ -3,7 +3,7 @@
 ; 0x59FB8..0x5A09E : 
 cs_59FB8:       textCursor $6C5
                 setActscriptWait FOLLOWER_B,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 cameraSpeed $30
                 setCamDest 22,15
                 setDest FOLLOWER_B,26,20
@@ -11,10 +11,10 @@ cs_59FB8:       textCursor $6C5
                 setActscript FOLLOWER_B,eas_461B6
                 csWait 120
                 nextSingleText $0,FOLLOWER_B ; "(Sniff, sniff)...{N}It smells like a ditch!{W1}"
-                setDest ALLY_PETER,27,20
+                setDest ALLY_RUBURAN,27,20
                 setFacing FOLLOWER_B,RIGHT
-                shiver ALLY_PETER
-                nextSingleText $0,ALLY_PETER ; "Is this the smell of the{N}devils that they were{N}talking about?{W1}"
+                shiver ALLY_RUBURAN
+                nextSingleText $0,ALLY_RUBURAN ; "Is this the smell of the{N}devils that they were{N}talking about?{W1}"
                 setCamDest 36,17
                 setDest 129,41,21
                 nextSingleText $C0,129  ; "Hee, hee!{W1}"
@@ -34,7 +34,7 @@ cs_59FB8:       textCursor $6C5
                 startEntity 128
                 startEntity 129
                 startEntity 130
-                nextSingleText $0,ALLY_PETER ; "What huge rats!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "What huge rats!{W1}"
                 nextText $C0,129        ; "Welcome!{W2}"
                 nextSingleText $C0,129  ; "It's dinner time!{W1}"
                 setActscript 128,eas_Jump

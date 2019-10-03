@@ -4,24 +4,24 @@
 bbcs_30:        textCursor $AC8
                 loadMapFadeIn 1,7,21
                 loadMapEntities ce_4C690
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,11,28,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,11,28,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,11,27,UP
                 playSound MUSIC_BATTLE_THEME_1
                 fadeInB
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 2
                 endActions
                 entityActions FOLLOWER_B
                  moveUp 2
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 2
                 endActions
                 nextSingleText $0,128   ; "What a pleasure!{N}Nice to meet you.{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 entityActionsWait FOLLOWER_B
                  moveRight 1
                  moveUp 1
@@ -46,6 +46,6 @@ bbcs_30:        textCursor $AC8
                 flashScreenWhite $28
                 csc_end
 ce_4C690:       mainEntity 11,26,UP
-                entity 11,28,UP,ALLY_PETER,eas_Init
+                entity 11,28,UP,ALLY_RUBURAN,eas_Init
                 entity 13,4,DOWN,MAPSPRITE_ZALBARD,eas_Init
                 dc.w $FFFF

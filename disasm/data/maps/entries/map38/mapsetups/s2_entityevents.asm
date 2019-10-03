@@ -96,7 +96,7 @@ Map38_EntityEvent6:
                  
                 txt     $863            ; "Do you know of Mithril?{W2}"
                 txt     $864            ; "Mithril weapons are awfully{N}strong.{W2}"
-                txt     $865            ; "They may help you in your{N}battles.{W1}"
+                txt     $865            ; "They KIDDO help you in your{N}battles.{W1}"
                 rts
 
 	; End of function Map38_EntityEvent6

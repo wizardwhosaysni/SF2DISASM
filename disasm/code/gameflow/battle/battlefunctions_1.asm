@@ -145,7 +145,7 @@ HealAliveCharsAndImmortals:
                 moveq   #COM_ALLIES_COUNTER,d7
 loc_23C04:
                 
-                cmpi.b  #ALLY_PETER,d0
+                cmpi.b  #ALLY_RUBURAN,d0
                 beq.w   loc_23C1E
                 cmpi.b  #ALLY_LEMON,d0
                 beq.w   loc_23C1E
@@ -574,12 +574,12 @@ loc_24090:
                 
                 move.w  -2(a6),d0
                 jsr     j_GetClass      
-                cmpi.w  #$1C,d1         ; HARDCODED class test : MNST (Monster, for Kiwi)
+                cmpi.w  #$1C,d1         ; HARDCODED class test : MNST (Monster, for CYNTHIA)
                 bne.s   loc_240E6       
                 tst.w   ((BATTLESCENE_ACTION_TYPE-$1000000)).w
                 bne.s   loc_240E6       
                 moveq   #4,d6
-                jsr     (GenerateRandomNumber).w ; Kiwi's special attack ?
+                jsr     (GenerateRandomNumber).w ; CYNTHIA's special attack ?
                 tst.w   d7
                 bne.s   loc_240E6       
                 move.w  ((word_FFB630-$1000000)).w,((word_FFB632-$1000000)).w

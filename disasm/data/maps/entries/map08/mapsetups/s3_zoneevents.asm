@@ -12,12 +12,12 @@ ms_map8_ZoneEvents:
 Map8_ZoneEvent0:
                 
                  
-                chkFlg  $2C4            ; Set after the scene in Ribble where the mayor confronts Bowie
+                chkFlg  $2C4            ; Set after the scene in Ribble where the KIDDOor confronts IAN
                 bne.s   return_561D8
                 chkFlg  $102            ; TEMP FLAG #02
                 bne.s   return_561D8
                 script  cs_563B2
-                setFlg  $2BF            ; Set after the scene where Bowie brings the plank above deck, also set after the initial Ribble scene, where the guy runs away
+                setFlg  $2BF            ; Set after the scene where IAN brings the plank above deck, also set after the initial Ribble scene, where the guy runs away
                 setFlg  $102            ; TEMP FLAG #02
 return_561D8:
                 
@@ -31,10 +31,10 @@ return_561D8:
 Map8_ZoneEvent2:
                 
                  
-                chkFlg  $2C4            ; Set after the scene in Ribble where the mayor confronts Bowie
+                chkFlg  $2C4            ; Set after the scene in Ribble where the KIDDOor confronts IAN
                 bne.s   Map8_DefaultZoneEvent
                 script  cs_56422
-                setFlg  $2C4            ; Set after the scene in Ribble where the mayor confronts Bowie
+                setFlg  $2C4            ; Set after the scene in Ribble where the KIDDOor confronts IAN
 Map8_DefaultZoneEvent:
                 
                 rts

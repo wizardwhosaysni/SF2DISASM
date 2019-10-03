@@ -4,9 +4,9 @@
 bbcs_26:        textCursor $A24
                 loadMapFadeIn 72,2,20
                 loadMapEntities ce_4BC5A
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,6,26,RIGHT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,6,26,RIGHT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,6,24,RIGHT
                 setPos FOLLOWER_A,6,25,RIGHT
@@ -185,7 +185,7 @@ bbcs_26:        textCursor $A24
                 animEntityFX 128,6
                 csc_end
 ce_4BC5A:       mainEntity 7,25,RIGHT
-                entity 6,26,RIGHT,ALLY_PETER,eas_Init
+                entity 6,26,RIGHT,ALLY_RUBURAN,eas_Init
                 entity 18,14,UP,ALLY_HIGINS,eas_Init
                 entity 18,11,DOWN,MAPSPRITE_GESHP,eas_Init
                 entity 17,11,DOWN,MAPSPRITE_LESSER_DEMON,eas_Init

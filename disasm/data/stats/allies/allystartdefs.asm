@@ -4,7 +4,7 @@
 AllyStartDefs:  ; startClass enum Classes : CLASS_*
                 ; startItems enum Items : ITEM_*
                     
-                startClass SDMN         ; BOWIE
+                startClass SDMN         ; IAN
                 startLevel 1
                 startItems &
                     WOODEN_SWORD|EQUIPPED, &
@@ -12,7 +12,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass PRST         ; SARAH
+                startClass PRST         ; MEAD
                 startLevel 1
                 startItems &
                     WOODEN_ROD|EQUIPPED, &
@@ -20,7 +20,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     MEDICAL_HERB, &
                     NOTHING
                     
-                startClass KNTE         ; CHESTER
+                startClass KNTE         ; PAIGE
                 startLevel 1
                 startItems &
                     WOODEN_STICK|EQUIPPED, &
@@ -28,7 +28,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass WARR         ; JAHA
+                startClass WARR         ; HAWEL
                 startLevel 1
                 startItems &
                     SHORT_AXE|EQUIPPED, &
@@ -36,7 +36,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass MAGE         ; KAZIN
+                startClass MAGE         ; KNUCKLES
                 startLevel 4
                 startItems &
                     WOODEN_ROD|EQUIPPED, &
@@ -44,7 +44,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass THIF         ; SLADE
+                startClass THIF         ; SONETTE
                 startLevel 5
                 startItems &
                     SHORT_KNIFE|EQUIPPED, &
@@ -52,7 +52,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass TORT         ; KIWI
+                startClass TORT         ; CYNTHIA
                 startLevel 7
                 startItems &
                     NOTHING, &
@@ -60,7 +60,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass PHNK         ; PETER
+                startClass PHNK         ; RUBURAN
                 startLevel 9
                 startItems &
                     NOTHING, &
@@ -68,7 +68,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass RNGR         ; MAY
+                startClass RNGR         ; KIDDO
                 startLevel 10
                 startItems &
                     WOODEN_ARROW|EQUIPPED, &
@@ -76,7 +76,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass WFMN         ; GERHALT
+                startClass WFMN         ; SYLVIA
                 startLevel 13
                 startItems &
                     NOTHING, &
@@ -84,7 +84,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass BDMN         ; LUKE
+                startClass BDMN         ; JULIA
                 startLevel 14
                 startItems &
                     MIDDLE_SWORD|EQUIPPED, &
@@ -92,7 +92,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass BRGN         ; ROHDE
+                startClass BRGN         ; ERIC
                 startLevel 4
                 startItems &
                     ASSAULT_SHELL|EQUIPPED, &
@@ -100,7 +100,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass KNTE         ; RICK
+                startClass KNTE         ; MINTO
                 startLevel 19
                 startItems &
                     STEEL_LANCE|EQUIPPED, &
@@ -108,7 +108,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass ACHR         ; ELRIC
+                startClass ACHR         ; MORTON
                 startLevel 21
                 startItems &
                     STEEL_ARROW|EQUIPPED, &
@@ -124,7 +124,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass PRST         ; KARNA
+                startClass PRST         ; RIDION
                 startLevel 24
                 startItems &
                     POWER_STICK|EQUIPPED, &
@@ -132,7 +132,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass WARR         ; RANDOLF
+                startClass WARR         ; KOJIROU
                 startLevel 24
                 startItems &
                     POWER_AXE|EQUIPPED, &
@@ -140,7 +140,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass MAGE         ; TYRIN
+                startClass MAGE         ; MAX
                 startLevel 24
                 startItems &
                     POWER_STICK|EQUIPPED, &
@@ -148,7 +148,7 @@ AllyStartDefs:  ; startClass enum Classes : CLASS_*
                     NOTHING, &
                     NOTHING
                     
-                startClass ACHR         ; JANET
+                startClass ACHR         ; ODDEYE
                 startLevel 24
                 startItems &
                     STEEL_ARROW|EQUIPPED, &

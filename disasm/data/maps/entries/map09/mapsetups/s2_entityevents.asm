@@ -99,7 +99,7 @@ Map9_EntityEvent8:
                 addq.w  #2,d1
                 andi.w  #3,d1
                 jsr     sub_4781A       
-                txt     $556            ; "He is eccentric.{N}He hates talking, but...{W2}{N}a historical topic may{N}interest him.{W1}"
+                txt     $556            ; "He is eccentric.{N}He hates talking, but...{W2}{N}a historical topic KIDDO{N}interest him.{W1}"
                 bra.s   return_567C6
 byte_567C2:
                 

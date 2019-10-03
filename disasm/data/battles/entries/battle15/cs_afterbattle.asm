@@ -4,8 +4,8 @@
 abcs_battle15:  textCursor $9CA
                 loadMapFadeIn 50,9,10
                 loadMapEntities ce_4AFB6
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_A,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_A,14,19,UP
@@ -23,8 +23,8 @@ abcs_battle15:  textCursor $9CA
                  moveRight 6
                 endActions
                 fadeOutB
-                setPos ALLY_BOWIE,27,10,UP
-                setPos ALLY_PETER,28,10,UP
+                setPos ALLY_IAN,27,10,UP
+                setPos ALLY_RUBURAN,28,10,UP
                 setPos FOLLOWER_B,26,10,UP
                 setPos FOLLOWER_A,27,7,UP
                 setCamDest 21,5
@@ -53,24 +53,24 @@ abcs_battle15:  textCursor $9CA
                  moveDown 2
                 endActions
                 csWait 15
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveDown 1
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveDown 1
                 endActions
                 entityActionsWait FOLLOWER_B
                  moveDown 1
                 endActions
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
                 waitIdle FOLLOWER_A
                 entityActionsWait FOLLOWER_A
                  moveLeft 3
                 endActions
-                setFacing ALLY_BOWIE,LEFT
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_IAN,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 setFacing FOLLOWER_B,LEFT
                 entityActionsWait FOLLOWER_A
                  moveLeft 5
@@ -78,8 +78,8 @@ abcs_battle15:  textCursor $9CA
                 hide FOLLOWER_A
                 clearF $4D              ; Old man is a follower
                 setF $2DC               ; Set after the old man fails to open the way to Grans in the Wooden Panel shrine
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 warp $32,$1B,$B,$1
                 csc_end
 ce_4AFB6:       mainEntity 14,5,DOWN

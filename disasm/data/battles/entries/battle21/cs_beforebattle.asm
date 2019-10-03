@@ -4,9 +4,9 @@
 bbcs_21:        textCursor $A10
                 loadMapFadeIn 67,5,18
                 loadMapEntities ce_4B84C
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,28,24,LEFT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,28,24,LEFT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,28,22,LEFT
                 setPos FOLLOWER_A,28,23,LEFT
@@ -20,11 +20,11 @@ bbcs_21:        textCursor $A10
                 csWait 30
                 setCamDest 23,18
                 nextSingleText $0,128   ; "Go away!{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 2
                 endActions
-                nextText $0,ALLY_PETER  ; "But we have to see him.{W2}"
-                nextSingleText $0,ALLY_PETER ; "Please let us pass!{W1}"
+                nextText $0,ALLY_RUBURAN  ; "But we have to see him.{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Please let us pass!{W1}"
                 setCamDest 5,18
                 entityActionsWait 128
                  moveRight 1
@@ -43,7 +43,7 @@ bbcs_21:        textCursor $A10
                 setActscriptWait 133,eas_Jump
                 csc_end
 ce_4B84C:       mainEntity 27,23,LEFT
-                entity 28,24,LEFT,ALLY_PETER,eas_Init
+                entity 28,24,LEFT,ALLY_RUBURAN,eas_Init
                 entity 8,22,LEFT,MAPSPRITE_SKELETON,eas_Init
                 entity 9,21,LEFT,MAPSPRITE_DARK_CLERIC,eas_Init
                 entity 9,23,LEFT,MAPSPRITE_DARK_MADAM,eas_Init

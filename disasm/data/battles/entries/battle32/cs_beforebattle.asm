@@ -4,9 +4,9 @@
 bbcs_32:        textCursor $B1D
                 loadMapFadeIn 74,10,38
                 loadMapEntities ce_4CCC0
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,16,45,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,16,45,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,14,45,UP
                 setActscriptWait ALLY_FRAYJA,eas_Init
@@ -15,10 +15,10 @@ bbcs_32:        textCursor $B1D
                 setPos FOLLOWER_A,15,45,UP
                 fadeInB
                 cameraSpeed $30
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 3
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 3
                 endActions
                 entityActions FOLLOWER_B
@@ -50,7 +50,7 @@ bbcs_32:        textCursor $B1D
                 setActscriptWait 134,eas_Jump
                 csc_end
 ce_4CCC0:       mainEntity 15,44,UP
-                entity 16,45,UP,ALLY_PETER,eas_Init
+                entity 16,45,UP,ALLY_RUBURAN,eas_Init
                 entity 15,46,UP,ALLY_FRAYJA,eas_Init
                 entity 14,21,DOWN,MAPSPRITE_DEATH_ARCHER,eas_Init
                 entity 12,21,DOWN,MAPSPRITE_NECROMANCER,eas_Init

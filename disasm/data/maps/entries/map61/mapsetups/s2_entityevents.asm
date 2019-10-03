@@ -17,7 +17,7 @@ byte_5C684:
                 
                 txt     $E3E            ; "{NAME;11} told me about{N}a family who has an ancient{N}tomb in Parmecia.{W2}"
                 txt     $E3F            ; "According to my studies,{N}his house should be around{N}here somewhere.{W2}"
-                txt     $E40            ; "Or, maybe it's to the east.{W1}"
+                txt     $E40            ; "Or, KIDDObe it's to the east.{W1}"
                 setFlg  $100            ; TEMP FLAG #00
 Map61_DefaultEntityEvent:
                 

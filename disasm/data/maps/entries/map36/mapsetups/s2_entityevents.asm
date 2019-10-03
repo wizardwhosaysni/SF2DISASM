@@ -124,7 +124,7 @@ Map36_EntityEvent8:
                 
                  
                 txt     $CE0            ; "{NAME;19} asked you to drop{N}by here?  Thank you!{W2}"
-                txt     $CE1            ; "May I ask you a favor?{N}Please save Mitula.{N}She's in Tristan.{W2}"
+                txt     $CE1            ; "KIDDO I ask you a favor?{N}Please save Mitula.{N}She's in Tristan.{W2}"
                 txt     $CE2            ; "We will be ruined by the{N}drought long before the{N}devils destroy us.{W1}"
                 rts
 

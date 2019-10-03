@@ -138,7 +138,7 @@ Map3_1FA_EntityEvent13:
 Map3_1FA_EntityEvent15:
                 
                  
-                chkFlg  $6              ; Kiwi joined
+                chkFlg  $6              ; CYNTHIA joined
                 bne.s   return_512B8
                 txt     $2A2            ; "(Shiver)...ooouu....{W1}"
                 clsTxt
@@ -166,10 +166,10 @@ return_512B8:
 
 	; End of function Map3_1FA_EntityEvent15
 
-cs_512BA:       setFacing ALLY_KIWI,DOWN
-                setActscriptWait ALLY_KIWI,eas_Jump
-                setActscriptWait ALLY_KIWI,eas_Jump
-                setActscriptWait ALLY_KIWI,eas_Jump
-                join ALLY_KIWI
-                addNewFollower ALLY_KIWI
+cs_512BA:       setFacing ALLY_CYNTHIA,DOWN
+                setActscriptWait ALLY_CYNTHIA,eas_Jump
+                setActscriptWait ALLY_CYNTHIA,eas_Jump
+                setActscriptWait ALLY_CYNTHIA,eas_Jump
+                join ALLY_CYNTHIA
+                addNewFollower ALLY_CYNTHIA
                 csc_end

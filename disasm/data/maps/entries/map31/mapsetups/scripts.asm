@@ -6,18 +6,18 @@ cs_5D644:       setPos 137,8,3,LEFT
                 csc_end
 cs_5D652:       textCursor $7E8
                 nextSingleText $0,136   ; "Oh, you're cute!{N}(Cough)...well...{W1}"
-                nextText $0,136         ; "May I paint your portrait?"
+                nextText $0,136         ; "KIDDO I paint your portrait?"
 cs_5D65E:       textCursor $7EB
                 yesNo
                 jumpIfFlagClear $59,cs_5D712 ; YES/NO prompt answer
                 hideText
                 nextSingleText $0,136   ; "Excellent!{W1}"
                 nextSingleText $0,136   ; "Then, would you stand over{N}there, in front of the{N}flowers?{W1}"
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
-                setDest ALLY_BOWIE,28,3
-                setFacing ALLY_BOWIE,DOWN
-                setDest ALLY_PETER,27,4
+                setDest ALLY_IAN,28,3
+                setFacing ALLY_IAN,DOWN
+                setDest ALLY_RUBURAN,27,4
                 setDest FOLLOWER_B,27,5
                 setFacing 136,UP
                 setActscriptWait 136,eas_46172
@@ -49,8 +49,8 @@ cs_5D65E:       textCursor $7EB
                  moveRight 1
                 endActions
                 setFacing 136,LEFT
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 csc_end
 cs_5D712:       textCursor $7EA
                 hideText
@@ -71,7 +71,7 @@ cs_5D732:       executeSubroutine sub_5D73E
 sub_5D73E:
                 
                 movem.l d0-d2/a0,-(sp)
-                move.w  #PORTRAIT_BOWIE_PAINTING,d0 ; Bowie painting portrait index
+                move.w  #PORTRAIT_IAN_PAINTING,d0 ; IAN painting portrait index
                 moveq   #$FFFFFFFF,d1
                 clr.w   d2
                 jsr     j_InitPortraitWindow

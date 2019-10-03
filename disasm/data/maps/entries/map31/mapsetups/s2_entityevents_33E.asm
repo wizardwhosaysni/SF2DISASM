@@ -69,7 +69,7 @@ Map31_33E_EntityEvent4:
                 jsr     j_YesNoPrompt
                 btst    #0,d0
                 bne.s   byte_5D508      
-                txt     $7F9            ; "It moves around as if it's{N}searching for something.{N}Maybe it's body?{W1}"
+                txt     $7F9            ; "It moves around as if it's{N}searching for something.{N}KIDDObe it's body?{W1}"
                 bra.s   return_5D50C
 byte_5D508:
                 

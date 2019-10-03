@@ -4,9 +4,9 @@
 abcs_battle38:  textCursor $BC4
                 loadMapFadeIn 66,3,22
                 loadMapEntities ce_4E372
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,5,25,RIGHT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,5,25,RIGHT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,8,28,UP
                 setActscriptWait FOLLOWER_A,eas_Init
@@ -29,7 +29,7 @@ cs_4DF00:       setActscriptWait 128,eas_46172
                 setActscriptWait 133,eas_46172
                 setActscriptWait 134,eas_46172
                 setActscriptWait 135,eas_46172
-                setPriority ALLY_BOWIE,$0
+                setPriority ALLY_IAN,$0
                 setPriority 136,$FFFF
                 fadeInB
                 csWait 60
@@ -117,20 +117,20 @@ cs_4DF00:       setActscriptWait 128,eas_46172
                 endActions
                 nextSingleText $C0,FOLLOWER_B ; "We don't want to kill{N}you.{N}You've lost your powers.{W1}"
                 nextSingleText $0,136   ; "I know...(sob, sob)....{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
-                nextSingleText $C0,ALLY_PETER ; "You may go.{W1}"
+                nextSingleText $C0,ALLY_RUBURAN ; "You KIDDO go.{W1}"
                 setFacing 136,LEFT
                 nextSingleText $0,136   ; "Thank you.{W1}"
                 setActscriptWait 136,eas_Init
                 setFacing 136,UP
                 setCameraEntity 136
                 csWait 60
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveRight 1
                 endActions
-                setFacing ALLY_BOWIE,DOWN
+                setFacing ALLY_IAN,DOWN
                 csWait 60
                 cameraSpeed $8
                 customActscriptWait 136
@@ -140,12 +140,12 @@ cs_4DF00:       setActscriptWait 128,eas_46172
                 entityActionsWait 136
                  moveUp 1
                 endActions
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_IAN,LEFT
                 entityActionsWait 136
                  moveUp 2
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 entityActionsWait 136
                  moveUp 2
                 endActions
@@ -302,18 +302,18 @@ cs_4DF00:       setActscriptWait 128,eas_46172
                  moveUp 3
                 endActions
                 nextSingleText $0,FOLLOWER_B ; "Zeon is such an unfeeling{N}devil...(shiver).{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                  moveUp 2
                 endActions
-                nextSingleText $0,ALLY_PETER ; "He will do the same to us{N}if we lose to him.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "He will do the same to us{N}if we lose to him.{W1}"
                 nextSingleText $0,FOLLOWER_B ; "We must not be defeated.{W1}"
-                followEntity FOLLOWER_A,ALLY_BOWIE,2
-                followEntity ALLY_PETER,FOLLOWER_A,1
+                followEntity FOLLOWER_A,ALLY_IAN,2
+                followEntity ALLY_RUBURAN,FOLLOWER_A,1
                 followEntity FOLLOWER_B,FOLLOWER_A,3
                 csc_end
 ce_4E372:       mainEntity 8,23,DOWN
-                entity 5,25,RIGHT,ALLY_PETER,eas_Init
+                entity 5,25,RIGHT,ALLY_RUBURAN,eas_Init
                 entity 63,63,RIGHT,MAPSPRITE_EFFECT3,eas_Init
                 entity 63,63,LEFT,MAPSPRITE_EFFECT3,eas_Init
                 entity 63,63,RIGHT,MAPSPRITE_EFFECT3,eas_Init

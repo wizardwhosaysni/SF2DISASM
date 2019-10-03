@@ -13,7 +13,7 @@ ms_map6_InitFunction:
                 rts
 byte_54E62:
                 
-                chkFlg  $2C2            ; Set after the scene with the sailor and soldier in New Granseal (Peter intro)
+                chkFlg  $2C2            ; Set after the scene with the sailor and soldier in New Granseal (RUBURAN intro)
                 beq.s   return_54E6E
                 script  cs_54E78
 return_54E6E:
