@@ -207,18 +207,18 @@ IntroCutscene:
       moveUp 4
     endActions
     csWait 40
-    nextText $0,23            ; "What are you saying, Max?{N}If that's the case, it's time to finish me, don't you think?{D3}{D1}"
-    nextSingleText $0,23      ; "Too bad I'm not the same old Mishaela you defeated before!{D3}{D1}"
+    nextText $0,$82            ; "What are you saying, Max?{N}If that's the case, it's time to finish me, don't you think?{D3}{D1}"
+    nextSingleText $0,$82      ; "Too bad I'm not the same old Mishaela you defeated before!{D3}{D1}"
     setCamDest 7,16
     entityActionsWait $81
      moveLeft 1
     endActions
     setFacing $81,UP
-    nextText $80,21           ; "Mistress Mishaela, I am here!{N}You can always rely on Lynx.{D3}{D1}"
-    nextSingleText $80,21     ; "Leave them to me!{D3}{D1}"
-    nextText $0,23            ; "So, Max, it seems that you're here to stop us from fulfilling our dream.{D3}{D1}"
-    nextText $0,23            ; " "
-    nextSingleText $0,23      ; "Do as you wish, Lynx.{D3}{D1}"
+    nextText $80,$81           ; "Mistress Mishaela, I am here!{N}You can always rely on Lynx.{D3}{D1}"
+    nextSingleText $80,$81     ; "Leave them to me!{D3}{D1}"
+    nextText $0,$82            ; "So, Max, it seems that you're here to stop us from fulfilling our dream.{D3}{D1}"
+    nextText $0,$82            ; " "
+    nextSingleText $0,$82      ; "Do as you wish, Lynx.{D3}{D1}"
     ; command  51 1
     entityActions $82
       moveLeft 7
@@ -242,16 +242,16 @@ IntroCutscene:
     setFacing $82,DOWN
     setFacing $83,DOWN
     setFacing $84,DOWN
-    nextSingleText $80,21     ; "Well, Shining Force!{N}Show me what you've got!{D3}{D1}"
+    nextSingleText $80,$81     ; "Well, Shining Force!{N}Show me what you've got!{D3}{D1}"
     setCamDest 7,22
     csWait 44
     nextSingleText $0,17      ; "Ridion, we can't let Mishaela escape!{D3}{D1}"
     setFacing $11,DOWN
     nextText $0,17            ; "Adam, take Mead and the others and go after Mishaela!{D3}{D1}"
     nextSingleText $0,17      ; " "
-    nextSingleText $0,26      ; "Understood, Master Max.{N}We'll chase after Mishaela.{D3}{D1}"
+    nextSingleText $0,$80      ; "Understood, Master Max.{N}We'll chase after Mishaela.{D3}{D1}"
     setFacing $80,DOWN
-    nextSingleText $0,26      ; "Mead, Paige, Sonette, let's go. Follow me!{D3}{D1}"
+    nextSingleText $0,$80      ; "Mead, Paige, Sonette, let's go. Follow me!{D3}{D1}"
     ; command  51 2
     entityActions $1
       jumpUp 1
@@ -262,7 +262,7 @@ IntroCutscene:
     entityActionsWait $5
       jumpUp 1
     endActions
-    nextSingleText $0,26      ; "Right!{D3}{D1}"
+    nextSingleText $FF,255      ; "Right!{D3}{D1}"
     ; command  51 2
     entityActions $80
       moveUp 2
@@ -318,8 +318,8 @@ IntroCutscene:
     endActions
     csWait 30
     shiver $81
-    nextText $0,21            ; "They've gone after Mistress Mishaela?{D3}{D1}"
-    nextSingleText $0,21      ; "I should get to her side quickly.{D3}{D1}"
+    nextText $0,$81            ; "They've gone after Mistress Mishaela?{D3}{D1}"
+    nextSingleText $0,$81      ; "I should get to her side quickly.{D3}{D1}"
     entityActionsWait $11
      moveUp 1
     endActions
@@ -337,9 +337,9 @@ IntroCutscene:
     entityActionsWait $81
       moveDown 1
     endActions
-    flashScreenWhite 10
-    csWait 2
     playSound $54
+    flashScreenWhite 10
+    ;csWait 2
     entityActions $11
       faceUp 20
       moveDown 1
@@ -358,9 +358,9 @@ IntroCutscene:
       faceLeft 40
       moveLeft 1
     endActions
-    flashScreenWhite 10
-    csWait 2
     playSound $53
+    flashScreenWhite 10
+    ;csWait 2
     entityActions $11
       faceRight 20
       moveLeft 1
@@ -375,9 +375,9 @@ IntroCutscene:
       moveUp 2
       moveLeft 1
     endActions
-    flashScreenWhite 10
-    csWait 2
     playSound $54
+    flashScreenWhite 10
+    ;csWait 2
     entityActions $11
       faceRight 20
       moveLeft 1
@@ -388,8 +388,8 @@ IntroCutscene:
     endActions
     ; command 53
     csWait 40
-    nextText $80,21           ; "Max fights well, however...{D3}{D1}"
-    nextSingleText $80,21     ; "Pity I can't stay... I must return to Mistress Mishaela.{D3}{D1}"
+    nextText $80,$81           ; "Max fights well, however...{D3}{D1}"
+    nextSingleText $80,$81     ; "Pity I can't stay... I must return to Mistress Mishaela.{D3}{D1}"
     ; command  51 2
     ; command 53
     entityActions $81
@@ -483,8 +483,8 @@ IntroCutscene:
     setPos $F,1,1,DOWN
     setCamDest 0,6
     csWait 60
-    nextSingleText $0,26      ; "With this, Mishaela, it's time for you to die.{N}Your anger is useless. This is the end.{D3}{D1}"
-    nextSingleText $0,26      ; "Adam fires his laser cannon.{D3}{D1}"
+    nextSingleText $0,$80      ; "With this, Mishaela, it's time for you to die.{N}Your anger is useless. This is the end.{D3}{D1}"
+    nextSingleText $FF,255      ; "Adam fires his laser cannon.{D3}{D1}"
     ; command 8 3 8D 5B
     setPos $8A,5,10,UP
     flashScreenWhite 10
@@ -529,14 +529,14 @@ IntroCutscene:
       moveRight 3
     endActions
     csWait 40
-    nextText $80,23           ; "Oh, ho ho ho!{N}I can't be defeated *that* easily!{D3}{D1}"
-    nextSingleText $80,23     ; "Eiku, destroy those hindering pests!{D3}{D1}"
+    nextText $80,$82           ; "Oh, ho ho ho!{N}I can't be defeated *that* easily!{D3}{D1}"
+    nextSingleText $80,$82     ; "Eiku, destroy those hindering pests!{D3}{D1}"
     ; command  51 1
     entityActionsWait $83
       moveLeft 1
     endActions
-    nextText $80,20           ; "I have my orders...{N}it's nothing personal!{D3}{D1}"
-    nextSingleText $80,20     ; "Take this...{N}Blaze level 3!{D3}{D1}"
+    nextText $80,$83           ; "I have my orders...{N}it's nothing personal!{D3}{D1}"
+    nextSingleText $80,$83     ; "Take this...{N}Blaze level 3!{D3}{D1}"
     playSound $4B
     flashScreenWhite 10
     csWait 2
@@ -630,9 +630,9 @@ IntroCutscene:
     csWait 150
     shiver $83
     playSound $7
-    nextSingleText $80,20     ; "Hah hah hah ha!{N}You'd do well to realise just how much power I have.{D3}{D1}"
+    nextSingleText $80,$83     ; "Hah hah hah ha!{N}You'd do well to realise just how much power I have.{D3}{D1}"
     setFacing $82,RIGHT
-    nextSingleText $80,23     ; "Now Lynx, Eiku, Magus - let's GO!{D3}{D1}"
+    nextSingleText $80,$82     ; "Now Lynx, Eiku, Magus - let's GO!{D3}{D1}"
     ; command  51 1
     entityActions $82
       moveRight 5
@@ -657,11 +657,11 @@ IntroCutscene:
       moveRight 4
     endActions
     nextSingleText $0,17      ; "A.. Adaaaam!{D3}{D1}"
-    setPos $11,4,9,RIGHT
-    setPos $F,3,9,DOWN
-    setPos $1,2,9,UP
-    setPos $2,1,9,UP
-    setPos $5,0,9,UP
+    setPos $11,5,9,RIGHT
+    setPos $F,4,9,DOWN
+    setPos $1,3,9,UP
+    setPos $2,2,9,UP
+    setPos $5,1,9,UP
     ; command  51 2
     entityActions $11
       moveRight 3
@@ -695,7 +695,7 @@ IntroCutscene:
     setCamDest 4,5
     shiver $11
     nextSingleText $0,17      ; "...{N}Adam, are you alright?!{D3}{D1}"
-    nextSingleText $0,26      ; "...{N}Master{D2} Max...{D3}{D1}"
+    nextSingleText $0,$80      ; "...{N}Master{D2} Max...{D3}{D1}"
     setFacing $11,RIGHT
     nextText $0,17            ; "Mishaela has damaged Adam...{D3}{D1}"
     setFacing $11,DOWN
@@ -784,7 +784,7 @@ IntroCutscene:
     setCamDest 13,4
     csWait 30
     shiver $82
-    nextSingleText $80,23     ; "Ho ho ho!{N}You're not going to stop me here!{N}I'll cast Spark level 3!{D3}{D1}"
+    nextSingleText $80,$82     ; "Ho ho ho!{N}You're not going to stop me here!{N}I'll cast Spark level 3!{D3}{D1}"
     playSound $4B
     flashScreenWhite 10
     csWait 2
@@ -834,14 +834,14 @@ IntroCutscene:
       moveLeft 1
       faceUp 20
     endActions
-    nextSingleText $80,23     ; "Your turn, Magus!{D3}{D1}"
+    nextSingleText $80,$82     ; "Your turn, Magus!{D3}{D1}"
     ; command  51 1
     entityActionsWait $84
       moveUp 1
       moveLeft 1
       faceUp 20
     endActions
-    nextSingleText $80,19     ; "Alright!{N}*guffaws*{N}Blaze level 2!{D3}{D1}"
+    nextSingleText $80,$84     ; "Alright!{N}*guffaws*{N}Blaze level 2!{D3}{D1}"
     setCamDest 14,3
     playSound $4B
     flashScreenWhite 10
@@ -883,7 +883,7 @@ IntroCutscene:
     setQuake 0
     csWait 60
     setFacing $82,LEFT
-    nextSingleText $80,23     ; "How do you like that, Max?{N}Oh ho ho ho!{D3}{D1}"
+    nextSingleText $80,$82     ; "How do you like that, Max?{N}Oh ho ho ho!{D3}{D1}"
     ; command  51 1
     entityActionsWait $84
       faceLeft 20
