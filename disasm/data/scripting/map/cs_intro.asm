@@ -98,15 +98,15 @@ IntroCutscene:
      ac_jump eas_Idle   
     ac_end             
     customActscript $8B
-     ac_setSpeed $30,$30   
+     ac_setSpeed $40,$40   
      ac_jump eas_Idle   
     ac_end             
     customActscript $8C
-     ac_setSpeed $30,$30   
+     ac_setSpeed $40,$40   
      ac_jump eas_Idle   
     ac_end             
     customActscript $8D
-     ac_setSpeed $30,$30   
+     ac_setSpeed $40,$40   
      ac_jump eas_Idle   
     ac_end             
     customActscript $8E
@@ -338,10 +338,10 @@ IntroCutscene:
       moveDown 1
     endActions
     playSound $54
-    flashScreenWhite 10
+    flashScreenWhite 2
     ;csWait 2
     entityActions $11
-      faceUp 20
+      faceUp 5
       moveDown 1
       moveLeft 1
       faceRight 20
@@ -350,7 +350,7 @@ IntroCutscene:
       moveRight 1
     endActions
     entityActionsWait $81
-      faceDown 20
+      faceDown 5
       moveUp 1
       moveRight 1
       faceLeft 20
@@ -359,32 +359,34 @@ IntroCutscene:
       moveLeft 1
     endActions
     playSound $53
-    flashScreenWhite 10
-    ;csWait 2
+    flashScreenWhite 2
+    ;csWait 2   
     entityActions $11
-      faceRight 20
+      faceRight 5
       moveLeft 1
       faceRight 40
       moveUp 2
       moveRight 1
     endActions
     entityActionsWait $81
-      faceLeft 20
+      faceLeft 5
       moveRight 1
       faceLeft 40
       moveUp 2
       moveLeft 1
     endActions
     playSound $54
-    flashScreenWhite 10
+    flashScreenWhite 2
     ;csWait 2
     entityActions $11
-      faceRight 20
+      faceRight 5
       moveLeft 1
+      faceRight 1
     endActions
     entityActionsWait $81
-      faceLeft 20
+      faceLeft 5
       moveRight 1
+      faceLeft 1
     endActions
     ; command 53
     csWait 40
@@ -424,21 +426,29 @@ IntroCutscene:
     endActions
     nextSingleText $80,15     ; "I'll knock you down and wipe the floor with you, Devil!{D3}{D1}"
     ; command  51 2
+    customActscript $F
+     ac_setSpeed $40,$40   
+     ac_jump eas_Idle   
+    ac_end      
     entityActions $81
-      faceRight 40
+      faceRight 15
       moveUp 1
-    endActions
+    endActions       
     entityActionsWait $F
       moveLeft 3
     endActions
     setQuake 1
-    playSound $64
+    playSound SFX_LIGHTNING_2
+    flashScreenWhite 5
     setBlocks 50,6,5,5,10,14
-    ; rotate to implement here
+    flashScreenWhite 5
     ; command  51 2
+    playSound SFX_FALLING
     entityActions $81
-      moveUp 1
-      moveLeft 2
+      ;moveUp 1
+      ;moveLeft 2
+      moveUpLeft 1
+      moveDownLeft 1
       ; unknownMoveCommand 10 4E
       moveDown 1
     endActions
@@ -448,6 +458,10 @@ IntroCutscene:
     endActions
     setQuake 0
     csWait 40
+    customActscript $F
+     ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end  
     ; command  51 1
     ; command  51 1
     entityActionsWait $81
@@ -487,30 +501,39 @@ IntroCutscene:
     nextSingleText $FF,255      ; "Adam fires his laser cannon.{D3}{D1}"
     ; command 8 3 8D 5B
     setPos $8A,5,10,UP
-    flashScreenWhite 10
+    flashScreenWhite 2
     csWait 2
     csWait 23
-    playSound $50
+    ;playSound SFX_PRISM_LASER_CUTSCENE_FIRING
     csWait 12
     ; command  51 4
     ; command 53
-    setBlocks 57,8,7,7,3,3
     entityActions $8A
       moveUp 5
       ; unknownMoveCommand 10 4B
     endActions
+    playSound SFX_PRISM_LASER_CUTSCENE_FIRING
     entityActions $82
-      faceDown 20
-      moveRight 7
+      faceDown 5
+      moveRight 4
+      moveDown 1
+      moveRight 2
     endActions
     entityActions $83
-      faceDown 20
-      moveRight 7
+      faceDown 5
+      moveRight 3
+      moveDown 2
+      moveRight 2
     endActions
-    entityActionsWait $84
-      faceDown 20
-      moveRight 7
+    entityActions $84
+      faceDown 5
+      moveRight 5
+      moveDown 2
+      moveRight 2
     endActions
+    csWait 30
+    setBlocks 57,8,7,7,3,3
+    csWait 60
     setPos $8A,1,1,UP
     ; command 3C 8 1E
     ;setBlocks 25,1,5,7,5,3
@@ -537,7 +560,7 @@ IntroCutscene:
     endActions
     nextText $80,$83           ; "I have my orders...{N}it's nothing personal!{D3}{D1}"
     nextSingleText $80,$83     ; "Take this...{N}Blaze level 3!{D3}{D1}"
-    playSound $4B
+    playSound SFX_SPELL_CAST
     flashScreenWhite 10
     csWait 2
     flashScreenWhite 10
@@ -560,19 +583,19 @@ IntroCutscene:
       moveDown 6
     endActions
     entityActionsWait $80
-      faceLeft 40
-      faceRight 20
-      faceLeft 20
-      faceRight 20
+      faceLeft 10
+      faceRight 5
+      faceLeft 5
+      faceRight 5
     endActions
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setQuake 1
     setPos $8E,7,10,LEFT
     csWait 20
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setPos $8E,9,9,LEFT
     csWait 20
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setPos $8E,8,8,LEFT
     csWait 20
     setPos $8E,1,1,LEFT
@@ -592,27 +615,30 @@ IntroCutscene:
       moveDown 6
     endActions
     entityActionsWait $80
-      faceRight 40
-      faceLeft 20
-      faceRight 20
-      faceLeft 20
+      faceRight 10
+      faceLeft 5
+      faceRight 5
+      faceLeft 5
     endActions
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setQuake 1
     setPos $8E,9,10,LEFT
     csWait 20
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setPos $8E,7,8,LEFT
     csWait 10
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setPos $8E,8,8,LEFT
     csWait 20
     setPos $8E,1,1,LEFT
     ;setBlocks 25,9,5,6,5,3
     setBlocks 57,16,7,7,3,3
-    setFacing $8B,UP
-    setFacing $8C,UP
-    setFacing $8D,UP    
+    setPos $8B,1,1,LEFT
+    setPos $8C,1,1,LEFT
+    setPos $8D,1,1,LEFT
+    ;setFacing $8B,UP
+    ;setFacing $8C,UP
+    ;setFacing $8D,UP    
     setQuake 0
     ; command  51 1
     entityActionsWait $80
@@ -635,26 +661,26 @@ IntroCutscene:
     nextSingleText $80,$82     ; "Now Lynx, Eiku, Magus - let's GO!{D3}{D1}"
     ; command  51 1
     entityActions $82
-      moveRight 5
+      moveRight 6
     endActions
     entityActionsWait $81
-      faceDown 20
+      faceDown 10
       moveUp 1
     endActions
     csWait 40
     ; command  51 1
     entityActions $81
       moveDown 1
-      moveRight 3
+      moveRight 4
     endActions
     entityActions $83
       moveDown 1
-      moveRight 4
+      moveRight 5
     endActions
     entityActionsWait $84
       faceUp 20
       moveUp 1
-      moveRight 4
+      moveRight 5
     endActions
     nextSingleText $0,17      ; "A.. Adaaaam!{D3}{D1}"
     setPos $11,5,9,RIGHT
@@ -785,7 +811,7 @@ IntroCutscene:
     csWait 30
     shiver $82
     nextSingleText $80,$82     ; "Ho ho ho!{N}You're not going to stop me here!{N}I'll cast Spark level 3!{D3}{D1}"
-    playSound $4B
+    playSound $4D
     flashScreenWhite 10
     csWait 2
     flashScreenWhite 10
@@ -801,13 +827,17 @@ IntroCutscene:
       faceRight 20
       moveDown 1
     endActions
-    setQuake 1
-    playSound $64
+    setQuake 2
+    playSound $51
     setPos $85,15,5,UP
     setPos $86,15,6,UP
     setPos $87,15,7,UP
     setPos $88,15,8,UP
     setPos $89,15,9,UP
+    csWait 2
+    playSound $51
+    csWait 2
+    playSound $76
     flashScreenWhite 10
     csWait 2
     csWait 30
@@ -843,14 +873,14 @@ IntroCutscene:
     endActions
     nextSingleText $80,$84     ; "Alright!{N}*guffaws*{N}Blaze level 2!{D3}{D1}"
     setCamDest 14,3
-    playSound $4B
+    playSound SFX_SPELL_CAST
     flashScreenWhite 10
     csWait 2
     flashScreenWhite 10
     csWait 2
     flashScreenWhite 10
     csWait 2
-    playSound $75
+    playSound SFX_INTRO_LIGHTNING
     setPos $8B,18,3,DOWN
     setPos $8C,19,2,DOWN
     setPos $8D,20,1,DOWN
@@ -865,62 +895,84 @@ IntroCutscene:
       moveDown 5
     endActions
     setQuake 1
-    playSound $6B
-    setFacing $8B,UP
-    setFacing $8C,UP
-    setFacing $8D,UP        
+    playSound SFX_LIGHTNING_2
+    setPos $8B,1,1,DOWN
+    setPos $8C,1,1,DOWN
+    setPos $8D,1,1,DOWN
+    ;setFacing $8B,UP
+    ;setFacing $8C,UP
+    ;setFacing $8D,UP        
     setPos $8E,18,6,LEFT
     csWait 10
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setPos $8E,19,6,LEFT
     csWait 10
-    playSound $6B
+    playSound SFX_LIGHTNING_2
     setPos $8E,20,6,LEFT
     csWait 10
     setPos $8E,1,1,LEFT
     ;setBlocks 25,23,3,6,18,2
+    flashScreenWhite 2
     setBlocks 50,21,6,8,16,3
+    flashScreenWhite 2
     setQuake 0
     csWait 60
     setFacing $82,LEFT
     nextSingleText $80,$82     ; "How do you like that, Max?{N}Oh ho ho ho!{D3}{D1}"
     ; command  51 1
     entityActionsWait $84
-      faceLeft 20
+      faceLeft 10
       moveRight 1
     endActions
     ; command  51 2
     entityActions $82
       moveRight 1
       moveUp 1
+    ;endActions
       ; unknownMoveCommand 10 4E
+    ;playSound SFX_FALLING
+      eaSound SFX_FALLING
+    ;entityActions $82
       moveUp 3
       moveDown 1
       moveUp 4
     endActions
     entityActions $81
-      faceUp 60
+      faceUp 30
       moveUp 1
       moveRight 1
       moveUp 1
+    ;endActions
       ; unknownMoveCommand 10 4E
+    ;playSound SFX_FALLING
+      eaSound SFX_FALLING
+    ;entityActions $81
       moveUp 3
       moveDown 1
       moveUp 4
     endActions
     entityActions $83
-      faceUp 160
+      faceUp 80
       moveUp 2
+    ;endActions
       ; unknownMoveCommand 10 4E
+    ;playSound SFX_FALLING
+      eaSound SFX_FALLING
+    ;entityActions $83
       moveUp 3
       moveDown 1
       moveUp 4
     endActions
     entityActionsWait $84
-      faceLeft 240
+      faceLeft 120
       moveLeft 1
       moveUp 1
+    ;entityActions $84
       ; unknownMoveCommand 10 4E
+    ;playSound SFX_FALLING
+      eaSound SFX_FALLING
+    ;endActions
+    ;entityActions $84
       moveUp 3
       moveDown 1
       moveUp 4
@@ -945,7 +997,11 @@ IntroCutscene:
     entityActions $11
       moveRight 4
       moveUp 1
+    ;endActions
       ; unknownMoveCommand 10 4E
+    ;playSound SFX_FALLING
+      eaSound SFX_FALLING
+    ;entityActions $11
       moveUp 3
       moveDown 1
       moveUp 3
@@ -954,7 +1010,11 @@ IntroCutscene:
       faceRight 60
       moveRight 4
       moveUp 2
+    ;endActions
       ; unknownMoveCommand 10 4E
+    ;playSound SFX_FALLING
+      eaSound SFX_FALLING
+    ;entityActionsWait $F
       moveUp 3
       moveDown 1
       moveUp 3
