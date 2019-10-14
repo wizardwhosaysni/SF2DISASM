@@ -126,7 +126,7 @@ loc_100104:
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
                 move.b  #8,((FADING_PALETTE_BITMAP-$1000000)).w
-                move.w  #$78,d0 
+                move.w  #$60,d0 
                 bsr.w   WaitForPlayer1InputStart                                           ; Sub-title fade in removed from here
                 move.b  #1,((FADING_SETTING-$1000000)).w                                   ; New "Final conflict" subtitle fade in
                 clr.w   ((FADING_TIMER-$1000000)).w
