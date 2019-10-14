@@ -15,7 +15,7 @@ BattleNeutralEntities:
                 ;dc.l eas_Standing
                 dc.b 12                  ; Caravan
                 dc.b 5
-                dc.b LEFT
+                dc.b DOWN
                 dc.b 62
                 dc.l eas_Motionless
                 dc.w $FFFF              ; FFFF to say "end of definition for this battle"

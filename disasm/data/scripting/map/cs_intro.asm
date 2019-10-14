@@ -22,6 +22,7 @@ IntroCutscene:
     newEntity $8C,63,63,DOWN,60
     newEntity $8D,63,63,DOWN,60
     newEntity $8E,63,63,DOWN,60
+    newEntity $8F,12,5,DOWN,62
     newEntity $11,1,1,DOWN,ALLY_MAX
     newEntity $F,1,3,DOWN,ALLY_RIDION
     newEntity $1,1,4,DOWN,ALLY_MEAD
@@ -111,6 +112,10 @@ IntroCutscene:
     ac_end             
     customActscript $8E
      ac_setSpeed $30,$30   
+     ac_jump eas_Idle   
+    ac_end          
+    customActscript $8F
+     ac_setAnimCounter 0 
      ac_jump eas_Idle   
     ac_end             
     customActscript $11
@@ -707,10 +712,19 @@ IntroCutscene:
       moveRight 6
     endActions
     entityActionsWait $81
-      faceDown 10
-      moveUp 1
+      faceDown 5
+    ;  moveUp 1
     endActions
+    customActscriptWait $81
+      ac_autoFacing $0
+      ac_moveRel 0,-1
+      ac_jump eas_Idle
+    ac_end
     csWait 40
+    customActscriptWait $81
+      ac_autoFacing $FFFF
+      ac_jump eas_Idle
+    ac_end
     ; command  51 1
     entityActions $81
       moveDown 1
@@ -870,7 +884,7 @@ IntroCutscene:
       faceRight 20
       moveDown 1
     endActions
-    setQuake 2
+    setQuake 4
     playSound $51
     setPos $85,15,5,UP
     setPos $86,15,6,UP
@@ -901,12 +915,54 @@ IntroCutscene:
     customActscript $11
       ac_setFacing LEFT
       ac_updateSprite
-      ac_jump eas_LyingLeft
-    ac_end
-    customActscript $F
+      ac_wait 5
+      ac_setFacing UP
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing RIGHT
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing DOWN
+      ac_updateSprite
+      ac_wait 5
       ac_setFacing LEFT
       ac_updateSprite
-      ac_jump eas_LyingLeft
+      ac_wait 5
+      ac_setFacing UP
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing RIGHT
+      ac_updateSprite
+      ac_setFlip $1
+      ac_updateSprite
+      ac_setAnimCounter $0
+      ac_jump eas_Idle
+    ac_end
+    customActscript $F
+      ac_setFacing UP
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing RIGHT
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing DOWN
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing LEFT
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing UP
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing RIGHT
+      ac_updateSprite
+      ac_wait 5
+      ac_setFacing DOWN
+      ac_updateSprite
+      ac_setFlip $2
+      ac_updateSprite
+      ac_setAnimCounter $0
+      ac_jump eas_Idle
     ac_end
     setQuake 0
     ; rotate to implement here
