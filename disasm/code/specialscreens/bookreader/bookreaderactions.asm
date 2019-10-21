@@ -77,7 +77,7 @@ loc_74B4:
                 
                 move.w  ((SAVE_SLOT_INDEX-$1000000)).w,d0
                 move.b  #0,((CURRENT_MAP-$1000000)).w
-                move.b  #0,((EGRESS_MAP_INDEX-$1000000)).w
+                move.b  #32,((EGRESS_MAP_INDEX-$1000000)).w
                 bsr.w   SaveGame
                 disableSram
                 clsTxt

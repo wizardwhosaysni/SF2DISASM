@@ -30,12 +30,12 @@ pt_Portraits:   dc.l Portrait00
                 dc.l Portrait26
                 dc.l Portrait27
                 dc.l Portrait28
-                ;dc.l Portrait29
-                ;dc.l Portrait30
-                ;dc.l Portrait31
-                ;dc.l Portrait32
-                ;dc.l Portrait33
-                ;dc.l Portrait34
+                dc.l Portrait29
+                dc.l Portrait30
+                dc.l Portrait31
+                dc.l Portrait32
+                dc.l Portrait33
+                dc.l Portrait34
                 ;dc.l Portrait33
                 ;dc.l Portrait36
                 ;dc.l Portrait37
@@ -86,12 +86,12 @@ Portrait25:     incbin "data/graphics/portraits/sffc/portrait25.bin"
 Portrait26:     incbin "data/graphics/portraits/sffc/portrait26.bin"
 Portrait27:     incbin "data/graphics/portraits/sffc/portrait27.bin"
 Portrait28:     incbin "data/graphics/portraits/sffc/portrait28.bin"
-;Portrait29:     incbin "data/graphics/portraits/portrait29.bin"
-;Portrait30:     incbin "data/graphics/portraits/portrait30.bin"
-;Portrait31:     incbin "data/graphics/portraits/portrait31.bin"
-;Portrait32:     incbin "data/graphics/portraits/portrait32.bin"
-;Portrait33:     incbin "data/graphics/portraits/portrait33.bin"
-;Portrait34:     incbin "data/graphics/portraits/portrait34.bin"
+Portrait29:     incbin "data/graphics/portraits/portrait29.bin"
+Portrait30:     incbin "data/graphics/portraits/portrait30.bin"
+Portrait31:     incbin "data/graphics/portraits/portrait31.bin"
+Portrait32:     incbin "data/graphics/portraits/portrait32.bin"
+Portrait33:     incbin "data/graphics/portraits/portrait33.bin"
+Portrait34:     incbin "data/graphics/portraits/portrait34.bin"
 ;Portrait36:     incbin "data/graphics/portraits/portrait36.bin"
 ;Portrait37:     incbin "data/graphics/portraits/portrait37.bin"
 ;Portrait38:     incbin "data/graphics/portraits/portrait38.bin"

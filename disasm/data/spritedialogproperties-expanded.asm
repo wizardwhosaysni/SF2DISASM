@@ -4,7 +4,7 @@ SpriteDialogProperties:
                 speechSound 73
 
                 mapSprite   1
-                portrait    47
+                portrait    0
                 speechSound 73
 
                 mapSprite   2
