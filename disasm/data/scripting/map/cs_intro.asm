@@ -250,13 +250,13 @@ IntroCutscene:
     nextSingleText $80,$81     ; "Well, Shining Force!{N}Show me what you've got!{D2}"
     setCamDest 7,22
     csWait 44
-    nextSingleText $0,17      ; "Ridion, we can't let Mishaela escape!{D2}"
+    nextSingleText $0,17      ; "Ridion, we can't let{N}Mishaela escape!{D2}"
     setFacing $11,DOWN
-    nextText $0,17            ; "Adam, take Mead and the others and go after Mishaela!{D2}"
+    nextText $0,17            ; "Adam, take Mead and the others{N}and go after Mishaela!{D2}"
     nextSingleText $0,17      ; " "
     nextSingleText $0,$80      ; "Understood, Master Max.{N}We'll chase after Mishaela.{D2}"
     setFacing $80,DOWN
-    nextSingleText $0,$80      ; "Mead, Paige, Sonette, let's go. Follow me!{D2}"
+    nextSingleText $0,$80      ; "Mead, Paige, Sonette, let's go.{N}Follow me!{D2}"
     ; command  51 2
     entityActions $1
       jumpUp 1
@@ -323,7 +323,7 @@ IntroCutscene:
     endActions
     csWait 30
     shiver $81
-    nextText $0,$81            ; "They've gone after Mistress Mishaela?{D2}"
+    nextText $0,$81            ; "They've gone after Mistress{N}Mishaela?{D2}"
     nextSingleText $0,$81      ; "I should get to her side quickly.{D2}"
     entityActionsWait $11
      moveUp 1
@@ -408,7 +408,7 @@ IntroCutscene:
     ; command 53
     csWait 40
     nextText $80,$81           ; "Max fights well, however...{D2}"
-    nextSingleText $80,$81     ; "Pity I can't stay... I must return to Mistress Mishaela.{D2}"
+    nextSingleText $80,$81     ; "Pity I can't stay... I must return{N}to Mistress Mishaela.{D2}"
     ; command  51 2
     ; command 53
     entityActions $81
@@ -423,7 +423,7 @@ IntroCutscene:
       moveUp 1
       moveRight 3
     endActions
-    nextSingleText $0,15      ; "Hold it, Lynx! You'll have to get past me first.{D2}"
+    nextSingleText $0,15      ; "Hold it, Lynx! You'll have{N}to get past me first.{D2}"
     ; command 53
     setCamDest 11,13
     setActscript $81,eas_Jump
@@ -441,7 +441,7 @@ IntroCutscene:
       faceLeft 20
       moveLeft 1
     endActions
-    nextSingleText $80,15     ; "I'll knock you down and wipe the floor with you, Devil!{D2}"
+    nextSingleText $80,15     ; "I'll knock you down and wipe{N}the floor with you, Devil!{D2}"
     ; command  51 2
     customActscript $F
      ac_setSpeed $40,$40   
@@ -500,7 +500,7 @@ IntroCutscene:
       faceLeft 20
     endActions
     setFacing $11,RIGHT
-    nextSingleText $0,17      ; "Ridion, he got away.{N}I'm concerned about Adam and the others. Let's hurry up and rejoin them.{D3}{D3}"
+    nextSingleText $0,17      ; "Ridion, he got away.{N}I'm concerned about Adam and{N}the others. Let's hurry up{N}and rejoin them.{D2}"
     ; command  51 2
     ; command 53
     entityActions $11
@@ -514,7 +514,7 @@ IntroCutscene:
     setPos $F,1,1,DOWN
     setCamDest 0,6
     csWait 60
-    nextSingleText $0,$80      ; "With this, Mishaela, it's time for you to die.{N}Your anger is useless. This is the end.{D2}"
+    nextSingleText $0,$80      ; "With this, Mishaela, it's time{N}for you to die.{N}Your anger is useless.{N}This is the end.{D2}"
     nextSingleText $FF,255      ; "Adam fires his laser cannon.{D2}"
     ; command 8 3 8D 5B
     setPos $8A,5,10,UP
@@ -570,13 +570,13 @@ IntroCutscene:
     endActions
     csWait 40
     nextText $80,$82           ; "Oh, ho ho ho!{N}I can't be defeated *that* easily!{D2}"
-    nextSingleText $80,$82     ; "Eiku, destroy those hindering pests!{D2}"
+    nextSingleText $80,$82     ; "Eiku, destroy those{N}hindering pests!{D2}"
     ; command  51 1
     entityActionsWait $83
       moveLeft 1
     endActions
     nextText $80,$83           ; "I have my orders...{N}it's nothing personal!{D2}"
-    nextSingleText $80,$83     ; "Take this...{N}Blaze level 3!{D2}"
+    nextSingleText $80,$83     ; "Take this... Blaze level 3!{D2}"
     playSound SFX_SPELL_CAST
     flashScreenWhite 10
     csWait 2
@@ -704,9 +704,9 @@ IntroCutscene:
     csWait 150
     shiver $83
     playSound $7
-    nextSingleText $80,$83     ; "Hah hah hah ha!{N}You'd do well to realise just how much power I have.{D2}"
+    nextSingleText $80,$83     ; "Hah hah hah ha!{N}You'd do well to realise{N}just how much power I have.{D2}"
     setFacing $82,RIGHT
-    nextSingleText $80,$82     ; "Now Lynx, Eiku, Magus - let's GO!{D2}"
+    nextSingleText $80,$82     ; "Now Lynx,{N}Eiku, Magus - let's GO!{D2}"
     ; command  51 1
     entityActions $82
       moveRight 6
@@ -782,9 +782,9 @@ IntroCutscene:
     setFacing $11,RIGHT
     nextText $0,17            ; "Mishaela has damaged Adam...{D2}"
     setFacing $11,DOWN
-    nextText $0,17            ; "Mead, Paige, Sonette, you stay here and help Adam.{D2}"
+    nextText $0,17            ; "Mead, Paige, Sonette, you stay{N}here and help Adam.{D2}"
     setFacing $11,LEFT
-    nextSingleText $0,17      ; "Ridion, follow me, we'll go after Mishaela!{D2}"
+    nextSingleText $0,17      ; "Ridion, follow me, we'll go{N}after Mishaela!{D2}"
     ; command  51 2
     entityActions $11
       moveRight 3
@@ -799,20 +799,20 @@ IntroCutscene:
     endActions
     setFacing $2,RIGHT
     setFacing $5,RIGHT
-    nextSingleText $0,1       ; "Please don't leave us here! Let us come and fight with you.{D2}"
+    nextSingleText $0,1       ; "Please don't leave us here!{N}Let us come and fight with you.{D2}"
     setFacing $11,DOWN
     setFacing $F,DOWN
-    nextSingleText $0,17      ; "Mead, don't say such things.{N}Adam will need someone to stay and assist him, won't he?{D3}{D3}"
-    nextSingleText $0,2       ; "What a thing to say!{N}I'm concerned that only two people are going though.{D2}"
+    nextSingleText $0,17      ; "Mead, don't say such things.{N}Adam will need someone to{N}stay and assist him, won't he?{D2}"
+    nextSingleText $0,2       ; "What a thing to say!{N}I'm concerned that only two{N}people are going though.{D2}"
     setFacing $11,LEFT
     setFacing $F,LEFT
-    nextSingleText $0,15      ; "It'll be okay Paige.{N}Though you are gallant, you are needed here.{D2}"
+    nextSingleText $0,15      ; "It'll be okay Paige.{N}Though you are gallant,{N}you are needed here.{D2}"
     ; command  51 1
     entityActionsWait $5
       moveUp 1
       faceRight 20
     endActions
-    nextSingleText $0,5       ; "Max and the others won't be harmed.{D2}"
+    nextSingleText $0,5       ; "Max and the others{N}won't be harmed.{D2}"
     ; command  51 1
     entityActions $11
       faceLeft 20
@@ -823,7 +823,7 @@ IntroCutscene:
       moveUp 1
     endActions
     nextText $0,17            ; "That's right Sonette.{D2}"
-    nextSingleText $0,17      ; "I'll leave Adam in your capable hands. Ridion will come with me.{D2}"
+    nextSingleText $0,17      ; "I'll leave Adam in{N}your capable hands. Ridion will{N}come with me.{D2}"
     setPos $82,19,8,RIGHT
     setPos $81,18,9,LEFT
     setPos $83,19,9,LEFT
@@ -867,7 +867,7 @@ IntroCutscene:
     setCamDest 13,4
     csWait 30
     shiver $82
-    nextSingleText $80,$82     ; "Ho ho ho!{N}You're not going to stop me here!{N}I'll cast Spark level 3!{D2}"
+    nextSingleText $80,$82     ; "Ho ho ho! You're not going{N}to stop me here!{N}I'll cast Spark level 3!{D2}"
     playSound $4D
     flashScreenWhite 10
     csWait 2
@@ -980,7 +980,7 @@ IntroCutscene:
       moveLeft 1
       faceUp 20
     endActions
-    nextSingleText $80,$84     ; "Alright!{N}*guffaws*{N}Blaze level 2!{D2}"
+    nextSingleText $80,$84     ; "Alright! (guffaws){N}Blaze level 2!{D2}"
     setCamDest 14,3
     playSound SFX_SPELL_CAST
     flashScreenWhite 10
@@ -1114,8 +1114,8 @@ IntroCutscene:
     entityActionsWait $F
       moveUp 1
     endActions
-    nextText $0,17            ; "Ridion, we must destroy Mishaela and her devils to stop their evil plan...{D1} at all costs!{D2}"
-    nextSingleText $0,17      ; " "
+    nextText $0,17            ; "Ridion, we must destroy{N}Mishaela and her devils{N}to stop their evil plan...{D1}"
+    nextSingleText $0,17      ; "At all costs!{D2}"
     nextSingleText $80,15     ; "Yes, we will defeat them!{D2}"
     ; command  51 2
     entityActions $11
