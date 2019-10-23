@@ -77,7 +77,7 @@ loc_74B4:
                 
                 move.w  ((SAVE_SLOT_INDEX-$1000000)).w,d0
                 move.b  #0,((CURRENT_MAP-$1000000)).w
-                move.b  #32,((EGRESS_MAP_INDEX-$1000000)).w
+                move.b  #30,((EGRESS_MAP_INDEX-$1000000)).w
                 bsr.w   SaveGame
                 disableSram
                 clsTxt
@@ -128,7 +128,7 @@ loc_74FE:
                 chkFlg  $58             ; checks if a game has been saved for copying purposes ? (or if saved from battle?)
                 beq.s   loc_753A
                 jsr     j_BattleLoop
-                bra.w   loc_75E0        
+                bra.w   loc_75C8        
 loc_753A:
                 
                 clr.w   d0
