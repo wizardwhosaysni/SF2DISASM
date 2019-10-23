@@ -687,7 +687,7 @@ Map29s8_OtherItems:include "data\maps\entries\map29\8-other-items.asm"    ;
 Map29s0_Blocks: incbin "data/maps/entries/map29/0-blocks.bin"
 Map29s1_Layout: incbin "data/maps/entries/map29/1-layout.bin"
 Map29s9_Animations:include "data\maps\entries\map29\9-animations.asm"    ; 
-Map30:          include "data\maps\entries\map30\00-tilesets.asm"    ; 
+Map30:          include "data\maps\entries\sffc-map30\00-tilesets.asm"    ; 
                 dc.l Map30s0_Blocks
                 dc.l Map30s1_Layout
                 dc.l Map30s2_Areas
@@ -698,16 +698,16 @@ Map30:          include "data\maps\entries\map30\00-tilesets.asm"    ;
                 dc.l Map30s7_ChestItems
                 dc.l Map30s8_OtherItems
                 dc.l $FFFFFFFF
-Map30s2_Areas:  include "data\maps\entries\map30\2-areas.asm"    ; 
-Map30s3_FlagEvents:include "data\maps\entries\map30\3-flag-events.asm"    ; 
-Map30s4_StepEvents:include "data\maps\entries\map30\4-step-events.asm"    ; 
-Map30s5_RoofEvents:include "data\maps\entries\map30\5-roof-events.asm"    ; 
-Map30s6_WarpEvents:include "data\maps\entries\map30\6-warp-events.asm"    ; 
-Map30s7_ChestItems:include "data\maps\entries\map30\7-chest-items.asm"    ; 
-Map30s8_OtherItems:include "data\maps\entries\map30\8-other-items.asm"    ; 
-Map30s0_Blocks: incbin "data/maps/entries/map30/0-blocks.bin"
-Map30s1_Layout: incbin "data/maps/entries/map30/1-layout.bin"
-Map31:          include "data\maps\entries\map31\00-tilesets.asm"    ; 
+Map30s2_Areas:  include "data\maps\entries\sffc-map30\2-areas.asm"    ; 
+Map30s3_FlagEvents:include "data\maps\entries\sffc-map30\3-flag-events.asm"    ; 
+Map30s4_StepEvents:include "data\maps\entries\sffc-map30\4-step-events.asm"    ; 
+Map30s5_RoofEvents:include "data\maps\entries\sffc-map30\5-roof-events.asm"    ; 
+Map30s6_WarpEvents:include "data\maps\entries\sffc-map30\6-warp-events.asm"    ; 
+Map30s7_ChestItems:include "data\maps\entries\sffc-map30\7-chest-items.asm"    ; 
+Map30s8_OtherItems:include "data\maps\entries\sffc-map30\8-other-items.asm"    ; 
+Map30s0_Blocks: incbin "data/maps/entries/sffc-map30/0-blocks.bin"
+Map30s1_Layout: incbin "data/maps/entries/sffc-map30/1-layout.bin"
+Map31:          include "data\maps\entries\sffc-map31\00-tilesets.asm"    ; 
                 dc.l Map31s0_Blocks
                 dc.l Map31s1_Layout
                 dc.l Map31s2_Areas
@@ -718,15 +718,15 @@ Map31:          include "data\maps\entries\map31\00-tilesets.asm"    ;
                 dc.l Map31s7_ChestItems
                 dc.l Map31s8_OtherItems
                 dc.l $FFFFFFFF
-Map31s2_Areas:  include "data\maps\entries\map31\2-areas.asm"    ; 
-Map31s3_FlagEvents:include "data\maps\entries\map31\3-flag-events.asm"    ; 
-Map31s4_StepEvents:include "data\maps\entries\map31\4-step-events.asm"    ; 
-Map31s5_RoofEvents:include "data\maps\entries\map31\5-roof-events.asm"    ; 
-Map31s6_WarpEvents:include "data\maps\entries\map31\6-warp-events.asm"    ; 
-Map31s7_ChestItems:include "data\maps\entries\map31\7-chest-items.asm"    ; 
-Map31s8_OtherItems:include "data\maps\entries\map31\8-other-items.asm"    ; 
-Map31s0_Blocks: incbin "data/maps/entries/map31/0-blocks.bin"
-Map31s1_Layout: incbin "data/maps/entries/map31/1-layout.bin"
+Map31s2_Areas:  include "data\maps\entries\sffc-map31\2-areas.asm"    ; 
+Map31s3_FlagEvents:include "data\maps\entries\sffc-map31\3-flag-events.asm"    ; 
+Map31s4_StepEvents:include "data\maps\entries\sffc-map31\4-step-events.asm"    ; 
+Map31s5_RoofEvents:include "data\maps\entries\sffc-map31\5-roof-events.asm"    ; 
+Map31s6_WarpEvents:include "data\maps\entries\sffc-map31\6-warp-events.asm"    ; 
+Map31s7_ChestItems:include "data\maps\entries\sffc-map31\7-chest-items.asm"    ; 
+Map31s8_OtherItems:include "data\maps\entries\sffc-map31\8-other-items.asm"    ; 
+Map31s0_Blocks: incbin "data/maps/entries/sffc-map31/0-blocks.bin"
+Map31s1_Layout: incbin "data/maps/entries/sffc-map31/1-layout.bin"
 Map32:          include "data\maps\entries\sffc-map32\00-tilesets.asm"    ; 
                 dc.l Map32s0_Blocks
                 dc.l Map32s1_Layout

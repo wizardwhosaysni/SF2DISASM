@@ -96,12 +96,9 @@ MapSetups:      msMap 3, ms_map3
                 msMapEnd
                 msMap 29, ms_map29
                 msMapEnd
-                msMap 30, ms_map30
-                msFlag 785, ms_map30_flag311 ; set after the fairy tags along at Creed's
-                msFlag 761, ms_map30_flag2F9 ; set after the dwarf gives Bowie the cannon
+                msMap 30, ms_sffcmap30
                 msMapEnd
-                msMap 31, ms_map31
-                msFlag 830, ms_map31_flag33E ; set after the Gyan join scene in the Moun underground
+                msMap 31, ms_sffcmap31
                 msMapEnd
                 msMap 32, ms_sffcmap32
                 msMapEnd
