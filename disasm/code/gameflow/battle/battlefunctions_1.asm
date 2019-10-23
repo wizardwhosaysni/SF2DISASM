@@ -279,14 +279,14 @@ loc_23D44:
                 jsr     GetEgressPositionForBattle(pc)
                 nop
                 moveq   #$FFFFFFFF,d4
-                cmpi.b  #BATTLE_AMBUSHED_BY_GALAM_SOLDIERS,((CURRENT_BATTLE-$1000000)).w 
+                ;cmpi.b  #BATTLE_AMBUSHED_BY_GALAM_SOLDIERS,((CURRENT_BATTLE-$1000000)).w 
                                                         ; HARDCODED battle 4 upgrade
-                bne.s   return_23D96
-                clrFlg  $194            ; Battle 4 unlocked
-                setFlg  $1F8            ; Battle 4 completed
-                jsr     j_UpgradeBattle
-                moveq   #$11,d0
-                clr.w   d4
+                ;bne.s   return_23D96
+                ;clrFlg  $194            ; Battle 4 unlocked
+                ;setFlg  $1F8            ; Battle 4 completed
+                ;jsr     j_UpgradeBattle
+                ;moveq   #$11,d0
+                ;clr.w   d4
 return_23D96:
                 
                 rts
@@ -375,47 +375,51 @@ GetEgressPositionForBattle:
                 
                 clr.b   d7
                 move.b  ((CURRENT_BATTLE-$1000000)).w,d7
-                cmpi.b  #BATTLE_VERSUS_GESHP,d7
-                bne.s   loc_23E60
-                clrFlg  $1B6            ; Battle 38 unlocked
-loc_23E60:
+                ;cmpi.b  #BATTLE_VERSUS_GESHP,d7
+                ;bne.s   loc_23E60
+                ;clrFlg  $1B6            ; Battle 38 unlocked
+;loc_23E60:
                 
-                cmpi.b  #BATTLE_TO_ANCIENT_SHRINE,d7
-                bne.s   loc_23E6A
-                clrFlg  $1B7            ; Battle 39 unlocked
-loc_23E6A:
+                ;cmpi.b  #BATTLE_TO_ANCIENT_SHRINE,d7
+                ;bne.s   loc_23E6A
+                ;clrFlg  $1B7            ; Battle 39 unlocked
+;loc_23E6A:
                 
-                cmpi.b  #BATTLE_VERSUS_KRAKEN,d7
-                bne.s   loc_23E76
-                moveq   #$D,d0
-                bra.w   loc_23EAA
-loc_23E76:
+                ;cmpi.b  #BATTLE_VERSUS_KRAKEN,d7
+                ;bne.s   loc_23E76
+                ;moveq   #$D,d0
+                ;bra.w   loc_23EAA
+;loc_23E76:
                 
-                cmpi.b  #BATTLE_TO_TAROS_SHRINE,d7
-                bne.s   loc_23E82
-                moveq   #9,d0
-                bra.w   loc_23EAA
-loc_23E82:
+                ;cmpi.b  #BATTLE_TO_TAROS_SHRINE,d7
+                ;bne.s   loc_23E82
+                ;moveq   #9,d0
+                ;bra.w   loc_23EAA
+;loc_23E82:
                 
-                cmpi.b  #BATTLE_POLCA_VILLAGE,d7
-                bne.s   loc_23E8E
-                moveq   #$A,d0
-                bra.w   loc_23EAA
-loc_23E8E:
+                ;cmpi.b  #BATTLE_POLCA_VILLAGE,d7
+                ;bne.s   loc_23E8E
+                ;moveq   #$A,d0
+                ;bra.w   loc_23EAA
+;loc_23E8E:
                 
-                cmpi.b  #BATTLE_PACALON,d7
-                bne.s   loc_23E9A
-                moveq   #$24,d0 
-                bra.w   loc_23EAA
-loc_23E9A:
+                ;cmpi.b  #BATTLE_PACALON,d7
+                ;bne.s   loc_23E9A
+                ;moveq   #$24,d0 
+                ;bra.w   loc_23EAA
+;loc_23E9A:
                 
-                cmpi.b  #BATTLE_TO_MOUN,d7
-                bne.s   loc_23EA6
-                moveq   #2,d0
-                bra.w   loc_23EAA
-loc_23EA6:
+                ;cmpi.b  #BATTLE_TO_MOUN,d7
+                ;bne.s   loc_23EA6
+                ;moveq   #2,d0
+                ;bra.w   loc_23EAA
+;loc_23EA6:
                 
-                move.b  ((EGRESS_MAP_INDEX-$1000000)).w,d0
+                ;move.b  ((EGRESS_MAP_INDEX-$1000000)).w,d0
+                ; default sffc behaviour : battle egress map = battle map index + 30
+                ; to refine with a smarter behaviour after the camp map(s) will be properly defined
+                move.b  ((CURRENT_MAP-$1000000)).w,d0
+                addi.w  #30, d0
 loc_23EAA:
                 
                 jsr     (GetSavePointForMap).w
