@@ -210,8 +210,14 @@ loc_23CA4:
                 
                 addq.w  #1,d0
                 dbf     d7,loc_23C8A
+                ; SFFC implementation to manage Battle 01 with MEAD as the leader
+                cmpi.b  #1,((CURRENT_BATTLE-$1000000)).w
+                bne.w   @default
+                move.w  #ALLY_MEAD,d0
+                bra.s   @checkLeader
+@default:           
                 clr.w   d0
-                jsr     j_GetCurrentHP
+@checkLeader:   jsr     j_GetCurrentHP
                 tst.w   d1
                 bne.s   return_23CB8
                 clr.w   d2
@@ -270,8 +276,13 @@ loc_23D44:
                 sndCom  MUSIC_SAD_THEME_2
                 txt     $16B            ; "{LEADER} is exhausted.{W1}"
                 clsTxt
-                clr.w   d0
-                jsr     j_GetMaxHP
+                ; SFFC implementation to manage Battle 01 with MEAD as the leader
+                cmpi.b  #1,((CURRENT_BATTLE-$1000000)).w
+                bne.w   @default
+                move.w  #ALLY_MEAD,d0
+                bra.s   @reviveLeader
+@default:       clr.w   d0
+@reviveLeader:  jsr     j_GetMaxHP
                 jsr     j_SetCurrentHP
                 jsr     j_GetGold
                 lsr.l   #1,d1
