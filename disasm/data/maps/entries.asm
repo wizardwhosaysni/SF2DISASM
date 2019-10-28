@@ -122,7 +122,7 @@ Map01s8_OtherItems:include "data\maps\entries\sffc-map01\8-other-items.asm"    ;
 Map01s0_Blocks: incbin "data/maps/entries/sffc-map01/0-blocks.bin"
 Map01s1_Layout: incbin "data/maps/entries/sffc-map01/1-layout.bin"
 ;Map01s9_Animations:include "data\maps\entries\map01\9-animations.asm"    ; 
-Map02:          include "data\maps\entries\map02\00-tilesets.asm"    ; 
+Map02:          include "data\maps\entries\sffc-map02\00-tilesets.asm"    ; 
                 dc.l Map02s0_Blocks
                 dc.l Map02s1_Layout
                 dc.l Map02s2_Areas
@@ -132,16 +132,17 @@ Map02:          include "data\maps\entries\map02\00-tilesets.asm"    ;
                 dc.l Map02s6_WarpEvents
                 dc.l Map02s7_ChestItems
                 dc.l Map02s8_OtherItems
-                dc.l $FFFFFFFF
-Map02s2_Areas:  include "data\maps\entries\map02\2-areas.asm"    ; 
-Map02s3_FlagEvents:include "data\maps\entries\map02\3-flag-events.asm"    ; 
-Map02s4_StepEvents:include "data\maps\entries\map02\4-step-events.asm"    ; 
-Map02s5_RoofEvents:include "data\maps\entries\map02\5-roof-events.asm"    ; 
-Map02s6_WarpEvents:include "data\maps\entries\map02\6-warp-events.asm"    ; 
-Map02s7_ChestItems:include "data\maps\entries\map02\7-chest-items.asm"    ; 
-Map02s8_OtherItems:include "data\maps\entries\map02\8-other-items.asm"    ; 
-Map02s0_Blocks: incbin "data/maps/entries/map02/0-blocks.bin"
-Map02s1_Layout: incbin "data/maps/entries/map02/1-layout.bin"
+                dc.l Map02s9_Animations
+Map02s2_Areas:  include "data\maps\entries\sffc-map02\2-areas.asm"    ; 
+Map02s3_FlagEvents:include "data\maps\entries\sffc-map02\3-flag-events.asm"    ; 
+Map02s4_StepEvents:include "data\maps\entries\sffc-map02\4-step-events.asm"    ; 
+Map02s5_RoofEvents:include "data\maps\entries\sffc-map02\5-roof-events.asm"    ; 
+Map02s6_WarpEvents:include "data\maps\entries\sffc-map02\6-warp-events.asm"    ; 
+Map02s7_ChestItems:include "data\maps\entries\sffc-map02\7-chest-items.asm"    ; 
+Map02s8_OtherItems:include "data\maps\entries\sffc-map02\8-other-items.asm"    ; 
+Map02s0_Blocks: incbin "data/maps/entries/sffc-map02/0-blocks.bin"
+Map02s1_Layout: incbin "data/maps/entries/sffc-map02/1-layout.bin"
+Map02s9_Animations:include "data\maps\entries\sffc-map02\9-animations.asm"    ; 
 Map03:          include "data\maps\entries\map03\00-tilesets.asm"    ; 
                 dc.l Map03s0_Blocks
                 dc.l Map03s1_Layout

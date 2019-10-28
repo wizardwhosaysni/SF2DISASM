@@ -5,7 +5,7 @@ rpt_AfterBattleCutscenes:
                 
                 dc.w abcs_battle00-rpt_AfterBattleCutscenes
                 dc.w abcs_battle01-rpt_AfterBattleCutscenes
-                dc.w (ms_Empty-rpt_AfterBattleCutscenes) & $FFFF
+                dc.w abcs_battle02-rpt_AfterBattleCutscenes
                 dc.w (ms_Empty-rpt_AfterBattleCutscenes) & $FFFF
                 dc.w abcs_battle04-rpt_AfterBattleCutscenes
                 dc.w abcs_battle05-rpt_AfterBattleCutscenes
