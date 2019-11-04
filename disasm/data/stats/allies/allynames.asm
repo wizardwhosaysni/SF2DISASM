@@ -31,8 +31,6 @@ AllyNames:      allyName "IAN"
                 allyName "CHAZ"
                 allyName "LEMON"
                 allyName "CLAUDE"
-                
-                ; Additional entries to be defined in expanded ROM
+; Additional entries to be defined in expanded ROM
                 allyNameIfExpandedRom ""
                 allyNameIfExpandedRom ""
-                

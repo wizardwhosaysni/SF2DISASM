@@ -2,8 +2,7 @@
 ; ASM FILE data\maps\global\savepointmapcoords.asm :
 ; 0x7B71..0x7BCE : Save point map coords
 SavepointMapCoordinates:
-                ; Map, X, Y, Facing
-
+                ; Map, X, Y, Facing
                 savePointMapCoords 30, 3, 6, UP
                 savePointMapCoords 31, 3, 6, UP
                 savePointMapCoords 32, 3, 6, UP
