@@ -3,15 +3,19 @@
 ; 0x496DC..0x4980E : Cutscene after battle 1
 abcs_battle01:  textCursor $901
                 resetForceBattleStats
-                loadMapFadeIn 57,2,0
+                loadMapFadeIn 0,2,0
                 loadMapEntities ce_497F6
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setPos ALLY_SARAH,8,7,UP
-                setPos ALLY_CHESTER,8,8,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setPos ALLY_MEAD,8,7,UP
+                setPos ALLY_PAIGE,8,8,UP
                 fadeInB
                 csWait 40
                 nextSingleText $0,129   ; "Well done, {LEADER}!{N}What should I do with this{N}devil?{W1}"
                 setFacing 129,UP
+                setF $192
+                warp 66,30,40,DOWN
+                yesNo
+                csc_end        
                 csWait 40
                 shiver 128
                 csWait 30
@@ -23,7 +27,7 @@ abcs_battle01:  textCursor $901
                 csWait 5
                 setActscript 129,eas_461B6
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461B6
+                setActscript ALLY_IAN,eas_461B6
                 csWait 30
                 mapFadeOutToWhite
                 csWait 30
@@ -47,9 +51,9 @@ abcs_battle01:  textCursor $901
                  moveDown 1
                 endActions
                 nextSingleText $0,129   ; "Oh, there it is!{W1}"
-                setFacing ALLY_BOWIE,DOWN
-                setFacing ALLY_SARAH,DOWN
-                setFacing ALLY_CHESTER,DOWN
+                setFacing ALLY_IAN,DOWN
+                setFacing ALLY_MEAD,DOWN
+                setFacing ALLY_PAIGE,DOWN
                 setCamDest 2,3
                 csWait 70
                 mapFadeOutToWhite

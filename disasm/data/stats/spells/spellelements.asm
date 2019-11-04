@@ -45,6 +45,6 @@ SpellElementsTable:
                 spellElement ICE        ; BREZAD
                 spellElement LIGHTNING  ; THUNDR
                 spellElement ICE        ; AQUA
-                spellElement FIRE       ; KIWI
+                spellElement FIRE       ; CYNTHIA
                 spellElement UNDEFINED1 ; SHINE
                 spellElement LIGHTNING  ; ODDEYE

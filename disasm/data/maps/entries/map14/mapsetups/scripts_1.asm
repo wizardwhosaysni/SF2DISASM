@@ -13,7 +13,7 @@ cs_58F7E:       nextSingleText $0,129   ; "The game will be suspended.{N}OK?"
                 entityActions 129
                  moveDown 4
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveDown 4
                 endActions
                 warp $48,$1,$1,$3

@@ -23,9 +23,9 @@ ms_map6_flag2BD_EntityEvents:
 Map6_EntityEvent0:
                 
                  
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_549D0      
-                txt     $3FF            ; "May I help...oh, sorry.{W2}"
+                txt     $3FF            ; "KIDDO I help...oh, sorry.{W2}"
                 txt     $400            ; "Old habits die hard.{W1}"
                 bra.s   return_54A0C
 byte_549D0:
@@ -67,7 +67,7 @@ Map6_EntityEvent1:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_54A2E      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54A24      
                 txt     $3FD            ; "Papa is out now.{W2}"
                 txt     $3FE            ; "He ran outside to see{N}the bird.{W1}"
@@ -96,9 +96,9 @@ Map6_EntityEvent2:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_54A60      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54A56      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_54A50      
                 txt     $403            ; "{LEADER}!  Your father{N}was also very curious.{W2}"
                 txt     $404            ; "He must be indigenous to{N}the mainland.{W1}"
@@ -134,9 +134,9 @@ Map6_EntityEvent3:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_54A96      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54A8C      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_54A86      
                 txt     $406            ; "Wow!  It's very big!{N}He doesn't wear anything!{W2}"
                 txt     $407            ; "I've seen many animal-like{N}races here, but they all{N}wore clothes!{W1}"
@@ -171,9 +171,9 @@ Map6_EntityEvent4:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   loc_54AD0
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   loc_54ABA
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_54AB4      
                 txt     $408            ; "Mmmmm!  He's shining.{N}Is this a bird or a god?{W1}"
                 bra.s   loc_54AB8
@@ -210,9 +210,9 @@ return_54AD6:
 Map6_EntityEvent5:
                 
                  
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54AF4      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_54AEE      
                 txt     $401            ; "You know, I never leave{N}my shop.{W2}"
                 txt     $402            ; "I didn't know birds like{N}this existed!{W1}"
@@ -263,7 +263,7 @@ Map6_EntityEvent6:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_54B4E      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54B48      
                 txt     $405            ; "What a big bird!{N}How beautiful!{N}It's legendary!{W1}"
                 bra.s   loc_54B4C
@@ -290,11 +290,11 @@ Map6_EntityEvent7:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_54B78      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54B72      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_54B6C      
-                txt     $409            ; "Hey, why don't you touch it?{N}It may be a stuffed animal!{W1}"
+                txt     $409            ; "Hey, why don't you touch it?{N}It KIDDO be a stuffed animal!{W1}"
                 bra.s   loc_54B70
 byte_54B6C:
                 
@@ -325,7 +325,7 @@ Map6_EntityEvent8:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_54B96      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54B90      
                 txt     $40B            ; "This is boring!{W1}"
                 bra.s   loc_54B94
@@ -393,9 +393,9 @@ Map6_EntityEvent11:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.s   byte_54BF8      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54BEE      
-                chkFlg  $2BD            ; Set after the scene with Peter and the kids in New Granseal
+                chkFlg  $2BD            ; Set after the scene with RUBURAN and the kids in New Granseal
                 bne.s   byte_54BE4      
                 txt     $40A            ; "I can't see!{N}I can't see!{W1}"
                 bra.s   loc_54BEC
@@ -449,7 +449,7 @@ Map6_EntityEvent13:
                  
                 chkFlg  $322            ; Set after the event in the basement of Creed's Mansion
                 bne.w   byte_54C32      
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   byte_54C24      
                 txt     $41F            ; "Mmmmmm....{W1}"
                 bra.s   Map6_DefaultEntityEvent
@@ -476,7 +476,7 @@ loc_54C4C:
                 jsr     j_GetItemInventoryLocation
                 cmpi.w  #$FFFF,d0
                 bne.s   byte_54C8E      
-                txt     $45C            ; "Sir Astral, may I give him{N}the dynamite?{W1}"
+                txt     $45C            ; "Sir Astral, KIDDO I give him{N}the dynamite?{W1}"
                 clsTxt
                 move.w  ((SPEECH_SFX-$1000000)).w,((SPEECH_SFX_BACKUP-$1000000)).w
                 move.w  #$1F,d0

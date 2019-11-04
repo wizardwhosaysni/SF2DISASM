@@ -3,35 +3,35 @@
 ; 0x633C4..0x6343C : 
 cs_EndKiss:     hideText
                 setCameraEntity 65535
-                setFacing ALLY_BOWIE,RIGHT
-                customActscriptWait ALLY_BOWIE
+                setFacing ALLY_IAN,RIGHT
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 8,8        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
                 csWait 30
                 playSound MUSIC_ENDING
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUpRight 1
                 endActions
                 csWait 10
-                setActscriptWait ALLY_BOWIE,eas_461AA
+                setActscriptWait ALLY_IAN,eas_461AA
                 csWait 80
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveRight 1
                 endActions
                 csWait 10
-                setActscriptWait ALLY_BOWIE,eas_461AA
-                stopEntity ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_461AA
+                stopEntity ALLY_IAN
                 csWait 50
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 4,4        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveRight 1
                 endActions
                 csWait 16
-                setActscriptWait ALLY_BOWIE,eas_461AA
+                setActscriptWait ALLY_IAN,eas_461AA
                 csWait 120
                 executeSubroutine j_EndKiss
                 csc_end

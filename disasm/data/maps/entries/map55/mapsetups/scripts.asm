@@ -1,9 +1,9 @@
 
 ; ASM FILE data\maps\entries\map55\mapsetups\scripts.asm :
 ; 0x5E27C..0x5E37C : 
-cs_5E27C:       setActscriptWait ALLY_BOWIE,eas_5E2C4
-                setActscriptWait ALLY_PETER,eas_Init
-                setActscriptWait ALLY_PETER,eas_5E2C4
+cs_5E27C:       setActscriptWait ALLY_IAN,eas_5E2C4
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_5E2C4
                 setActscriptWait FOLLOWER_B,eas_Init
                 setActscriptWait FOLLOWER_B,eas_5E2C4
                 jumpIfFlagClear $4C,cs_5E2BC ; Zynk is a follower
@@ -39,23 +39,23 @@ eas_5E2C4:       ac_set1Cb5 $0
                  ac_jump eas_Idle
 cs_5E320:       mapLoad 75,8,14
                 loadMapEntities ce_5E33E
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 playSound MUSIC_MAIN_THEME
                 fadeInB
                 csc_end
 ce_5E33E:       mainEntity 12,19,DOWN
                 dc.w $FFFF
 cs_5E346:       textCursor $D2B
-                setActscriptWait ALLY_BOWIE,eas_Init
-                entityActionsWait ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_Init
+                entityActionsWait ALLY_IAN
                  moveLeft 1
                  moveLeft 1
                 endActions
                 csWait 30
-                setFacing ALLY_PETER,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
                 setFacing ALLY_ZYNK,RIGHT
                 setFacing FOLLOWER_B,RIGHT
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_IAN,RIGHT
                 nextText $0,FOLLOWER_B  ; "What a terrible waste.{N}We've lost an ancient{N}treasure.{W2}"
                 setFacing FOLLOWER_B,LEFT
                 nextSingleText $0,FOLLOWER_B ; "Anyway, we have to go to{N}Arc Valley.{N}{LEADER}, let's go.{W1}"

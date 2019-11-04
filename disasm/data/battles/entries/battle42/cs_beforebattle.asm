@@ -4,9 +4,9 @@
 bbcs_42:        textCursor $C10
                 loadMapFadeIn 59,8,29
                 loadMapEntities ce_4EEDC
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,12,36,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,12,36,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,14,36,UP
                 setActscriptWait ALLY_LEMON,eas_Init
@@ -25,13 +25,13 @@ cs_4EDE8:       stopEntity 129
                 fadeInFromBlackHalf
                 cameraSpeed $30
                 csWait 60
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 2
                 endActions
-                nextSingleText $0,ALLY_PETER ; "I can't see!  Is anybody{N}there?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "I can't see!  Is anybody{N}there?{W1}"
                 nextSingleText $C0,128  ; "Welcome...{W1}"
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscript FOLLOWER_B,eas_Jump
                 setActscriptWait ALLY_LEMON,eas_Jump
                 entityActionsWait FOLLOWER_B
@@ -41,7 +41,7 @@ cs_4EDE8:       stopEntity 129
                 nextSingleText $C0,128  ; "Is it too dark?{N}Let there be light!{W1}"
                 fadeInB
                 nextSingleText $C0,128  ; "Is that better?{W1}"
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 2
                 endActions
                 entityActionsWait ALLY_LEMON
@@ -49,13 +49,13 @@ cs_4EDE8:       stopEntity 129
                 endActions
                 shiver FOLLOWER_B
                 nextSingleText $0,FOLLOWER_B ; "King Galam!{W1}"
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveLeft 1
                 endActions
                 entityActionsWait ALLY_LEMON
                  moveUp 1
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 entityActionsWait ALLY_LEMON
                  moveUp 1
                 endActions
@@ -65,7 +65,7 @@ cs_4EDE8:       stopEntity 129
                 nextSingleText $0,FOLLOWER_B ; "Where's Zeon?{W1}"
                 nextText $C0,128        ; "He has not revived fully yet.{W2}"
                 nextSingleText $C0,128  ; "So I came to welcome you for{N}him.{W1}"
-                nextSingleText $0,ALLY_PETER ; "She isn't moving!{N}Is she dead?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "She isn't moving!{N}Is she dead?{W1}"
                 setFacing 128,UP
                 csWait 40
                 setFacing 128,DOWN
@@ -82,7 +82,7 @@ cs_4EDE8:       stopEntity 129
                 setQuake 0
                 csc_end
 ce_4EEDC:       mainEntity 13,35,UP
-                entity 12,36,UP,ALLY_PETER,eas_Init
+                entity 12,36,UP,ALLY_RUBURAN,eas_Init
                 entity 13,36,UP,ALLY_LEMON,eas_Init
                 entity 13,18,DOWN,MAPSPRITE_GALAM_EVIL,eas_Init
                 entity 13,15,DOWN,MAPSPRITE_ELIS,eas_Init

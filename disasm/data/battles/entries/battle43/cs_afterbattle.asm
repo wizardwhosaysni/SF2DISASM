@@ -63,7 +63,7 @@ abcs_battle43:  setCamDest 8,2
                 mapFadeInFromWhite
                 warp $3B,$C,$B,$1
                 setQuake 0
-                clearF $43              ; Peter is a follower
+                clearF $43              ; RUBURAN is a follower
                 clearF $46              ; Astral is a follower
                 clearF $47              ; Lemon is a follower
                 clearF $4C              ; Zynk is a follower

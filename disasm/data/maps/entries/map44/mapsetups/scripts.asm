@@ -6,7 +6,7 @@ cs_54578:       textCursor $3F5
                 nod 138
                 setFacing 138,DOWN
                 nextSingleText $0,138   ; "Weigh anchor!{W1}"
-                setDest ALLY_BOWIE,11,13
+                setDest ALLY_IAN,11,13
                 entityActions 139
                  moveRight 4
                  moveUp 9
@@ -19,7 +19,7 @@ cs_54578:       textCursor $3F5
                  faceRight 2
                  faceDown 1
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveRight 4
 Map21_DefaultZoneEvent:
                  moveDown 1
@@ -28,7 +28,7 @@ Map21_DefaultZoneEvent:
                  moveRight 2
                 endActions
                 csWait 30
-                setFacing ALLY_BOWIE,DOWN
+                setFacing ALLY_IAN,DOWN
                 setFacing FOLLOWER_B,DOWN
                 setFacing FOLLOWER_A,DOWN
                 setFacing 159,DOWN
@@ -55,7 +55,7 @@ Map21_DefaultZoneEvent:
                 setFacing FOLLOWER_B,LEFT
                 nextSingleText $C0,FOLLOWER_B ; "This earthquake must{N}have caused damage all{N}over the island.{W1}"
                 setFacing FOLLOWER_B,DOWN
-                nextSingleText $C0,FOLLOWER_B ; "Maybe...to the east...to...{N}Oh, yes!  To the mainland!{W1}"
+                nextSingleText $C0,FOLLOWER_B ; "KIDDObe...to the east...to...{N}Oh, yes!  To the mainland!{W1}"
                 setActscriptWait 159,eas_Jump
                 setActscriptWait 159,eas_Jump
                 nextSingleText $0,159   ; "To Parmecia?!{N}Hmmmm....{W1}"
@@ -74,14 +74,14 @@ Map21_DefaultZoneEvent:
                 csWait 120
                 loadMapFadeIn 66,28,26
                 loadMapEntities ce_54736
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setSprite ALLY_BOWIE,MAPSPRITE_BOAT
+                setActscriptWait ALLY_IAN,eas_Init
+                setSprite ALLY_IAN,MAPSPRITE_BOAT
                 fadeInB
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 20,20      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveRight 1
                  moveUp 2
                  moveRight 1

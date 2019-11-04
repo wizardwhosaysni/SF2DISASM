@@ -4,9 +4,9 @@
 bbcs_33:        textCursor $B32
                 loadMapFadeIn 31,22,29
                 loadMapEntities ce_4D048
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,27,38,LEFT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,27,38,LEFT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,27,37,LEFT
                 setActscriptWait ALLY_FRAYJA,eas_Init
@@ -16,8 +16,8 @@ bbcs_33:        textCursor $B32
                 playSound MUSIC_BATTLE_THEME_3
                 fadeInB
                 csWait 30
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
                 entityActionsWait ALLY_FRAYJA
                  moveUp 1
@@ -33,9 +33,9 @@ bbcs_33:        textCursor $B32
                 setBlocks 1,39,2,2,26,32
                 csWait 20
                 setQuake 0
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 csWait 50
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 1
                 endActions
                 entityActions ALLY_FRAYJA
@@ -43,7 +43,7 @@ bbcs_33:        textCursor $B32
                  moveLeft 1
                  moveUp 1
                 endActions
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 7
                 endActions
                 entityActions FOLLOWER_B
@@ -51,7 +51,7 @@ bbcs_33:        textCursor $B32
                  moveLeft 2
                  moveUp 1
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 8
                 endActions
                 csWait 30
@@ -74,7 +74,7 @@ bbcs_33:        textCursor $B32
                  moveUp 1
                 endActions
                 setFacing FOLLOWER_B,RIGHT
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_IAN,LEFT
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, {NAME;22} will be{N}a great asset.{W1}"
                 joinBatParty ALLY_FRAYJA
                 executeSubroutine sub_4D078
@@ -84,7 +84,7 @@ bbcs_33:        textCursor $B32
                 clearF $52              ; Frayja is a follower
                 csc_end
 ce_4D048:       mainEntity 26,37,LEFT
-                entity 27,38,LEFT,ALLY_PETER,eas_Init
+                entity 27,38,LEFT,ALLY_RUBURAN,eas_Init
                 entity 27,36,LEFT,ALLY_FRAYJA,eas_Init
                 entity 10,10,DOWN,MAPSPRITE_SHAMAN,eas_Init
                 entity 9,10,DOWN,MAPSPRITE_DEVIL_SOLDIER,eas_Init

@@ -32,7 +32,7 @@ Map20_21F_ZoneEvent0:
                 jsr     PlayEndCredits
                 moveq   #$FFFFFFFF,d0
                 jsr     PlayIntroOrEndCutscene
-                jmp     (WitchEnd).w
+                ;jmp     (WitchEnd).w
 byte_632E0:
                 
                 sndCom  SOUND_COMMAND_INIT_DRIVER
@@ -41,9 +41,9 @@ byte_632E0:
 
 	; End of function Map20_21F_ZoneEvent0
 
-cs_632EA:       setActscriptWait ALLY_BOWIE,eas_Init
+cs_632EA:       setActscriptWait ALLY_IAN,eas_Init
                 csWait 1
-                shiver ALLY_BOWIE
+                shiver ALLY_IAN
                 csc_end
 
 ; =============== S U B R O U T I N E =======================================

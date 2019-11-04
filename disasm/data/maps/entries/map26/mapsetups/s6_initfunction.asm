@@ -27,17 +27,17 @@ return_59E02:
 cs_59E04:       textCursor $6CB
                 setCameraEntity 65535
                 reloadMap 21,8
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
-                stopEntity ALLY_BOWIE
-                stopEntity ALLY_PETER
+                stopEntity ALLY_IAN
+                stopEntity ALLY_RUBURAN
                 stopEntity FOLLOWER_B
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -57,17 +57,17 @@ cs_59E04:       textCursor $6CB
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setPos ALLY_BOWIE,26,7,DOWN
-                setPos ALLY_PETER,27,6,DOWN
+                setPos ALLY_IAN,26,7,DOWN
+                setPos ALLY_RUBURAN,27,6,DOWN
                 setPos FOLLOWER_B,25,6,DOWN
                 setPos 130,26,6,UP
                 setPos 131,25,5,UP
                 setPos 132,27,5,UP
                 fadeInB
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveDown 7
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveDown 7
                 endActions
                 entityActions FOLLOWER_B
@@ -83,8 +83,8 @@ cs_59E04:       textCursor $6CB
                  moveDown 7
                 endActions
                 csWait 20
-                startEntity ALLY_BOWIE
-                startEntity ALLY_PETER
+                startEntity ALLY_IAN
+                startEntity ALLY_RUBURAN
                 startEntity FOLLOWER_B
                 csWait 40
                 hide 130
@@ -92,6 +92,6 @@ cs_59E04:       textCursor $6CB
                 hide 132
                 csWait 30
                 nextSingleText $FF,255  ; "The Cotton Balloon popped.{W1}"
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 csc_end

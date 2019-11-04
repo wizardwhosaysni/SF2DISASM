@@ -38,16 +38,16 @@ cs_5249E:       playSound $FD
                 fadeInB
                 textCursor $370
                 reloadMap 52,1
-                setPos ALLY_BOWIE,59,4,UP
-                nextSingleText $0,ALLY_SARAH ; "Impossible!{N}Galam and Granseal are{N}allies!{W1}"
+                setPos ALLY_IAN,59,4,UP
+                nextSingleText $0,ALLY_MEAD ; "Impossible!{N}Galam and Granseal are{N}allies!{W1}"
                 nextSingleText $C0,132  ; "But it's true.  I'm a scholar.{N}I'm here because I tried{N}to stop him.{W1}"
                 nextText $C0,133        ; "I'm a leader of the Galam{N}Army.  I disagreed with{N}the war and now I'm here.{W2}"
                 nextText $C0,133        ; "What did your kingdom{N}do to Galam?{W2}"
                 nextSingleText $C0,133  ; "What is the reason for this{N}war?{W1}"
-                nextText $0,ALLY_KAZIN  ; "What about Sir Hawel?{N}He was killed by Galam!{W2}"
-                nextSingleText $0,ALLY_KAZIN ; "What did Galam want?{N}What is Ground Seal?{W1}"
+                nextText $0,ALLY_KNUCKLES  ; "What about Sir Hawel?{N}He was killed by Galam!{W2}"
+                nextSingleText $0,ALLY_KNUCKLES ; "What did Galam want?{N}What is Ground Seal?{W1}"
                 nextSingleText $C0,132  ; "Ground Seal...do you know{N}what Ground Seal is?{W1}"
-                nextSingleText $0,ALLY_CHESTER ; "What is Ground Seal?{N}Please tell me!{W1}"
+                nextSingleText $0,ALLY_PAIGE ; "What is Ground Seal?{N}Please tell me!{W1}"
                 nextText $C0,132        ; "I heard King Galam say{N}those words.{W2}"
                 nextSingleText $C0,132  ; "I just know that something{N}is being concealed.{W1}"
                 loadMapFadeIn 17,52,1
@@ -55,15 +55,15 @@ cs_5249E:       playSound $FD
                 playSound MUSIC_CASTLE
                 fadeInB
                 csWait 30
-                setDest ALLY_BOWIE,59,5
-                headshake ALLY_BOWIE
-                nod ALLY_BOWIE
-                nextSingleText $0,ALLY_BOWIE ; "(Yawn){W1}"
-                setFacing ALLY_BOWIE,LEFT
+                setDest ALLY_IAN,59,5
+                headshake ALLY_IAN
+                nod ALLY_IAN
+                nextSingleText $0,ALLY_IAN ; "(Yawn){W1}"
+                setFacing ALLY_IAN,LEFT
                 csWait 40
-                setFacing ALLY_CHESTER,RIGHT
+                setFacing ALLY_PAIGE,RIGHT
                 textCursor $37C
-                nextText $0,ALLY_CHESTER ; "{LEADER}!{N}You finally woke up!{W2}"
-                nextSingleText $0,ALLY_CHESTER ; "We're talking about{N}Ground Seal.{N}Please, join in.{W1}"
-                setFacing ALLY_CHESTER,LEFT
+                nextText $0,ALLY_PAIGE ; "{LEADER}!{N}You finally woke up!{W2}"
+                nextSingleText $0,ALLY_PAIGE ; "We're talking about{N}Ground Seal.{N}Please, join in.{W1}"
+                setFacing ALLY_PAIGE,LEFT
                 csc_end

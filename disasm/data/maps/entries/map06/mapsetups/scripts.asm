@@ -33,7 +33,7 @@ cs_54E86:       textCursor $42A
                  moveDown 2
                 endActions
                 setFacing 139,RIGHT
-                setPos ALLY_BOWIE,10,9,DOWN
+                setPos ALLY_IAN,10,9,DOWN
                 setCameraEntity 138
                 entityActionsWait 138
                  moveUp 1
@@ -41,7 +41,7 @@ cs_54E86:       textCursor $42A
                 nextText $0,138         ; "Oh, {LEADER}.{N}Good timing.{W2}"
                 nextText $0,138         ; "There's a strange animal in{N}town.{W2}"
                 nextSingleText $0,138   ; "It's very exciting!{W1}"
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 entityActionsWait 138
                  moveRight 1
                  moveUp 7
@@ -49,7 +49,7 @@ cs_54E86:       textCursor $42A
                 hide 138
                 csc_end
 cs_54F26:       textCursor $432
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -65,7 +65,7 @@ cs_54F26:       textCursor $432
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setActscriptWait ALLY_PETER,eas_46172
+                setActscriptWait ALLY_RUBURAN,eas_46172
                 setCameraEntity 136
                 setFacing 136,LEFT
                 nextSingleText $0,136   ; "Oooo...it's big!{N}I want to touch him!{W1}"
@@ -75,7 +75,7 @@ cs_54F26:       textCursor $432
                  moveRight 1
                 endActions
                 csWait 8
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
                 csWait 30
@@ -83,8 +83,8 @@ cs_54F26:       textCursor $432
                 nextSingleText $0,136   ; "Ooops!{W1}"
                 setCameraEntity 137
                 nextSingleText $0,137   ; "Ha, ha!  You missed.{N}Let me try.{W1}"
-                setActscriptWait ALLY_PETER,eas_Init
-                customActscriptWait ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -92,7 +92,7 @@ cs_54F26:       textCursor $432
                  moveLeft 1
                 endActions
                 csWait 8
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                 endActions
                 setFacing 137,DOWN
@@ -104,19 +104,19 @@ cs_54F26:       textCursor $432
                  moveUp 1
                 endActions
                 csWait 8
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                  moveDownLeft 1
                 endActions
                 setFacing 136,RIGHT
                 setFacing 137,LEFT
                 nextSingleText $0,140   ; "Gosh, he's quick!{W1}"
-                setCameraEntity ALLY_PETER
-                setFacing ALLY_PETER,UP
+                setCameraEntity ALLY_RUBURAN
+                setFacing ALLY_RUBURAN,UP
                 csWait 30
-                setFacing ALLY_PETER,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
                 csWait 30
-                nextSingleText $0,ALLY_PETER ; "Stop!  Stop this!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Stop!  Stop this!{W1}"
                 setActscript 136,eas_Jump
                 setActscript 137,eas_Jump
                 setActscriptWait 140,eas_Jump
@@ -125,22 +125,22 @@ cs_54F26:       textCursor $432
                 setFacing 140,LEFT
                 csWait 30
                 nextSingleText $0,140   ; "Amazing!  He speaks!{W1}"
-                nextText $0,ALLY_PETER  ; "Of course I do.{W2}"
-                nextSingleText $0,ALLY_PETER ; "Is this how you greet{N}strangers?{W1}"
+                nextText $0,ALLY_RUBURAN  ; "Of course I do.{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Is this how you greet{N}strangers?{W1}"
                 entityActionsWait 137
                  moveDown 1
                  moveLeft 1
                 endActions
                 nextSingleText $0,136   ; "Shut up, bird!{W1}"
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
-                nextText $0,ALLY_PETER  ; "How barbaric!{W2}"
-                nextSingleText $0,ALLY_PETER ; "I didn't know humans were{N}so impolite.{W1}"
+                setActscript ALLY_RUBURAN,eas_461B6
+                nextText $0,ALLY_RUBURAN  ; "How barbaric!{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "I didn't know humans were{N}so impolite.{W1}"
                 setFacing 136,RIGHT
                 setFacing 137,DOWN
                 setFacing 140,UP
                 nextSingleText $0,137   ; "What?{W1}"
-                setFacing ALLY_PETER,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
                 setFacing 136,DOWN
                 setFacing 137,LEFT
                 setFacing 140,LEFT
@@ -155,16 +155,16 @@ cs_54F26:       textCursor $432
                  moveLeft 1
                 endActions
                 csWait 5
-                setActscriptWait ALLY_PETER,eas_Init
-                setActscriptWait ALLY_PETER,eas_JumpLeft
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_JumpLeft
                 nextSingleText $0,144   ; "Stop!{W1}"
                 setQuake 3
                 csWait 40
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing 136,UP
                 setFacing 137,UP
                 setFacing 140,UP
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 setFacing 128,UP
                 setFacing 130,UP
                 setFacing 131,UP
@@ -218,7 +218,7 @@ cs_54F26:       textCursor $432
                 setFacing 136,LEFT
                 setFacing 137,LEFT
                 setFacing 140,LEFT
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_IAN,LEFT
                 setFacing 128,LEFT
                 setFacing 130,DOWN
                 setFacing 131,DOWN
@@ -234,16 +234,16 @@ cs_54F26:       textCursor $432
                 nextText $0,144         ; "I'm sorry.  I must apologize{N}for their actions.{W2}"
                 nextText $0,144         ; "Welcome to Granseal.{N}I am the Minister.{W2}"
                 nextSingleText $0,144   ; "We just settled here.{N}We're strangers here.{W1}"
-                nextText $0,ALLY_PETER  ; "Ha, ha!  You're right.{W2}"
-                nextSingleText $0,ALLY_PETER ; "But, I'm very happy to meet{N}a man like you!{W1}"
+                nextText $0,ALLY_RUBURAN  ; "Ha, ha!  You're right.{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "But, I'm very happy to meet{N}a man like you!{W1}"
                 nextText $0,144         ; "Please stay here as long{N}as you like.{W2}"
                 nextSingleText $0,144   ; "Let me introduce you to{N}King Granseal.{N}Follow me, please.{W1}"
                 csWait 40
-                setCameraEntity ALLY_PETER
+                setCameraEntity ALLY_RUBURAN
                 entityActions 144
                  moveUp 8
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 8
                 endActions
                 setFacing 145,RIGHT
@@ -254,7 +254,7 @@ cs_54F26:       textCursor $432
                  moveLeft 1
                  moveUp 5
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveLeft 1
                  moveUp 5
                 endActions
@@ -271,7 +271,7 @@ cs_54F26:       textCursor $432
                 hide 144
                 hide 145
                 hide 146
-                hide ALLY_PETER
+                hide ALLY_RUBURAN
                 entityActionsWait 130
                  moveLeft 1
                 endActions
@@ -286,8 +286,8 @@ cs_55242:       textCursor $463
                 entityActionsWait 142
                  moveDown 7
                 endActions
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 nextText $0,142         ; "Welcome back, {LEADER}!{N}I heard your journey was{N}hard.{W2}"
                 nextText $0,142         ; "Sir Astral was right.{N}He said, you were coming{N}back soon.{W2}"
                 nextSingleText $0,142   ; "I'll go to the castle and tell{N}everyone!{W1}"
@@ -297,22 +297,22 @@ cs_55242:       textCursor $463
                 hide 142
                 csc_end
 cs_55288:       textCursor $466
-                newEntity ALLY_JANET,16,22,DOWN,ALLY_JANET
+                newEntity ALLY_ODDEYE,16,22,DOWN,ALLY_ODDEYE
                 setActscriptWait FOLLOWER_B,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                nextSingleText $0,ALLY_JANET ; "I finally found you.{N}You're {LEADER}, right?{W1}"
-                setActscript ALLY_BOWIE,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                nextSingleText $0,ALLY_ODDEYE ; "I finally found you.{N}You're {LEADER}, right?{W1}"
+                setActscript ALLY_IAN,eas_Jump
                 setActscript FOLLOWER_B,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 setFacing 139,UP
                 setCamDest 14,17
-                setDest ALLY_BOWIE,19,28
+                setDest ALLY_IAN,19,28
                 setDest FOLLOWER_B,20,28
-                setDest ALLY_PETER,20,27
-                setFacing ALLY_BOWIE,UP
+                setDest ALLY_RUBURAN,20,27
+                setFacing ALLY_IAN,UP
                 setFacing FOLLOWER_B,UP
-                setFacing ALLY_PETER,UP
-                entityActionsWait ALLY_JANET
+                setFacing ALLY_RUBURAN,UP
+                entityActionsWait ALLY_ODDEYE
                  moveDown 2
                  moveRight 3
                  moveDown 1
@@ -321,32 +321,32 @@ cs_55288:       textCursor $466
                 setFacing FOLLOWER_B,LEFT
                 nextSingleText $C0,FOLLOWER_B ; "Who are you?{W1}"
                 setFacing FOLLOWER_B,UP
-                nextSingleText $0,ALLY_JANET ; "My love, I mean{N}{NAME;13} is with you.{N}Am I right?{W1}"
-                nextSingleText $C0,ALLY_PETER ; "Yes, he joined us willingly.{W1}"
-                headshake ALLY_JANET
-                nextText $0,ALLY_JANET  ; "No, no.  I don't want to stop{N}him, but...{N}I want to be with him!{W2}"
-                nextSingleText $0,ALLY_JANET ; "Please take me with you.{N}Please!{W1}"
-                setFacing ALLY_PETER,DOWN
+                nextSingleText $0,ALLY_ODDEYE ; "My love, I mean{N}{NAME;13} is with you.{N}Am I right?{W1}"
+                nextSingleText $C0,ALLY_RUBURAN ; "Yes, he joined us willingly.{W1}"
+                headshake ALLY_ODDEYE
+                nextText $0,ALLY_ODDEYE  ; "No, no.  I don't want to stop{N}him, but...{N}I want to be with him!{W2}"
+                nextSingleText $0,ALLY_ODDEYE ; "Please take me with you.{N}Please!{W1}"
+                setFacing ALLY_RUBURAN,DOWN
                 csWait 50
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                  moveDown 1
                 endActions
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 nextSingleText $C0,FOLLOWER_B ; "This is not a sightseeing{N}trip, if you know what I{N}mean?{W1}"
-                entityActionsWait ALLY_JANET
+                entityActionsWait ALLY_ODDEYE
                  moveDown 1
                 endActions
-                nextSingleText $0,ALLY_JANET ; "Yes, I know.{N}I still want to go!{W1}"
-                setFacing ALLY_BOWIE,RIGHT
+                nextSingleText $0,ALLY_ODDEYE ; "Yes, I know.{N}I still want to go!{W1}"
+                setFacing ALLY_IAN,RIGHT
                 setFacing FOLLOWER_B,LEFT
                 nextSingleText $C0,FOLLOWER_B ; "OK, you look tough enough,{N}anyway.{W1}"
-                nod ALLY_BOWIE
-                setFacing ALLY_BOWIE,UP
+                nod ALLY_IAN
+                setFacing ALLY_IAN,UP
                 setFacing FOLLOWER_B,UP
-                nextSingleText $0,ALLY_JANET ; "Oh, really?{N}Thank you very much!{W1}"
-                join ALLY_JANET
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
-                followEntity ALLY_JANET,FOLLOWER_B,2
+                nextSingleText $0,ALLY_ODDEYE ; "Oh, really?{N}Thank you very much!{W1}"
+                join ALLY_ODDEYE
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
+                followEntity ALLY_ODDEYE,FOLLOWER_B,2
                 csc_end

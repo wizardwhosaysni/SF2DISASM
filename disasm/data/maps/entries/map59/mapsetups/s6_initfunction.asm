@@ -54,7 +54,7 @@ cs_5EB44:       textCursor $E73
                 setCameraEntity 65535
                 reloadMap 8,2
                 loadMapEntities ce_5F19E
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 csWait 60
                 playSound MUSIC_WITCH
                 csWait 30
@@ -69,7 +69,7 @@ cs_5EB44:       textCursor $E73
                 nextText $80,129        ; "I think it's better for us{N}to shoot them down over the{N}"
                 nextSingleText $80,129  ; "cape.{W1}"
                 nextSingleText $0,128   ; "I agree.{W1}"
-                nextText $80,129        ; "Thank you.  Then... may I{W2}"
+                nextText $80,129        ; "Thank you.  Then... KIDDO I{W2}"
                 nextSingleText $80,129  ; "borrow Odd Eye?{W1}"
                 nextText $0,128         ; "He's still damaged from his{N}battle against Volcanon.{W2}"
                 nextSingleText $0,128   ; "Take Red Baron instead.{W1}"
@@ -98,7 +98,7 @@ cs_5EB44:       textCursor $E73
 cs_5EBFC:       loadMapFadeIn 53,8,14
                 textCursor $E8B
                 loadMapEntities ce_5F1DE
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 stopEntity 130
                 stopEntity 131
                 stopEntity 132
@@ -164,18 +164,18 @@ cs_5EBFC:       loadMapFadeIn 53,8,14
 cs_5ED06:       textCursor $E91
                 loadMapFadeIn 73,0,0
                 loadMapEntities ce_5F1BE
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 executeSubroutine sub_5F31E
                 playSound MUSIC_MITULA_SHRINE
                 setBlocks 0,10,22,10,42,10
                 fadeInB
                 executeSubroutine sub_5FD92
                 nextSingleText $80,ALLY_ZYNK ; "There's Grans Island!{W1}"
-                nextSingleText $80,ALLY_PETER ; "Alright!{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Alright!{W1}"
                 nextSingleText $0,FOLLOWER_B ; "We've finally come home.{W1}"
                 loadMapFadeIn 53,10,13
                 loadMapEntities ce_5F23E
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 playSound MUSIC_BATTLE_THEME_1
                 stopEntity 128
                 stopEntity 130
@@ -185,21 +185,21 @@ cs_5ED06:       textCursor $E91
                 nextSingleText $80,129  ; "I see the Nazca Ship!{N}Everybody, get ready!{W1}"
                 loadMapFadeIn 73,0,0
                 loadMapEntities ce_5F1BE
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 executeSubroutine sub_5F31E
                 playSound MUSIC_MITULA_SHRINE
                 setBlocks 0,10,22,10,42,10
                 fadeInB
                 executeSubroutine sub_5FD92
                 nextSingleText $0,FOLLOWER_B ; "What's that?  I saw a flash{N}of light over there.{W1}"
-                nextSingleText $80,ALLY_PETER ; "I didn't see it.  You must be{N}seeing things because you're{N}so old!  Ha, ha!{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "I didn't see it.  You must be{N}seeing things because you're{N}so old!  Ha, ha!{W1}"
                 nextText $0,FOLLOWER_B  ; "(Grumble)....{W2}"
                 nextSingleText $0,FOLLOWER_B ; "Someday, {NAME;7}....{W1}"
                 csc_end
 cs_5EDB8:       textCursor $E99
                 loadMapFadeIn 53,10,13
                 loadMapEntities ce_5F28E
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 playSound MUSIC_ENEMY_ATTACK
                 setActscript 133,eas_5EF46
                 setActscript 134,eas_5EF46
@@ -305,16 +305,16 @@ cs_5EF60:       textCursor $E9B
                 executeSubroutine InitNazcaShipForceMembers
                 setPos ALLY_ZYNK,8,10,RIGHT
                 executeSubroutine sub_5F32E
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 setActscriptWait ALLY_ZYNK,eas_Init
                 setPos 128,9,12,UP
-                setPos ALLY_PETER,10,12,UP
+                setPos ALLY_RUBURAN,10,12,UP
                 setPos ALLY_ZYNK,10,11,LEFT
                 fadeInB
                 shiver 128
                 nextSingleText $0,128   ; "I did see something!{W1}"
-                nextSingleText $80,ALLY_PETER ; "Well, I didn't.{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Well, I didn't.{W1}"
                 nextSingleText $0,128   ; "This could be bad.{W1}"
                 nextSingleText $80,ALLY_ZYNK ; "Sir Astral!  {LEADER}!{N}Something is coming straight{N}towards us!{W1}"
                 nextSingleText $0,128   ; "What is it?{W1}"
@@ -324,16 +324,16 @@ cs_5EF60:       textCursor $E9B
                 setQuake 1
                 csWait 10
                 setQuake 0
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                  jumpRight 1
                  jumpLeft 1
                  jumpRight 1
                  jumpLeft 1
                 endActions
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $80,ALLY_PETER ; "Oooouu!!  What was that?!{N}Lightning?{W1}"
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $80,ALLY_RUBURAN ; "Oooouu!!  What was that?!{N}Lightning?{W1}"
+                setFacing ALLY_IAN,RIGHT
                 setFacing ALLY_ZYNK,DOWN
                 nextText $80,ALLY_ZYNK  ; "An attack from the ground.{W2}"
                 nextSingleText $80,ALLY_ZYNK ; "I can't control the ship!{W1}"
@@ -368,10 +368,10 @@ cs_5EF60:       textCursor $E9B
                 flashScreenWhite $14
                 setQuake 1
                 csWait 10
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextText $80,ALLY_PETER ; "I don't want to crash!{W2}"
-                nextSingleText $80,ALLY_PETER ; "Sir Astral, please help us!{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextText $80,ALLY_RUBURAN ; "I don't want to crash!{W2}"
+                nextSingleText $80,ALLY_RUBURAN ; "Sir Astral, please help us!{W1}"
                 nextSingleText $0,128   ; "{NAME;26}, can you land on{N}that cape before the ship{N}crashes?{W1}"
                 nextSingleText $80,ALLY_ZYNK ; "I'm not sure,{W2}"
                 playSound SFX_BATTLEFIELD_DEATH
@@ -391,7 +391,7 @@ cs_5EF60:       textCursor $E9B
                 setQuake 0
                 mapLoad 75,20,14
                 loadMapEntities ce_5F1CE
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 setCameraEntity 128
                 customActscriptWait 128
                  ac_setSpeed 16,16      ;   

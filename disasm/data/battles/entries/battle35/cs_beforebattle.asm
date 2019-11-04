@@ -4,9 +4,9 @@
 bbcs_35:        textCursor $B76
                 loadMapFadeIn 76,37,5
                 loadMapEntities ce_4D832
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,44,10,LEFT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,44,10,LEFT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,44,8,LEFT
                 setActscriptWait FOLLOWER_A,eas_Init
@@ -17,15 +17,15 @@ bbcs_35:        textCursor $B76
 cs_4D728:       fadeInB
                 cameraSpeed $30
                 nextSingleText $0,128   ; "You're still alive?{W1}"
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
                 nextSingleText $C0,FOLLOWER_B ; "Geshp!{W1}"
                 setCamDest 22,11
                 setFacing 128,RIGHT
                 nextSingleText $0,128   ; "Unbelievable!{N}You really are persistent.{W1}"
-                nextText $C0,ALLY_PETER ; "We'll never stop!{W2}"
-                nextSingleText $C0,ALLY_PETER ; "We will not die until we{N}destroy all of you.{W1}"
+                nextText $C0,ALLY_RUBURAN ; "We'll never stop!{W2}"
+                nextSingleText $C0,ALLY_RUBURAN ; "We will not die until we{N}destroy all of you.{W1}"
                 nextText $C0,FOLLOWER_B ; "{LEADER}, kill him!{W2}"
                 nextSingleText $C0,FOLLOWER_B ; "We have to kill him now!{W1}"
                 csWait 40
@@ -62,11 +62,11 @@ cs_4D728:       fadeInB
                 animEntityFX 128,6
                 csWait 50
                 setCamDest 37,5
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                  moveLeft 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "He escaped again!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "He escaped again!{W1}"
                 entityActionsWait FOLLOWER_B
                  moveLeft 1
                 endActions
@@ -74,7 +74,7 @@ cs_4D728:       fadeInB
                 nextSingleText $0,FOLLOWER_B ; "After him, now!{W1}"
                 csc_end
 ce_4D832:       mainEntity 43,9,LEFT
-                entity 44,10,LEFT,ALLY_PETER,eas_Init
+                entity 44,10,LEFT,ALLY_RUBURAN,eas_Init
                 entity 27,16,UP,MAPSPRITE_GESHP,eas_Init
                 entity 26,21,UP,MAPSPRITE_MUD_MAN,eas_Init
                 entity 29,21,UP,MAPSPRITE_MUD_MAN,eas_Init

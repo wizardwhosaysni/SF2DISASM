@@ -48,7 +48,7 @@ Map10_2D2_EntityEvent19:
                 bra.s   loc_56F38
 byte_56F30:
                 
-                txt     $645            ; "Then you may stay in Bedoe.{W2}"
+                txt     $645            ; "Then you KIDDO stay in Bedoe.{W2}"
                 txt     $646            ; "You'll be safe here.{W1}"
 loc_56F38:
                 

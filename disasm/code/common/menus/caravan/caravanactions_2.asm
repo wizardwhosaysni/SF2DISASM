@@ -10,7 +10,7 @@ ChooseCaravanPortrait:
                 move.l  d1,-(sp)
                 chkFlg  $46             ; Astral is a follower
                 bne.s   loc_228B8       
-                moveq   #PORTRAIT_ROHDE,d0 ; ROHDE portrait idx
+                moveq   #PORTRAIT_ERIC,d0 ; ERIC portrait idx
                 bra.s   loc_228BA
 loc_228B8:
                 

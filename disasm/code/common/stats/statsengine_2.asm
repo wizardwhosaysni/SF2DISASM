@@ -2977,7 +2977,17 @@ loc_9740:
                 dbf     d7,loc_9740
                 moveq   #GOLD_STARTING_AMOUNT,d1 ; starting gold value
                 bsr.w   SetGold
-                moveq   #ALLY_BOWIE,d0  ; starting character
+                moveq   #ALLY_IAN,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_MEAD,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_PAIGE,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_HAWEL,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_KNUCKLES,d0  ; starting character
+                bsr.w   JoinForce
+                moveq   #ALLY_SONETTE,d0  ; starting character
                 bsr.w   JoinForce
                 movem.w (sp)+,d0-d1/d7
                 rts

@@ -41,7 +41,7 @@ cs_5C8D4:       textCursor $E23
 cs_5C8FE:       textCursor $E2B
                 nextSingleText $0,129   ; "You need my help?{W1}"
                 nextSingleText $0,129   ; "Come in.  Talk to me.{W1}"
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 1
                 endActions
                 csc_end
@@ -49,8 +49,8 @@ cs_5C914:       textCursor $E2D
                 nextText $0,129         ; "I came here looking for{N}ancient treasure, and found{N}the Sky Orb.{W2}"
                 nextText $0,129         ; "Also, I discovered how to{N}use the ancient tunnels.{W2}"
                 nextSingleText $0,129   ; "But, most of them are{N}useless, except for the{N}one to Grans.{W1}"
-                nextText $0,ALLY_PETER  ; "To Grans?{W1}"
-                nextSingleText $0,ALLY_PETER ; "Can we get to Grans Island{N}through it?{W1}"
+                nextText $0,ALLY_RUBURAN  ; "To Grans?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Can we get to Grans Island{N}through it?{W1}"
                 nextSingleText $0,129   ; "Yes.  Do you want to go{N}there?{W2}"
                 nextSingleText $0,129   ; "Really?{W2}"
                 nextSingleText $0,129   ; "You'll go to Grans with me.{N}Let's go now!{W1}"

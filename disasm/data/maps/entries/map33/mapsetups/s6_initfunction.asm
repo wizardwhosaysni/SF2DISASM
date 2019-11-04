@@ -76,7 +76,7 @@ byte_5AC0C:
                 bra.w   byte_5AC24      
 cs_5AC1C:
                 
-                setPos ALLY_RANDOLF,16,15,DOWN
+                setPos ALLY_KOJIROU,16,15,DOWN
                 csc_end
 byte_5AC24:
                 
@@ -86,7 +86,7 @@ byte_5AC24:
                 bra.w   byte_5AC3C      
 cs_5AC34:
                 
-                setPos ALLY_TYRIN,18,15,DOWN
+                setPos ALLY_MAX,18,15,DOWN
                 csc_end
 byte_5AC3C:
                 
@@ -96,7 +96,7 @@ byte_5AC3C:
                 bra.w   return_5AC54
 cs_5AC4C:
                 
-                setPos ALLY_KARNA,19,14,DOWN
+                setPos ALLY_RIDION,19,14,DOWN
                 csc_end
 return_5AC54:
                 

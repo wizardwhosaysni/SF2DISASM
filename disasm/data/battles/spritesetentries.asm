@@ -50,11 +50,11 @@ pt_BattleSpriteSets:
 BattleSpriteSet00:
                 incbin "data/battles/entries/battle00/spriteset.bin"
 BattleSpriteSet01:
-                incbin "data/battles/entries/battle01/spriteset.bin"
+                incbin "data/battles/entries/sffc-battle01/spriteset.bin"
 BattleSpriteSet02:
-                incbin "data/battles/entries/battle02/spriteset.bin"
+                incbin "data/battles/entries/sffc-battle02/spriteset.bin"
 BattleSpriteSet03:
-                incbin "data/battles/entries/battle03/spriteset.bin"
+                incbin "data/battles/entries/sffc-battle03/spriteset.bin"
 BattleSpriteSet04:
                 incbin "data/battles/entries/battle04/spriteset.bin"
 BattleSpriteSet05:

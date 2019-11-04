@@ -90,8 +90,8 @@ return_606E8:
 
 	; End of function ms_map5_flag212_InitFunction
 
-cs_606EA:       setPos ALLY_BOWIE,11,10,UP
-                setPos ALLY_PETER,11,10,UP
+cs_606EA:       setPos ALLY_IAN,11,10,UP
+                setPos ALLY_RUBURAN,11,10,UP
                 setPos FOLLOWER_B,11,10,UP
                 csWait 1
                 reloadMap 5,4

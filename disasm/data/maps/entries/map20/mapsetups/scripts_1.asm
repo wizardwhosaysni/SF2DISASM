@@ -68,11 +68,11 @@ cs_53C42:       setCamDest 19,48
                 csWait 30
                 setFacing 130,UP
                 nextText $80,130        ; "Yeow!  My head!{N}No, I'm OK, {LEADER}.{W2}"
-                nextSingleText $80,130  ; "I must use a powerful spell.{N}It may be dangerous.{N}Stay back!{W1}"
-                entityActionsWait ALLY_BOWIE
+                nextSingleText $80,130  ; "I must use a powerful spell.{N}It KIDDO be dangerous.{N}Stay back!{W1}"
+                entityActionsWait ALLY_IAN
                  moveUp 1
                 endActions
-                setFacing ALLY_BOWIE,DOWN
+                setFacing ALLY_IAN,DOWN
                 setActscriptWait 128,eas_46172
                 customActscriptWait 130
                  ac_setSpeed 16,16      ;   

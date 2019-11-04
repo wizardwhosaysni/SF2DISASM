@@ -4,9 +4,9 @@
 abcs_battle33:  textCursor $B3C
                 loadMapFadeIn 31,8,6
                 loadMapEntities ce_4D322
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,13,11,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,13,11,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,12,9,DOWN
                 setBlocks 3,39,1,1,16,8
@@ -24,13 +24,13 @@ abcs_battle33:  textCursor $B3C
                 setActscriptWait ALLY_ZYNK,eas_461AA
                 setActscriptWait ALLY_ZYNK,eas_45F9C
                 fadeInB
-                nextSingleText $0,FOLLOWER_B ; "There may be some survivors{N}somewhere.{W1}"
+                nextSingleText $0,FOLLOWER_B ; "There KIDDO be some survivors{N}somewhere.{W1}"
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461B6
+                setActscript ALLY_IAN,eas_461B6
                 csWait 5
                 setActscript FOLLOWER_B,eas_461E4
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 csWait 120
                 entityActions 128
                  moveUp 1
@@ -49,14 +49,14 @@ abcs_battle33:  textCursor $B3C
                 endActions
                 csWait 3
                 setActscriptWait 128,eas_461AA
-                setFacing ALLY_PETER,RIGHT
-                setActscriptWait ALLY_PETER,eas_Jump
+                setFacing ALLY_RUBURAN,RIGHT
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 csWait 40
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 3
                 endActions
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_IAN,RIGHT
                 setFacing FOLLOWER_B,RIGHT
                 customActscriptWait 128
                  ac_setSpeed 24,24      ;   
@@ -81,17 +81,17 @@ abcs_battle33:  textCursor $B3C
                 csWait 10
                 setQuake 0
                 csWait 40
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 2
                 endActions
                 nextSingleText $0,128   ; "Do not touch my rock!{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_PETER,eas_46172
-                customActscriptWait ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_46172
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 2
                 endActions
                 setCamDest 10,6
@@ -110,11 +110,11 @@ abcs_battle33:  textCursor $B3C
                  moveRight 3
                  moveUp 1
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveRight 4
                 endActions
                 setFacing FOLLOWER_B,RIGHT
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 nextSingleText $0,FOLLOWER_B ; "Are you a survivor?{N}Are you from Moun?{N}What's your name?{W1}"
                 nextSingleText $0,128   ; "I am {NAME;26}.{N}I am not from Moun.{W1}"
                 nextSingleText $0,FOLLOWER_B ; "Then, where are you from?{W1}"
@@ -149,20 +149,20 @@ abcs_battle33:  textCursor $B3C
                 nextSingleText $0,FOLLOWER_B ; "And where are they?{W1}"
                 nextSingleText $C0,ALLY_ZYNK ; "Down here.  Follow me.{W1}"
                 setPos ALLY_ZYNK,63,63,DOWN
-                setActscriptWait ALLY_PETER,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 csWait 30
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 2
                 endActions
                 setFacing FOLLOWER_B,DOWN
                 nextText $0,FOLLOWER_B  ; "{LEADER}, hurry!{N}Follow {NAME;26}!{W2}"
                 nextSingleText $0,FOLLOWER_B ; "{NAME;26} knows where{N}they're hiding.{W1}"
-                followEntity FOLLOWER_B,ALLY_BOWIE,2
-                followEntity ALLY_PETER,FOLLOWER_B,2
+                followEntity FOLLOWER_B,ALLY_IAN,2
+                followEntity ALLY_RUBURAN,FOLLOWER_B,2
                 setF $341               ; Set after the scene after you win the battle in Moun plays out
                 csc_end
 ce_4D322:       mainEntity 11,11,UP
-                entity 13,11,UP,ALLY_PETER,eas_Init
+                entity 13,11,UP,ALLY_RUBURAN,eas_Init
                 entity 16,8,UP,MAPSPRITE_OBJECT2,eas_Init
                 entity 16,8,DOWN,ALLY_ZYNK,eas_Init
                 dc.w $FFFF

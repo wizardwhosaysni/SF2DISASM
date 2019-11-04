@@ -108,7 +108,7 @@ Map16_212_EntityEvent6:
 Map16_212_EntityEvent7:
                 
                  
-                txt     $DAB            ; "The priest of Yeel liked the{N}piano.  The ghost may be him.{W1}"
+                txt     $DAB            ; "The priest of Yeel liked the{N}piano.  The ghost KIDDO be him.{W1}"
                 rts
 
 	; End of function Map16_212_EntityEvent7

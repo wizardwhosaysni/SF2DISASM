@@ -4,7 +4,7 @@
 bbcs_08:        textCursor $99D
                 loadMapFadeIn 72,1,46
                 loadMapEntities ce_4AA14
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 stopEntity 129
                 customActscriptWait 129
                  ac_setAnimCounter $0   ;   
@@ -12,8 +12,8 @@ bbcs_08:        textCursor $99D
                  ac_updateSprite        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                jumpIfFlagSet $6,cs_4A994 ; Kiwi joined
-                setPos ALLY_KIWI,63,63,DOWN
+                jumpIfFlagSet $6,cs_4A994 ; CYNTHIA joined
+                setPos ALLY_CYNTHIA,63,63,DOWN
 cs_4A994:       playSound MUSIC_MAIN_THEME
                 fadeInB
                 nextSingleText $0,128   ; "The game will be suspended.{N}OK?"
@@ -47,11 +47,11 @@ cs_4A994:       playSound MUSIC_MAIN_THEME
                 csc_end
 ce_4AA14:       mainEntity 4,50,RIGHT
                 entity 5,50,RIGHT,MAPSPRITE_WORKER,eas_Init
-                entity 4,49,RIGHT,ALLY_SARAH,eas_Init
-                entity 4,51,RIGHT,ALLY_JAHA,eas_Init
-                entity 3,50,RIGHT,ALLY_KAZIN,eas_Init
-                entity 2,50,RIGHT,ALLY_CHESTER,eas_Init
-                entity 1,50,RIGHT,ALLY_KIWI,eas_Init
+                entity 4,49,RIGHT,ALLY_MEAD,eas_Init
+                entity 4,51,RIGHT,ALLY_HAWEL,eas_Init
+                entity 3,50,RIGHT,ALLY_KNUCKLES,eas_Init
+                entity 2,50,RIGHT,ALLY_PAIGE,eas_Init
+                entity 1,50,RIGHT,ALLY_CYNTHIA,eas_Init
                 entity 14,34,DOWN,MAPSPRITE_WORKER,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_WITCH,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_GOBLIN,eas_Init

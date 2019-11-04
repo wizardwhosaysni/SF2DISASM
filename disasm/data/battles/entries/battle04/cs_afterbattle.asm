@@ -4,33 +4,33 @@
 abcs_battle04:  textCursor $90F
                 loadMapFadeIn 66,9,16
                 loadMapEntities ce_49A6A
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setPos ALLY_SARAH,14,21,DOWN
-                setPos ALLY_CHESTER,12,21,DOWN
-                setPos ALLY_JAHA,13,22,DOWN
-                setPos ALLY_KAZIN,11,22,DOWN
+                setActscriptWait ALLY_IAN,eas_Init
+                setPos ALLY_MEAD,14,21,DOWN
+                setPos ALLY_PAIGE,12,21,DOWN
+                setPos ALLY_HAWEL,13,22,DOWN
+                setPos ALLY_KNUCKLES,11,22,DOWN
                 fadeInB
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 nextSingleText $0,ALLY_LEMON ; "Your battle strategy was{N}wonderful!  I praise you.{W1}"
                 csWait 5
-                setActscript ALLY_JAHA,eas_461B6
+                setActscript ALLY_HAWEL,eas_461B6
                 csWait 5
-                setActscript ALLY_KAZIN,eas_461B6
-                setActscript ALLY_SARAH,eas_Jump
-                setActscriptWait ALLY_CHESTER,eas_Jump
-                setActscript ALLY_SARAH,eas_Jump
-                setActscriptWait ALLY_CHESTER,eas_Jump
+                setActscript ALLY_KNUCKLES,eas_461B6
+                setActscript ALLY_MEAD,eas_Jump
+                setActscriptWait ALLY_PAIGE,eas_Jump
+                setActscript ALLY_MEAD,eas_Jump
+                setActscriptWait ALLY_PAIGE,eas_Jump
                 csWait 80
                 setPos ALLY_LEMON,18,22,UP
                 entityActionsWait ALLY_LEMON
                  moveUp 2
                 endActions
                 setFacing ALLY_LEMON,LEFT
-                setFacing ALLY_BOWIE,RIGHT
-                setFacing ALLY_SARAH,RIGHT
-                setFacing ALLY_CHESTER,RIGHT
-                setFacing ALLY_JAHA,RIGHT
-                setFacing ALLY_KAZIN,RIGHT
+                setFacing ALLY_IAN,RIGHT
+                setFacing ALLY_MEAD,RIGHT
+                setFacing ALLY_PAIGE,RIGHT
+                setFacing ALLY_HAWEL,RIGHT
+                setFacing ALLY_KNUCKLES,RIGHT
                 nextSingleText $0,ALLY_LEMON ; "But, I can't let you escape.{W1}"
                 customActscriptWait ALLY_LEMON
                  ac_setSpeed 64,64      ;   
@@ -39,30 +39,30 @@ abcs_battle04:  textCursor $90F
                 entityActionsWait ALLY_LEMON
                  moveLeft 4
                 endActions
-                setActscriptWait ALLY_BOWIE,eas_46172
-                customActscriptWait ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_46172
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
                 setQuake 2
                 playSound SFX_BATTLEFIELD_DEATH
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveLeft 1
                 endActions
                 setQuake 0
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 1
                  moveRight 1
                 endActions
-                setActscript ALLY_BOWIE,eas_RotateRight
-                setFacing ALLY_SARAH,UP
-                setFacing ALLY_CHESTER,UP
-                setFacing ALLY_JAHA,UP
-                setFacing ALLY_KAZIN,UP
+                setActscript ALLY_IAN,eas_RotateRight
+                setFacing ALLY_MEAD,UP
+                setFacing ALLY_PAIGE,UP
+                setFacing ALLY_HAWEL,UP
+                setFacing ALLY_KNUCKLES,UP
                 csWait 60
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setFacing ALLY_BOWIE,DOWN
-                customActscriptWait ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_Init
+                setFacing ALLY_IAN,DOWN
+                customActscriptWait ALLY_IAN
                  ac_setAnimCounter $0   ;   
                  ac_setFlip $1          ;   
                  ac_updateSprite        ;   
@@ -97,10 +97,10 @@ abcs_battle04:  textCursor $90F
                 warp $11,$0,$0,$0
                 csc_end
 ce_49A6A:       mainEntity 13,20,DOWN
-                entity 14,21,DOWN,ALLY_SARAH,eas_Init
-                entity 12,21,DOWN,ALLY_CHESTER,eas_Init
-                entity 13,22,DOWN,ALLY_JAHA,eas_Init
-                entity 11,22,DOWN,ALLY_KAZIN,eas_Init
+                entity 14,21,DOWN,ALLY_MEAD,eas_Init
+                entity 12,21,DOWN,ALLY_PAIGE,eas_Init
+                entity 13,22,DOWN,ALLY_HAWEL,eas_Init
+                entity 11,22,DOWN,ALLY_KNUCKLES,eas_Init
                 entity 63,63,UP,ALLY_LEMON,eas_Init
                 entity 17,18,LEFT,MAPSPRITE_GALAM_ARCHER,eas_Init
                 entity 17,19,LEFT,MAPSPRITE_GALAM_SOLDIER,eas_Init

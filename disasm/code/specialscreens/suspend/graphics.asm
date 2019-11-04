@@ -4,4 +4,4 @@
 plt_SuspendString:
                 incbin "data/graphics/specialscreens/suspendscreen/suspendstringpalette.bin"
 SuspendStringTiles:
-                incbin "data/graphics/specialscreens/suspendscreen/suspendstringtiles.bin"
+                incbin "data/graphics/specialscreens/suspendscreen/sffc-suspendstringtiles.bin"

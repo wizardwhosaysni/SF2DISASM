@@ -2,7 +2,7 @@
 ; ASM FILE data\maps\entries\map33\mapsetups\scripts.asm :
 ; 0x5AC58..0x5B5B6 : 
 cs_5AC58:       textCursor $70C
-                nextSingleText $0,129   ; "You may go now.{N}I need to talk to fairy.{W1}"
+                nextSingleText $0,129   ; "You KIDDO go now.{N}I need to talk to fairy.{W1}"
                 nextSingleText $0,128   ; "Yes, sir.{W1}"
                 setCamDest 12,11
                 csWait 30
@@ -20,21 +20,21 @@ cs_5AC58:       textCursor $70C
                  moveLeft 5
                 endActions
                 setFacing 128,UP
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
-                setPos ALLY_PETER,15,21,UP
-                setPos ALLY_BOWIE,15,22,UP
+                setPos ALLY_RUBURAN,15,21,UP
+                setPos ALLY_IAN,15,22,UP
                 setPos FOLLOWER_B,15,23,UP
                 stepEvent 15,20
                 setCamDest 8,12
                 csWait 30
                 nextSingleText $FF,255  ; "Servant Goliath unlocks the{N}door.{W1}"
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 4
                  moveLeft 3
                  moveUp 1
                 endActions
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 5
                  moveLeft 3
                 endActions
@@ -42,9 +42,9 @@ cs_5AC58:       textCursor $70C
                  moveUp 6
                  moveLeft 2
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 setFacing FOLLOWER_B,UP
-                nextSingleText $0,ALLY_PETER ; "Excuse me.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Excuse me.{W1}"
                 shiver 128
                 nextSingleText $0,128   ; "Yeow!{W1}"
                 stopEntity 128
@@ -55,62 +55,62 @@ cs_5AC58:       textCursor $70C
                 csWait 30
                 startEntity 128
                 nextSingleText $0,128   ; "Y...yes?{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "We've come to see Mr. Creed.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "We've come to see Mr. Creed.{W1}"
                 nextText $0,128         ; "My master?{W2}"
                 nextSingleText $0,128   ; "Do you have an appointment?{W1}"
-                nextSingleText $0,ALLY_PETER ; "A what?{W1}"
-                entityActionsWait ALLY_PETER
+                nextSingleText $0,ALLY_RUBURAN ; "A what?{W1}"
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                 endActions
-                headshake ALLY_BOWIE
-                entityActionsWait ALLY_PETER
+                headshake ALLY_IAN
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "No, not yet, but...{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "No, not yet, but...{W1}"
                 nextText $0,128         ; "I'm sorry, but he's busy now.{W2}"
                 nextSingleText $0,128   ; "Please come back later.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "We can't see Mr. Creed now.{W1}"
-                setFacing ALLY_BOWIE,RIGHT
+                nextSingleText $0,ALLY_RUBURAN ; "We can't see Mr. Creed now.{W1}"
+                setFacing ALLY_IAN,RIGHT
                 setFacing FOLLOWER_B,LEFT
                 nextText $0,FOLLOWER_B  ; "No kidding!{W2}"
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, {NAME;7}, let's{N}force our way into the room!{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
-                setFacing ALLY_PETER,DOWN
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_RUBURAN,DOWN
+                setFacing ALLY_IAN,UP
                 setFacing FOLLOWER_B,UP
-                nextText $0,ALLY_PETER  ; "Oddler, you're getting bold.{W2}"
-                nextSingleText $0,ALLY_PETER ; "But, it is a good idea.{W1}"
+                nextText $0,ALLY_RUBURAN  ; "Oddler, you're getting bold.{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "But, it is a good idea.{W1}"
                 setFacing 128,UP
                 csWait 10
                 shiver 128
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                 endActions
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
                 shiver 128
                 csWait 10
                 nextSingleText $0,128   ; "Hmmmph....{W1}"
                 csWait 20
-                nextSingleText $0,ALLY_PETER ; "Let's go!{W1}"
-                setCameraEntity ALLY_BOWIE
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                nextSingleText $0,ALLY_RUBURAN ; "Let's go!{W1}"
+                setCameraEntity ALLY_IAN
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 40,40      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 40,40      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -118,7 +118,7 @@ cs_5AC58:       textCursor $70C
                  ac_setSpeed 40,40      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveRight 5
                  moveUp 3
                 endActions
@@ -126,7 +126,7 @@ cs_5AC58:       textCursor $70C
                  moveRight 5
                  moveUp 3
                 endActions
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveRight 5
                  moveUp 3
                 endActions
@@ -134,22 +134,22 @@ cs_5AC58:       textCursor $70C
                 animEntityFX 128,2
                 setPos 128,17,12,DOWN
                 animEntityFX 128,3
-                waitIdle ALLY_BOWIE
-                setActscript ALLY_PETER,eas_BumpUp
+                waitIdle ALLY_IAN
+                setActscript ALLY_RUBURAN,eas_BumpUp
                 setActscript FOLLOWER_B,eas_BumpUp
-                setActscriptWait ALLY_BOWIE,eas_BumpUp
-                nextSingleText $0,ALLY_PETER ; "How did he do that?{W1}"
+                setActscriptWait ALLY_IAN,eas_BumpUp
+                nextSingleText $0,ALLY_RUBURAN ; "How did he do that?{W1}"
                 shiver 128
                 nextText $0,128         ; "You impolite kids!{N}You can't go in!{W2}"
                 nextSingleText $0,128   ; "Mr. Creed is too busy!{N}Go away!{W1}"
-                setActscriptWait ALLY_BOWIE,eas_46172
-                setActscriptWait ALLY_PETER,eas_46172
+                setActscriptWait ALLY_IAN,eas_46172
+                setActscriptWait ALLY_RUBURAN,eas_46172
                 setActscriptWait FOLLOWER_B,eas_46172
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -157,37 +157,37 @@ cs_5AC58:       textCursor $70C
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveDown 1
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveDown 1
                 endActions
                 entityActionsWait FOLLOWER_B
                  moveDown 1
                 endActions
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 csWait 25
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 csWait 120
-                nextText $0,ALLY_PETER  ; "{LEADER}, on our left!{N}That door might lead to{N}Mr. Creed!{W2}"
-                setFacing ALLY_PETER,DOWN
-                nextSingleText $0,ALLY_PETER ; "Let's ditch this guy and go{N}through that door.{W1}"
-                setFacing ALLY_BOWIE,RIGHT
+                nextText $0,ALLY_RUBURAN  ; "{LEADER}, on our left!{N}That door might lead to{N}Mr. Creed!{W2}"
+                setFacing ALLY_RUBURAN,DOWN
+                nextSingleText $0,ALLY_RUBURAN ; "Let's ditch this guy and go{N}through that door.{W1}"
+                setFacing ALLY_IAN,RIGHT
                 setFacing FOLLOWER_B,LEFT
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, let's do it!{N}I don't want to fail now!{W1}"
-                nod ALLY_BOWIE
-                setFacing ALLY_PETER,UP
-                nextText $0,ALLY_PETER  ; "OK, OK.  We give up.{W2}"
-                nextSingleText $0,ALLY_PETER ; "We'll see Mr. Creed later.{N}Let's get out of here.{W1}"
+                nod ALLY_IAN
+                setFacing ALLY_RUBURAN,UP
+                nextText $0,ALLY_RUBURAN  ; "OK, OK.  We give up.{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "We'll see Mr. Creed later.{N}Let's get out of here.{W1}"
                 setFacing FOLLOWER_B,UP
-                setFacing ALLY_BOWIE,UP
-                nextSingleText $0,FOLLOWER_B ; "Yeah, maybe later.{W1}"
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                setFacing ALLY_IAN,UP
+                nextSingleText $0,FOLLOWER_B ; "Yeah, KIDDObe later.{W1}"
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 csc_end
 cs_5AF36:       textCursor $72A
                 setActscriptWait 128,eas_Init
@@ -208,17 +208,17 @@ cs_5AF36:       textCursor $72A
                 csWait 30
                 flashScreenWhite $4
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461B6
+                setActscript ALLY_IAN,eas_461B6
                 csWait 5
-                setActscript ALLY_PETER,eas_461E4
+                setActscript ALLY_RUBURAN,eas_461E4
                 csWait 5
                 setActscript FOLLOWER_B,eas_461B6
                 csWait 20
                 flashScreenWhite $4
                 csWait 10
                 flashScreenWhite $1E
-                setActscript ALLY_BOWIE,eas_463AE
-                setActscript ALLY_PETER,eas_463AE
+                setActscript ALLY_IAN,eas_463AE
+                setActscript ALLY_RUBURAN,eas_463AE
                 setActscript FOLLOWER_B,eas_463AE
                 csWait 60
                 nextSingleText $0,128   ; "What stupid kids!{W1}"
@@ -246,8 +246,8 @@ cs_5AF36:       textCursor $72A
                 csc_end
 cs_5B016:       textCursor $730
                 reloadMap 12,2
-                setPos ALLY_BOWIE,63,63,DOWN
-                setPos ALLY_PETER,63,63,DOWN
+                setPos ALLY_IAN,63,63,DOWN
+                setPos ALLY_RUBURAN,63,63,DOWN
                 setPos FOLLOWER_B,63,63,DOWN
                 fadeInB
                 csWait 40
@@ -338,18 +338,18 @@ cs_5B016:       textCursor $730
                 entityActionsWait 129
                  moveLeft 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "Are you Mr. Creed?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Are you Mr. Creed?{W1}"
                 setFacing 129,DOWN
                 csWait 20
                 setActscriptWait 129,eas_Init
                 setActscriptWait 129,eas_Jump
                 nextText $80,129        ; "Oh, someone from my{N}collection is talking!{W2}"
                 nextSingleText $80,129  ; "You must be one of the people{N}Goliath was talking about.{W1}"
-                nextText $0,ALLY_PETER  ; "We came to see you.{W2}"
-                nextSingleText $0,ALLY_PETER ; "Please return us to our{N}original size.{W1}"
+                nextText $0,ALLY_RUBURAN  ; "We came to see you.{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Please return us to our{N}original size.{W1}"
                 nextText $80,129        ; "You came to see me?{W2}"
                 nextSingleText $80,129  ; "Hmmm...why?{W1}"
-                nextSingleText $0,ALLY_PETER ; "Make us bigger.  My neck{N}hurts from looking up at you!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Make us bigger.  My neck{N}hurts from looking up at you!{W1}"
                 nextSingleText $80,129  ; "Oh, sorry. {W1}"
                 customActscriptWait 129
                  ac_setSpeed 16,16      ;   
@@ -374,32 +374,32 @@ cs_5B016:       textCursor $730
                 flashScreenWhite $4
                 csWait 10
                 flashScreenWhite $1E
-                setPos ALLY_BOWIE,16,9,DOWN
-                setActscript ALLY_BOWIE,eas_46310
-                setPos ALLY_PETER,15,9,DOWN
-                setActscript ALLY_PETER,eas_46310
+                setPos ALLY_IAN,16,9,DOWN
+                setActscript ALLY_IAN,eas_46310
+                setPos ALLY_RUBURAN,15,9,DOWN
+                setActscript ALLY_RUBURAN,eas_46310
                 setPos FOLLOWER_B,17,9,DOWN
                 setActscript FOLLOWER_B,eas_46310
                 csWait 60
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461B6
+                setActscript ALLY_IAN,eas_461B6
                 csWait 5
-                setActscript ALLY_PETER,eas_461E4
+                setActscript ALLY_RUBURAN,eas_461E4
                 csWait 5
                 setActscript FOLLOWER_B,eas_461B6
                 csWait 120
-                setFacing ALLY_PETER,RIGHT
-                nextSingleText $0,ALLY_PETER ; "Wow, we're back to normal!{N}I can't believe we were so{N}small!{W1}"
-                nod ALLY_BOWIE
-                nod ALLY_BOWIE
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
+                nextSingleText $0,ALLY_RUBURAN ; "Wow, we're back to normal!{N}I can't believe we were so{N}small!{W1}"
+                nod ALLY_IAN
+                nod ALLY_IAN
+                setFacing ALLY_IAN,RIGHT
                 nod FOLLOWER_B
                 nod FOLLOWER_B
                 nextSingleText $80,129  ; "Now, why did you want to see{N}me?{W1}"
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
-                nextSingleText $0,ALLY_PETER ; "Oh, yes!{N}We want to know about Zeon!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Oh, yes!{N}We want to know about Zeon!{W1}"
                 nextSingleText $0,130   ; "Zeon?{W1}"
                 setPos 130,16,0,DOWN
                 entityActionsWait 130
@@ -411,7 +411,7 @@ cs_5B016:       textCursor $730
                  moveDown 1
                 endActions
                 nextSingleText $0,130   ; "Did something happen to{N}Zeon?  Has he revived?{W1}"
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 nextSingleText $FF,255  ; "{LEADER} nods.{W1}"
                 csWait 5
                 setActscript 130,eas_461B6
@@ -432,7 +432,7 @@ cs_5B016:       textCursor $730
                 endActions
                 setFacing 129,DOWN
                 nextSingleText $80,129  ; "Is what you say true?{W1}"
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 nextSingleText $FF,255  ; "{LEADER} nods again.{W1}"
                 customActscriptWait 129
                  ac_setSpeed 16,16      ;   
@@ -509,7 +509,7 @@ cs_5B016:       textCursor $730
                 setQuake 0
                 nextText $80,129        ; "I have no time to scold you{N}now!{W2}"
                 setFacing 129,LEFT
-                nextSingleText $80,129  ; "The Evil Spirit may know{N}something.{W1}"
+                nextSingleText $80,129  ; "The Evil Spirit KIDDO know{N}something.{W1}"
                 setActscriptWait 129,eas_Init
                 entityActionsWait 129
                  moveLeft 3
@@ -530,33 +530,33 @@ cs_5B016:       textCursor $730
                  moveLeft 4
                 endActions
                 hide 130
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 csc_end
 cs_5B466:       textCursor $78C
                 setCamDest 12,15
                 csWait 20
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_IAN,UP
                 shiver FOLLOWER_B
                 csWait 20
-                nextSingleText $0,ALLY_PETER ; "Oddler?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Oddler?{W1}"
                 nextSingleText $0,129   ; "I understand you.{W1}"
                 setFacing FOLLOWER_B,UP
                 setFacing 130,UP
                 setPos 129,17,15,DOWN
                 setCamDest 12,7
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 setActscriptWait 130,eas_Init
-                setPos ALLY_BOWIE,15,23,UP
-                setPos ALLY_PETER,15,22,UP
+                setPos ALLY_IAN,15,23,UP
+                setPos ALLY_RUBURAN,15,22,UP
                 setPos FOLLOWER_B,16,22,UP
                 setPos 130,16,23,UP
                 hide ALLY_ERIC
-                hide ALLY_RANDOLF
-                hide ALLY_TYRIN
-                hide ALLY_KARNA
+                hide ALLY_KOJIROU
+                hide ALLY_MAX
+                hide ALLY_RIDION
                 setCameraEntity 129
                 entityActionsWait 129
                  moveDown 2
@@ -564,23 +564,23 @@ cs_5B466:       textCursor $78C
                  moveDown 4
                 endActions
                 setCamDest 10,18
-                nextSingleText $0,ALLY_PETER ; "Understand what?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Understand what?{W1}"
                 nextText $0,129         ; "Oddler will remain here.{W2}"
                 entityActionsWait 129
                  moveRight 1
                  faceDown 1
                 endActions
                 nextSingleText $0,129   ; "Won't you, Oddler?{W1}"
-                setFacing ALLY_PETER,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
                 setFacing FOLLOWER_B,LEFT
-                nextSingleText $0,ALLY_PETER ; "Oddler, is this true?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Oddler, is this true?{W1}"
                 nextText $80,FOLLOWER_B ; "I don't know why, but I{N}would like to stay.{W2}"
                 nextSingleText $80,FOLLOWER_B ; "No, I must stay here....{N}I must stay here....{W1}"
                 entityActionsWait 129
                  moveLeft 1
                  faceDown 1
                 endActions
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
                 nextText $0,129         ; "He's weak.{W2}"
                 nextSingleText $0,129   ; "He had better stay.{N}Say farewell.{W1}"
@@ -622,6 +622,6 @@ cs_5B466:       textCursor $78C
                 endActions
                 nextText $0,129         ; "{LEADER}, you'll learn{N}the reason why he has to stay{N}here soon enough.{W2}"
                 nextSingleText $0,129   ; "Don't think about it now.{N}Go to the north.{W1}"
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity 130,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity 130,ALLY_RUBURAN,2
                 csc_end

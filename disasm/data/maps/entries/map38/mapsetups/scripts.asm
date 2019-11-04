@@ -20,23 +20,23 @@ cs_5DE2E:       textCursor $86A
                 playSound $FB
                 csc_end
 cs_5DE76:       textCursor $879
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 setCameraEntity ALLY_ZYNK
-                setDest ALLY_BOWIE,12,9
-                setDest ALLY_PETER,12,8
-                setDest ALLY_PETER,13,8
+                setDest ALLY_IAN,12,9
+                setDest ALLY_RUBURAN,12,8
+                setDest ALLY_RUBURAN,13,8
                 setDest FOLLOWER_B,12,8
                 setDest FOLLOWER_B,14,8
                 setActscriptWait ALLY_ZYNK,eas_Init
                 setDest ALLY_ZYNK,11,8
-                setFacing ALLY_BOWIE,LEFT
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_IAN,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 setFacing FOLLOWER_B,LEFT
                 entityActionsWait ALLY_ZYNK
                  moveLeft 2
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 2
                 endActions
                 entityActionsWait FOLLOWER_B
@@ -56,7 +56,7 @@ cs_5DE76:       textCursor $879
                 endActions
                 setActscriptWait ALLY_ZYNK,eas_Jump
                 setActscript ALLY_ZYNK,eas_Jump
-                nextSingleText $0,ALLY_PETER ; "What's wrong with {NAME;26}?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "What's wrong with {NAME;26}?{W1}"
                 nextSingleText $0,FOLLOWER_B ; "I have no idea, but he's{N}obviously disturbed!{W1}"
                 entityActionsWait ALLY_ZYNK
                  moveUp 1
@@ -80,7 +80,7 @@ cs_5DE76:       textCursor $879
                 join ALLY_ZYNK
                 clearF $4C              ; Zynk is a follower
                 nextSingleText $0,ALLY_ZYNK ; "Let us go defeat the Devil{N}Army!{W1}"
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 followEntity ALLY_ZYNK,FOLLOWER_B,2
                 csc_end

@@ -4,15 +4,15 @@
 abcs_battle30:  textCursor $ACD
                 loadMapFadeIn 1,5,8
                 loadMapEntities ce_4C96C
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,12,13,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,12,13,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,11,13,UP
                 stopEntity 128
                 setActscriptWait 130,eas_46172
                 stopEntity 130
-                setPriority ALLY_PETER,$0
+                setPriority ALLY_RUBURAN,$0
                 setPriority FOLLOWER_B,$FFFF
                 fadeInB
                 shiver 128
@@ -59,11 +59,11 @@ abcs_battle30:  textCursor $ACD
                 nextText $0,FOLLOWER_B  ; "Thanks to the Ground Orb, we{N}finally defeated Zalbard.{W2}"
                 nextSingleText $0,FOLLOWER_B ; "The orb released holy power{N}in it's light.{W1}"
                 entityFlashWhite 130,$3C
-                setActscriptWait ALLY_PETER,eas_Jump
-                entityActionsWait ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                entityActionsWait ALLY_RUBURAN
                  moveUp 2
                 endActions
-                nextSingleText $0,ALLY_PETER ; "Hey, look over there!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Hey, look over there!{W1}"
                 setCamDest 5,0
                 setPos 129,11,3,DOWN
                 entityFlashWhite 129,$3C
@@ -74,9 +74,9 @@ abcs_battle30:  textCursor $ACD
                  moveLeft 2
                  moveDown 4
                 endActions
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_IAN,LEFT
                 setFacing FOLLOWER_B,LEFT
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 csWait 50
                 entityFlashWhite 129,$3C
                 customActscriptWait 130
@@ -97,22 +97,22 @@ abcs_battle30:  textCursor $ACD
                 nextText $0,FOLLOWER_B  ; "Oh, you know my name?{N}Gee....{W2}"
                 nextSingleText $0,FOLLOWER_B ; "Please tell us, what should{N}we do now?{W1}"
                 nextSingleText $C0,129  ; "I don't know.{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextText $0,ALLY_PETER  ; "What?!{W2}"
-                nextSingleText $0,ALLY_PETER ; "But, why?  You're a goddess.{N}You know our future, right?{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextText $0,ALLY_RUBURAN  ; "What?!{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "But, why?  You're a goddess.{N}You know our future, right?{W1}"
                 nextSingleText $C0,129  ; "I'm not Volcanon.  I never{N}tell people the future, even{N}if it could prevent death.{W1}"
                 shiver FOLLOWER_B
                 nextSingleText $0,FOLLOWER_B ; "Death?!  Not ours I hope.{W1}"
                 nextText $C0,129        ; "Zeon is an unimaginably{N}strong devil.{W2}"
                 nextSingleText $C0,129  ; "If he attains full power,{N}I, even Volcanon, would not{N}be able to stop him.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "So, we have to defeat him{N}before he revives completely.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "So, we have to defeat him{N}before he revives completely.{W1}"
                 nextSingleText $C0,129  ; "His power is sealed in the{N}Jewel of Evil.{W1}"
                 setActscriptWait FOLLOWER_B,eas_Jump
                 nextSingleText $0,FOLLOWER_B ; "So, that's why he wants the{N}jewel!{W1}"
-                nextSingleText $0,ALLY_PETER ; "Then, why don't we keep the{N}jewel forever.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Then, why don't we keep the{N}jewel forever.{W1}"
                 nextText $C0,129        ; "Arc Valley is the place where{N}evil power gathers.{W2}"
                 nextSingleText $C0,129  ; "He will recover his power{N}if he stays there long enough.{W1}"
                 nextSingleText $0,FOLLOWER_B ; "Did you say, Arc Valley?{W1}"
@@ -124,8 +124,8 @@ abcs_battle30:  textCursor $ACD
                 setFacing 129,LEFT
                 csWait 40
                 entityFlashWhite 129,$32
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
                 nextSingleText $0,FOLLOWER_B ; "Goddess Mitula, where are{N}you going?{W1}"
                 nextSingleText $C0,129  ; "Down to the surface.{N}To save the people.{W1}"
@@ -148,28 +148,28 @@ abcs_battle30:  textCursor $ACD
                 setActscript FOLLOWER_B,eas_461E4
                 csWait 120
                 nextSingleText $0,FOLLOWER_B ; "Mitula, Mitula!!{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                 endActions
                 csWait 30
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 csWait 30
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 csWait 30
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 csWait 30
-                nextSingleText $0,ALLY_PETER ; "{LEADER}, Mitula{N}has vanished!{N}What should we do now?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "{LEADER}, Mitula{N}has vanished!{N}What should we do now?{W1}"
                 setFacing FOLLOWER_B,RIGHT
                 nextSingleText $0,FOLLOWER_B ; "We have to go to Arc Valley{N}on Grans Island.{W2}"
                 setFacing FOLLOWER_B,DOWN
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, find the{N}storytellers first.{W1}"
-                setFacing ALLY_BOWIE,UP
-                nod ALLY_BOWIE
-                followEntity FOLLOWER_B,ALLY_BOWIE,2
-                followEntity ALLY_PETER,FOLLOWER_B,2
+                setFacing ALLY_IAN,UP
+                nod ALLY_IAN
+                followEntity FOLLOWER_B,ALLY_IAN,2
+                followEntity ALLY_RUBURAN,FOLLOWER_B,2
                 csc_end
 ce_4C96C:       mainEntity 10,13,UP
-                entity 12,13,UP,ALLY_PETER,eas_Init
+                entity 12,13,UP,ALLY_RUBURAN,eas_Init
                 entity 11,10,DOWN,MAPSPRITE_ZALBARD,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_MITULA,eas_Init
                 entity 63,63,UP,MAPSPRITE_ORB,eas_Init

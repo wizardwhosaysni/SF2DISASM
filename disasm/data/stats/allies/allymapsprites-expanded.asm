@@ -3,81 +3,81 @@
 ; Expanded ally map sprite IDs - works in tandem with ClassTypesTable located in data\stats\allies\classes\classtypes.asm
 AllyMapSprites: ; enum Mapsprites : MAPSPRITE_*
                     
-                mapSprite BOWIE_BASE        ; BOWIE
-                mapSprite BOWIE_PROMO
+                mapSprite IAN_BASE        ; IAN
+                mapSprite IAN_PROMO
                 mapSprite DEFAULT
                 
-                mapSprite SARAH_BASE        ; SARAH
-                mapSprite SARAH_PROMO
-                mapSprite SARAH_SPECIAL
-                
-                mapSprite CHESTER_BASE      ; CHESTER
-                mapSprite CHESTER_PROMO
-                mapSprite CHESTER_SPECIAL
-                
-                mapSprite JAHA_BASE         ; JAHA
-                mapSprite JAHA_PROMO
-                mapSprite JAHA_SPECIAL
-                
-                mapSprite KAZIN_BASE        ; KAZIN
-                mapSprite KAZIN_PROMO
-                mapSprite KAZIN_SPECIAL
-                
-                mapSprite SLADE_BASE        ; SLADE
-                mapSprite SLADE_PROMO
+                mapSprite MEAD_BASE        ; MEAD
+                mapSprite MEAD_PROMO
                 mapSprite DEFAULT
                 
-                mapSprite KIWI_BASE         ; KIWI
-                mapSprite KIWI_PROMO
+                mapSprite PAIGE_BASE      ; PAIGE
+                mapSprite PAIGE_PROMO
                 mapSprite DEFAULT
                 
-                mapSprite PETER_BASE        ; PETER
-                mapSprite PETER_PROMO
+                mapSprite HAWEL_BASE         ; HAWEL
+                mapSprite HAWEL_PROMO
                 mapSprite DEFAULT
                 
-                mapSprite MAY_BASE          ; MAY
-                mapSprite MAY_PROMO
+                mapSprite KNUCKLES_BASE        ; KNUCKLES
+                mapSprite KNUCKLES_PROMO
                 mapSprite DEFAULT
                 
-                mapSprite GERHALT_BASE      ; GERHALT
-                mapSprite GERHALT_PROMO
+                mapSprite SONETTE_BASE        ; SONETTE
+                mapSprite SONETTE_PROMO
                 mapSprite DEFAULT
                 
-                mapSprite LUKE_BASE         ; LUKE
-                mapSprite LUKE_PROMO
+                mapSprite CYNTHIA_BASE         ; CYNTHIA
+                mapSprite CYNTHIA_PROMO
                 mapSprite DEFAULT
                 
-                mapSprite DEFAULT           ; ROHDE
+                mapSprite RUBURAN_BASE        ; RUBURAN
+                mapSprite RUBURAN_PROMO
                 mapSprite DEFAULT
-                mapSprite ROHDE_SPECIAL
                 
-                mapSprite RICK_BASE         ; RICK
-                mapSprite RICK_PROMO
-                mapSprite RICK_SPECIAL
+                mapSprite KIDDO_BASE          ; KIDDO
+                mapSprite KIDDO_PROMO
+                mapSprite DEFAULT
                 
-                mapSprite ELRIC_BASE        ; ELRIC
-                mapSprite ELRIC_PROMO
-                mapSprite ELRIC_SPECIAL
+                mapSprite SYLVIA_BASE      ; SYLVIA
+                mapSprite SYLVIA_PROMO
+                mapSprite DEFAULT
                 
-                mapSprite ERIC_BASE         ; ERIC
+                mapSprite JULIA_BASE         ; JULIA
+                mapSprite JULIA_PROMO
+                mapSprite DEFAULT
+                
+                mapSprite ERIC_PROMO           ; ERIC
                 mapSprite ERIC_PROMO
-                mapSprite ERIC_SPECIAL
+                mapSprite ERIC_PROMO
                 
-                mapSprite KARNA_BASE        ; KARNA
-                mapSprite KARNA_PROMO
-                mapSprite KARNA_SPECIAL
+                mapSprite MINTO_PROMO         ; MINTO
+                mapSprite MINTO_PROMO
+                mapSprite MINTO_PROMO
                 
-                mapSprite RANDOLF_BASE      ; RANDOLF
-                mapSprite RANDOLF_PROMO
-                mapSprite RANDOLF_SPECIAL
+                mapSprite MORTON_PROMO        ; MORTON
+                mapSprite MORTON_PROMO
+                mapSprite MORTON_PROMO
                 
-                mapSprite TYRIN_BASE        ; TYRIN
-                mapSprite TYRIN_PROMO
-                mapSprite TYRIN_SPECIAL
+                mapSprite SASUKE_PROMO         ; SASUKE
+                mapSprite SASUKE_PROMO
+                mapSprite SASUKE_PROMO
                 
-                mapSprite JANET_BASE        ; JANET
-                mapSprite JANET_PROMO
-                mapSprite JANET_SPECIAL
+                mapSprite RIDION_PROMO        ; RIDION
+                mapSprite RIDION_PROMO
+                mapSprite RIDION_PROMO
+                
+                mapSprite KOJIROU_PROMO      ; KOJIROU
+                mapSprite KOJIROU_PROMO
+                mapSprite KOJIROU_PROMO
+                
+                mapSprite MAX_PROMO        ; MAX
+                mapSprite MAX_PROMO
+                mapSprite MAX_PROMO
+                
+                mapSprite ODDEYE_PROMO        ; ODDEYE
+                mapSprite ODDEYE_PROMO
+                mapSprite ODDEYE_PROMO
                 
                 mapSprite DEFAULT           ; HIGINS
                 mapSprite HIGINS_PROMO

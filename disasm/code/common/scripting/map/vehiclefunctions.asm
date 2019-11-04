@@ -20,9 +20,9 @@ MapEventType2:
 	; End of function MapEventType2
 
 cs_45284:       setActscriptWait FOLLOWER_A,eas_452A4
-                setActscriptWait ALLY_BOWIE,eas_452B2
+                setActscriptWait ALLY_IAN,eas_452B2
                 setPos FOLLOWER_A,64,64,DOWN
-                setActscriptWait ALLY_BOWIE,eas_45308
+                setActscriptWait ALLY_IAN,eas_45308
                 csc_end
 eas_452A4:       ac_0E $0,$0,$1
                  ac_waitDest
@@ -79,8 +79,8 @@ MapEventType4:
 	; End of function MapEventType4
 
 cs_45348:       setActscriptWait FOLLOWER_A,eas_45360
-                setSprite ALLY_BOWIE,ALLY_BOWIE
-                setActscriptWait ALLY_BOWIE,eas_4536C
+                setSprite ALLY_IAN,ALLY_IAN
+                setActscriptWait ALLY_IAN,eas_4536C
                 csc_end
 eas_45360:       ac_clonePos $0
 word_45364:      ac_branch
@@ -136,9 +136,9 @@ return_453F0:
 
 	; End of function MapEventType3
 
-cs_453F2:       setActscriptWait ALLY_BOWIE,eas_4540C
+cs_453F2:       setActscriptWait ALLY_IAN,eas_4540C
                 setPos 159,64,64,DOWN
-                setActscriptWait ALLY_BOWIE,eas_45426
+                setActscriptWait ALLY_IAN,eas_45426
                 csc_end
 
 ; =============== S U B R O U T I N E =======================================
@@ -184,8 +184,8 @@ MapEventType5:
 	; End of function MapEventType5
 
 cs_45470:       setActscriptWait 159,eas_45360
-                setSprite ALLY_BOWIE,ALLY_BOWIE
-                setActscriptWait ALLY_BOWIE,eas_4548C
+                setSprite ALLY_IAN,ALLY_IAN
+                setActscriptWait ALLY_IAN,eas_4548C
                 csc_end
 byte_45488:      ac_clonePos $1F
 eas_4548C:       ac_09 $0,$1
@@ -255,14 +255,14 @@ sub_454E4:
 
 ; =============== S U B R O U T I N E =======================================
 
-ShrinkIntoCaravanBowieAndFollowers:
+ShrinkIntoCaravanIANAndFollowers:
                 
                 move.b  #$FF,((VIEW_TARGET_ENTITY-$1000000)).w
                 clr.w   d0
                 bsr.w   MakeEntityIdle
                 moveq   #1,d0
                 bsr.w   MakeEntityIdle
-                script  ms_BowieShrinkIn
+                script  ms_IANShrinkIn
                 lea     eas_ShrinkIn(pc), a1
                 bsr.w   ApplyActscriptToFollowers
                 bsr.w   WaitForFollowersStopped
@@ -271,11 +271,11 @@ ShrinkIntoCaravanBowieAndFollowers:
                 jsr     (Sleep).w       
                 rts
 
-	; End of function ShrinkIntoCaravanBowieAndFollowers
+	; End of function ShrinkIntoCaravanIANAndFollowers
 
-ms_BowieShrinkIn:
-                setActscriptWait ALLY_BOWIE,eas_ShrinkIn
-                setPos ALLY_BOWIE,64,64,DOWN
+ms_IANShrinkIn:
+                setActscriptWait ALLY_IAN,eas_ShrinkIn
+                setPos ALLY_IAN,64,64,DOWN
                 csc_end
 eas_ShrinkIn:    ac_0E $1,$0,$0
                  ac_wait 6
@@ -305,11 +305,11 @@ word_455A8:      ac_branch
 
 ; =============== S U B R O U T I N E =======================================
 
-GrowOutBowieAndFollowers:
+GrowOutIANAndFollowers:
                 
                 clr.w   d0
                 bsr.w   MakeEntityIdle
-                script  ms_BowieGrowOut
+                script  ms_IANGrowOut
                 lea     eas_GrowOut(pc), a1
                 bsr.w   ApplyActscriptToFollowers
                 bsr.w   WaitForFollowersStopped
@@ -317,9 +317,9 @@ GrowOutBowieAndFollowers:
                 move.b  #0,((PLAYER_TYPE-$1000000)).w
                 rts
 
-	; End of function GrowOutBowieAndFollowers
+	; End of function GrowOutIANAndFollowers
 
-ms_BowieGrowOut:setActscriptWait ALLY_BOWIE,eas_GrowOut
+ms_IANGrowOut:setActscriptWait ALLY_IAN,eas_GrowOut
                 csc_end
 eas_GrowOut:     ac_clonePos $1
                  ac_set1Db3 $FFFF

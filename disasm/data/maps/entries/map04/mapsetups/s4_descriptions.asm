@@ -16,5 +16,5 @@ ms_map4_AreaDescriptions:
 byte_51712:     msDesc 40, 6, 4, 0      ; "{NAME} investigated{N}the book shelves.{W2}{CLEAR}"
                                         ; "A book...{N}HEALING MAGIC{W1}"
                 msDesc 41, 6, 4, 1      ; "{NAME} investigated{N}the book shelves.{W2}{CLEAR}"
-                                        ; "A book...{N}TRICKS OF THE SWORD{W1}"
+                                        ; "A book...{N}TMINTOS OF THE SWORD{W1}"
                 msDescEnd

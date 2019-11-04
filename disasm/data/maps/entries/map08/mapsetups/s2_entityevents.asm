@@ -176,7 +176,7 @@ Map8_2C4_EntityEvent13:
 Map8_2C4_EntityEvent12:
                 
                  
-                chkFlg  $8              ; May joined
+                chkFlg  $8              ; KIDDO joined
                 bne.s   Map8_DefaultEntityEvent
                 script  cs_56146
 Map8_DefaultEntityEvent:
@@ -185,14 +185,14 @@ Map8_DefaultEntityEvent:
 
 	; End of function Map8_2C4_EntityEvent12
 
-cs_56146:       setActscriptWait ALLY_MAY,eas_Init
-                setActscriptWait ALLY_MAY,eas_461AA
-                faceEntity ALLY_MAY,ALLY_BOWIE
+cs_56146:       setActscriptWait ALLY_KIDDO,eas_Init
+                setActscriptWait ALLY_KIDDO,eas_461AA
+                faceEntity ALLY_KIDDO,ALLY_IAN
                 textCursor $543
-                nextSingleText $0,ALLY_MAY ; "The people in this village{N}are cowards!{W2}{N}When do they ever go{N}adventuring?{N}I can't take it anymore!{W2}{N}Hey, would you mind if I{N}joined you?{W1}"
-                join ALLY_MAY
-                nextSingleText $0,ALLY_MAY ; "Now, let's go!{W1}"
-                addNewFollower ALLY_MAY
+                nextSingleText $0,ALLY_KIDDO ; "The people in this village{N}are cowards!{W2}{N}When do they ever go{N}adventuring?{N}I can't take it anymore!{W2}{N}Hey, would you mind if I{N}joined you?{W1}"
+                join ALLY_KIDDO
+                nextSingleText $0,ALLY_KIDDO ; "Now, let's go!{W1}"
+                addNewFollower ALLY_KIDDO
                 csc_end
 cs_56172:       textCursor $534
                 nextSingleText $0,135   ; "To Mt. Volcano?{W1}"

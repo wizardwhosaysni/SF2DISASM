@@ -30,7 +30,7 @@ Map17_EntityEvent9:
 Map17_EntityEvent7:
                 
                  
-                chkFlg  $295            ; Set after prison scene, ending in Slade unlocking/Sarah accusing
+                chkFlg  $295            ; Set after prison scene, ending in SONETTE unlocking/MEAD accusing
                 bne.s   return_5235C
                 txt     $37D            ; "We're talking about{N}Ground Seal.{N}Please, join in.{W1}"
 return_5235C:
@@ -45,7 +45,7 @@ return_5235C:
 Map17_EntityEvent8:
                 
                  
-                chkFlg  $295            ; Set after prison scene, ending in Slade unlocking/Sarah accusing
+                chkFlg  $295            ; Set after prison scene, ending in SONETTE unlocking/MEAD accusing
                 bne.s   return_52368
                 txt     $380            ; "Hey!  Don't interrupt!{N}Sit down next to me!{W1}"
 return_52368:
@@ -60,7 +60,7 @@ return_52368:
 Map17_EntityEvent10:
                 
                  
-                chkFlg  $295            ; Set after prison scene, ending in Slade unlocking/Sarah accusing
+                chkFlg  $295            ; Set after prison scene, ending in SONETTE unlocking/MEAD accusing
                 bne.s   return_52374
                 txt     $37F            ; "Hey, {LEADER}!{N}King Galam also knows about{N}Ground Seal!{W1}"
 return_52374:
@@ -86,7 +86,7 @@ Map17_EntityEvent11:
 Map17_EntityEvent0:
                 
                  
-                txt     $343            ; "This is the treasure room!{N}You may not pass!{W1}"
+                txt     $343            ; "This is the treasure room!{N}You KIDDO not pass!{W1}"
                 rts
 
 	; End of function Map17_EntityEvent0
@@ -124,7 +124,7 @@ Map17_EntityEvent2:
 Map17_EntityEvent4:
                 
                  
-                chkFlg  $295            ; Set after prison scene, ending in Slade unlocking/Sarah accusing
+                chkFlg  $295            ; Set after prison scene, ending in SONETTE unlocking/MEAD accusing
                 bne.s   byte_523AE      
                 txt     $37E            ; "You got a raw deal, huh?{N}The same thing happened to{N}the rat next door.{W1}"
                 bra.s   return_523B2

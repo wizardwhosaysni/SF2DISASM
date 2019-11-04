@@ -514,7 +514,7 @@ loc_A09E:
                 move.w  #$116,d1        ; {NAME} belched{N}out flames!
                 cmpi.w  #SPELL_FLAME,d2
                 beq.w   loc_A132
-                cmpi.w  #SPELL_KIWI,d2
+                cmpi.w  #SPELL_CYNTHIA,d2
                 beq.w   loc_A132
                 move.w  #$117,d1        ; {NAME} blew out{N}a snowstorm!
                 cmpi.w  #SPELL_SNOW,d2

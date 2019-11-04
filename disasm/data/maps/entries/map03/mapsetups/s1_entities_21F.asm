@@ -13,8 +13,8 @@ ms_map3_flag21F_Entities:
                 msFixedEntity 23, 27, DOWN, MAPSPRITE_MAN1, eas_Init
                 msFixedEntity 1, 26, RIGHT, MAPSPRITE_SOLDIER1, eas_Init
                 msFixedEntity 42, 9, DOWN, MAPSPRITE_ASTRAL, eas_Init
-                msFixedEntity 44, 10, RIGHT, ALLY_SARAH, eas_Init
-                msFixedEntity 43, 11, LEFT, ALLY_CHESTER, eas_Init
-                msFixedEntity 40, 11, UP, ALLY_JAHA, eas_Init
-                msFixedEntity 40, 10, DOWN, ALLY_KAZIN, eas_Init
+                msFixedEntity 44, 10, RIGHT, ALLY_MEAD, eas_Init
+                msFixedEntity 43, 11, LEFT, ALLY_PAIGE, eas_Init
+                msFixedEntity 40, 11, UP, ALLY_HAWEL, eas_Init
+                msFixedEntity 40, 10, DOWN, ALLY_KNUCKLES, eas_Init
                 msEntitiesEnd

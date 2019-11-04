@@ -37,11 +37,8 @@ PlayIntroOrEndCutscene:
                 jsr     (sub_4EC6).w    
                 move.w  (sp)+,d0
                 bne.s   byte_47F72
-                sndCom  MUSIC_INTRO
-                script  IntroCutscene1
-                script  IntroCutscene2
-                script  IntroCutscene3
-                script  IntroCutscene4
+                ;sndCom  7
+                script  IntroCutscene
                 bra.s   return_47F7C
 byte_47F72:
                 

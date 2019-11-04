@@ -51,7 +51,7 @@ loc_50F88:
                 bra.s   return_50F96
 byte_50F8A:
                 
-                chkFlg  $42             ; Sarah + Chester are followers
+                chkFlg  $42             ; MEAD + PAIGE are followers
                 bne.s   return_50F96
                 script  cs_513E2
 return_50F96:
@@ -114,7 +114,7 @@ Map3_EntityEvent3:
                 
                  
                 txt     $1E4            ; "He thinks of you as his own{N}grandson.{W2}"
-                txt     $1E5            ; "Sometimes he may badger{N}you, but that's because he{N}loves you.{W1}"
+                txt     $1E5            ; "Sometimes he KIDDO badger{N}you, but that's because he{N}loves you.{W1}"
                 rts
 
 	; End of function Map3_EntityEvent3
@@ -196,7 +196,7 @@ Map3_EntityEvent9:
 Map3_EntityEvent10:
                 
                  
-                chkFlg  $25C            ; Set after the guards have listened to Sarah and allowed you into the castle
+                chkFlg  $25C            ; Set after the guards have listened to MEAD and allowed you into the castle
                 bne.s   byte_5101A      
                 txt     $1F1            ; "You cannot enter the castle{N}of Granseal.  Go away!{W1}"
                 bra.s   return_5101E
@@ -215,7 +215,7 @@ return_5101E:
 Map3_EntityEvent11:
                 
                  
-                chkFlg  $25C            ; Set after the guards have listened to Sarah and allowed you into the castle
+                chkFlg  $25C            ; Set after the guards have listened to MEAD and allowed you into the castle
                 bne.s   byte_5102C      
                 txt     $1F1            ; "You cannot enter the castle{N}of Granseal.  Go away!{W1}"
                 bra.s   return_51030

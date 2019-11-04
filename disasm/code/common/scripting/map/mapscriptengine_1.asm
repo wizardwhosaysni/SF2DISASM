@@ -489,7 +489,7 @@ loc_467FC:
                 ext.w   d2
                 move.w  d2,d3
                 neg.w   d3
-                andi.w  #$F,d1
+                andi.w  #$1F,d1
                 add.w   d1,d1
                 move.w  rjt_EntityMoveCommands(pc,d1.w),d1
                 jsr     rjt_EntityMoveCommands(pc,d1.w)
@@ -514,6 +514,17 @@ rjt_EntityMoveCommands:
                 dc.w csc2D_D_jump-rjt_EntityMoveCommands
                 dc.w csc2D_E_jumpRight-rjt_EntityMoveCommands
                 dc.w csc2D_F_jumpLeft-rjt_EntityMoveCommands
+                dc.w csc2D_10_eaSound-rjt_EntityMoveCommands
+
+; =============== S U B R O U T I N E =======================================
+
+csc2D_10_eaSound:
+                
+                move.w  #$23,(a0)+
+                move.w  d2, (a0)+
+                rts
+
+	; End of function csc2D_10_eaSound
 
 ; =============== S U B R O U T I N E =======================================
 

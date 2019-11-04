@@ -16,7 +16,7 @@ Map23_EntityEvent0:
                 
                  
                 txt     $69A            ; "Welcome.  Travelers often{N}stop by here to rest.{W2}"
-                txt     $69B            ; "You may stay here as{N}long as you like.{W1}"
+                txt     $69B            ; "You KIDDO stay here as{N}long as you like.{W1}"
                 rts
 
 	; End of function Map23_EntityEvent0
@@ -51,7 +51,7 @@ Map23_EntityEvent3:
                 
                  
                 txt     $69F            ; "To Creed Mansion?{N}Only the fairy knows how to{N}get there.{W2}"
-                txt     $6A0            ; "But, maybe {NAME;13} knows{N}because he is a friend of{N}the fairy.{W1}"
+                txt     $6A0            ; "But, KIDDObe {NAME;13} knows{N}because he is a friend of{N}the fairy.{W1}"
                 rts
 
 	; End of function Map23_EntityEvent3

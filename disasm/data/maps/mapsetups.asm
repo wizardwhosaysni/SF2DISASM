@@ -25,9 +25,9 @@ MapSetups:      msMap 3, ms_map3
                 msMap 8, ms_map8
                 msFlag 708, ms_map8_flag2C4 ; set after the scene in Ribble where the mayor confronts Bowie
                 msMapEnd
-                msMap 9, ms_map9
-                msFlag 518, ms_map9_flag206 ; Battle 18 completed
-                msMapEnd
+                ;msMap 9, ms_map9
+                ;msFlag 518, ms_map9_flag206 ; Battle 18 completed
+                ;msMapEnd
                 msMap 10, ms_map10
                 msFlag 722, ms_map10_flag2D2 ; set after speaking with Volcanon
                 msMapEnd
@@ -96,12 +96,11 @@ MapSetups:      msMap 3, ms_map3
                 msMapEnd
                 msMap 29, ms_map29
                 msMapEnd
-                msMap 30, ms_map30
-                msFlag 785, ms_map30_flag311 ; set after the fairy tags along at Creed's
-                msFlag 761, ms_map30_flag2F9 ; set after the dwarf gives Bowie the cannon
+                msMap 30, ms_sffcmap30
                 msMapEnd
-                msMap 31, ms_map31
-                msFlag 830, ms_map31_flag33E ; set after the Gyan join scene in the Moun underground
+                msMap 31, ms_sffcmap31
+                msMapEnd
+                msMap 32, ms_sffcmap32
                 msMapEnd
                 msMap 33, ms_map33
                 msFlag 523, ms_map33_flag20B ; Battle 23 completed
@@ -166,13 +165,13 @@ MapSetups:      msMap 3, ms_map3
                 msMap 63, ms_map63
                 msFlag 29, ms_map63_flag1D ; Claude joined
                 msMapEnd
-                msMap 0, ms_map0
-                msMapEnd
-                msMap 1, ms_map1
-                msMapEnd
-                msMap 2, ms_map2
-                msFlag 530, ms_map2_flag212 ; Battle 30 completed
-                msMapEnd
+                ;msMap 0, ms_map0
+                ;msMapEnd
+                ;msMap 1, ms_map1
+                ;msMapEnd
+                ;msMap 2, ms_map2
+                ;msFlag 530, ms_map2_flag212 ; Battle 30 completed
+                ;msMapEnd
                 msMap 66, ms_map66
                 msMapEnd
                 msMap 67, ms_map67

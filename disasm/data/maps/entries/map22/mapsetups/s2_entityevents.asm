@@ -154,7 +154,7 @@ Map22_EntityEvent8:
                 txt     $6F4            ; "OK, I'll let you go if you{N}win a game against my army.{W2}"
 byte_5956C:
                 
-                txt     $6F5            ; "You may go to the chessboard{N}now.{W1}"
+                txt     $6F5            ; "You KIDDO go to the chessboard{N}now.{W1}"
                 setFlg  $309            ; Set after the Desktop King tells you to fight on the chessboard
                 bra.s   return_5957A
 byte_59576:

@@ -1,6 +1,19 @@
 
 # No rom files or game content on the repository
 *.bin
+!cubesfx.bin
+!**/bookreader/*.bin
+!**/suspendscreen/sffc-suspendstringtiles.bin
+!**/sffc-*
+!**/sffc/*.bin
+!**/sffc-*/*.bin
+
+*.png
+!**/sffc/*.png
+!**/sffc-*.png
+*.gif
+!**/sffc/*.gif
+!**/sffc-*.gif
 
 # No log files
 *.log
@@ -234,12 +247,6 @@ pip-log.txt
 .mr.developer.cfg
 #*.jar
 *.csv
-*.png
-disasm/data/flags/flagmap.txt
-disasm/data/flags/sf2 flags.txt
-disasm/data/flags/SF2_debug_list.doc
-!disasm/system/debug/
-*.gif
 *.jpg
 *.dat
 build/caravan.cfg
@@ -252,7 +259,7 @@ build/Lunar IPS.exe
 build/mega-usb.exe
 *.ips
 *.avi
-disasm/code/gameflow/start/textintro.asm
+#disasm/code/gameflow/start/textintro.asm
 disasm/code/common/tech/sound/sounddriver-cubewiz.asm
 build/buildcubewiz.bat
 build/buildexpandedcubewiz.bat

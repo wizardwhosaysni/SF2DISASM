@@ -4,9 +4,9 @@
 bbcs_31:        textCursor $AFB
                 loadMapFadeIn 2,16,2
                 loadMapEntities ce_4CB92
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,20,3,DOWN
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,20,3,DOWN
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,22,3,DOWN
                 setActscriptWait ALLY_FRAYJA,eas_Init
@@ -20,7 +20,7 @@ bbcs_31:        textCursor $AFB
                 nextSingleText $C0,128  ; "Finally, you've left the{N}castle, Vicar {NAME;22}.{W1}"
                 setCamDest 16,5
                 animEntityFX 128,7
-                nextSingleText $0,ALLY_PETER ; "Geshp!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Geshp!{W1}"
                 nextSingleText $C0,128  ; "So, you remember me. {W1}"
                 setCamDest 16,2
                 entityActionsWait FOLLOWER_B
@@ -56,7 +56,7 @@ bbcs_31:        textCursor $AFB
                 setCamDest 16,6
                 setFacing 128,DOWN
                 nextSingleText $C0,128  ; "Cameela!  Cameeeeeela!{W1}"
-                nextSingleText $0,ALLY_PETER ; "Cameela?!  We met her in{N}Pangoat Valley.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Cameela?!  We met her in{N}Pangoat Valley.{W1}"
                 animEntityFX 129,7
                 nextSingleText $0,129   ; "What?{W1}"
                 nextText $C0,128        ; "Ah, Cameela.  You're here.{W2}"
@@ -87,7 +87,7 @@ bbcs_31:        textCursor $AFB
                 animEntityFX 129,6
                 nextText $C0,128        ; "That witch!{W2}"
                 nextSingleText $C0,128  ; "Cameela!  Cameela!!{W1}"
-                nextSingleText $0,ALLY_PETER ; "They're divided....{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "They're divided....{W1}"
                 csWait 40
                 shiver 128
                 csWait 40
@@ -107,13 +107,13 @@ bbcs_31:        textCursor $AFB
                 csWait 30
                 setCamDest 16,6
                 nextSingleText $C0,128  ; "Bye, {LEADER}.{W1}"
-                nextSingleText $0,ALLY_PETER ; "You're not staying?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "You're not staying?{W1}"
                 nextText $C0,128        ; "I'm good at using my brains,{N}not my strength.{W2}"
                 nextSingleText $C0,128  ; "I'll return by the time{N}you're defeated.{W1}"
                 animEntityFX 128,6
                 csc_end
 ce_4CB92:       mainEntity 21,4,DOWN
-                entity 20,3,DOWN,ALLY_PETER,eas_Init
+                entity 20,3,DOWN,ALLY_RUBURAN,eas_Init
                 entity 21,3,DOWN,ALLY_FRAYJA,eas_Init
                 entity 21,8,UP,MAPSPRITE_GESHP,eas_Init
                 entity 21,11,UP,MAPSPRITE_CAMEELA,eas_Init

@@ -1,8 +1,8 @@
 
 ; ASM FILE data\maps\entries\map41\mapsetups\scripts.asm :
 ; 0x5F4B8..0x5F630 : 
-cs_5F4B8:       setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+cs_5F4B8:       setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
                 csWait 40
                 playSound SFX_BIG_DOOR_RUMBLE
@@ -10,9 +10,9 @@ cs_5F4B8:       setActscriptWait ALLY_BOWIE,eas_Init
                 csWait 40
                 playSound SFX_BIG_DOOR_RUMBLE
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461B6
+                setActscript ALLY_IAN,eas_461B6
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 csWait 5
                 setActscript FOLLOWER_B,eas_461B6
                 playSound SFX_BIG_DOOR_RUMBLE
@@ -26,8 +26,8 @@ cs_5F4B8:       setActscriptWait ALLY_BOWIE,eas_Init
                 playSound SFX_BLAST_SPELL
                 flashScreenWhite $4
                 playSound SFX_BIG_DOOR_RUMBLE
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
                 csWait 60
                 setBlocks 13,0,3,5,5,4
@@ -36,29 +36,29 @@ cs_5F4B8:       setActscriptWait ALLY_BOWIE,eas_Init
                 playSound SFX_BIG_DOOR_RUMBLE
                 setQuake 16387
                 csWait 40
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
                 csWait 50
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 csc_end
 cs_5F594:       newEntity ALLY_LEMON,6,15,UP,MAPSPRITE_TAROS
                 textCursor $DB9
                 nextSingleText $0,ALLY_LEMON ; "Sir Astral!  {LEADER}!{W1}"
                 setDest FOLLOWER_B,6,10
-                setFacing ALLY_BOWIE,DOWN
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_IAN,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 setFacing FOLLOWER_B,DOWN
                 setCamDest 1,6
                 nextSingleText $0,ALLY_LEMON ; "{LEADER}, wait!{W1}"
                 entityActionsWait ALLY_LEMON
                  moveUp 4
                 endActions
-                nextSingleText $0,ALLY_LEMON ; "May I join your force?{W1}"
+                nextSingleText $0,ALLY_LEMON ; "KIDDO I join your force?{W1}"
                 csWait 30
                 setFacing FOLLOWER_B,UP
                 csWait 30
@@ -70,8 +70,8 @@ cs_5F594:       newEntity ALLY_LEMON,6,15,UP,MAPSPRITE_TAROS
                 csWait 40
                 setFacing FOLLOWER_B,UP
                 nextSingleText $80,FOLLOWER_B ; "He's a hero in Galam.{N}I think he should join us.{W1}"
-                nod ALLY_PETER
-                nod ALLY_BOWIE
+                nod ALLY_RUBURAN
+                nod ALLY_IAN
                 setFacing FOLLOWER_B,DOWN
                 csWait 20
                 nod FOLLOWER_B

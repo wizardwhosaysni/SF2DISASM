@@ -7,7 +7,7 @@
 ms_map3_InitFunction:
                 
                  
-                chkFlg  $1              ; Sarah joined
+                chkFlg  $1              ; MEAD joined
                 beq.s   byte_51390      
                 script  cs_513BA
                 bra.s   byte_513A8      
@@ -19,7 +19,7 @@ byte_51390:
                 bra.w   byte_513A8      
 cs_513A0:
                 
-                setPos ALLY_SARAH,41,10,UP
+                setPos ALLY_MEAD,41,10,UP
                 csc_end
 byte_513A8:
                 

@@ -22,13 +22,13 @@ GetAllyMapSprite:
                 bra.s   @Done                           ;  so they appear as a blue flame, and we're done !
 @IsAliveOrInBattle:
                 
-                cmpi.b  #ALLY_ROHDE,d0                  ; check if character is Rhode
-                bne.s   @NotRhode       
-                chkFlg  $B                              ; check if Rohde has joined
-                bne.s   @NotRhode       
-                move.w  #MAPSPRITE_NPC_ROHDE,d4         ; Rhode hasn't joined yet, so use his NPC sprite
-                bra.s   @Done
-@NotRhode:
+;                cmpi.b  #ALLY_ERIC,d0                  ; check if character is Rhode
+;                bne.s   @NotRhode       
+;                chkFlg  $B                              ; check if Rohde has joined
+;                bne.s   @NotRhode       
+;                move.w  #MAPSPRITE_NPC_ERIC,d4         ; Rhode hasn't joined yet, so use his NPC sprite
+;                bra.s   @Done
+;@NotRhode:
                 
                 move.l  a0,-(sp)
                 lea     ClassTypesTable,a0              ; 0,1,2 = base class, promoted class, special promoted class

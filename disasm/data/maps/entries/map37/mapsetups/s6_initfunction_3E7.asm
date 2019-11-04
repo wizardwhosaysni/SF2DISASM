@@ -19,31 +19,31 @@ return_5FABA:
 
 cs_5FABC:       textCursor $D1F
                 reloadMap 6,6
-                setPos ALLY_BOWIE,8,12,UP
-                setPos ALLY_PETER,13,12,UP
+                setPos ALLY_IAN,8,12,UP
+                setPos ALLY_RUBURAN,13,12,UP
                 setPos ALLY_ZYNK,10,10,DOWN
                 setPos 128,10,11,UP
                 stopEntity 128
                 playSound MUSIC_STOP
                 fadeInB
-                nextText $80,ALLY_PETER ; "Ouch!  Hey, {NAME;26}!{N}I like your wild driving!{W2}"
-                nextSingleText $80,ALLY_PETER ; "Where's Sir Astral?{W1}"
-                setFacing ALLY_PETER,RIGHT
+                nextText $80,ALLY_RUBURAN ; "Ouch!  Hey, {NAME;26}!{N}I like your wild driving!{W2}"
+                nextSingleText $80,ALLY_RUBURAN ; "Where's Sir Astral?{W1}"
+                setFacing ALLY_RUBURAN,RIGHT
                 csWait 20
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 csWait 20
-                setFacing ALLY_PETER,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
                 csWait 20
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 csWait 20
-                shiver ALLY_PETER
-                nextSingleText $80,ALLY_PETER ; "Oh, there he is!{W1}"
-                setActscriptWait ALLY_PETER,eas_Init
-                entityActionsWait ALLY_PETER
+                shiver ALLY_RUBURAN
+                nextSingleText $80,ALLY_RUBURAN ; "Oh, there he is!{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 3
                  faceUp 1
                 endActions
-                nextSingleText $80,ALLY_PETER ; "Sir Astral!  Are you OK?{W1}"
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $80,ALLY_PETER ; "{LEADER}, come on!{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Sir Astral!  Are you OK?{W1}"
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $80,ALLY_RUBURAN ; "{LEADER}, come on!{W1}"
                 csc_end

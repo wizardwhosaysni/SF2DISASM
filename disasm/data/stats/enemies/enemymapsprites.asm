@@ -109,7 +109,7 @@ EnemyMapSprites:; enum Mapsprites : MAPSPRITE_*
                 mapSprite FILLER7
                 mapSprite FILLER8
                 mapSprite FILLER9
-                mapSprite NPC_ROHDE
+                mapSprite NPC_ERIC
                 mapSprite FLAME1
                 mapSprite ORB
                 mapSprite OBJECT1

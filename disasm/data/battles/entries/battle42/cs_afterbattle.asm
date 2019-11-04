@@ -4,9 +4,9 @@
 abcs_battle42:  textCursor $C22
                 loadMapFadeIn 59,8,13
                 loadMapEntities ce_4F328
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,15,15,LEFT
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,15,15,LEFT
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,11,15,RIGHT
                 setActscriptWait ALLY_LEMON,eas_Init
@@ -37,8 +37,8 @@ cs_4EF5E:       stopEntity 128
                 csWait 60
                 shiver 128
                 nextSingleText $C0,128  ; "Auuugh...{W1}"
-                setFacing ALLY_BOWIE,DOWN
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_IAN,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 setFacing FOLLOWER_B,DOWN
                 shiver 128
                 nextText $C0,128        ; "I've never lost to anybody{N}but the gods.{W2}"
@@ -46,10 +46,10 @@ cs_4EF5E:       stopEntity 128
                 setFacing 128,UP
                 nextSingleText $0,ALLY_LEMON ; "Oh, King Galam...poor{N}King Galam....{W1}"
                 shiver 129
-                setFacing ALLY_PETER,LEFT
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $0,ALLY_PETER ; "Princess Elis!{W1}"
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_RUBURAN,LEFT
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $0,ALLY_RUBURAN ; "Princess Elis!{W1}"
+                setFacing ALLY_IAN,UP
                 setFacing FOLLOWER_B,RIGHT
                 setFacing ALLY_LEMON,UP
                 nextSingleText $C0,129  ; "Zzzzz....{W1}"
@@ -77,17 +77,17 @@ cs_4EF5E:       stopEntity 128
                 csWait 30
                 setFacing 129,LEFT
                 nextSingleText $C0,129  ; "Who are they?{W1}"
-                nextSingleText $0,ALLY_PETER ; "Nice to meet you.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Nice to meet you.{W1}"
                 setFacing 129,UP
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $0,ALLY_PETER ; "I'm {NAME;7}.  And this is{N}our leader.{W1}"
-                entityActionsWait ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $0,ALLY_RUBURAN ; "I'm {NAME;7}.  And this is{N}our leader.{W1}"
+                entityActionsWait ALLY_RUBURAN
                  moveDown 2
                  moveLeft 1
                 endActions
                 setFacing 129,DOWN
-                setFacing ALLY_PETER,UP
-                nextSingleText $0,ALLY_PETER ; "{LEADER}, say something.{W1}"
+                setFacing ALLY_RUBURAN,UP
+                nextSingleText $0,ALLY_RUBURAN ; "{LEADER}, say something.{W1}"
                 setSprite 129,MAPSPRITE_ELIS
                 setFacing 129,DOWN
                 startEntity 129
@@ -100,16 +100,16 @@ cs_4EF5E:       stopEntity 128
                  moveDown 1
                 endActions
                 csWait 50
-                nextSingleText $0,ALLY_BOWIE ; "Ah...{W1}"
+                nextSingleText $0,ALLY_IAN ; "Ah...{W1}"
                 csWait 50
                 nextSingleText $C0,129  ; "Er...ummm....{W1}"
-                setPos ALLY_PETER,13,18,UP
+                setPos ALLY_RUBURAN,13,18,UP
                 csWait 30
-                setPos ALLY_PETER,14,16,LEFT
+                setPos ALLY_RUBURAN,14,16,LEFT
                 csWait 30
-                setPos ALLY_PETER,13,15,DOWN
+                setPos ALLY_RUBURAN,13,15,DOWN
                 csWait 30
-                setPos ALLY_PETER,14,17,LEFT
+                setPos ALLY_RUBURAN,14,17,LEFT
                 setFacing FOLLOWER_B,DOWN
                 nextSingleText $0,FOLLOWER_B ; "{NAME;7}, don't bother them!{N}This is a private moment!{W1}"
                 setQuake 2
@@ -120,7 +120,7 @@ cs_4EF5E:       stopEntity 128
                 csWait 120
                 setFacing ALLY_LEMON,DOWN
                 setQuake 2
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveLeft 2
                 endActions
                 entityActionsWait 129
@@ -128,23 +128,23 @@ cs_4EF5E:       stopEntity 128
                  moveLeft 1
                 endActions
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461E4
-                entityActionsWait ALLY_PETER
+                setActscript ALLY_IAN,eas_461E4
+                entityActionsWait ALLY_RUBURAN
                  moveRight 2
                 endActions
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 entityActionsWait FOLLOWER_B
                  moveRight 1
                 endActions
                 csWait 5
                 setActscript FOLLOWER_B,eas_461B6
                 csWait 120
-                nextSingleText $0,ALLY_PETER ; "An earthquake!{N}Deep below us....{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "An earthquake!{N}Deep below us....{W1}"
                 nextSingleText $0,ALLY_LEMON ; "Something is coming up{N}through the earth...{W1}"
                 setFacing FOLLOWER_B,UP
                 nextSingleText $0,FOLLOWER_B ; "I almost forgot...about...{N}the other devil....{W1}"
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 2
                  moveRight 1
                 endActions
@@ -153,25 +153,25 @@ cs_4EF5E:       stopEntity 128
                  moveRight 1
                  moveUp 1
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 2
                  moveLeft 2
                 endActions
                 entityActions 129
                  moveUp 1
                 endActions
-                waitIdle ALLY_PETER
-                setFacing ALLY_BOWIE,RIGHT
+                waitIdle ALLY_RUBURAN
+                setFacing ALLY_IAN,RIGHT
                 setFacing FOLLOWER_B,LEFT
-                nextSingleText $0,ALLY_BOWIE ; "You mean...Zeon?{W1}"
+                nextSingleText $0,ALLY_IAN ; "You mean...Zeon?{W1}"
                 nod FOLLOWER_B
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
                 setFacing ALLY_LEMON,UP
                 setCamDest 8,3
                 setQuake 3
-                nextSingleText $0,ALLY_PETER ; "Huh?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Huh?{W1}"
                 playSound SFX_BATTLEFIELD_DEATH
                 setBlocks 12,39,7,4,10,3
                 csWait 40
@@ -185,7 +185,7 @@ cs_4EF5E:       stopEntity 128
                 csWait 40
                 nextSingleText $0,129   ; "Eeeekkk!{W1}"
                 csWait 40
-                nextSingleText $0,ALLY_BOWIE ; "Oh, no.{W1}"
+                nextSingleText $0,ALLY_IAN ; "Oh, no.{W1}"
                 playSound SFX_DEMON_BREATH
                 setQuake 4
                 csWait 30
@@ -235,17 +235,17 @@ cs_4EF5E:       stopEntity 128
                 setCamDest 8,12
                 setFacing FOLLOWER_B,LEFT
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, we had better{N}run away and return later.{W1}"
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $0,ALLY_PETER ; "Sir Astral, we can't!{W1}"
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $0,ALLY_RUBURAN ; "Sir Astral, we can't!{W1}"
                 setFacing FOLLOWER_B,RIGHT
                 nextSingleText $0,FOLLOWER_B ; "Why not?{W1}"
-                nextSingleText $0,ALLY_PETER ; "Princess Elis fainted when{N}she saw Zeon.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Princess Elis fainted when{N}she saw Zeon.{W1}"
                 setFacing FOLLOWER_B,DOWN
                 setFacing ALLY_LEMON,LEFT
                 setActscriptWait FOLLOWER_B,eas_Jump
                 nextSingleText $0,FOLLOWER_B ; "What?  Oh, my.{W1}"
-                setFacing ALLY_BOWIE,DOWN
-                setActscriptWait ALLY_BOWIE,eas_Jump
+                setFacing ALLY_IAN,DOWN
+                setActscriptWait ALLY_IAN,eas_Jump
                 entityActionsWait ALLY_LEMON
                  moveDown 1
                 endActions
@@ -259,19 +259,19 @@ cs_4EF5E:       stopEntity 128
                 csWait 30
                 nextSingleText $0,ALLY_LEMON ; "And now we're surrounded{N}by devils.{W1}"
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 setFacing FOLLOWER_B,LEFT
                 csWait 40
                 setFacing FOLLOWER_B,UP
                 nextText $0,FOLLOWER_B  ; "{LEADER}, believe in your{N}sword and the jewel!{N}We must fight Zeon now!{W1}"
                 nextSingleText $0,FOLLOWER_B ; "Let's go!{W1}"
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
-                nod ALLY_BOWIE
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
+                nod ALLY_IAN
                 setStoryFlag $2B        ; Battle 43 unlocked
                 csc_end
 ce_4F328:       mainEntity 13,17,UP
-                entity 15,15,LEFT,ALLY_PETER,eas_Init
+                entity 15,15,LEFT,ALLY_RUBURAN,eas_Init
                 entity 12,19,RIGHT,ALLY_LEMON,eas_Init
                 entity 13,19,DOWN,MAPSPRITE_GALAM_EVIL,eas_Init
                 entity 13,15,DOWN,MAPSPRITE_ELIS,eas_Init

@@ -81,15 +81,15 @@ j_MapEventType3:
                 jmp     MapEventType3(pc)
 j_MapEventType5:                
                 jmp     MapEventType5(pc)
-; related to followers maybe
+; related to followers KIDDObe
 j_MapEventType2:                
                 jmp     MapEventType2(pc)
 j_MapEventType4:                
                 jmp     MapEventType4(pc)
-j_ShrinkInBowieAndFollowers:                
-                jmp     ShrinkIntoCaravanBowieAndFollowers(pc)
-j_GrowOutBowieAndFollowers:                
-                jmp     GrowOutBowieAndFollowers(pc)
+j_ShrinkInIANAndFollowers:                
+                jmp     ShrinkIntoCaravanIANAndFollowers(pc)
+j_GrowOutIANAndFollowers:                
+                jmp     GrowOutIANAndFollowers(pc)
 j_RunMapSetupInitFunction:                
                 jmp     RunMapSetupInitFunction(pc)
 sub_440AC:                
@@ -116,22 +116,32 @@ j_ClearEntities:
                 include "code\common\scripting\entity\entityfunctions_1.asm"    ; Entity functions
                 include "data\battles\global\battleneutralentities.asm"    ; Battle entities which are not force members or enemies
                 include "data\scripting\entity\eas_battleneutralentities.asm"    ; Entity actscripts for battle entities which are not force members or enemies
-                includeIfVanillaRom "code\common\scripting\entity\getallymapsprite.asm"    ; Get ally map sprite ID function
-                includeIfVanillaRom "data\stats\allies\allymapsprites.asm"    ; Ally map sprite IDs
-                includeIfVanillaRom "code\common\scripting\entity\getcombatantmapsprite.asm"    ; Get combatant map sprite ID function
-                includeIfExpandedRom "code\common\scripting\entity\getallymapsprite-expanded.asm"
-                includeIfExpandedRom "code\common\scripting\entity\getcombatantmapsprite-expanded.asm"
-                includeIfExpandedRom "data\stats\allies\allymapsprites-expanded.asm"
+                
+                ;includeIfVanillaRom "code\common\scripting\entity\getallymapsprite.asm"    ; Get ally map sprite ID function
+                ;includeIfVanillaRom "data\stats\allies\allymapsprites.asm"    ; Ally map sprite IDs
+                ;includeIfVanillaRom "code\common\scripting\entity\getcombatantmapsprite.asm"    ; Get combatant map sprite ID function
+                ;includeIfExpandedRom "code\common\scripting\entity\getallymapsprite-expanded.asm"
+                ;includeIfExpandedRom "code\common\scripting\entity\getcombatantmapsprite-expanded.asm"
+                ;includeIfExpandedRom "data\stats\allies\allymapsprites-expanded.asm"
+                include "code\common\scripting\entity\getallymapsprite-expanded.asm"
+                include "code\common\scripting\entity\getcombatantmapsprite-expanded.asm"
+                include "data\stats\allies\allymapsprites-expanded.asm"
+                
                 include "data\stats\enemies\enemymapsprites.asm"    ; Enemy map sprite IDs
-                wordAlignIfExpandedRom
+                align 2
+                ;wordAlignIfExpandedRom
                 include "code\common\scripting\entity\entityfunctions_2.asm"    ; Entity functions
                 include "data\scripting\entity\eas_main.asm"    ; Main entity actscripts
                 include "code\common\scripting\entity\entityfunctions_3.asm"    ; Entity functions
                 include "code\common\scripting\map\vehiclefunctions.asm"    ; Mapscripts and functions for Caravan and Raft
-                includeIfVanillaRom "code\common\scripting\entity\getentityportaitandspeechsound.asm"    ; Get entity portrait and speech sound IDs function
-                includeIfVanillaRom "data\spritedialogproperties.asm"    ; Sprite dialog properties
-                includeIfExpandedRom "code\common\scripting\entity\getentityportaitandspeechsound-expanded.asm"
-                includeIfExpandedRom "data\spritedialogproperties-expanded.asm"
+                
+                ;includeIfVanillaRom "code\common\scripting\entity\getentityportaitandspeechsound.asm"    ; Get entity portrait and speech sound IDs function
+                ;includeIfVanillaRom "data\spritedialogproperties.asm"    ; Sprite dialog properties
+                ;includeIfExpandedRom "code\common\scripting\entity\getentityportaitandspeechsound-expanded.asm"
+                ;includeIfExpandedRom "data\spritedialogproperties-expanded.asm"
+                include "code\common\scripting\entity\getentityportaitandspeechsound-expanded.asm"
+                include "data\spritedialogproperties-expanded.asm"
+                
                 include "code\common\scripting\entity\entityfunctions_4.asm"    ; Entity functions
                 include "data\scripting\entity\eas_actions.asm"    ; Entity scripts for cutscene actions
                 include "code\common\scripting\map\mapscriptengine_1.asm"    ; Mapscript engine, part 1
@@ -152,7 +162,8 @@ j_ClearEntities:
                 include "data\battles\battleendcutscenes.asm"    ; Enemy defeated cutscenes
                 include "code\gameflow\battle\battleendcutscenesend.asm"    ; Battle end cutscenes function end
                 include "data\battles\global\enemyleaderpresence.asm"    ; Enemy leader presence table
-                wordAlignIfExpandedRom
+                align 2
+                ;wordAlignIfExpandedRom
                 include "code\gameflow\battle\afterbattlecutscenesstart.asm"    ; After battle cutscenes function start
                 include "data\battles\afterbattlecutscenes.asm"    ; After battle cutscenes
                 include "code\gameflow\battle\afterbattlecutscenesend.asm"    ; After battle cutscenes function end
@@ -161,11 +172,10 @@ j_ClearEntities:
                 include "code\gameflow\battle\regionactivatedcutscenes.asm"    ; Region-activated cutscenes functions
                 include "data\battles\global\regionactivatedcutscenes.asm"    ; Region-activated cutscenes data
                 include "code\common\tech\graphics\flashwhite.asm"    ; Flash white function and script
+      					include "code\common\scripting\scrollingtext.asm"         ; SCROLLING TEXT INSERTION 
+      					include "code\gameflow\start\textintro.asm"         ; TEXT INTRO INSERTION 
                 include "data\scripting\map\cs_introendroutine.asm"    ; Subroutine launching intro and end cutscenes
-                include "data\scripting\map\cs_intro1.asm"    ; Intro cutscene 1
-                include "data\scripting\map\cs_intro2.asm"    ; Intro cutscene 2
-                include "data\scripting\map\cs_intro3.asm"    ; Intro cutscene 3
-                include "data\scripting\map\cs_intro4.asm"    ; Intro cutscene 4
+                include "data\scripting\map\cs_intro.asm"    ; Intro cutscene 
                 include "data\scripting\map\cs_intro_stormeffect.asm"    ; Storm Effect
                 include "data\scripting\map\cs_end.asm"    ; End cutscene
                 include data\battles\entries\battlecutscenesstorage.asm

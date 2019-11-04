@@ -23,8 +23,8 @@ loc_612A8:
 
 cs_612BE:       textCursor $E61
                 mapLoad 59,8,4
-                setPos ALLY_BOWIE,63,63,DOWN
-                setPos ALLY_PETER,63,63,DOWN
+                setPos ALLY_IAN,63,63,DOWN
+                setPos ALLY_RUBURAN,63,63,DOWN
                 setPos FOLLOWER_B,63,63,DOWN
                 setPos ALLY_ZYNK,63,63,DOWN
                 fadeInFromBlackHalf

@@ -26,11 +26,11 @@ GetAllyMapSprite:
                 bra.w   @Done           ;  so they appear as a blue flame, and we're done !
 @IsAliveOrInBattle:
                 
-                cmpi.b  #ALLY_ROHDE,d0  ; Rhode !
+                cmpi.b  #ALLY_ERIC,d0  ; Rhode !
                 bne.s   @NotRhode       
                 chkFlg  $B              ; Rohde joined
                 bne.s   @NotRhode       
-                move.w  #MAPSPRITE_NPC_ROHDE,d4 ; Rhode hasn't joined yet...
+                move.w  #MAPSPRITE_NPC_ERIC,d4 ; Rhode hasn't joined yet...
                 bra.w   @Done           ;  so use his NPC sprite
 @NotRhode:
                 

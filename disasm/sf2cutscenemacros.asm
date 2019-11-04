@@ -552,6 +552,11 @@ jumpLeft:	macro
 	dc.b $0F
 	dc.b \1
 	endm
+	
+eaSound:	macro
+	dc.b $10
+	dc.b \1
+	endm
 
 endActions:	macro
 	dc.w $8080

@@ -350,11 +350,11 @@ j_VintFunc_16588:
 
 ; =============== S U B R O U T I N E =======================================
 
-j_WitchMainMenu:
+j_BookReaderMainMenu:
                 
-                jmp     WitchMainMenu(pc)
+                jmp     BookReaderMainMenu(pc)
 
-	; End of function j_WitchMainMenu
+	; End of function j_BookReaderMainMenu
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3975,7 +3975,7 @@ loc_123F2:
                 
                 move.w  -2(a6),d0
                 bne.s   loc_12446
-                chkFlg  $180            ; Set after Bowie obtains the jewel of light/evil... whichever it is
+                chkFlg  $180            ; Set after IAN obtains the jewel of light/evil... whichever it is
                 beq.s   loc_12446
                 move.w  d7,-(sp)
                 lea     aJewel(pc), a0  
@@ -3989,7 +3989,7 @@ loc_123F2:
                 adda.w  #$39E,a1
                 move.w  #$92,d1 
                 bsr.w   CopyMemberScreenIconsToVDPTileOrder
-                chkFlg  $181            ; Set after Bowie obtains King Galam's jewel
+                chkFlg  $181            ; Set after IAN obtains King Galam's jewel
                 beq.s   loc_12446
                 movea.l -6(a6),a1
                 adda.w  #$3A2,a1

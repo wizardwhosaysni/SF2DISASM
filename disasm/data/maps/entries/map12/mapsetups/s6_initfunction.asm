@@ -24,17 +24,17 @@ return_57D20:
 
 cs_57D22:       textCursor $C7D
                 cameraSpeed $30
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
-                setPos ALLY_BOWIE,12,31,UP
-                setPos ALLY_PETER,13,31,UP
+                setPos ALLY_IAN,12,31,UP
+                setPos ALLY_RUBURAN,13,31,UP
                 setPos FOLLOWER_B,11,31,UP
                 fadeInB
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 5
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 5
                 endActions
                 entityActionsWait FOLLOWER_B
@@ -42,46 +42,46 @@ cs_57D22:       textCursor $C7D
                 endActions
                 nextSingleText $0,128   ; "Stop!{W1}"
                 csWait 10
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscriptWait FOLLOWER_B,eas_Jump
                 csWait 30
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461B6
+                setActscript ALLY_IAN,eas_461B6
                 csWait 5
-                setActscript ALLY_PETER,eas_461E4
+                setActscript ALLY_RUBURAN,eas_461E4
                 csWait 5
                 setActscript FOLLOWER_B,eas_461B6
                 csWait 80
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 setFacing FOLLOWER_B,UP
-                nextSingleText $80,ALLY_PETER ; "Who said that?{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Who said that?{W1}"
                 setCamDest 7,5
-                nextSingleText $80,ALLY_PETER ; "Wow, what a huge guy!{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Wow, what a huge guy!{W1}"
                 csWait 30
                 nextSingleText $0,128   ; "Leave here!{N}I'll attack you if you don't!{W1}"
                 setCamDest 7,21
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                 endActions
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_IAN,RIGHT
                 setFacing FOLLOWER_B,RIGHT
-                setFacing ALLY_PETER,LEFT
-                nextText $80,ALLY_PETER ; "Attack us?!  {LEADER},{N}let's get out of here!{W2}"
-                nextSingleText $80,ALLY_PETER ; "We don't want to fight him!{W1}"
+                setFacing ALLY_RUBURAN,LEFT
+                nextText $80,ALLY_RUBURAN ; "Attack us?!  {LEADER},{N}let's get out of here!{W2}"
+                nextSingleText $80,ALLY_RUBURAN ; "We don't want to fight him!{W1}"
                 csWait 20
-                nod ALLY_BOWIE
-                nextSingleText $80,ALLY_PETER ; "OK, hurry!{W1}"
-                entityActions ALLY_BOWIE
+                nod ALLY_IAN
+                nextSingleText $80,ALLY_RUBURAN ; "OK, hurry!{W1}"
+                entityActions ALLY_IAN
                  moveDown 5
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveDown 5
                 endActions
                 entityActionsWait FOLLOWER_B

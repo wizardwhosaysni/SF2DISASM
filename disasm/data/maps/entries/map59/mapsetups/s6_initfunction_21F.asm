@@ -19,14 +19,14 @@ return_615E4:
 cs_615E6:       textCursor $EB0
                 setCameraEntity 65535
                 reloadMap 9,6
-                setPos ALLY_BOWIE,12,11,UP
-                setPriority ALLY_BOWIE,$0
+                setPos ALLY_IAN,12,11,UP
+                setPriority ALLY_IAN,$0
                 setPriority 128,$FFFF
                 setBlocks 12,39,7,4,10,3
                 setActscriptWait 130,eas_46172
                 setActscriptWait 128,eas_46172
                 setActscriptWait 131,eas_46172
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 setActscript 129,eas_Transparent
                 customActscriptWait 134
                  ac_setAnimCounter $0   ;   
@@ -127,12 +127,12 @@ cs_615E6:       textCursor $EB0
                  moveUp 1
                  moveLeft 1
                 endActions
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscript 133,eas_Jump
                 setActscriptWait ALLY_LEMON,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscript 133,eas_Jump
                 setActscriptWait ALLY_LEMON,eas_Jump
                 csWait 20
@@ -156,18 +156,18 @@ cs_615E6:       textCursor $EB0
                 playSound MUSIC_ZEON_ATTACK
                 nextSingleText $80,134  ; "I'm not Galam, you fools!{W1}"
                 setActscript 132,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscript 133,eas_Jump
                 setActscriptWait ALLY_LEMON,eas_Jump
                 setActscript 132,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscript 133,eas_Jump
                 setActscriptWait ALLY_LEMON,eas_Jump
                 setActscriptWait 132,eas_46172
                 setActscript 132,eas_AnimSpeedx2
-                nextSingleText $80,ALLY_PETER ; "Zeon!{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Zeon!{W1}"
                 setActscriptWait ALLY_LEMON,eas_46172
                 customActscriptWait ALLY_LEMON
                  ac_setSpeed 10,10      ;   
@@ -204,94 +204,94 @@ cs_615E6:       textCursor $EB0
                 setFacing 134,DOWN
                 nextSingleText $0,134   ; "{LEADER}!  Phoenix!{N}Come here!{W1}"
                 csWait 20
-                setFacing ALLY_PETER,LEFT
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_RUBURAN,LEFT
+                setFacing ALLY_IAN,RIGHT
                 csWait 20
-                nextSingleText $80,ALLY_PETER ; "Well, {LEADER}.{N}What should we do?{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Well, {LEADER}.{N}What should we do?{W1}"
                 nextText $0,134         ; "Quickly!  My time is short,{N}but I can still choke her!{W2}"
                 nextSingleText $0,134   ; "Get over here, NOW!{W1}"
                 csWait 20
-                nextSingleText $80,ALLY_PETER ; "We have no choice....{W1}"
-                nod ALLY_BOWIE
+                nextSingleText $80,ALLY_RUBURAN ; "We have no choice....{W1}"
+                nod ALLY_IAN
                 nextSingleText $FF,255  ; "{LEADER} nods hopelessly.{W1}"
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_IAN,UP
                 csWait 30
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 16,16      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 16,16      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 1
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
                 nextText $0,134         ; "That's far enough.{N}Now, phoenix.{W2}"
                 nextSingleText $0,134   ; "Take the Jewel of Evil{N}from {LEADER}!{W1}"
                 csWait 20
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 csWait 50
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 csWait 30
-                nextSingleText $80,ALLY_PETER ; "But, we can't remove it.{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "But, we can't remove it.{W1}"
                 setActscriptWait 134,eas_Jump
                 setActscriptWait 134,eas_Jump
                 nextSingleText $0,134   ; "Shut up!  Do it!{W1}"
-                nextSingleText $80,ALLY_PETER ; "But...{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "But...{W1}"
                 csWait 30
-                setFacing ALLY_PETER,LEFT
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_RUBURAN,LEFT
+                setFacing ALLY_IAN,RIGHT
                 csWait 20
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveRight 1
                 endActions
                 csWait 30
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveLeft 1
                 endActions
                 csWait 15
-                setActscriptWait ALLY_PETER,eas_461AA
+                setActscriptWait ALLY_RUBURAN,eas_461AA
                 nextSingleText $FF,255  ; "{NAME;7} tugs at the{N}jewel.{W1}"
                 csWait 20
-                nextSingleText $80,ALLY_PETER ; "Nope.  Let me try this.{W1}"
-                shiver ALLY_PETER
+                nextSingleText $80,ALLY_RUBURAN ; "Nope.  Let me try this.{W1}"
+                shiver ALLY_RUBURAN
                 nextSingleText $FF,255  ; "{NAME;7} removed the{N}jewel from {LEADER}'s neck.{W1}"
-                setActscriptWait ALLY_PETER,eas_46172
-                entityActions ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_46172
+                entityActions ALLY_RUBURAN
                  moveRight 1
                 endActions
                 csWait 15
-                setActscriptWait ALLY_PETER,eas_461AA
-                nextSingleText $80,ALLY_PETER ; "Oh, my!{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_461AA
+                nextSingleText $80,ALLY_RUBURAN ; "Oh, my!{W1}"
                 csWait 30
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_BOWIE,UP
-                nextSingleText $80,ALLY_PETER ; "What should I do with it?{W1}"
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_IAN,UP
+                nextSingleText $80,ALLY_RUBURAN ; "What should I do with it?{W1}"
                 csWait 20
                 setFacing 134,RIGHT
                 nextSingleText $0,134   ; "Put it in front of me.{W1}"
                 csWait 20
-                nod ALLY_PETER
-                nextSingleText $80,ALLY_PETER ; "OK....{W1}"
-                entityActionsWait ALLY_PETER
+                nod ALLY_RUBURAN
+                nextSingleText $80,ALLY_RUBURAN ; "OK....{W1}"
+                entityActionsWait ALLY_RUBURAN
                  moveUp 2
                  faceLeft 1
                 endActions
                 setFacing 134,RIGHT
                 csWait 20
-                nod ALLY_PETER
+                nod ALLY_RUBURAN
                 csWait 20
                 nextSingleText $FF,255  ; "{NAME;7} put the jewel on{N}the ground.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 2
                 endActions
                 nextSingleText $0,134   ; "Excellent!{N}Finally, I have it back!{W1}"
@@ -328,7 +328,7 @@ cs_615E6:       textCursor $EB0
                 shiver 133
                 nextSingleText $0,134   ; "Ha, ha!  Astral!{N}I'll have revived fully in a{N}few minutes.{W1}"
                 shiver 133
-                nextSingleText $0,134   ; "You did a good job, Elis.{N}You may take a rest now.{W1}"
+                nextSingleText $0,134   ; "You did a good job, Elis.{N}You KIDDO take a rest now.{W1}"
                 nextSingleText $80,132  ; "A rest?  Wha...{W1}"
                 nextSingleText $FF,255  ; "A black cloud envelopes{N}Elis.{W1}"
                 setPos 131,14,8,LEFT
@@ -396,17 +396,17 @@ cs_615E6:       textCursor $EB0
                  ac_updateSprite        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_IAN,LEFT
                 setFacing 133,LEFT
                 nextSingleText $0,134   ; "That is special fire.{N}It burns even vampires!{W1}"
                 shiver 134
                 csWait 20
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 setFacing 133,UP
-                nextSingleText $80,ALLY_PETER ; "NO!{W1}"
-                setActscriptWait ALLY_PETER,eas_Init
+                nextSingleText $80,ALLY_RUBURAN ; "NO!{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait 133,eas_Init
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveLeft 1
                 endActions
                 entityActionsWait 133
@@ -414,7 +414,7 @@ cs_615E6:       textCursor $EB0
                 endActions
                 setFacing 133,LEFT
                 setFacing 134,RIGHT
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -422,13 +422,13 @@ cs_615E6:       textCursor $EB0
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setActscriptWait ALLY_PETER,eas_46172
+                setActscriptWait ALLY_RUBURAN,eas_46172
                 setActscriptWait 133,eas_46172
                 setActscript 134,eas_BumpRight
                 entityFlashWhite 134,$28
                 playSound SFX_BLAST_SPELL
-                setCameraEntity ALLY_PETER
-                entityActions ALLY_PETER
+                setCameraEntity ALLY_RUBURAN
+                entityActions ALLY_RUBURAN
                  moveRight 4
                 endActions
                 entityActions 133
@@ -439,8 +439,8 @@ cs_615E6:       textCursor $EB0
                 playSound SFX_LIGHTNING_2
                 setQuake 4
                 setDest 134,13,8
-                setFacing ALLY_PETER,LEFT
-                customActscriptWait ALLY_PETER
+                setFacing ALLY_RUBURAN,LEFT
+                customActscriptWait ALLY_RUBURAN
                  ac_setAnimCounter $0   ;   
                  ac_setFlip $3          ;   
                  ac_updateSprite        ;   
@@ -455,15 +455,15 @@ cs_615E6:       textCursor $EB0
                 ac_end
                 csWait 30
                 setQuake 0
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 64,64      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setCameraEntity ALLY_BOWIE
-                entityActionsWait ALLY_BOWIE
+                setCameraEntity ALLY_IAN
+                entityActionsWait ALLY_IAN
                  moveUp 1
                 endActions
-                setActscriptWait ALLY_BOWIE,eas_BumpUp
+                setActscriptWait ALLY_IAN,eas_BumpUp
                 nextSingleText $FF,255  ; "{LEADER} slapped the jewel{N}out of Zeon's hand.{W1}"
                 playSound $FD
                 setPos 129,14,8,DOWN
@@ -474,24 +474,24 @@ cs_615E6:       textCursor $EB0
                 setFacing 134,DOWN
                 headshake 134
                 nextSingleText $0,134   ; "Ouch, darn you {LEADER}!{W1}"
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setActscriptWait ALLY_BOWIE,eas_46172
+                setActscriptWait ALLY_IAN,eas_46172
                 setActscript 134,eas_BumpDown
                 entityFlashWhite 134,$A
                 playSound SFX_BLAST_SPELL
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveDown 5
                 endActions
                 playSound SFX_FALLING
                 entityFlashWhite 134,$28
-                waitIdle ALLY_BOWIE
+                waitIdle ALLY_IAN
                 playSound SFX_LIGHTNING_2
                 setQuake 4
-                setFacing ALLY_BOWIE,UP
-                customActscriptWait ALLY_BOWIE
+                setFacing ALLY_IAN,UP
+                customActscriptWait ALLY_IAN
                  ac_setAnimCounter $0   ;   
                  ac_setFlip $2          ;   
                  ac_updateSprite        ;   
@@ -500,8 +500,8 @@ cs_615E6:       textCursor $EB0
                 csWait 30
                 setQuake 0
                 csWait 30
-                nextSingleText $0,ALLY_BOWIE ; "Ohhh....{W1}"
-                shiver ALLY_BOWIE
+                nextSingleText $0,ALLY_IAN ; "Ohhh....{W1}"
+                shiver ALLY_IAN
                 nextSingleText $FF,255  ; "{LEADER} is stunned.{W1}"
                 setCamDest 10,4
                 setFacing 134,DOWN
@@ -720,16 +720,16 @@ cs_615E6:       textCursor $EB0
                 setQuake 0
                 csWait 60
                 playSound $FD
-                setCameraEntity ALLY_PETER
+                setCameraEntity ALLY_RUBURAN
                 csWait 60
-                setActscriptWait ALLY_PETER,eas_Init
-                startEntity ALLY_PETER
-                setFacing ALLY_PETER,DOWN
-                headshake ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                startEntity ALLY_RUBURAN
+                setFacing ALLY_RUBURAN,DOWN
+                headshake ALLY_RUBURAN
                 csWait 60
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 csWait 20
-                nextSingleText $80,ALLY_PETER ; "{NAME;28} has taken Zeon{N}away.{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "{NAME;28} has taken Zeon{N}away.{W1}"
                 playSound MUSIC_SAD_THEME_3
                 setCameraEntity 133
                 csWait 30
@@ -742,16 +742,16 @@ cs_615E6:       textCursor $EB0
                  moveRight 1
                  faceUp 1
                 endActions
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 nextText $80,133        ; "It's over.{W2}"
                 nextSingleText $80,133  ; "But, what a tragic ending.{W1}"
-                nod ALLY_PETER
+                nod ALLY_RUBURAN
                 csWait 40
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $80,ALLY_PETER ; "{LEADER}?  Is he OK?{W1}"
-                setCameraEntity ALLY_PETER
-                entityActionsWait ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $80,ALLY_RUBURAN ; "{LEADER}?  Is he OK?{W1}"
+                setCameraEntity ALLY_RUBURAN
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                  moveDown 4
                 endActions
@@ -759,20 +759,20 @@ cs_615E6:       textCursor $EB0
                  moveDown 4
                  moveLeft 7
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 5
                  moveLeft 6
                 endActions
                 setFacing 133,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 csWait 40
-                setActscriptWait ALLY_BOWIE,eas_Init
-                startEntity ALLY_BOWIE
-                setFacing ALLY_BOWIE,DOWN
-                headshake ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_Init
+                startEntity ALLY_IAN
+                setFacing ALLY_IAN,DOWN
+                headshake ALLY_IAN
                 csWait 30
-                nextSingleText $80,ALLY_PETER ; "{LEADER},  Zeon was{N}taken away by {NAME;28}.{W1}"
-                nod ALLY_BOWIE
+                nextSingleText $80,ALLY_RUBURAN ; "{LEADER},  Zeon was{N}taken away by {NAME;28}.{W1}"
+                nod ALLY_IAN
                 nextSingleText $FF,255  ; "{LEADER} nods.{W1}"
                 csWait 40
                 shiver 133
@@ -780,13 +780,13 @@ cs_615E6:       textCursor $EB0
                 entityActions 133
                  moveUp 2
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                  moveUp 1
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 setCamDest 8,5
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 5
                  faceRight 1
                 endActions
@@ -796,29 +796,29 @@ cs_615E6:       textCursor $EB0
                  moveUp 1
                  faceLeft 1
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 6
                  moveRight 1
                  faceUp 1
                 endActions
                 csWait 20
-                setPriority ALLY_PETER,$FFFF
+                setPriority ALLY_RUBURAN,$FFFF
                 setPriority 132,$0
-                setActscriptWait ALLY_PETER,eas_BumpUp
-                setActscriptWait ALLY_PETER,eas_BumpUp
-                nextSingleText $80,ALLY_PETER ; "Princess!{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_BumpUp
+                setActscriptWait ALLY_RUBURAN,eas_BumpUp
+                nextSingleText $80,ALLY_RUBURAN ; "Princess!{W1}"
                 nextSingleText $FF,255  ; "{NAME;7} shakes her{N}wildly.{W1}"
                 csWait 10
                 showPortrait $80,132
                 executeSubroutine csub_6269C
                 nextSingleText $80,132  ; "Elis does not respond.{W1}"
-                shiver ALLY_PETER
-                nextSingleText $80,ALLY_PETER ; "She's so cold, and looks so{N}pale.{W2}"
-                entityActionsWait ALLY_PETER
+                shiver ALLY_RUBURAN
+                nextSingleText $80,ALLY_RUBURAN ; "She's so cold, and looks so{N}pale.{W2}"
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                  faceUp 1
                 endActions
-                nextSingleText $80,ALLY_PETER ; "Sir Astral, is she dead?{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "Sir Astral, is she dead?{W1}"
                 setFacing 133,DOWN
                 headshake 133
                 nextSingleText $80,133  ; "I don't think so.{N}Let me see her.{W1}"
@@ -849,25 +849,25 @@ cs_615E6:       textCursor $EB0
                 playSound $FD
                 nextSingleText $0,135   ; "She's in a coma.{W1}"
                 csWait 5
-                setActscript ALLY_BOWIE,eas_461B6
+                setActscript ALLY_IAN,eas_461B6
                 csWait 5
                 setActscript 133,eas_461B6
                 csWait 5
-                setActscript ALLY_PETER,eas_461E4
+                setActscript ALLY_RUBURAN,eas_461E4
                 csWait 120
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 setFacing 133,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 playSound MUSIC_MITULA
                 setPos 135,13,7,DOWN
                 playSound SFX_PRISM_LASER_FIRING
                 entityFlashWhite 135,$46
-                setActscript ALLY_BOWIE,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
                 setActscript 133,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
                 setActscript 133,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
                 csWait 20
                 entityActionsWait 133
                  moveUp 1
@@ -877,53 +877,53 @@ cs_615E6:       textCursor $EB0
                 setCamDest 8,4
                 nod 135
                 nextSingleText $0,135   ; "Hello, Astral.{N}{LEADER} and {NAME;7},{N}you did very well.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "Mitula!  I knew you would{N}come.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Mitula!  I knew you would{N}come.{W1}"
                 shiver 135
                 nextSingleText $0,135   ; "We've been watching.{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $80,ALLY_PETER ; "We?  I don't see anybody{N}else?{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $80,ALLY_RUBURAN ; "We?  I don't see anybody{N}else?{W1}"
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 csWait 80
                 nextSingleText $0,135   ; "C'mon, {NAME;7}.{N}You know what I mean.{W1}"
-                setFacing ALLY_PETER,UP
-                nextSingleText $80,ALLY_PETER ; "Volcanon?{W1}"
-                setActscriptWait ALLY_PETER,eas_46172
-                customActscriptWait ALLY_PETER
+                setFacing ALLY_RUBURAN,UP
+                nextSingleText $80,ALLY_RUBURAN ; "Volcanon?{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_46172
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                 endActions
-                shiver ALLY_PETER
+                shiver ALLY_RUBURAN
                 csWait 30
                 nextSingleText $0,135   ; "Yes.  He helped you many{N}times.{W1}"
-                setActscriptWait ALLY_PETER,eas_Init
-                entityActionsWait ALLY_PETER
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 3
                  moveUp 3
                  faceRight 1
                 endActions
                 setCamDest 8,3
-                nextSingleText $80,ALLY_PETER ; "When?{W1}"
+                nextSingleText $80,ALLY_RUBURAN ; "When?{W1}"
                 setFacing 135,LEFT
                 nextText $80,135        ; "You doubt me?{W2}"
                 nextSingleText $80,135  ; "How about {NAME;28}?{N}God Volcanon protected him{N}from the fire.{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $0,ALLY_PETER ; "Really?  But he said, he{N}would forsake the people{N}of the earth.{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $0,ALLY_RUBURAN ; "Really?  But he said, he{N}would forsake the people{N}of the earth.{W1}"
                 nextText $80,135        ; "He said that to deceive the{N}devils.{W2}"
                 nextText $80,135        ; "If he had joined you at{N}that time, Zeon would've{N}come to Parmecia.{W2}"
                 nextText $80,135        ; "The entire continent might{N}have been destroyed.{W2}"
                 nextSingleText $80,135  ; "And if Volcanon had joined{N}you, you would've leaned{N}on him, wouldn't you have?{W1}"
                 csWait 20
                 nextText $80,133        ; "The Jewel of Light was made{N}by him, wasn't it?{W2}"
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_IAN,RIGHT
                 setFacing 135,RIGHT
                 setActscriptWait 133,eas_Init
                 entityActionsWait 133
@@ -931,7 +931,7 @@ cs_615E6:       textCursor $EB0
                  moveUp 1
                  faceLeft 1
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 nextSingleText $80,133  ; "It protected {NAME;28}, right?{W1}"
                 csWait 20
                 setFacing 135,DOWN
@@ -949,7 +949,7 @@ cs_615E6:       textCursor $EB0
                  moveDown 1
                 endActions
                 setFacing 133,DOWN
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 csWait 30
                 setActscriptWait 135,eas_46172
                 customActscriptWait 135
@@ -976,8 +976,8 @@ cs_615E6:       textCursor $EB0
                  moveRight 3
                 endActions
                 setFacing 133,RIGHT
-                setFacing ALLY_PETER,RIGHT
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_RUBURAN,RIGHT
+                setFacing ALLY_IAN,RIGHT
                 csWait 30
                 nod 135
                 hide 129
@@ -1016,7 +1016,7 @@ cs_615E6:       textCursor $EB0
                 headshake 135
                 csWait 10
                 nextText $80,135        ; "I have no idea.  It depends{N}on her physical strength.{W2}"
-                nextText $80,135        ; "It may take a few months...{N}or a few years.{W2}"
+                nextText $80,135        ; "It KIDDO take a few months...{N}or a few years.{W2}"
                 nextSingleText $80,135  ; "Now, I must go.{N}Good luck.{W1}"
                 setFacing 135,UP
                 csWait 30
@@ -1024,10 +1024,10 @@ cs_615E6:       textCursor $EB0
                 hide 135
                 csWait 50
                 playSound $FD
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "She's gone.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "She's gone.{W1}"
                 customActscriptWait 133
                  ac_setSpeed 16,16      ;   
                  ac_jump eas_Idle       ;   
@@ -1038,15 +1038,15 @@ cs_615E6:       textCursor $EB0
                 endActions
                 shiver 133
                 nextSingleText $80,133  ; "A few years....{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 1
                  faceDown 1
                  jumpUp 1
                  jumpUp 10
                 endActions
-                nextText $0,ALLY_PETER  ; "Sir Astral, c'mon!{W2}"
+                nextText $0,ALLY_RUBURAN  ; "Sir Astral, c'mon!{W2}"
                 setFacing 133,UP
-                nextSingleText $0,ALLY_PETER ; "Mitula told us to leave.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Mitula told us to leave.{W1}"
                 shiver 133
                 nextSingleText $80,133  ; "Oh, yeah...let's get out of{N}here!{W1}"
                 setActscriptWait 133,eas_Init
@@ -1054,53 +1054,53 @@ cs_615E6:       textCursor $EB0
                  moveLeft 1
                  faceDown 1
                 endActions
-                setFacing ALLY_BOWIE,UP
+                setFacing ALLY_IAN,UP
                 nextSingleText $80,133  ; "{LEADER}, you carry{N}Princess Elis!{W1}"
-                setPriority ALLY_BOWIE,$0
+                setPriority ALLY_IAN,$0
                 setPriority 132,$FFFF
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 csWait 20
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 1
                 endActions
                 csWait 2
-                setActscriptWait ALLY_BOWIE,eas_461AA
-                entityActionsWait ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_461AA
+                entityActionsWait ALLY_IAN
                  moveRight 1
                  faceDown 20
                 endActions
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 hide 132
-                setFacing ALLY_BOWIE,DOWN
-                setSprite ALLY_BOWIE,MAPSPRITE_POSE2
+                setFacing ALLY_IAN,DOWN
+                setSprite ALLY_IAN,MAPSPRITE_POSE2
                 csWait 30
                 csWait 5
-                setActscript ALLY_PETER,eas_461B6
+                setActscript ALLY_RUBURAN,eas_461B6
                 csWait 5
                 setActscript 133,eas_461E4
                 setQuake 32771
                 playSound MUSIC_BOSS_ATTACK
                 nextSingleText $0,133   ; "Oops!  She's sealing the{N}tower!{W1}"
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveDown 1
                 endActions
                 csWait 2
-                setActscriptWait ALLY_BOWIE,eas_461AA
-                entityActionsWait ALLY_PETER
+                setActscriptWait ALLY_IAN,eas_461AA
+                entityActionsWait ALLY_RUBURAN
                  moveDown 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "Hurry!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Hurry!{W1}"
                 entityActionsWait 133
                  moveDown 1
                  faceRight 1
                 endActions
                 nextSingleText $0,133   ; "{LEADER}, run!{W1}"
-                setPriority ALLY_BOWIE,$FFFF
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity 133,ALLY_PETER,2
-                setActscriptWait ALLY_BOWIE,eas_46172
-                setCameraEntity ALLY_BOWIE
-                entityActions ALLY_BOWIE
+                setPriority ALLY_IAN,$FFFF
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity 133,ALLY_RUBURAN,2
+                setActscriptWait ALLY_IAN,eas_46172
+                setCameraEntity ALLY_IAN
+                entityActions ALLY_IAN
                  moveDown 1
                  moveLeft 1
                  moveDown 10
@@ -1118,8 +1118,8 @@ cs_62658:       setQuake 5
                 textCursor $F44
                 nextSingleText $FF,255  ; "Two years have passed{N}since Mitula resealed Zeon.{W1}"
                 nextSingleText $0,136   ; "Wow, is it true?{N}Did Elis' face turn pink?{W1}"
-                clearF $180             ; Set after Bowie obtains the jewel of light/evil... whichever it is
-                clearF $181             ; Set after Bowie obtains King Galam's jewel
+                clearF $180             ; Set after IAN obtains the jewel of light/evil... whichever it is
+                clearF $181             ; Set after IAN obtains King Galam's jewel
                 resetForceBattleStats
                 warp $3,$38,$3,$3
                 csc_end

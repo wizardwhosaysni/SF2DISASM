@@ -40,12 +40,12 @@ Map5_EntityEvent0:
                 jsr     LoadAndDisplayCurrentPortrait
                 txt     $313            ; "Sir Hawel lives just outside{N}of this village.{W1}"
                 script  cs_51B14
-                setFlg  $48             ; Kazin is a follower
+                setFlg  $48             ; KNUCKLES is a follower
                 rts
 
 	; End of function Map5_EntityEvent0
 
-cs_51B14:       followEntity ALLY_KAZIN,ALLY_BOWIE,2
+cs_51B14:       followEntity ALLY_KNUCKLES,ALLY_IAN,2
                 csc_end
 
 ; =============== S U B R O U T I N E =======================================
@@ -100,7 +100,7 @@ Map5_EntityEvent4:
 Map5_EntityEvent5:
                 
                  
-                txt     $2FF            ; "May I help you?{N}Oh, hi kids.{N}Hawel?{W2}"
+                txt     $2FF            ; "KIDDO I help you?{N}Oh, hi kids.{N}Hawel?{W2}"
                 txt     $300            ; "Yes, I know him.{N}He's famous, and he's kind{N}of a screwball.{W2}"
                 txt     $301            ; "He lives northwest{N}of this village.{N}You can't miss it.{W1}"
                 rts
@@ -195,7 +195,7 @@ Map5_EntityEvent12:
 Map5_EntityEvent13:
                 
                  
-                chkFlg  $48             ; Kazin is a follower
+                chkFlg  $48             ; KNUCKLES is a follower
                 bne.s   byte_51B9E      
                 txt     $30E            ; "Want to see Hawel?{W2}"
                 txt     $30F            ; "Then why don't you go with{N}him?{W1}"

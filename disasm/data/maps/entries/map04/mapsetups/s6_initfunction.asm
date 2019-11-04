@@ -25,7 +25,7 @@ cs_51742:       setPos 128,0,0,RIGHT
                 setPos 129,0,0,RIGHT
                 csc_end
 cs_51750:       textCursor $2CB
-                setPos ALLY_BOWIE,29,4,DOWN
+                setPos ALLY_IAN,29,4,DOWN
                 setPos FOLLOWER_B,28,3,DOWN
                 setPos FOLLOWER_A,29,3,DOWN
                 setPos 159,30,3,DOWN

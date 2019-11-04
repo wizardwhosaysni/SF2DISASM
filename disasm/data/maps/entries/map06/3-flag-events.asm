@@ -17,7 +17,7 @@
                   fbcSource 39, 1
                   fbcSize   5, 7
                   fbcDest   27, 53
-                fbcFlag $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                fbcFlag $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                   fbcSource 8, 11
                   fbcSize   1, 1
                   fbcDest   16, 13

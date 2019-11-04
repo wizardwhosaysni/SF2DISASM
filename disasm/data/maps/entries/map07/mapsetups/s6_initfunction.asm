@@ -22,7 +22,7 @@ return_55830:
 cs_55832:       textCursor $50A
                 mapLoad 7,6,2
                 loadMapEntities ce_559AE
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 resetMap
                 slowFadeInB
                 reloadMap 6,2
@@ -84,7 +84,7 @@ cs_55832:       textCursor $50A
                 csWait 20
                 setFacing 139,DOWN
                 setFacing 128,DOWN
-                nextSingleText $0,128   ; "That's all for today.{N}You may go now.{W1}"
+                nextSingleText $0,128   ; "That's all for today.{N}You KIDDO go now.{W1}"
                 entityActions 130
                  moveDown 1
                  moveLeft 5
@@ -112,20 +112,20 @@ cs_55832:       textCursor $50A
                 entityActions 139
                  moveLeft 1
                 endActions
-                entityActionsWait ALLY_JAHA
+                entityActionsWait ALLY_HAWEL
                  moveDown 1
                 endActions
-                entityActions ALLY_JAHA
+                entityActions ALLY_HAWEL
                  moveRight 6
                 endActions
-                entityActions ALLY_SARAH
+                entityActions ALLY_MEAD
                  moveRight 6
                 endActions
-                entityActions ALLY_KAZIN
+                entityActions ALLY_KNUCKLES
                  moveUp 1
                  moveRight 6
                 endActions
-                entityActionsWait ALLY_CHESTER
+                entityActionsWait ALLY_PAIGE
                  moveUp 2
                  moveRight 6
                 endActions
@@ -147,8 +147,8 @@ ce_559AE:       mainEntity 11,7,UP
                 entity 8,7,RIGHT,MAPSPRITE_MAID,eas_Init
                 entity 14,7,LEFT,MAPSPRITE_MAID,eas_Init
                 entity 10,5,DOWN,MAPSPRITE_ASTRAL,eas_Init
-                entity 12,7,UP,ALLY_JAHA,eas_Init
-                entity 11,8,UP,ALLY_SARAH,eas_Init
-                entity 11,9,UP,ALLY_KAZIN,eas_Init
-                entity 11,10,UP,ALLY_CHESTER,eas_Init
+                entity 12,7,UP,ALLY_HAWEL,eas_Init
+                entity 11,8,UP,ALLY_MEAD,eas_Init
+                entity 11,9,UP,ALLY_KNUCKLES,eas_Init
+                entity 11,10,UP,ALLY_PAIGE,eas_Init
                 dc.w $FFFF

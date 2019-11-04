@@ -4,23 +4,23 @@
 abcs_battle28:  textCursor $A6E
                 loadMapFadeIn 47,7,25
                 loadMapEntities ce_4C3B4
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,13,28,DOWN
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,13,28,DOWN
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,11,28,DOWN
                 stopEntity 128
                 stopEntity 130
                 setPriority FOLLOWER_B,$0
-                setPriority ALLY_PETER,$0
+                setPriority ALLY_RUBURAN,$0
                 setPriority 128,$FFFF
                 fadeInB
                 csWait 57
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $0,ALLY_PETER ; "Phew!  That was close!{W1}"
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $0,ALLY_RUBURAN ; "Phew!  That was close!{W1}"
                 nextText $0,128         ; "Thank you very much.{W2}"
                 nextSingleText $0,128   ; "Excuse me, will you help{N}me up?{W1}"
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveDown 1
                 endActions
                 entityActions FOLLOWER_B
@@ -28,7 +28,7 @@ abcs_battle28:  textCursor $A6E
                  moveRight 1
                 endActions
                 csWait 15
-                setActscriptWait ALLY_BOWIE,eas_JumpRight
+                setActscriptWait ALLY_IAN,eas_JumpRight
                 waitIdle FOLLOWER_B
                 setFacing FOLLOWER_B,DOWN
                 nextSingleText $0,FOLLOWER_B ; "NO!  I'll do it!{W1}"
@@ -45,13 +45,13 @@ abcs_battle28:  textCursor $A6E
                 endActions
                 csWait 14
                 setActscriptWait 128,eas_461AA
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                  moveDown 1
                 endActions
-                nextText $0,ALLY_PETER  ; "You sure are being nice.{N}Hmmm....{W2}"
-                nextSingleText $0,ALLY_PETER ; "Anyway, Tristan is just over{N}there.  Let's go.{W1}"
-                entityActions ALLY_BOWIE
+                nextText $0,ALLY_RUBURAN  ; "You sure are being nice.{N}Hmmm....{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Anyway, Tristan is just over{N}there.  Let's go.{W1}"
+                entityActions ALLY_IAN
                  moveRight 1
                 endActions
                 entityActionsWait 129
@@ -59,7 +59,7 @@ abcs_battle28:  textCursor $A6E
                  moveDown 2
                 endActions
                 setCamDest 10,25
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveRight 2
                  moveDown 1
                  moveRight 2
@@ -69,19 +69,19 @@ abcs_battle28:  textCursor $A6E
                  moveDown 1
                  moveRight 1
                 endActions
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveRight 4
                  moveDown 1
                 endActions
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}...{NAME;7}...{W1}"
-                setFacing ALLY_BOWIE,LEFT
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $0,ALLY_PETER ; "What?  Don't you want to{N}go to Tristan?{W1}"
+                setFacing ALLY_IAN,LEFT
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $0,ALLY_RUBURAN ; "What?  Don't you want to{N}go to Tristan?{W1}"
                 csWait 60
                 nextSingleText $0,FOLLOWER_B ; "Oh, I do, but...{W1}"
                 nextSingleText $0,128   ; "We shouldn't go to Tristan{N}right now.{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $0,ALLY_PETER ; "Why not?{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $0,ALLY_RUBURAN ; "Why not?{W1}"
                 nextSingleText $0,128   ; "Because of me!{W1}"
                 setCamDest 8,25
                 entityFlashWhite 128,$28
@@ -97,17 +97,17 @@ abcs_battle28:  textCursor $A6E
                 setSprite 128,MAPSPRITE_CAMEELA
                 setFacing 128,RIGHT
                 startEntity 128
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                entityActions ALLY_PETER
+                setActscript ALLY_IAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                entityActions ALLY_RUBURAN
                  moveLeft 1
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveDown 1
                  moveLeft 3
                 endActions
-                nextText $0,ALLY_PETER  ; "Wh...who are you?!{W2}"
-                nextSingleText $0,ALLY_PETER ; "Are you a devil?{W1}"
+                nextText $0,ALLY_RUBURAN  ; "Wh...who are you?!{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Are you a devil?{W1}"
                 nextSingleText $C0,128  ; "I'm one of the leaders of{N}the Devil Army.{N}My name is Cameela!{W1}"
                 nextSingleText $0,FOLLOWER_B ; "What do you want?{W1}"
                 nextSingleText $C0,128  ; "{LEADER}, I came here{N}to get your Jewel of Evil!{W1}"
@@ -172,8 +172,8 @@ abcs_battle28:  textCursor $A6E
                 csWait 40
                 setCameraEntity 65535
                 setCamDest 8,26
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 entityActionsWait FOLLOWER_B
                  moveUp 2
                 endActions
@@ -195,24 +195,24 @@ abcs_battle28:  textCursor $A6E
                  moveDown 2
                 endActions
                 setFacing FOLLOWER_B,RIGHT
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $0,ALLY_PETER ; "Would you please explain{N}what just happened?{W1}"
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $0,ALLY_RUBURAN ; "Would you please explain{N}what just happened?{W1}"
                 nextText $0,FOLLOWER_B  ; "You don't know?{W2}"
                 nextText $0,FOLLOWER_B  ; "Everything here was set up{N}by Cameela.{W2}"
                 nextSingleText $0,FOLLOWER_B ; "It was a trap to get the{N}Jewel of Evil.{W1}"
-                nextSingleText $0,ALLY_PETER ; "Your fireball...as if you{N}knew what she was from the{N}beginning.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Your fireball...as if you{N}knew what she was from the{N}beginning.{W1}"
                 nextText $0,FOLLOWER_B  ; "Yes, I did.{W2}"
                 nextText $0,FOLLOWER_B  ; "Her evil aura was apparent.{N}By the way, did you hear{N}what she said?{W2}"
                 nextText $0,FOLLOWER_B  ; "They're all acting on their{N}own, ignoring Zeon's orders.{W2}"
                 nextSingleText $0,FOLLOWER_B ; "It will be dangerous.{N}We must be careful.{W1}"
-                followEntity 129,ALLY_BOWIE,2
+                followEntity 129,ALLY_IAN,2
                 followEntity FOLLOWER_B,129,1
-                followEntity ALLY_PETER,129,3
+                followEntity ALLY_RUBURAN,129,3
                 warp $FF,$10,$1E,$0
                 csc_end
 ce_4C3B4:       mainEntity 12,28,DOWN
                 entity 12,31,UP,MAPSPRITE_POSE3,eas_Init
-                entity 13,28,DOWN,ALLY_PETER,eas_Init
+                entity 13,28,DOWN,ALLY_RUBURAN,eas_Init
                 entity 12,27,DOWN,MAPSPRITE_CARAVAN,eas_Init
                 entity 63,63,LEFT,MAPSPRITE_EFFECT3,eas_Init
                 dc.w $FFFF

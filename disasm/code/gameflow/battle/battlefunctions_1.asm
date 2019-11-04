@@ -145,7 +145,7 @@ HealAliveCharsAndImmortals:
                 moveq   #COM_ALLIES_COUNTER,d7
 loc_23C04:
                 
-                cmpi.b  #ALLY_PETER,d0
+                cmpi.b  #ALLY_RUBURAN,d0
                 beq.w   loc_23C1E
                 cmpi.b  #ALLY_LEMON,d0
                 beq.w   loc_23C1E
@@ -210,8 +210,14 @@ loc_23CA4:
                 
                 addq.w  #1,d0
                 dbf     d7,loc_23C8A
+                ; SFFC implementation to manage Battle 01 with MEAD as the leader
+                cmpi.b  #1,((CURRENT_BATTLE-$1000000)).w
+                bne.w   @default
+                move.w  #ALLY_MEAD,d0
+                bra.s   @checkLeader
+@default:           
                 clr.w   d0
-                jsr     j_GetCurrentHP
+@checkLeader:   jsr     j_GetCurrentHP
                 tst.w   d1
                 bne.s   return_23CB8
                 clr.w   d2
@@ -270,8 +276,13 @@ loc_23D44:
                 sndCom  MUSIC_SAD_THEME_2
                 txt     $16B            ; "{LEADER} is exhausted.{W1}"
                 clsTxt
-                clr.w   d0
-                jsr     j_GetMaxHP
+                ; SFFC implementation to manage Battle 01 with MEAD as the leader
+                cmpi.b  #1,((CURRENT_BATTLE-$1000000)).w
+                bne.w   @default
+                move.w  #ALLY_MEAD,d0
+                bra.s   @reviveLeader
+@default:       clr.w   d0
+@reviveLeader:  jsr     j_GetMaxHP
                 jsr     j_SetCurrentHP
                 jsr     j_GetGold
                 lsr.l   #1,d1
@@ -279,14 +290,14 @@ loc_23D44:
                 jsr     GetEgressPositionForBattle(pc)
                 nop
                 moveq   #$FFFFFFFF,d4
-                cmpi.b  #BATTLE_AMBUSHED_BY_GALAM_SOLDIERS,((CURRENT_BATTLE-$1000000)).w 
+                ;cmpi.b  #BATTLE_AMBUSHED_BY_GALAM_SOLDIERS,((CURRENT_BATTLE-$1000000)).w 
                                                         ; HARDCODED battle 4 upgrade
-                bne.s   return_23D96
-                clrFlg  $194            ; Battle 4 unlocked
-                setFlg  $1F8            ; Battle 4 completed
-                jsr     j_UpgradeBattle
-                moveq   #$11,d0
-                clr.w   d4
+                ;bne.s   return_23D96
+                ;clrFlg  $194            ; Battle 4 unlocked
+                ;setFlg  $1F8            ; Battle 4 completed
+                ;jsr     j_UpgradeBattle
+                ;moveq   #$11,d0
+                ;clr.w   d4
 return_23D96:
                 
                 rts
@@ -375,47 +386,51 @@ GetEgressPositionForBattle:
                 
                 clr.b   d7
                 move.b  ((CURRENT_BATTLE-$1000000)).w,d7
-                cmpi.b  #BATTLE_VERSUS_GESHP,d7
-                bne.s   loc_23E60
-                clrFlg  $1B6            ; Battle 38 unlocked
-loc_23E60:
+                ;cmpi.b  #BATTLE_VERSUS_GESHP,d7
+                ;bne.s   loc_23E60
+                ;clrFlg  $1B6            ; Battle 38 unlocked
+;loc_23E60:
                 
-                cmpi.b  #BATTLE_TO_ANCIENT_SHRINE,d7
-                bne.s   loc_23E6A
-                clrFlg  $1B7            ; Battle 39 unlocked
-loc_23E6A:
+                ;cmpi.b  #BATTLE_TO_ANCIENT_SHRINE,d7
+                ;bne.s   loc_23E6A
+                ;clrFlg  $1B7            ; Battle 39 unlocked
+;loc_23E6A:
                 
-                cmpi.b  #BATTLE_VERSUS_KRAKEN,d7
-                bne.s   loc_23E76
-                moveq   #$D,d0
-                bra.w   loc_23EAA
-loc_23E76:
+                ;cmpi.b  #BATTLE_VERSUS_KRAKEN,d7
+                ;bne.s   loc_23E76
+                ;moveq   #$D,d0
+                ;bra.w   loc_23EAA
+;loc_23E76:
                 
-                cmpi.b  #BATTLE_TO_TAROS_SHRINE,d7
-                bne.s   loc_23E82
-                moveq   #9,d0
-                bra.w   loc_23EAA
-loc_23E82:
+                ;cmpi.b  #BATTLE_TO_TAROS_SHRINE,d7
+                ;bne.s   loc_23E82
+                ;moveq   #9,d0
+                ;bra.w   loc_23EAA
+;loc_23E82:
                 
-                cmpi.b  #BATTLE_POLCA_VILLAGE,d7
-                bne.s   loc_23E8E
-                moveq   #$A,d0
-                bra.w   loc_23EAA
-loc_23E8E:
+                ;cmpi.b  #BATTLE_POLCA_VILLAGE,d7
+                ;bne.s   loc_23E8E
+                ;moveq   #$A,d0
+                ;bra.w   loc_23EAA
+;loc_23E8E:
                 
-                cmpi.b  #BATTLE_PACALON,d7
-                bne.s   loc_23E9A
-                moveq   #$24,d0 
-                bra.w   loc_23EAA
-loc_23E9A:
+                ;cmpi.b  #BATTLE_PACALON,d7
+                ;bne.s   loc_23E9A
+                ;moveq   #$24,d0 
+                ;bra.w   loc_23EAA
+;loc_23E9A:
                 
-                cmpi.b  #BATTLE_TO_MOUN,d7
-                bne.s   loc_23EA6
-                moveq   #2,d0
-                bra.w   loc_23EAA
-loc_23EA6:
+                ;cmpi.b  #BATTLE_TO_MOUN,d7
+                ;bne.s   loc_23EA6
+                ;moveq   #2,d0
+                ;bra.w   loc_23EAA
+;loc_23EA6:
                 
-                move.b  ((EGRESS_MAP_INDEX-$1000000)).w,d0
+                ;move.b  ((EGRESS_MAP_INDEX-$1000000)).w,d0
+                ; default sffc behaviour : battle egress map = battle map index + 30
+                ; to refine with a smarter behaviour after the camp map(s) will be properly defined
+                move.b  ((CURRENT_MAP-$1000000)).w,d0
+                addi.w  #30, d0
 loc_23EAA:
                 
                 jsr     (GetSavePointForMap).w
@@ -574,12 +589,12 @@ loc_24090:
                 
                 move.w  -2(a6),d0
                 jsr     j_GetClass      
-                cmpi.w  #$1C,d1         ; HARDCODED class test : MNST (Monster, for Kiwi)
+                cmpi.w  #$1C,d1         ; HARDCODED class test : MNST (Monster, for CYNTHIA)
                 bne.s   loc_240E6       
                 tst.w   ((BATTLESCENE_ACTION_TYPE-$1000000)).w
                 bne.s   loc_240E6       
                 moveq   #4,d6
-                jsr     (GenerateRandomNumber).w ; Kiwi's special attack ?
+                jsr     (GenerateRandomNumber).w ; CYNTHIA's special attack ?
                 tst.w   d7
                 bne.s   loc_240E6       
                 move.w  ((word_FFB630-$1000000)).w,((word_FFB632-$1000000)).w
@@ -2237,7 +2252,7 @@ byte_252E6:
                 
                 sndCom  SOUND_COMMAND_FADE_OUT
                 jsr     (FadeOutToBlack).w
-                jmp     (WitchSuspend).w
+                jmp     (BookReaderSuspend).w
 byte_252F2:
                 
                 clrFlg  $58             ; checks if a game has been saved for copying purposes ? (or if saved from battle?)

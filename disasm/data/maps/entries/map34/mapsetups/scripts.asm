@@ -49,11 +49,11 @@ cs_5B6C0:       textCursor $C87
                 csWait 10
                 setPos 130,7,6,DOWN
                 setActscript 130,eas_Transparent
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
-                setPos ALLY_BOWIE,7,12,UP
-                setPos ALLY_PETER,6,12,UP
+                setPos ALLY_IAN,7,12,UP
+                setPos ALLY_RUBURAN,6,12,UP
                 setPos FOLLOWER_B,8,12,UP
                 setCamDest 2,4
                 entityActionsWait 128
@@ -78,16 +78,16 @@ cs_5B6C0:       textCursor $C87
                 mapFadeOutToWhite
                 csWait 30
                 nextSingleText $0,130   ; "Hmmmm....{N}Hmmmm...mmmm....{W1}"
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 1
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 1
                 endActions
                 entityActionsWait FOLLOWER_B
                  moveUp 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "What is he doing now?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "What is he doing now?{W1}"
                 setFacing 129,DOWN
                 nextText $0,129         ; "He's channeling his mind{N}into the nature of all{N}things.{W2}"
                 setFacing 129,UP
@@ -102,22 +102,22 @@ cs_5B6C0:       textCursor $C87
                 nextSingleText $0,130   ; "The barrier around Grans{N}Island is too strong.{N}I can't see anything.{W1}"
                 shiver 128
                 nextSingleText $80,128  ; "Please try again!{W1}"
-                nextSingleText $0,130   ; "If I touch something of his,{N}maybe I could contact his{N}mind better....{W1}"
+                nextSingleText $0,130   ; "If I touch something of his,{N}KIDDObe I could contact his{N}mind better....{W1}"
                 setCamDest 2,5
-                setFacing ALLY_PETER,RIGHT
-                setFacing ALLY_BOWIE,LEFT
+                setFacing ALLY_RUBURAN,RIGHT
+                setFacing ALLY_IAN,LEFT
                 setFacing FOLLOWER_B,LEFT
-                nextSingleText $0,ALLY_PETER ; "{LEADER}, you have the{N}Jewel of Evil, right?{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "{LEADER}, you have the{N}Jewel of Evil, right?{W1}"
                 setFacing 128,DOWN
                 setFacing 129,DOWN
                 setActscriptWait 128,eas_Jump
                 setActscriptWait 128,eas_Jump
                 nextText $80,128        ; "Is this true, {LEADER}?{W2}"
                 nextSingleText $80,128  ; "That's one of the magic{N}jewels used to seal{N}Zeon.  Give it to me.{W1}"
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing FOLLOWER_B,UP
-                nextSingleText $0,ALLY_PETER ; "But, we can't remove it.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "But, we can't remove it.{W1}"
                 nextSingleText $80,128  ; "I can.{W1}"
                 entityActionsWait 128
                  moveDown 1
@@ -131,7 +131,7 @@ cs_5B6C0:       textCursor $C87
                 setActscriptWait 128,eas_461AA
                 stopEntity 128
                 csWait 20
-                entityFlashWhite ALLY_BOWIE,$28
+                entityFlashWhite ALLY_IAN,$28
                 startEntity 128
                 entityActions 128
                  moveUp 1
@@ -141,13 +141,13 @@ cs_5B6C0:       textCursor $C87
                 headshake 128
                 nextText $80,128        ; "Whhoooa!{W2}"
                 nextSingleText $80,128  ; "What's that light?{N}There are two!{W1}"
-                nextSingleText $0,ALLY_PETER ; "The other one is...{N}...ahhh...they called it,{N}the Jewel of Light.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "The other one is...{N}...ahhh...they called it,{N}the Jewel of Light.{W1}"
                 shiver 128
                 nextText $80,128        ; "What?!{W2}"
                 nextText $80,128        ; "{LEADER}, do you have both{N}of the legendary jewels?{W2}"
                 nextText $80,128        ; "I can't remove them.{N}The chain is made of Mithril.{W2}"
                 nextSingleText $80,128  ; "Show them to him.{N}They might help him.{W1}"
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 csWait 20
                 setCamDest 2,4
                 setActscriptWait 128,eas_Init
@@ -155,12 +155,12 @@ cs_5B6C0:       textCursor $C87
                  moveRight 1
                  moveUp 1
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 2
                 endActions
                 setFacing 129,UP
                 nextSingleText $FF,255  ; "{LEADER} displays the{N}jewels to Evil Spirit.{W1}"
-                entityFlashWhite ALLY_BOWIE,$28
+                entityFlashWhite ALLY_IAN,$28
                 nextText $0,130         ; "Yeah, I feel it...I feel it...!{N}I think I can do it now.{N}Let me try again.{W1}"
                 executeSubroutine csub_55EF4
                 csWait 20
@@ -209,13 +209,13 @@ cs_5B6C0:       textCursor $C87
                 executeSubroutine sub_5BFDA
                 flashScreenWhite $28
                 executeSubroutine sub_5BFE4
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscript FOLLOWER_B,eas_Jump
                 setActscript 128,eas_Jump
                 setActscriptWait 129,eas_Jump
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 setActscript FOLLOWER_B,eas_Jump
                 setActscript 128,eas_Jump
                 setActscriptWait 129,eas_Jump
@@ -228,10 +228,10 @@ cs_5B6C0:       textCursor $C87
                 nextSingleText $80,128  ; "Impossible!{W1}"
                 nextText $0,131         ; "You're {LEADER}.{N}I see you....{W2}"
                 nextSingleText $0,131   ; "Listen, {LEADER}.{N}Bring that jewel to Arc{N}Valley.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "Why should we?!{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "Why should we?!{W1}"
                 nextText $0,131         ; "I'll return Elis to you in{N}exchange for the jewel.{W2}"
                 nextSingleText $0,131   ; "Come to Arc Valley...{N}Ggggooo...!{W1}"
                 csWait 40
@@ -541,7 +541,7 @@ cs_5B6C0:       textCursor $C87
                 setQuake 16389
                 executeSubroutine sub_55F82
                 csWait 60
-                setFacing ALLY_BOWIE,DOWN
+                setFacing ALLY_IAN,DOWN
                 setFacing 129,DOWN
                 setFacing 128,DOWN
                 nextText $80,128        ; "No!  Evil Spirit exploded!{W2}"
@@ -565,7 +565,7 @@ cs_5B6C0:       textCursor $C87
                  moveLeft 1
                  moveDown 1
                 endActions
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 setFacing FOLLOWER_B,DOWN
                 nextText $0,129         ; "Creed?  Creed!{W2}"
                 setActscriptWait 129,eas_Jump
@@ -575,8 +575,8 @@ cs_5B6C0:       textCursor $C87
                  moveDown 5
                 endActions
                 hide 129
-                followEntity ALLY_PETER,ALLY_BOWIE,2
-                followEntity FOLLOWER_B,ALLY_PETER,2
+                followEntity ALLY_RUBURAN,ALLY_IAN,2
+                followEntity FOLLOWER_B,ALLY_RUBURAN,2
                 csc_end
 
 ; =============== S U B R O U T I N E =======================================

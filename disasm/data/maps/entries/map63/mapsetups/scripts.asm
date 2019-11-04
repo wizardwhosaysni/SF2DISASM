@@ -96,14 +96,14 @@ cs_5CBB4:       textCursor $1053
                 join ALLY_CLAUDE
                 addNewFollower ALLY_CLAUDE
                 csc_end
-cs_5CC26:       entityFlashWhite ALLY_BOWIE,$32
-                setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
+cs_5CC26:       entityFlashWhite ALLY_IAN,$32
+                setActscript ALLY_IAN,eas_RotateRightHighSpeed
                 csWait 30
                 executeSubroutine FadeOutToWhite
                 mapLoad 64,0,0
                 loadEntitiesFromMapSetup 5,4,UP
                 executeSubroutine csub_5CDDC
-                setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
+                setActscript ALLY_IAN,eas_RotateRightHighSpeed
                 executeSubroutine FadeInFromWhite
                 csWait 30
                 executeSubroutine sub_5CDEC
@@ -132,21 +132,21 @@ cs_5CC26:       entityFlashWhite ALLY_BOWIE,$32
                 csWait 2
                 mapLoad 63,3,3
                 loadEntitiesFromMapSetup 8,7,UP
-                setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
+                setActscript ALLY_IAN,eas_RotateRightHighSpeed
                 executeSubroutine FadeInFromWhite
                 csWait 30
-                entityFlashWhite ALLY_BOWIE,$32
-                setActscriptWait ALLY_BOWIE,eas_Init
-                startEntity ALLY_BOWIE
+                entityFlashWhite ALLY_IAN,$32
+                setActscriptWait ALLY_IAN,eas_Init
+                startEntity ALLY_IAN
                 csc_end
-cs_5CCF6:       entityFlashWhite ALLY_BOWIE,$32
-                setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
+cs_5CCF6:       entityFlashWhite ALLY_IAN,$32
+                setActscript ALLY_IAN,eas_RotateRightHighSpeed
                 csWait 30
                 executeSubroutine FadeOutToWhite
                 mapLoad 64,0,0
                 loadEntitiesFromMapSetup 5,4,UP
                 executeSubroutine sub_5CDE4
-                setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
+                setActscript ALLY_IAN,eas_RotateRightHighSpeed
                 executeSubroutine FadeInFromWhite
                 csWait 30
                 executeSubroutine sub_5CDF2
@@ -175,12 +175,12 @@ cs_5CCF6:       entityFlashWhite ALLY_BOWIE,$32
                 csWait 2
                 mapLoad 63,5,17
                 loadEntitiesFromMapSetup 10,21,UP
-                setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
+                setActscript ALLY_IAN,eas_RotateRightHighSpeed
                 executeSubroutine FadeInFromWhite
                 csWait 30
-                entityFlashWhite ALLY_BOWIE,$32
-                setActscriptWait ALLY_BOWIE,eas_Init
-                startEntity ALLY_BOWIE
+                entityFlashWhite ALLY_IAN,$32
+                setActscriptWait ALLY_IAN,eas_Init
+                startEntity ALLY_IAN
                 jumpIfFlagSet $1D,cs_5CDDA ; Claude joined
                 setSprite ALLY_CLAUDE,MAPSPRITE_POSE3
                 setFacing ALLY_CLAUDE,DOWN

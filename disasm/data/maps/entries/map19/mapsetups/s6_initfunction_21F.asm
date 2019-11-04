@@ -13,7 +13,7 @@ ms_map19_flag21F_InitFunction:
                 jsr     MoveEntityOutOfMap
 byte_62CAE:
                 
-                chkFlg  $8              ; May joined
+                chkFlg  $8              ; KIDDO joined
                 bne.s   byte_62CBE      
                 move.w  #8,d0
                 jsr     MoveEntityOutOfMap
@@ -51,20 +51,20 @@ return_62D04:
 
 	; End of function ms_map19_flag21F_InitFunction
 
-cs_62D06:       setSprite ALLY_ROHDE,MAPSPRITE_NPC_ROHDE
+cs_62D06:       setSprite ALLY_ERIC,MAPSPRITE_NPC_ERIC
                 csc_end
 cs_62D0E:       textCursor $F7F
                 setCameraEntity 129
                 setPos 129,26,29,UP
-                setPos ALLY_KAZIN,26,30,UP
-                setPos ALLY_SARAH,26,30,UP
-                setPos ALLY_JAHA,26,30,UP
-                setPos ALLY_CHESTER,26,30,UP
-                followEntity ALLY_BOWIE,129,2
-                followEntity ALLY_KAZIN,129,5
-                followEntity ALLY_SARAH,129,6
-                followEntity ALLY_JAHA,ALLY_KAZIN,2
-                followEntity ALLY_CHESTER,ALLY_SARAH,2
+                setPos ALLY_KNUCKLES,26,30,UP
+                setPos ALLY_MEAD,26,30,UP
+                setPos ALLY_HAWEL,26,30,UP
+                setPos ALLY_PAIGE,26,30,UP
+                followEntity ALLY_IAN,129,2
+                followEntity ALLY_KNUCKLES,129,5
+                followEntity ALLY_MEAD,129,6
+                followEntity ALLY_HAWEL,ALLY_KNUCKLES,2
+                followEntity ALLY_PAIGE,ALLY_MEAD,2
                 csWait 10
                 fadeInB
                 entityActionsWait 129
@@ -76,11 +76,11 @@ cs_62D0E:       textCursor $F7F
                 entityActionsWait 129
                  moveUp 14
                 endActions
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_SARAH,eas_Init
-                setActscriptWait ALLY_JAHA,eas_Init
-                setActscriptWait ALLY_CHESTER,eas_Init
-                setActscriptWait ALLY_KAZIN,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_MEAD,eas_Init
+                setActscriptWait ALLY_HAWEL,eas_Init
+                setActscriptWait ALLY_PAIGE,eas_Init
+                setActscriptWait ALLY_KNUCKLES,eas_Init
                 setCamDest 24,5
                 csWait 40
                 customActscriptWait 129
@@ -103,29 +103,29 @@ cs_62D0E:       textCursor $F7F
                 endActions
                 csWait 30
                 nod 129
-                setFacing ALLY_BOWIE,UP
-                setFacing ALLY_SARAH,UP
-                setFacing ALLY_JAHA,UP
-                setFacing ALLY_CHESTER,UP
-                setFacing ALLY_KAZIN,UP
-                setFacing ALLY_SLADE,UP
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_LUKE,UP
+                setFacing ALLY_IAN,UP
+                setFacing ALLY_MEAD,UP
+                setFacing ALLY_HAWEL,UP
+                setFacing ALLY_PAIGE,UP
+                setFacing ALLY_KNUCKLES,UP
+                setFacing ALLY_SONETTE,UP
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_JULIA,UP
                 setFacing ALLY_SHEELA,UP
-                setFacing ALLY_MAY,UP
+                setFacing ALLY_KIDDO,UP
                 setFacing ALLY_HIGINS,UP
-                setFacing ALLY_ROHDE,UP
+                setFacing ALLY_ERIC,UP
                 setFacing ALLY_ZYNK,UP
                 setFacing ALLY_CHAZ,UP
                 csWait 10
                 nextText $0,129         ; "Listen up!{W2}"
                 nextText $0,129         ; "It took two years, but the{N}Princess finally recovered{N}from the poison.{W2}"
                 nextSingleText $0,129   ; "But she's still sleeping.{N}We've decided to take{N}Mitula's advice.{W1}"
-                setActscriptWait ALLY_PETER,eas_Jump
-                setActscriptWait ALLY_PETER,eas_Jump
-                nextSingleText $80,ALLY_PETER ; "Mitula...you mean, somebody{N}gets to kiss her?{W1}"
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                setActscriptWait ALLY_RUBURAN,eas_Jump
+                nextSingleText $80,ALLY_RUBURAN ; "Mitula...you mean, somebody{N}gets to kiss her?{W1}"
                 csWait 10
-                shiver ALLY_SARAH
+                shiver ALLY_MEAD
                 csWait 10
                 setFacing 129,UP
                 csWait 40
@@ -135,204 +135,204 @@ cs_62D0E:       textCursor $F7F
                 csWait 30
                 setFacing 129,DOWN
                 nextSingleText $0,129   ; "And we need to decide which{N}one of you will kiss{N}Elis.{W1}"
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $80,ALLY_PETER ; "We don't have to decide.{N}It's {LEADER}.{N}{NAME;10}, don't you agree?{W1}"
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $80,ALLY_RUBURAN ; "We don't have to decide.{N}It's {LEADER}.{N}{NAME;10}, don't you agree?{W1}"
+                setFacing ALLY_RUBURAN,DOWN
                 csWait 20
-                shiver ALLY_LUKE
+                shiver ALLY_JULIA
                 csWait 20
-                nextText $80,ALLY_LUKE  ; "Ha, ha!  Yes, {NAME;7}!{W2}"
+                nextText $80,ALLY_JULIA  ; "Ha, ha!  Yes, {NAME;7}!{W2}"
                 csWait 10
-                setFacing ALLY_LUKE,LEFT
-                nextSingleText $80,ALLY_LUKE ; "I always thought {LEADER}{N}was the best choice!{W1}"
+                setFacing ALLY_JULIA,LEFT
+                nextSingleText $80,ALLY_JULIA ; "I always thought {LEADER}{N}was the best choice!{W1}"
                 entityActionsWait 129
                  moveRight 2
                  faceDown 1
                 endActions
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_LUKE,UP
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_JULIA,UP
                 nextSingleText $0,129   ; "Are you sure?{N}Anybody disagree?{W1}"
-                setFacing ALLY_PETER,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 csWait 60
                 entityActionsWait 129
                  moveLeft 2
                  faceDown 1
                 endActions
-                setFacing ALLY_PETER,UP
+                setFacing ALLY_RUBURAN,UP
                 nextSingleText $0,129   ; "Nobody?{W1}"
                 csWait 30
                 entityActionsWait 129
                  moveLeft 2
                  faceDown 1
                 endActions
-                setFacing ALLY_PETER,DOWN
-                setFacing ALLY_KAZIN,RIGHT
-                setFacing ALLY_LUKE,UP
+                setFacing ALLY_RUBURAN,DOWN
+                setFacing ALLY_KNUCKLES,RIGHT
+                setFacing ALLY_JULIA,UP
                 setFacing ALLY_SHEELA,DOWN
-                setFacing ALLY_MAY,DOWN
+                setFacing ALLY_KIDDO,DOWN
                 setFacing ALLY_HIGINS,DOWN
-                setFacing ALLY_ROHDE,UP
-                setFacing ALLY_BOWIE,DOWN
+                setFacing ALLY_ERIC,UP
+                setFacing ALLY_IAN,DOWN
                 csWait 40
                 setCamDest 24,7
                 csWait 5
-                setActscript ALLY_JAHA,eas_461B6
+                setActscript ALLY_HAWEL,eas_461B6
                 csWait 100
-                entityActionsWait ALLY_JAHA
+                entityActionsWait ALLY_HAWEL
                  moveDown 1
                 endActions
-                setFacing ALLY_JAHA,RIGHT
-                shiver ALLY_JAHA
-                setFacing ALLY_SARAH,DOWN
-                setFacing ALLY_CHESTER,DOWN
-                setFacing ALLY_KAZIN,DOWN
-                setFacing ALLY_SLADE,RIGHT
-                setFacing ALLY_LUKE,LEFT
+                setFacing ALLY_HAWEL,RIGHT
+                shiver ALLY_HAWEL
+                setFacing ALLY_MEAD,DOWN
+                setFacing ALLY_PAIGE,DOWN
+                setFacing ALLY_KNUCKLES,DOWN
+                setFacing ALLY_SONETTE,RIGHT
+                setFacing ALLY_JULIA,LEFT
                 setFacing ALLY_SHEELA,RIGHT
-                setFacing ALLY_MAY,RIGHT
+                setFacing ALLY_KIDDO,RIGHT
                 setFacing ALLY_HIGINS,LEFT
-                setFacing ALLY_ROHDE,RIGHT
+                setFacing ALLY_ERIC,RIGHT
                 setFacing ALLY_ZYNK,RIGHT
                 setFacing ALLY_CHAZ,LEFT
-                setFacing ALLY_BOWIE,DOWN
-                nextText $0,ALLY_JAHA   ; "I understand what my friends{N}are saying, but...I love{N}her.{W2}"
-                nextSingleText $0,ALLY_JAHA ; "May I kiss her?{N}Somebody, say yes!{W1}"
+                setFacing ALLY_IAN,DOWN
+                nextText $0,ALLY_HAWEL   ; "I understand what my friends{N}are saying, but...I love{N}her.{W2}"
+                nextSingleText $0,ALLY_HAWEL ; "KIDDO I kiss her?{N}Somebody, say yes!{W1}"
                 csWait 5
-                setActscript ALLY_JAHA,eas_461B6
-                shiver ALLY_SARAH
+                setActscript ALLY_HAWEL,eas_461B6
+                shiver ALLY_MEAD
                 csWait 20
-                setFacing ALLY_PETER,DOWN
-                setFacing ALLY_LUKE,UP
+                setFacing ALLY_RUBURAN,DOWN
+                setFacing ALLY_JULIA,UP
                 csWait 20
-                headshake ALLY_LUKE
+                headshake ALLY_JULIA
                 csWait 20
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                  moveDown 2
                  faceLeft 1
                 endActions
-                setFacing ALLY_LUKE,LEFT
-                setFacing ALLY_JAHA,RIGHT
-                nextSingleText $80,ALLY_PETER ; "Sorry, but...I don't think{N}{NAME;3} is the right{N}choice.{W1}"
-                shiver ALLY_JAHA
-                entityActionsWait ALLY_SLADE
+                setFacing ALLY_JULIA,LEFT
+                setFacing ALLY_HAWEL,RIGHT
+                nextSingleText $80,ALLY_RUBURAN ; "Sorry, but...I don't think{N}{NAME;3} is the right{N}choice.{W1}"
+                shiver ALLY_HAWEL
+                entityActionsWait ALLY_SONETTE
                  moveRight 1
                  moveDown 1
                  faceRight 1
                 endActions
-                setFacing ALLY_JAHA,LEFT
-                nextText $0,ALLY_SLADE  ; "I understand {NAME;3}, but{N}she is a human.{W2}"
-                nextSingleText $0,ALLY_SLADE ; "A human is the best choice.{W1}"
-                shiver ALLY_JAHA
-                jumpIfFlagClear $8,cs_62FB0 ; May joined
-                entityActionsWait ALLY_MAY
+                setFacing ALLY_HAWEL,LEFT
+                nextText $0,ALLY_SONETTE  ; "I understand {NAME;3}, but{N}she is a human.{W2}"
+                nextSingleText $0,ALLY_SONETTE ; "A human is the best choice.{W1}"
+                shiver ALLY_HAWEL
+                jumpIfFlagClear $8,cs_62FB0 ; KIDDO joined
+                entityActionsWait ALLY_KIDDO
                  moveDown 1
                  faceRight 1
                 endActions
-                nextSingleText $0,ALLY_MAY ; "{LEADER} is a human!{N}They will make a cute couple!{W1}"
-                shiver ALLY_JAHA
+                nextSingleText $0,ALLY_KIDDO ; "{LEADER} is a human!{N}They will make a cute couple!{W1}"
+                shiver ALLY_HAWEL
 cs_62FB0:       textCursor $F93
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                  faceDown 1
                 endActions
                 entityActionsWait ALLY_HIGINS
                  moveLeft 1
                 endActions
-                setFacing ALLY_JAHA,RIGHT
+                setFacing ALLY_HAWEL,RIGHT
                 nextText $80,ALLY_HIGINS ; "{LEADER} is a good lad{N}with the manner of a{N}knight!{W2}"
                 nextSingleText $80,ALLY_HIGINS ; "I think he's the best{N}choice.{W1}"
-                shiver ALLY_JAHA
+                shiver ALLY_HAWEL
                 csWait 30
                 entityActionsWait 129
                  moveRight 2
                  moveDown 1
                 endActions
                 nextSingleText $0,129   ; "{NAME;1}, what do you{N}think?{W1}"
-                shiver ALLY_SARAH
-                setFacing ALLY_SARAH,UP
-                setFacing ALLY_JAHA,UP
-                setFacing ALLY_CHESTER,UP
-                setFacing ALLY_KAZIN,UP
-                setFacing ALLY_PETER,UP
+                shiver ALLY_MEAD
+                setFacing ALLY_MEAD,UP
+                setFacing ALLY_HAWEL,UP
+                setFacing ALLY_PAIGE,UP
+                setFacing ALLY_KNUCKLES,UP
+                setFacing ALLY_RUBURAN,UP
                 setFacing ALLY_HIGINS,UP
-                setFacing ALLY_BOWIE,UP
-                nextText $80,ALLY_SARAH ; "M...me?  Well...{W2}"
-                shiver ALLY_SARAH
-                nextText $80,ALLY_SARAH ; "I'm worried about her...{N}but...I...{W2}"
-                setFacing ALLY_SARAH,LEFT
+                setFacing ALLY_IAN,UP
+                nextText $80,ALLY_MEAD ; "M...me?  Well...{W2}"
+                shiver ALLY_MEAD
+                nextText $80,ALLY_MEAD ; "I'm worried about her...{N}but...I...{W2}"
+                setFacing ALLY_MEAD,LEFT
                 csWait 30
-                setFacing ALLY_SARAH,UP
+                setFacing ALLY_MEAD,UP
                 csWait 10
-                nextSingleText $80,ALLY_SARAH ; "Yes, a good choice....{N}{LEADER} will make her...{N}...happy....{W1}"
-                customActscriptWait ALLY_SARAH
+                nextSingleText $80,ALLY_MEAD ; "Yes, a good choice....{N}{LEADER} will make her...{N}...happy....{W1}"
+                customActscriptWait ALLY_MEAD
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_CHESTER
+                customActscriptWait ALLY_PAIGE
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_SARAH
+                entityActions ALLY_MEAD
                  moveDown 1
                 endActions
-                entityActionsWait ALLY_CHESTER
+                entityActionsWait ALLY_PAIGE
                  moveLeft 1
                 endActions
-                setActscript ALLY_CHESTER,eas_RotateRight
-                setFacing ALLY_BOWIE,DOWN
-                setFacing ALLY_KAZIN,DOWN
-                setFacing ALLY_JAHA,DOWN
-                setFacing ALLY_PETER,DOWN
+                setActscript ALLY_PAIGE,eas_RotateRight
+                setFacing ALLY_IAN,DOWN
+                setFacing ALLY_KNUCKLES,DOWN
+                setFacing ALLY_HAWEL,DOWN
+                setFacing ALLY_RUBURAN,DOWN
                 setFacing ALLY_HIGINS,DOWN
-                entityActionsWait ALLY_SARAH
+                entityActionsWait ALLY_MEAD
                  moveDown 8
                 endActions
-                hide ALLY_SARAH
-                setActscriptWait ALLY_CHESTER,eas_Init
-                startEntity ALLY_CHESTER
-                setFacing ALLY_CHESTER,DOWN
-                headshake ALLY_CHESTER
+                hide ALLY_MEAD
+                setActscriptWait ALLY_PAIGE,eas_Init
+                startEntity ALLY_PAIGE
+                setFacing ALLY_PAIGE,DOWN
+                headshake ALLY_PAIGE
                 csWait 30
                 setCamDest 24,9
-                entityActionsWait ALLY_CHESTER
+                entityActionsWait ALLY_PAIGE
                  moveDown 2
                 endActions
                 csWait 50
-                nextSingleText $0,ALLY_CHESTER ; "Does she love {LEADER}?{N}I didn't know that.{W1}"
-                setActscriptWait ALLY_KAZIN,eas_Jump
-                setActscriptWait ALLY_KAZIN,eas_Jump
-                entityActionsWait ALLY_KAZIN
+                nextSingleText $0,ALLY_PAIGE ; "Does she love {LEADER}?{N}I didn't know that.{W1}"
+                setActscriptWait ALLY_KNUCKLES,eas_Jump
+                setActscriptWait ALLY_KNUCKLES,eas_Jump
+                entityActionsWait ALLY_KNUCKLES
                  moveDown 1
                  moveRight 2
                  moveDown 2
                  faceLeft 1
                 endActions
-                setFacing ALLY_CHESTER,RIGHT
-                nextSingleText $80,ALLY_KAZIN ; "Stop!{N}I will go and comfort her.{W1}"
-                setFacing ALLY_CHESTER,DOWN
-                entityActions ALLY_KAZIN
+                setFacing ALLY_PAIGE,RIGHT
+                nextSingleText $80,ALLY_KNUCKLES ; "Stop!{N}I will go and comfort her.{W1}"
+                setFacing ALLY_PAIGE,DOWN
+                entityActions ALLY_KNUCKLES
                  moveDown 2
                 endActions
                 csWait 8
-                setActscriptWait ALLY_CHESTER,eas_Jump
-                setActscriptWait ALLY_CHESTER,eas_Jump
-                nextSingleText $0,ALLY_CHESTER ; "{NAME;4}!{N}I'll go with you!{W1}"
-                setFacing ALLY_KAZIN,UP
-                nextSingleText $80,ALLY_KAZIN ; "Oh, c'mon.{N}She needs someone like me.{W1}"
-                entityActionsWait ALLY_KAZIN
+                setActscriptWait ALLY_PAIGE,eas_Jump
+                setActscriptWait ALLY_PAIGE,eas_Jump
+                nextSingleText $0,ALLY_PAIGE ; "{NAME;4}!{N}I'll go with you!{W1}"
+                setFacing ALLY_KNUCKLES,UP
+                nextSingleText $80,ALLY_KNUCKLES ; "Oh, c'mon.{N}She needs someone like me.{W1}"
+                entityActionsWait ALLY_KNUCKLES
                  moveDown 5
                 endActions
-                hide ALLY_KAZIN
+                hide ALLY_KNUCKLES
                 csWait 30
-                nextSingleText $0,ALLY_CHESTER ; "What does he mean?{N}I don't understand!{W1}"
-                entityActionsWait ALLY_ROHDE
+                nextSingleText $0,ALLY_PAIGE ; "What does he mean?{N}I don't understand!{W1}"
+                entityActionsWait ALLY_ERIC
                  moveRight 2
                  moveDown 1
                  moveRight 2
                  faceDown 1
                 endActions
-                nextSingleText $80,ALLY_ROHDE ; "They remind me of when I{N}was young.{W1}"
+                nextSingleText $80,ALLY_ERIC ; "They remind me of when I{N}was young.{W1}"
                 entityActionsWait ALLY_ZYNK
                  moveRight 3
                  moveDown 1
@@ -340,30 +340,30 @@ cs_62FB0:       textCursor $F93
                 endActions
                 nextSingleText $0,ALLY_ZYNK ; "{NAME;11}, you were young{N}once?{W1}"
                 shiver ALLY_ZYNK
-                setFacing ALLY_ROHDE,LEFT
-                setActscriptWait ALLY_ROHDE,eas_Jump
-                setActscriptWait ALLY_ROHDE,eas_Jump
-                nextSingleText $80,ALLY_ROHDE ; "Be quiet, you bucket of bolts!{W1}"
+                setFacing ALLY_ERIC,LEFT
+                setActscriptWait ALLY_ERIC,eas_Jump
+                setActscriptWait ALLY_ERIC,eas_Jump
+                nextSingleText $80,ALLY_ERIC ; "Be quiet, you bucket of bolts!{W1}"
                 setCamDest 24,5
-                entityActionsWait ALLY_LUKE
+                entityActionsWait ALLY_JULIA
                  moveUp 1
                  moveLeft 2
                  faceUp 1
                 endActions
-                setFacing ALLY_JAHA,UP
-                setFacing ALLY_PETER,UP
-                setFacing ALLY_CHESTER,UP
-                setFacing ALLY_LUKE,UP
-                setFacing ALLY_ROHDE,UP
+                setFacing ALLY_HAWEL,UP
+                setFacing ALLY_RUBURAN,UP
+                setFacing ALLY_PAIGE,UP
+                setFacing ALLY_JULIA,UP
+                setFacing ALLY_ERIC,UP
                 setFacing ALLY_ZYNK,UP
                 setFacing ALLY_HIGINS,UP
-                setFacing ALLY_BOWIE,UP
-                nextText $80,ALLY_LUKE  ; "You heard everyone.{N}We think {LEADER} is the{N}right choice.{W2}"
-                setFacing ALLY_LUKE,DOWN
-                nextText $80,ALLY_LUKE  ; "{NAME;4} will take care{N}of {NAME;1}.{W2}"
+                setFacing ALLY_IAN,UP
+                nextText $80,ALLY_JULIA  ; "You heard everyone.{N}We think {LEADER} is the{N}right choice.{W2}"
+                setFacing ALLY_JULIA,DOWN
+                nextText $80,ALLY_JULIA  ; "{NAME;4} will take care{N}of {NAME;1}.{W2}"
                 nod 129
-                setFacing ALLY_LUKE,UP
-                nextSingleText $80,ALLY_LUKE ; "Everything went as you{N}expected, huh?{W1}"
+                setFacing ALLY_JULIA,UP
+                nextSingleText $80,ALLY_JULIA ; "Everything went as you{N}expected, huh?{W1}"
                 shiver 129
                 nextText $0,129         ; "You knew that?{N}{NAME;10}, you're smart.{W2}"
                 nextText $0,129         ; "But I didn't know what{N}{NAME;1} or {NAME;3} would do.{W2}I didn't want to hurt their{N}feelings.{W1}"

@@ -478,7 +478,7 @@ loc_20FE6:
                 beq.w   loc_20A40
                 txt     $75             ; "{CLEAR}Then, take a rest before{N}you continue.{W1}"
                 jsr     (FadeOutToBlack).w
-                jmp     (WitchSuspend).w
+                jmp     (BookReaderSuspend).w
                 bra.w   *+4
 byte_21028:
                 

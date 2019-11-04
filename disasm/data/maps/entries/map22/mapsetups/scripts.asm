@@ -12,8 +12,8 @@ cs_5994E:       textCursor $700
 cs_5996E:       textCursor $702
                 setCameraEntity 65535
                 reloadMap 10,0
-                setPos ALLY_BOWIE,25,12,UP
-                setPos ALLY_PETER,24,13,UP
+                setPos ALLY_IAN,25,12,UP
+                setPos ALLY_RUBURAN,24,13,UP
                 setPos FOLLOWER_B,25,13,UP
                 fadeInB
                 nextSingleText $0,134   ; "Checkmate!{N}This is for you.{W1}"
@@ -26,18 +26,18 @@ cs_599A4:       entityActionsWait 136
                 endActions
                 setFacing 136,DOWN
                 csc_end
-cs_599B2:       setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
+cs_599B2:       setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
                 setActscriptWait FOLLOWER_B,eas_Init
-                setDest ALLY_BOWIE,35,24
-                setDest ALLY_PETER,34,24
+                setDest ALLY_IAN,35,24
+                setDest ALLY_RUBURAN,34,24
                 setDest FOLLOWER_B,33,24
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  jumpRight 1
                  faceDown 1
                  moveDown 2
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveRight 1
                  jumpRight 1
                  moveDownRight 1
@@ -52,14 +52,14 @@ cs_599B2:       setActscriptWait ALLY_BOWIE,eas_Init
                 setPos 137,36,25,UP
                 setPos 138,37,24,UP
                 setPos 139,35,24,UP
-                stopEntity ALLY_BOWIE
-                stopEntity ALLY_PETER
+                stopEntity ALLY_IAN
+                stopEntity ALLY_RUBURAN
                 stopEntity FOLLOWER_B
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -79,10 +79,10 @@ cs_599B2:       setActscriptWait ALLY_BOWIE,eas_Init
                  ac_setSpeed 10,10      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveDown 6
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveDown 6
                 endActions
                 entityActions FOLLOWER_B

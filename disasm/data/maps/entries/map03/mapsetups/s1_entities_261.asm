@@ -22,14 +22,14 @@ ms_map3_flag261_Entities:
                 msWalkingEntity 47, 24, DOWN, MAPSPRITE_MAN2, 47, 24, 2
                 msWalkingEntity 25, 22, DOWN, MAPSPRITE_BEASTMAN1, 25, 22, 1
                 msWalkingEntity 26, 22, DOWN, MAPSPRITE_BEASTMAN2, 26, 22, 1
-                msWalkingEntity 27, 22, DOWN, ALLY_KIWI, 27, 22, 1
+                msWalkingEntity 27, 22, DOWN, ALLY_CYNTHIA, 27, 22, 1
                 msFixedEntity 32, 11, DOWN, MAPSPRITE_PRIEST, eas_Init
                 msWalkingEntity 29, 7, DOWN, MAPSPRITE_MAN2, 29, 7, 1
                 msWalkingEntity 18, 14, DOWN, MAPSPRITE_BOY, 18, 14, 1
                 msFixedEntity 18, 9, DOWN, MAPSPRITE_WOMAN1, eas_Init
                 msSequencedEntity 20, 16, DOWN, MAPSPRITE_DWARF, ems_50CAC
                 msFixedEntity 8, 18, DOWN, MAPSPRITE_SAILOR, eas_Init
-                msFixedEntity 1, 29, UP, ALLY_JAHA, eas_Init
+                msFixedEntity 1, 29, UP, ALLY_HAWEL, eas_Init
                 msEntitiesEnd
 ems_50CAC:      dc.b DOWN
                 dc.b DOWN

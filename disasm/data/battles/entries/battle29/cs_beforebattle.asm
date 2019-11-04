@@ -4,45 +4,45 @@
 bbcs_29:        textCursor $A9E
                 loadMapFadeIn 0,10,28
                 loadMapEntities ce_4C5AE
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,16,34,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,16,34,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,14,34,UP
                 playSound MUSIC_MITULA_SHRINE
                 fadeInB
                 cameraSpeed $30
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveUp 1
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveUp 1
                 endActions
                 entityActionsWait FOLLOWER_B
                  moveUp 1
                 endActions
                 nextSingleText $0,128   ; "You can't enter Mitula{N}Shrine now.{W1}"
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $0,ALLY_PETER ; "Sir Astral, what do we do{N}now?{W1}"
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $0,ALLY_RUBURAN ; "Sir Astral, what do we do{N}now?{W1}"
                 nextSingleText $0,FOLLOWER_B ; "Hmmm....{W1}"
                 entityActionsWait FOLLOWER_B
                  moveUp 1
                 endActions
                 setFacing FOLLOWER_B,RIGHT
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, what do you{N}think?{W1}"
-                setFacing ALLY_BOWIE,LEFT
-                nextSingleText $0,ALLY_BOWIE ; "I'm not sure.{W1}"
-                entityActionsWait ALLY_PETER
+                setFacing ALLY_IAN,LEFT
+                nextSingleText $0,ALLY_IAN ; "I'm not sure.{W1}"
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                setFacing ALLY_PETER,LEFT
-                nextSingleText $0,ALLY_PETER ; "{LEADER}, it's obvious!{W1}"
-                setFacing ALLY_BOWIE,RIGHT
+                setFacing ALLY_RUBURAN,LEFT
+                nextSingleText $0,ALLY_RUBURAN ; "{LEADER}, it's obvious!{W1}"
+                setFacing ALLY_IAN,RIGHT
                 nod FOLLOWER_B
                 nextText $0,FOLLOWER_B  ; "I agree.  We have to see the{N}storytellers and listen to{N}the legends.{W2}"
                 nextSingleText $0,FOLLOWER_B ; "Make a break for it!{W1}"
                 setCamDest 10,26
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -50,18 +50,18 @@ bbcs_29:        textCursor $A9E
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                customActscriptWait ALLY_PETER
+                customActscriptWait ALLY_RUBURAN
                  ac_setSpeed 48,48      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
                 entityActions FOLLOWER_B
                  moveUp 3
                 endActions
-                entityActions ALLY_BOWIE
+                entityActions ALLY_IAN
                  moveLeft 1
                  moveUp 2
                 endActions
-                entityActions ALLY_PETER
+                entityActions ALLY_RUBURAN
                  moveLeft 2
                  moveUp 1
                 endActions
@@ -76,7 +76,7 @@ bbcs_29:        textCursor $A9E
                 endActions
                 waitIdle 128
                 setFacing 128,DOWN
-                waitIdle ALLY_PETER
+                waitIdle ALLY_RUBURAN
                 nextText $0,128         ; "Wait, wait.  You must not{N}enter the holy shrine.{W2}"
                 nextSingleText $0,128   ; "So be it!  Let the truth be{N}known!{W1}"
                 playSound $FD
@@ -120,7 +120,7 @@ bbcs_29:        textCursor $A9E
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, attack!{W1}"
                 csc_end
 ce_4C5AE:       mainEntity 15,33,UP
-                entity 16,34,UP,ALLY_PETER,eas_Init
+                entity 16,34,UP,ALLY_RUBURAN,eas_Init
                 entity 15,30,DOWN,MAPSPRITE_PRIEST,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_DEATH_MONK,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_ORC_LORD,eas_Init

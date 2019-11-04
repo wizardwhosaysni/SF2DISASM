@@ -4,9 +4,9 @@
 abcs_battle34:  textCursor $B5F
                 loadMapFadeIn 55,2,7
                 loadMapEntities ce_4D69E
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setActscriptWait ALLY_PETER,eas_Init
-                setPos ALLY_PETER,9,11,UP
+                setActscriptWait ALLY_IAN,eas_Init
+                setActscriptWait ALLY_RUBURAN,eas_Init
+                setPos ALLY_RUBURAN,9,11,UP
                 setActscriptWait FOLLOWER_B,eas_Init
                 setPos FOLLOWER_B,5,11,UP
                 jumpIfFlagClear $4C,cs_4D502 ; Zynk is a follower
@@ -38,8 +38,8 @@ cs_4D502:       stopEntity 128
                 setSprite 128,MAPSPRITE_OBJECT3
                 startEntity 128
                 setActscript 128,eas_AnimSpeedx2
-                setActscript ALLY_BOWIE,eas_Jump
-                setActscript ALLY_PETER,eas_Jump
+                setActscript ALLY_IAN,eas_Jump
+                setActscript ALLY_RUBURAN,eas_Jump
                 jumpIfFlagClear $4C,cs_4D592 ; Zynk is a follower
                 setActscript ALLY_ZYNK,eas_Jump
 cs_4D592:       setActscriptWait FOLLOWER_B,eas_Jump
@@ -54,9 +54,9 @@ cs_4D592:       setActscriptWait FOLLOWER_B,eas_Jump
                 nextSingleText $C0,129  ; "I have to go now and{N}prepare your welcoming{N}party!{W1}"
                 flickerOnce
                 csWait 60
-                setFacing ALLY_PETER,LEFT
-                nextText $0,ALLY_PETER  ; "I really hate him!{W2}"
-                nextSingleText $0,ALLY_PETER ; "Prism Flowers?{N}What are they?{W1}"
+                setFacing ALLY_RUBURAN,LEFT
+                nextText $0,ALLY_RUBURAN  ; "I really hate him!{W2}"
+                nextSingleText $0,ALLY_RUBURAN ; "Prism Flowers?{N}What are they?{W1}"
                 setFacing FOLLOWER_B,RIGHT
                 nextSingleText $0,FOLLOWER_B ; "I have no idea, but it's{N}probably a trap.{W1}"
                 jumpIfFlagClear $4C,cs_4D620 ; Zynk is a follower
@@ -79,28 +79,28 @@ cs_4D592:       setActscriptWait FOLLOWER_B,eas_Jump
                 csWait 30
                 nextSingleText $0,ALLY_ZYNK ; "I cannot explain....{W1}"
 cs_4D620:       textCursor $B74
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveLeft 1
                 endActions
-                nextSingleText $0,ALLY_PETER ; "We will see them when we{N}arrive at Grans.{W1}"
+                nextSingleText $0,ALLY_RUBURAN ; "We will see them when we{N}arrive at Grans.{W1}"
                 nextSingleText $0,FOLLOWER_B ; "{LEADER}, grab the Sky{N}Orb.{N}Let's go.{W1}"
-                entityActionsWait ALLY_PETER
+                entityActionsWait ALLY_RUBURAN
                  moveUp 1
                 endActions
-                setFacing ALLY_PETER,LEFT
+                setFacing ALLY_RUBURAN,LEFT
                 jumpIfFlagClear $4C,cs_4D654 ; Zynk is a follower
                 entityActionsWait ALLY_ZYNK
                  moveRight 1
                 endActions
                 setFacing ALLY_ZYNK,LEFT
-cs_4D654:       nod ALLY_BOWIE
-                entityActionsWait ALLY_BOWIE
+cs_4D654:       nod ALLY_IAN
+                entityActionsWait ALLY_IAN
                  moveUp 1
                 endActions
                 hide 131
                 executeSubroutine csub_4D694
-                followEntity 130,ALLY_BOWIE,2
-                followEntity ALLY_PETER,130,1
+                followEntity 130,ALLY_IAN,2
+                followEntity ALLY_RUBURAN,130,1
                 followEntity FOLLOWER_B,130,3
                 jumpIfFlagClear $4C,cs_4D692 ; Zynk is a follower
                 followEntity ALLY_ZYNK,130,2
@@ -117,7 +117,7 @@ csub_4D694:
 	; End of function csub_4D694
 
 ce_4D69E:       mainEntity 7,12,UP
-                entity 9,11,UP,ALLY_PETER,eas_Init
+                entity 9,11,UP,ALLY_RUBURAN,eas_Init
                 entity 7,9,DOWN,MAPSPRITE_CAMEELA,eas_Init
                 entity 63,63,DOWN,MAPSPRITE_GESHP,eas_Init
                 entity 6,12,UP,MAPSPRITE_CARAVAN,eas_Init

@@ -4,7 +4,7 @@
 abcs_battle07:  textCursor $951
                 loadMapFadeIn 58,8,16
                 loadMapEntities ce_4A912
-                setActscriptWait ALLY_BOWIE,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
                 setBlocks 7,23,1,2,13,22
                 setBlocks 7,23,1,2,13,24
                 setBlocks 7,23,1,2,13,29
@@ -232,7 +232,7 @@ abcs_battle07:  textCursor $951
                  ac_setSpeed 32,32      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                nextSingleText $0,ALLY_BOWIE ; "I have a bad feeling about{N}this!{W1}"
+                nextSingleText $0,ALLY_IAN ; "I have a bad feeling about{N}this!{W1}"
                 entityActions 128
                  moveDown 5
                 endActions
@@ -295,8 +295,8 @@ abcs_battle07:  textCursor $951
                 setFacing 134,LEFT
                 nextSingleText $0,134   ; "Y...yes...but how?{W1}"
                 nextSingleText $0,131   ; "Throw {LEADER} towards{N}the light tubes!{W1}"
-                setActscriptWait ALLY_BOWIE,eas_Jump
-                setCameraEntity ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_Jump
+                setCameraEntity ALLY_IAN
                 entityActionsWait 133
                  moveLeft 1
                 endActions
@@ -312,16 +312,16 @@ abcs_battle07:  textCursor $951
                 setFacing 131,RIGHT
                 setFacing 134,LEFT
                 csWait 30
-                stopEntity ALLY_BOWIE
-                setFacing ALLY_BOWIE,DOWN
-                customActscriptWait ALLY_BOWIE
+                stopEntity ALLY_IAN
+                setFacing ALLY_IAN,DOWN
+                customActscriptWait ALLY_IAN
                  ac_setAnimCounter $0   ;   
                  ac_setFlip $1          ;   
                  ac_updateSprite        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
                 nextSingleText $0,131   ; "{LEADER}, save her!{W1}"
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 40,40      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -333,7 +333,7 @@ abcs_battle07:  textCursor $951
                  ac_setSpeed 40,40      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setActscriptWait ALLY_BOWIE,eas_46172
+                setActscriptWait ALLY_IAN,eas_46172
                 setActscriptWait 131,eas_46172
                 setActscriptWait 134,eas_46172
                 entityActions 131
@@ -342,12 +342,12 @@ abcs_battle07:  textCursor $951
                 entityActions 134
                  moveDown 3
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveDown 3
                 endActions
                 nextSingleText $C0,130  ; "Too late.  You're too late.{W1}"
                 cameraSpeed $38
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 56,56      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
@@ -365,11 +365,11 @@ abcs_battle07:  textCursor $951
                 entityActions 134
                  moveUp 5
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 5
                 endActions
                 setFacing 133,UP
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 3
                 endActions
                 nextSingleText $0,131   ; "Oops, we lost our grip!{N}But...{W1}"
@@ -385,23 +385,23 @@ abcs_battle07:  textCursor $951
                 entityActions 132
                  moveUp 8
                 endActions
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveUp 5
                 endActions
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 2,2        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
                 setQuake 4
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setAnimCounter $0   ;   
                  ac_setFlip $0          ;   
                  ac_updateSprite        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setFacing ALLY_BOWIE,UP
-                setSprite ALLY_BOWIE,MAPSPRITE_POSE4
-                entityActions ALLY_BOWIE
+                setFacing ALLY_IAN,UP
+                setSprite ALLY_IAN,MAPSPRITE_POSE4
+                entityActions ALLY_IAN
                  moveUp 8
                 endActions
                 csWait 20
@@ -409,97 +409,97 @@ abcs_battle07:  textCursor $951
                 nextSingleText $FF,255  ; "{LEADER} grasped the{N}Jewel of Evil.{W1}"
                 setCameraEntity 65535
                 nextText $C0,130        ; "What are you doing?{W2}"
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 setCameraEntity 65535
                 nextSingleText $C0,130  ; "Don't touch my jewel!{N}Don't touch it!{W1}"
-                setCameraEntity ALLY_BOWIE
-                shiver ALLY_BOWIE
-                stopEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
+                shiver ALLY_IAN
+                stopEntity ALLY_IAN
                 setCameraEntity 65535
                 nextText $C0,130        ; "I said, don't touch it!{W2}"
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 setCameraEntity 65535
                 nextSingleText $C0,130  ; "I'll shake you off!{W1}"
-                setCameraEntity ALLY_BOWIE
-                shiver ALLY_BOWIE
-                stopEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
+                shiver ALLY_IAN
+                stopEntity ALLY_IAN
                 setCameraEntity 65535
                 nextSingleText $C0,130  ; "You're still there?{W1}"
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 setCameraEntity 65535
-                nextSingleText $0,ALLY_BOWIE ; "Wow!  He's so brave.  Hmmm....{W1}"
-                setCameraEntity ALLY_BOWIE
+                nextSingleText $0,ALLY_IAN ; "Wow!  He's so brave.  Hmmm....{W1}"
+                setCameraEntity ALLY_IAN
                 setCameraEntity 65535
                 nextSingleText $C0,130  ; "I've almost got you now!{W1}"
-                setCameraEntity ALLY_BOWIE
-                shiver ALLY_BOWIE
-                stopEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
+                shiver ALLY_IAN
+                stopEntity ALLY_IAN
                 setCameraEntity 65535
                 nextSingleText $0,132   ; "No, you'll fall if you{N}open your hands now!{W1}"
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 setCameraEntity 65535
                 nextSingleText $FF,255  ; "{LEADER}'s jewel suddenly{N}flared!{W1}"
-                setCameraEntity ALLY_BOWIE
-                entityFlashWhite ALLY_BOWIE,$14
+                setCameraEntity ALLY_IAN
+                entityFlashWhite ALLY_IAN,$14
                 playSound SFX_VALIDATION
                 mapFadeOutToWhite
                 csWait 10
                 mapFadeInFromWhite
                 setCameraEntity 65535
                 nextSingleText $C0,130  ; "Whoa!  The light...the{N}light!{W1}"
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 setCameraEntity 65535
                 nextSingleText $FF,255  ; "The Jewel of Evil fused{N}to {LEADER}'s neck.{W1}"
-                setCameraEntity ALLY_BOWIE
+                setCameraEntity ALLY_IAN
                 cameraSpeed $38
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 56,56      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setActscriptWait ALLY_BOWIE,eas_46172
-                setSprite ALLY_BOWIE,ALLY_BOWIE
-                customActscriptWait ALLY_BOWIE
+                setActscriptWait ALLY_IAN,eas_46172
+                setSprite ALLY_IAN,ALLY_IAN
+                customActscriptWait ALLY_IAN
                  ac_setAnimCounter $0   ;   
                  ac_setFlip $1          ;   
                  ac_updateSprite        ;   
                  ac_jump eas_Idle       ;   
                 ac_end
-                setDest ALLY_BOWIE,13,10
+                setDest ALLY_IAN,13,10
                 nextSingleText $C0,130  ; "He stole my jewel!{W1}"
                 setFacing 131,UP
                 setFacing 134,UP
-                entityActionsWait ALLY_BOWIE
+                entityActionsWait ALLY_IAN
                  moveDown 5
                 endActions
                 cameraSpeed $40
-                customActscriptWait ALLY_BOWIE
+                customActscriptWait ALLY_IAN
                  ac_setSpeed 64,64      ;   
                  ac_jump eas_Idle       ;   
                 ac_end
                 playSound SFX_DOOR_OPEN
                 setQuake 3
-                setFacing ALLY_BOWIE,DOWN
-                entityActionsWait ALLY_BOWIE
+                setFacing ALLY_IAN,DOWN
+                entityActionsWait ALLY_IAN
                  moveDown 1
                 endActions
-                setFacing ALLY_BOWIE,LEFT
-                entityActionsWait ALLY_BOWIE
+                setFacing ALLY_IAN,LEFT
+                entityActionsWait ALLY_IAN
                  moveDown 1
                 endActions
-                setFacing ALLY_BOWIE,UP
-                entityActionsWait ALLY_BOWIE
+                setFacing ALLY_IAN,UP
+                entityActionsWait ALLY_IAN
                  moveDown 1
                 endActions
-                setFacing ALLY_BOWIE,RIGHT
-                entityActionsWait ALLY_BOWIE
+                setFacing ALLY_IAN,RIGHT
+                entityActionsWait ALLY_IAN
                  moveDown 1
                 endActions
-                setFacing ALLY_BOWIE,DOWN
-                entityActionsWait ALLY_BOWIE
+                setFacing ALLY_IAN,DOWN
+                entityActionsWait ALLY_IAN
                  moveDown 1
                 endActions
-                setSprite ALLY_BOWIE,MAPSPRITE_POSE4
-                customActscriptWait ALLY_BOWIE
+                setSprite ALLY_IAN,MAPSPRITE_POSE4
+                customActscriptWait ALLY_IAN
                  ac_setAnimCounter $0   ;   
                  ac_setFlip $0          ;   
                  ac_updateSprite        ;   
@@ -508,13 +508,13 @@ abcs_battle07:  textCursor $951
                 csWait 20
                 setQuake 0
                 csWait 40
-                shiver ALLY_BOWIE
-                stopEntity ALLY_BOWIE
+                shiver ALLY_IAN
+                stopEntity ALLY_IAN
                 csWait 30
                 setCameraEntity 65535
                 cameraSpeed $28
                 nextSingleText $FF,255  ; "The two jewels merge{N}together.{W1}"
-                setF $181               ; Set after Bowie obtains King Galam's jewel
+                setF $181               ; Set after IAN obtains King Galam's jewel
                 setCamDest 8,3
                 waitIdle 130
                 setFacing 130,DOWN
@@ -546,15 +546,15 @@ abcs_battle07:  textCursor $951
                 csWait 60
                 nextSingleText $0,133   ; "She's gone....{N}Elis!{W1}"
                 nextSingleText $0,131   ; "We couldn't help the{N}Princess.{W1}"
-                setSprite ALLY_BOWIE,ALLY_BOWIE
-                setActscriptWait ALLY_BOWIE,eas_Init
-                startEntity ALLY_BOWIE
-                headshake ALLY_BOWIE
-                nextSingleText $C0,ALLY_BOWIE ; "(Sigh)....{W1}"
+                setSprite ALLY_IAN,ALLY_IAN
+                setActscriptWait ALLY_IAN,eas_Init
+                startEntity ALLY_IAN
+                headshake ALLY_IAN
+                nextSingleText $C0,ALLY_IAN ; "(Sigh)....{W1}"
                 nextSingleText $0,131   ; "{LEADER}, why do you{N}have two jewels?{W1}"
                 nextSingleText $FF,255  ; "{LEADER} explains{N}what happened.{W1}"
                 nod 131
-                nod ALLY_BOWIE
+                nod ALLY_IAN
                 nextSingleText $0,131   ; "Indeed, perhaps...these{N}jewels are the key to{N}solving this....{W1}"
                 setQuake 2
                 csWait 5
@@ -636,7 +636,7 @@ abcs_battle07:  textCursor $951
                 nextSingleText $0,131   ; "Come on!{W1}"
                 csWait 50
                 warp $3A,$D,$23,$3
-                followEntity 131,ALLY_BOWIE,2
+                followEntity 131,ALLY_IAN,2
                 followEntity 133,131,2
                 followEntity 134,133,2
                 setF $4A                ; Astral + King are followers

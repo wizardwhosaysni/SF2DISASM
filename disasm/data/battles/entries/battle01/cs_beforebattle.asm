@@ -4,17 +4,22 @@
 bbcs_01:        textCursor $8F4
                 loadMapFadeIn 57,2,10
                 loadMapEntities ce_49694
-                setActscriptWait ALLY_BOWIE,eas_Init
-                setPos ALLY_SARAH,8,17,UP
-                setPos ALLY_CHESTER,7,17,UP
-                setActscriptWait ALLY_SARAH,eas_Init
+                setActscriptWait ALLY_IAN,eas_Init
+                setPos ALLY_MEAD,8,17,UP
+                setPos ALLY_PAIGE,7,17,UP
+                setActscriptWait ALLY_MEAD,eas_Init
                 fadeInB
                 setCamDest 2,8
                 csWait 60
                 setFacing 135,DOWN
                 nextText $0,135         ; "There you are, {LEADER}.{N}Stay here.{W2}"
                 nextSingleText $0,135   ; "I'll take a look inside the{N}tower.{W1}"
+								join 1
+								join 2
+								join 3
+								join 4
                 setCameraEntity 135
+                csc_end                
                 entityActionsWait 135
                  moveUp 1
                 endActions
@@ -50,13 +55,13 @@ bbcs_01:        textCursor $8F4
                 csWait 30
                 setCamDest 2,10
                 csWait 5
-                setActscript ALLY_CHESTER,eas_461B6
+                setActscript ALLY_PAIGE,eas_461B6
                 csWait 60
-                nextSingleText $0,ALLY_CHESTER ; "What's happening?{W1}"
-                entityActionsWait ALLY_SARAH
+                nextSingleText $0,ALLY_PAIGE ; "What's happening?{W1}"
+                entityActionsWait ALLY_MEAD
                  moveUp 1
                 endActions
-                nextSingleText $0,ALLY_SARAH ; "Look!  Something is{N}appearing.  What's that?{W1}"
+                nextSingleText $0,ALLY_MEAD ; "Look!  Something is{N}appearing.  What's that?{W1}"
                 setFacing 135,UP
                 setCamDest 2,1
                 setPos 128,7,4,DOWN

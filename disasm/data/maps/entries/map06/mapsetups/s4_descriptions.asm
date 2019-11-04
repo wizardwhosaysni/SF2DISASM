@@ -40,7 +40,7 @@ byte_54D9A:     msDesc 5, 7, 4, 0       ; "{NAME} investigated{N}the book shelve
 Map6_DescFunc0:
                 
                  
-                chkFlg  $2BE            ; Set after the scene with Peter at the Castle (ends with you leaving the Castle)
+                chkFlg  $2BE            ; Set after the scene with RUBURAN at the Castle (ends with you leaving the Castle)
                 bne.s   loc_54DEE
                 move.w  #$FFB,d0        ; It reads...{N}OUT TO LUNCH{W1}
                 jsr     (DisplayText).w 
