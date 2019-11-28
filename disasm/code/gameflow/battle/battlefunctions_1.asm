@@ -948,7 +948,16 @@ loc_2444C:
                 andi.w  #2,d1
                 beq.s   loc_2447C
                 move.w  d0,((TEXT_NAME_INDEX_1-$1000000)).w
-                moveq   #2,d1
+                
+                if (PERCENT_POISON_DAMAGE>=1)
+                jsr     GetMaxHP
+                mulu.w  #PERCENT_POISON_DAMAGE,d1
+                divu.w  #100,d1
+                andi.l  #$FFFF,d1
+                else
+                moveq   #2,d1           ; constant poison damage
+                endif
+                
                 move.l  d1,((TEXT_NUMBER-$1000000)).w
                 txt     $133            ; "{CLEAR}{NAME} gets damaged{N}by {#} because of the poison.{D3}"
                 jsr     j_DecreaseCurrentHP
@@ -2206,9 +2215,9 @@ loc_25236:
                 move.w  ((NUMBER_OF_BATTLE_PARTY_MEMBERS-$1000000)).w,d7
                 beq.s   loc_25236
                 move.w  ((NUMBER_OF_BATTLE_PARTY_MEMBERS-$1000000)).w,d7
-                move.w  d7,((word_FFB12E-$1000000)).w
+                move.w  d7,((INDEX_LIST_ENTRIES_NUM-$1000000)).w
                 lea     ((BATTLE_PARTY_MEMBERS-$1000000)).w,a0
-                lea     ((byte_FFB0AE-$1000000)).w,a1
+                lea     ((INDEX_LIST-$1000000)).w,a1
                 jsr     (CopyBytes).w   
 loc_25274:
                 
