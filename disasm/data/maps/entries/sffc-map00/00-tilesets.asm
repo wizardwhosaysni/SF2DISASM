@@ -4,6 +4,6 @@
                 mapPalette  1
                 mapTileset1 0
                 mapTileset2 255
-                mapTileset3 34
-                mapTileset4 35
-                mapTileset5 36
+                mapTileset3 2
+                mapTileset4 3
+                mapTileset5 4
