@@ -30,3 +30,5 @@ SavepointMapCoordinates:
                 ;savePointMapCoords 2, 41, 10, 1
                 ;savePointMapCoords 36, 40, 5, 1
                 dc.b $FF
+                
+                align 2

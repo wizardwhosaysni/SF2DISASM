@@ -7,3 +7,4 @@ RaftResetMapCoordinates:
                 raftResetMapCoords 13, 72, 43, 48
                 raftResetMapCoords 10, 72, 43, 48
                 raftResetMapCoords 255, 69, 42, 15
+
