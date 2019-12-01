@@ -7,28 +7,25 @@ SavepointMapCoordinates:
                 savePointMapCoords 30, 3, 6, UP
                 savePointMapCoords 31, 3, 6, UP
                 savePointMapCoords 32, 3, 6, UP
-                ;savePointMapCoords 4, 29, 2, 3
-                ;savePointMapCoords 5, 11, 6, 1
-                ;savePointMapCoords 16, 27, 7, 1
-                ;savePointMapCoords 6, 11, 22, 1
-                ;savePointMapCoords 8, 22, 22, 1
-                ;savePointMapCoords 13, 18, 25, 1
-                ;savePointMapCoords 10, 27, 35, 1
-                ;savePointMapCoords 14, 45, 7, 3
-                ;savePointMapCoords 25, 12, 11, 1
-                ;savePointMapCoords 9, 8, 9, 1
-                ;savePointMapCoords 31, 20, 8, 1
-                ;savePointMapCoords 15, 12, 16, 1
-                ;savePointMapCoords 43, 7, 5, 3
-                ;savePointMapCoords 45, 12, 25, 1
-                ;savePointMapCoords 26, 4, 36, 1
-                ;savePointMapCoords 23, 61, 4, 1
-                ;savePointMapCoords 38, 21, 27, 0
-                ;savePointMapCoords 56, 42, 38, 3
-                ;savePointMapCoords 22, 5, 8, 1
-                ;savePointMapCoords 29, 55, 10, 1
-                ;savePointMapCoords 2, 41, 10, 1
-                ;savePointMapCoords 36, 40, 5, 1
+                savePointMapCoords 33, 3, 6, UP
+                savePointMapCoords 34, 3, 6, UP
+                savePointMapCoords 35, 3, 6, UP
+                savePointMapCoords 36, 3, 6, UP
+                savePointMapCoords 37, 3, 6, UP
+                savePointMapCoords 38, 3, 6, UP
+                savePointMapCoords 39, 3, 6, UP
+                savePointMapCoords 40, 3, 6, UP
+                savePointMapCoords 41, 3, 6, UP
+                savePointMapCoords 42, 3, 6, UP
+                savePointMapCoords 43, 3, 6, UP
+                savePointMapCoords 44, 3, 6, UP
+                savePointMapCoords 45, 3, 6, UP
+                savePointMapCoords 46, 3, 6, UP
+                savePointMapCoords 47, 3, 6, UP
+                savePointMapCoords 48, 3, 6, UP
+                savePointMapCoords 49, 3, 6, UP
+                savePointMapCoords 50, 3, 6, UP
+                savePointMapCoords 51, 3, 6, UP
                 dc.b $FF
                 
                 align 2

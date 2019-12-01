@@ -5,7 +5,7 @@ pt_MapData:     dc.l Map00
                 dc.l Map01
                 dc.l Map02
                 dc.l Map03
-                dc.l Map00
+                dc.l Map04
                 dc.l Map00
                 dc.l Map00
                 dc.l Map00
@@ -138,6 +138,27 @@ Map03s8_OtherItems:include "data\maps\entries\sffc-map03\8-other-items.asm"    ;
 Map03s0_Blocks: incbin "data/maps/entries/sffc-map03/0-blocks.bin"
 Map03s1_Layout: incbin "data/maps/entries/sffc-map03/1-layout.bin"
 Map03s9_Animations:include "data\maps\entries\sffc-map03\9-animations.asm"    ; 
+Map04:          include "data\maps\entries\sffc-map04\00-tilesets.asm"    ; 
+                dc.l Map04s0_Blocks
+                dc.l Map04s1_Layout
+                dc.l Map04s2_Areas
+                dc.l Map04s3_FlagEvents 
+                dc.l Map04s4_StepEvents
+                dc.l Map04s5_RoofEvents
+                dc.l Map04s6_WarpEvents
+                dc.l Map04s7_ChestItems
+                dc.l Map04s8_OtherItems
+                dc.l Map04s9_Animations
+Map04s2_Areas:  include "data\maps\entries\sffc-map04\2-areas.asm"    ; 
+Map04s3_FlagEvents:include "data\maps\entries\sffc-map04\3-flag-events.asm"    ; 
+Map04s4_StepEvents:include "data\maps\entries\sffc-map04\4-step-events.asm"    ; 
+Map04s5_RoofEvents:include "data\maps\entries\sffc-map04\5-roof-events.asm"    ; 
+Map04s6_WarpEvents:include "data\maps\entries\sffc-map04\6-warp-events.asm"    ; 
+Map04s7_ChestItems:include "data\maps\entries\sffc-map04\7-chest-items.asm"    ; 
+Map04s8_OtherItems:include "data\maps\entries\sffc-map04\8-other-items.asm"    ; 
+Map04s0_Blocks: incbin "data/maps/entries/sffc-map04/0-blocks.bin"
+Map04s1_Layout: incbin "data/maps/entries/sffc-map04/1-layout.bin"
+Map04s9_Animations:include "data\maps\entries\sffc-map04\9-animations.asm"    ; 
 
 ; no map entries for indexes 22-29
 

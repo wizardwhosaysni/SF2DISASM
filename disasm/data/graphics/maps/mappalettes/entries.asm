@@ -4,6 +4,8 @@
 pt_MapPalettes: dc.l MapPalette00
                 dc.l MapPalette01
                 dc.l MapPalette02
+                dc.l MapPalette03
 MapPalette00:   incbin "data/graphics/maps/mappalettes/sffc-mappalette00-base.bin"
 MapPalette01:   incbin "data/graphics/maps/mappalettes/sffc-mappalette01-map00-shrine.bin"
 MapPalette02:   incbin "data/graphics/maps/mappalettes/sffc-mappalette02-map03-bridge.bin"
+MapPalette03:   incbin "data/graphics/maps/mappalettes/sffc-mappalette03-map04-cave.bin"
