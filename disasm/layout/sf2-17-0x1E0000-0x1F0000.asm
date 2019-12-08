@@ -26,13 +26,26 @@ p_SuspendStringTiles:
                 dc.l unused_BasePalettes
 p_BaseTiles:    dc.l BaseTiles
                 include "data\stats\allies\growthcurves.asm"    ; Stat growth curves
+                
+                if (PROJECT_SFFCMD=1)
+                include "data\stats\allies\stats-sffcmd\entries.asm"
+                include "data\stats\allies\allystartdefs-sffcmd.asm"
+                include "data\stats\allies\classes\classdefs-sffcmd.asm"
+                else
                 include "data\stats\allies\stats\entries.asm"    ; Ally stats
                 include "data\stats\allies\allystartdefs.asm"    ; Ally start definitions
                 include "data\stats\allies\classes\classdefs.asm"    ; Class definitions
+                endif
+                
                 if (FULL_CLASS_NAMES=1)
-                include "data\stats\allies\classes\fullclassnames.asm"
+                    if (PROJECT_SFFCMD=1)
+                    include "data\stats\allies\classes\fullclassnames-sffcmd.asm"
+                    else
+                    include "data\stats\allies\classes\fullclassnames.asm"
+                    endif
                 wordAlign
                 endif
+                
                 includeIfVanillaRom "code\specialscreens\jewelend\graphics.asm"    ; Jewel End Graphics
                 includeIfVanillaRom "code\specialscreens\suspend\graphics.asm"    ; Suspend String Graphics
 unused_BasePalettes:

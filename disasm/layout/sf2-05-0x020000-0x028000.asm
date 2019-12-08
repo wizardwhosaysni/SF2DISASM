@@ -59,7 +59,14 @@ j_SuspendGame:
                 include "data\stats\items\shopdefs.asm"    ; Shop definitions
                 wordAlignIfExpandedRom
                 include "code\common\menus\church\churchactions_1.asm"    ; Church functions
+                
+                if (PROJECT_SFFCMD=1)
+                include "data\stats\allies\promotions-sffcmd.asm"
+                wordAlign
+                else
                 include "data\stats\allies\promotions.asm"    ; Promotions
+                endif
+                
                 wordAlignIfExpandedRom
                 include "code\common\menus\church\churchactions_2.asm"    ; Church functions
                 include "code\common\menus\main\mainactions.asm"    ; Main menu functions

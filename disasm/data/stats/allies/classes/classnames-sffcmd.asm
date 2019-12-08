@@ -1,0 +1,35 @@
+
+; ASM FILE data\stats\allies\classes\classnames-sffcmd.asm :
+; Class names table
+ClassNames:     className "SDMN"
+                className "HERO"
+                className "KNTE"
+                className "PLDN"
+                className "WARR"
+                className "GLDT"
+                className "MAGE"
+                className "WIZ"
+                className "ACHR"
+                className "SNIP"
+                className "MONK"
+                className "MMNK"
+                className "PRST"
+                className "VICR"
+                className "THIF"
+                className "NINJ"
+                className "BDMN"
+                className "BDBT"
+                className "DGSD"    ; base
+                className "DGSD"
+                className "SMRI"    ; base
+                className "SMRI"
+                className "GDVL"    ; base
+                className "GDVL"
+                className ""
+                className ""
+                className ""
+                className ""
+                className ""
+                className ""
+                className ""
+                className ""

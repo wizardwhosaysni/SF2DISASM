@@ -304,3 +304,17 @@ disasm/data/battles/global/newbattlemapcoords.asm
 disasm/data/maps/SF2MapEditor.jar
 disasm/data/maps/entries/map*/*hptiles*.txt
 disasm/data/maps/entries/map*/*layoutflags*.txt
+
+
+#################
+## Vanilla SF2DISASM files to be excluded from SFFCMD project
+#################
+
+disasm/data/stats/allies/allynames.asm
+disasm/data/stats/allies/allystartdefs.asm
+disasm/data/stats/allies/classes/classdefs.asm
+disasm/data/stats/allies/classes/classnames.asm
+disasm/data/stats/allies/classes/classtypes.asm
+disasm/data/stats/allies/classes/fullclassnames.asm
+disasm/data/stats/allies/promotions.asm
+disasm/data/stats/allies/stats/

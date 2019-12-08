@@ -9,6 +9,11 @@
 
 GetAllyPortrait:
                 
+                ; Temporary hack to circumvent "stupid CMP mechanism" :P
+                if (PROJECT_SFFCMD=1)
+                rts
+                else
+; ---------------------------------------------------------------------------
                 move.w  d1,-(sp)
                 cmpi.b  #COM_ALLIES_NUM,d0
                 bhi.w   @Done
@@ -40,6 +45,8 @@ GetAllyPortrait:
                 
                 move.w  (sp)+,d1
                 rts
+; ---------------------------------------------------------------------------
+                endif
 
 	; End of function GetAllyPortrait
 

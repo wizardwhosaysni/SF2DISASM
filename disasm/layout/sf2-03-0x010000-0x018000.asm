@@ -18,5 +18,11 @@
                 include "data\stats\spells\spelldefs.asm"    ; Spell definitions
                 include "data\stats\items\itemnames.asm"    ; Item names
                 wordAlign
+                
+                if (PROJECT_SFFCMD=1)
+                include "data\stats\allies\classes\classnames-sffcmd.asm"
+                else
                 include "data\stats\allies\classes\classnames.asm"    ; Class names
+                endif
+                
                 align $18000

@@ -8,42 +8,44 @@ DebugModeBattleTest:
                 
                 move.b  #$FF,((DEBUG_MODE_ACTIVATED-$1000000)).w
                 move.b  #$FF,((SPECIAL_TURBO_CHEAT-$1000000)).w
-                moveq   #1,d0
+                moveq   #ALLY_MEAD,d0
                 bsr.w   j_JoinForce
-                moveq   #2,d0
+                moveq   #ALLY_PAIGE,d0
                 bsr.w   j_JoinForce
-                moveq   #3,d0
+                moveq   #ALLY_HAWEL,d0
                 bsr.w   j_JoinForce
-                moveq   #4,d0
+                moveq   #ALLY_KNUCKLES,d0
                 bsr.w   j_JoinForce
-                moveq   #5,d0
+                moveq   #ALLY_SONETTE,d0
                 bsr.w   j_JoinForce
-                moveq   #6,d0
+                moveq   #ALLY_CYNTHIA,d0
                 bsr.w   j_JoinForce
-                moveq   #7,d0
+                moveq   #ALLY_RUBURAN,d0
                 bsr.w   j_JoinForce
-                moveq   #8,d0
+                moveq   #ALLY_KIDDO,d0
                 bsr.w   j_JoinForce
-                moveq   #9,d0
+                moveq   #ALLY_SYLVIA,d0
                 bsr.w   j_JoinForce
-                moveq   #$A,d0
+                moveq   #ALLY_JULIA,d0
                 bsr.w   j_JoinForce
-                moveq   #$B,d0
+                moveq   #ALLY_ERIC,d0
                 bsr.w   j_JoinForce
-                moveq   #$C,d0
+                moveq   #ALLY_MINTO,d0
                 bsr.w   j_JoinForce
-                moveq   #$D,d0
+                moveq   #ALLY_MORTON,d0
                 bsr.w   j_JoinForce
-                moveq   #$E,d0
+                moveq   #ALLY_SASUKE,d0
                 bsr.w   j_JoinForce
-                moveq   #$F,d0
+                moveq   #ALLY_RIDION,d0
                 bsr.w   j_JoinForce
-                moveq   #$10,d0
+                moveq   #ALLY_KOJIROU,d0
                 bsr.w   j_JoinForce
-                moveq   #$11,d0
+                moveq   #ALLY_MAX,d0
                 bsr.w   j_JoinForce
-                moveq   #$12,d0
+                moveq   #ALLY_ODDEYE,d0
                 bsr.w   j_JoinForce
+                
+                if (PROJECT_SFFCMD=0)
                 moveq   #$13,d0
                 bsr.w   j_JoinForce
                 moveq   #$14,d0
@@ -66,6 +68,8 @@ DebugModeBattleTest:
                 bsr.w   j_JoinForce
                 moveq   #$1D,d0
                 bsr.w   j_JoinForce
+                endif
+                
                 moveq   #0,d0
                 move.w  #$63,d1 
                 bsr.w   j_SetBaseAGI
