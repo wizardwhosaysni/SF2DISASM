@@ -25,32 +25,5 @@ AfterBattleJoins:
                 dc.b 0
                 dc.b 0
                 dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
-                dc.b 0
+                
+                align 2

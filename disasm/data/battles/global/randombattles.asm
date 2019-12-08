@@ -4,15 +4,15 @@
 RandomBattlesList:
                 ; enum Battles : BATTLE_*
     
-                randomBattles &
-                    TO_HAWEL_HOUSE, &
-                    NORTH_CLIFF, &
-                    TO_RIBBLE, &
-                    TO_THE_EAST, &
-                    SOUTHEAST_DESERT, &
-                    TO_TAROS_SHRINE, &
-                    OUTSIDE_ELVEN_VILLAGE, &
-                    DEVIL_TAIL, &
-                    TO_NORTH_PARMECIA, &
-                    OUTSIDE_KETTO, &
-                    TO_ROFT
+                ;randomBattles &
+                ;    TO_HAWEL_HOUSE, &
+                ;    NORTH_CLIFF, &
+                ;    TO_RIBBLE, &
+                ;    TO_THE_EAST, &
+                ;    SOUTHEAST_DESERT, &
+                ;    TO_TAROS_SHRINE, &
+                ;    OUTSIDE_ELVEN_VILLAGE, &
+                ;    DEVIL_TAIL, &
+                ;    TO_NORTH_PARMECIA, &
+                ;    OUTSIDE_KETTO, &
+                ;    TO_ROFT

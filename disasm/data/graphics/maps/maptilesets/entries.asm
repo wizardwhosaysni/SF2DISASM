@@ -121,6 +121,16 @@ pt_MapTilesets: dc.l MapTileset000
                 dc.l MapTileset117
                 dc.l MapTileset118
                 dc.l MapTileset119
+                dc.l MapTileset120
+                dc.l MapTileset121
+                dc.l MapTileset122
+                dc.l MapTileset123
+                dc.l MapTileset124
+                dc.l MapTileset125
+                dc.l MapTileset126
+                dc.l MapTileset127
+                dc.l MapTileset128
+                dc.l MapTileset129
 MapTileset000:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-map00-1.bin"
 MapTileset001:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
 MapTileset002:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-map00-3.bin"
@@ -141,8 +151,8 @@ MapTileset016:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-map03-2.b
 MapTileset017:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-map03-3.bin"
 MapTileset018:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
 MapTileset019:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
-MapTileset020:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
-MapTileset021:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset020:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-map04-1.bin"
+MapTileset021:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-map04-2.bin"
 MapTileset022:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
 MapTileset023:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
 MapTileset024:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
@@ -241,3 +251,13 @@ MapTileset116:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-camp-2.bi
 MapTileset117:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-camp-3.bin"
 MapTileset118:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-camp-4.bin"
 MapTileset119:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-camp-5.bin"
+MapTileset120:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset121:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset122:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset123:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset124:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset125:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset126:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset127:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-empty.bin"
+MapTileset128:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-anims-base.bin"
+MapTileset129:  incbin "data/graphics/maps/maptilesets/sffc-maptileset-anims-overworld.bin"
