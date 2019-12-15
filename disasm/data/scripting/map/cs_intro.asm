@@ -53,7 +53,7 @@ IntroCutscene:
     setFacing $8C,DOWN
     setFacing $8D,DOWN
     setFacing $8E,LEFT          
-    mapLoad 0,7,18   
+    mapLoad 1,7,18   
     customActscript $80
      ac_setSpeed $30,$30   
      ac_jump eas_Idle  

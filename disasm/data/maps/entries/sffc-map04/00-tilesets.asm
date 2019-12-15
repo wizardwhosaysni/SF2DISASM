@@ -1,9 +1,7 @@
 
-; ASM FILE data\maps\entries\map78\00-tilesets.asm :
-; 0xC6990..0xC6996 : 
-                mapPalette  3
-                mapTileset1 20
-                mapTileset2 21
-                mapTileset3 255
-                mapTileset4 255
-                mapTileset5 255
+                mapPalette  4
+                mapTileset1 0+5*4
+                mapTileset2 1+5*4
+                mapTileset3 2+5*4
+                mapTileset4 3+5*4
+                mapTileset5 4+5*4

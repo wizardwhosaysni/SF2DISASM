@@ -76,13 +76,13 @@ loc_74A8:
 loc_74B4:
                 
                 move.w  ((SAVE_SLOT_INDEX-$1000000)).w,d0
-                move.b  #0,((CURRENT_MAP-$1000000)).w
-                move.b  #30,((EGRESS_MAP_INDEX-$1000000)).w
+                move.b  #1,((CURRENT_MAP-$1000000)).w
+                move.b  #0,((EGRESS_MAP_INDEX-$1000000)).w
                 bsr.w   SaveGame
                 disableSram
                 clsTxt
                 setFlg  $191
-                move.b  #0,d0           ; HARDCODED new game starting map
+                move.b  #1,d0           ; HARDCODED new game starting map
                 move.w  #8,d1 ; HARDCODED main entity starting X
                 move.w  #8,d2           ; HARDCODED main entity starting Y
                 move.w  #3,d3           ; HARDCODED main entity starting facing

@@ -1,19 +1,10 @@
 
-; ASM FILE data\battles\entries\battle01\cs_afterbattle.asm :
-; 0x496DC..0x4980E : Cutscene after battle 1
-abcs_battle03:  textCursor $901
-                resetForceBattleStats
-                loadMapFadeIn 1,2,0
-                loadMapEntities ce_abcs_battle03
-                setActscriptWait ALLY_IAN,eas_Init
+
+abcs_battle03:   
+                loadMapFadeIn 3,6,8
                 fadeInB
-                csWait 40
-                nextSingleText $0,128   ; "Well done, {LEADER}!{N}What should I do with this{N}devil?{W1}"
-                setFacing 128,UP
-                setF $193
-                warp 2,5,5,DOWN
-                csc_end        
-ce_abcs_battle03:
-                mainEntity 8,6,UP
-                entity 7,6,RIGHT,MAPSPRITE_ASTRAL,eas_Init
-                dc.w $FFFF       
+                setF $1F4+3
+                setF $190+4
+                warp 4,6,8,DOWN
+                yesNo
+                csc_end                   

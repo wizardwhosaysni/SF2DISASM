@@ -427,11 +427,12 @@ GetEgressPositionForBattle:
                 ;bra.w   loc_23EAA
 ;loc_23EA6:
                 
-                ;move.b  ((EGRESS_MAP_INDEX-$1000000)).w,d0
+                move.b  ((EGRESS_MAP_INDEX-$1000000)).w,d0
+                ; using map 0 as single camp map with dynamic flag-based shop/exit, abandoned solution below
                 ; default sffc behaviour : battle egress map = battle map index + 30
                 ; to refine with a smarter behaviour after the camp map(s) will be properly defined
-                move.b  ((CURRENT_MAP-$1000000)).w,d0
-                addi.w  #30, d0
+                ;move.b  ((CURRENT_MAP-$1000000)).w,d0
+                ;addi.w  #30, d0
 loc_23EAA:
                 
                 jsr     (GetSavePointForMap).w

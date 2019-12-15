@@ -6,7 +6,45 @@ pt_BattleTerrainData:
                 dc.l BattleTerrain01
                 dc.l BattleTerrain02
                 dc.l BattleTerrain03
-BattleTerrain00:incbin "data/battles/entries/sffc-battle01/terrain.bin"
+                dc.l BattleTerrain04
+                dc.l BattleTerrain05
+                dc.l BattleTerrain06
+                dc.l BattleTerrain07
+                dc.l BattleTerrain08
+                dc.l BattleTerrain09
+                dc.l BattleTerrain10
+                dc.l BattleTerrain11
+                dc.l BattleTerrain12
+                dc.l BattleTerrain13
+                dc.l BattleTerrain14
+                dc.l BattleTerrain15
+                dc.l BattleTerrain16
+                dc.l BattleTerrain17
+                dc.l BattleTerrain18
+                dc.l BattleTerrain19
+                dc.l BattleTerrain20
+                dc.l BattleTerrain21
+                dc.l BattleTerrain22
+BattleTerrain00:incbin "data/battles/entries/sffc-battle00/terrain.bin"
 BattleTerrain01:incbin "data/battles/entries/sffc-battle01/terrain.bin"
 BattleTerrain02:incbin "data/battles/entries/sffc-battle02/terrain.bin"
 BattleTerrain03:incbin "data/battles/entries/sffc-battle03/terrain.bin"
+BattleTerrain04:incbin "data/battles/entries/sffc-battle04/terrain.bin"
+BattleTerrain05:incbin "data/battles/entries/sffc-battle05/terrain.bin"
+BattleTerrain06:incbin "data/battles/entries/sffc-battle06/terrain.bin"
+BattleTerrain07:incbin "data/battles/entries/sffc-battle07/terrain.bin"
+BattleTerrain08:incbin "data/battles/entries/sffc-battle08/terrain.bin"
+BattleTerrain09:incbin "data/battles/entries/sffc-battle09/terrain.bin"
+BattleTerrain10:incbin "data/battles/entries/sffc-battle10/terrain.bin"
+BattleTerrain11:incbin "data/battles/entries/sffc-battle11/terrain.bin"
+BattleTerrain12:incbin "data/battles/entries/sffc-battle12/terrain.bin"
+BattleTerrain13:incbin "data/battles/entries/sffc-battle13/terrain.bin"
+BattleTerrain14:incbin "data/battles/entries/sffc-battle14/terrain.bin"
+BattleTerrain15:incbin "data/battles/entries/sffc-battle15/terrain.bin"
+BattleTerrain16:incbin "data/battles/entries/sffc-battle16/terrain.bin"
+BattleTerrain17:incbin "data/battles/entries/sffc-battle17/terrain.bin"
+BattleTerrain18:incbin "data/battles/entries/sffc-battle18/terrain.bin"
+BattleTerrain19:incbin "data/battles/entries/sffc-battle19/terrain.bin"
+BattleTerrain20:incbin "data/battles/entries/sffc-battle20/terrain.bin"
+BattleTerrain21:incbin "data/battles/entries/sffc-battle21/terrain.bin"
+BattleTerrain22:incbin "data/battles/entries/sffc-battle22/terrain.bin"
