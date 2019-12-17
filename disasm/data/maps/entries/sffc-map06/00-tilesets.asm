@@ -1,7 +1,7 @@
 
                 mapPalette  6
-                mapTileset1 0+5*6
-                mapTileset2 1+5*6
-                mapTileset3 2+5*6
-                mapTileset4 3+5*6
-                mapTileset5 4+5*6
+                mapTileset1 30
+                mapTileset2 31
+                mapTileset3 32
+                mapTileset4 33
+                mapTileset5 34

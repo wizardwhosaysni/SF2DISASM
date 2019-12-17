@@ -1,7 +1,7 @@
 
                 mapPalette  14
-                mapTileset1 0+5*14
-                mapTileset2 1+5*14
-                mapTileset3 2+5*14
-                mapTileset4 3+5*14
-                mapTileset5 4+5*14
+                mapTileset1 70
+                mapTileset2 71
+                mapTileset3 72
+                mapTileset4 73
+                mapTileset5 74

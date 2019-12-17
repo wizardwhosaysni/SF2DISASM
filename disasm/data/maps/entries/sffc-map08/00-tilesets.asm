@@ -1,7 +1,7 @@
 
                 mapPalette  8
-                mapTileset1 0+5*8
-                mapTileset2 1+5*8
-                mapTileset3 2+5*8
-                mapTileset4 3+5*8
-                mapTileset5 4+5*8
+                mapTileset1 40
+                mapTileset2 41
+                mapTileset3 42
+                mapTileset4 43
+                mapTileset5 44

@@ -1,7 +1,7 @@
 
                 mapPalette  9
-                mapTileset1 0+5*9
-                mapTileset2 1+5*9
-                mapTileset3 2+5*9
-                mapTileset4 3+5*9
-                mapTileset5 4+5*9
+                mapTileset1 45
+                mapTileset2 46
+                mapTileset3 47
+                mapTileset4 48
+                mapTileset5 49

@@ -1,7 +1,7 @@
 
                 mapPalette  20
-                mapTileset1 0+5*20
-                mapTileset2 1+5*20
-                mapTileset3 2+5*20
-                mapTileset4 3+5*20
-                mapTileset5 4+5*20
+                mapTileset1 100
+                mapTileset2 101
+                mapTileset3 102
+                mapTileset4 103
+                mapTileset5 104
