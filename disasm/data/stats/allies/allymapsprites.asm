@@ -22,14 +22,14 @@ AllyMapSprites: ; enum Mapsprites : MAPSPRITE_*
                 mapSprite KOJIROU_PROMO ; KOJIROU
                 mapSprite MAX_PROMO ; MAX
                 mapSprite ODDEYE_PROMO ; ODDEYE
-                mapSprite SKREECH_PROMO ; HIGINS
-                mapSprite SKREECH_PROMO ; SKREECH
-                mapSprite TAYA_SPECIAL  ; TAYA
-                mapSprite JARO_SPECIAL  ; FRAYJA
-                mapSprite JARO_SPECIAL  ; JARO
-                mapSprite SHEELA_SPECIAL ; GYAN
-                mapSprite SHEELA_SPECIAL ; SHEELA
-                mapSprite ZYNK_PROMO    ; ZYNK
-                mapSprite LEMON_SPECIAL ; CHAZ
-                mapSprite LEMON_SPECIAL ; LEMON
-                mapSprite CLAUDE_PROMO  ; CLAUDE
+                ;mapSprite SKREECH_PROMO ; HIGINS
+                ;mapSprite SKREECH_PROMO ; SKREECH
+                ;mapSprite TAYA_SPECIAL  ; TAYA
+                ;mapSprite JARO_SPECIAL  ; FRAYJA
+                ;mapSprite JARO_SPECIAL  ; JARO
+                ;mapSprite SHEELA_SPECIAL ; GYAN
+                ;mapSprite SHEELA_SPECIAL ; SHEELA
+                ;mapSprite ZYNK_PROMO    ; ZYNK
+                ;mapSprite LEMON_SPECIAL ; CHAZ
+                ;mapSprite LEMON_SPECIAL ; LEMON
+                ;mapSprite CLAUDE_PROMO  ; CLAUDE

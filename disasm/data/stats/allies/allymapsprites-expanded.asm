@@ -79,49 +79,49 @@ AllyMapSprites: ; enum Mapsprites : MAPSPRITE_*
                 mapSprite ODDEYE_PROMO
                 mapSprite ODDEYE_PROMO
                 
-                mapSprite DEFAULT           ; HIGINS
-                mapSprite HIGINS_PROMO
-                mapSprite DEFAULT
+                ;mapSprite DEFAULT           ; HIGINS
+                ;mapSprite HIGINS_PROMO
+                ;mapSprite DEFAULT
                 
-                mapSprite DEFAULT           ; SKREECH
-                mapSprite SKREECH_PROMO
-                mapSprite DEFAULT
+                ;mapSprite DEFAULT           ; SKREECH
+                ;mapSprite SKREECH_PROMO
+                ;mapSprite DEFAULT
                 
-                mapSprite DEFAULT           ; TAYA
-                mapSprite DEFAULT
-                mapSprite TAYA_SPECIAL
+                ;mapSprite DEFAULT           ; TAYA
+                ;mapSprite DEFAULT
+                ;mapSprite TAYA_SPECIAL
                 
-                mapSprite DEFAULT           ; FRAYJA
-                mapSprite FRAYJA_PROMO
-                mapSprite DEFAULT
+                ;mapSprite DEFAULT           ; FRAYJA
+                ;mapSprite FRAYJA_PROMO
+                ;mapSprite DEFAULT
                 
-                mapSprite DEFAULT           ; JARO
-                mapSprite DEFAULT
-                mapSprite JARO_SPECIAL
+                ;mapSprite DEFAULT           ; JARO
+                ;mapSprite DEFAULT
+                ;mapSprite JARO_SPECIAL
                 
-                mapSprite DEFAULT           ; GYAN
-                mapSprite GYAN_PROMO
-                mapSprite DEFAULT
+                ;mapSprite DEFAULT           ; GYAN
+                ;mapSprite GYAN_PROMO
+                ;mapSprite DEFAULT
                 
-                mapSprite DEFAULT           ; SHEELA
-                mapSprite DEFAULT
-                mapSprite SHEELA_SPECIAL
+                ;mapSprite DEFAULT           ; SHEELA
+                ;mapSprite DEFAULT
+                ;mapSprite SHEELA_SPECIAL
                 
-                mapSprite DEFAULT           ; ZYNK
-                mapSprite ZYNK_PROMO
-                mapSprite DEFAULT
+                ;mapSprite DEFAULT           ; ZYNK
+                ;mapSprite ZYNK_PROMO
+                ;mapSprite DEFAULT
                 
-                mapSprite DEFAULT           ; CHAZ
-                mapSprite CHAZ_PROMO
-                mapSprite DEFAULT
+                ;mapSprite DEFAULT           ; CHAZ
+                ;mapSprite CHAZ_PROMO
+                ;mapSprite DEFAULT
                 
-                mapSprite DEFAULT           ; LEMON
-                mapSprite DEFAULT
-                mapSprite LEMON_SPECIAL
+                ;mapSprite DEFAULT           ; LEMON
+                ;mapSprite DEFAULT
+                ;mapSprite LEMON_SPECIAL
                 
-                mapSprite DEFAULT           ; CLAUDE
-                mapSprite CLAUDE_PROMO
-                mapSprite DEFAULT
+                ;mapSprite DEFAULT           ; CLAUDE
+                ;mapSprite CLAUDE_PROMO
+                ;mapSprite DEFAULT
                 
                 mapSprite DEFAULT
                 mapSprite DEFAULT

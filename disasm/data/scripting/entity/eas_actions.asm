@@ -152,7 +152,7 @@ eas_Die:         ac_setAnimCounter $0
                  ac_updateSprite
                  ac_wait 3
                  ac_soundCommand SFX_BATTLEFIELD_DEATH
-                 ac_setSprite MAPSPRITE_EFFECT1
+                 ac_setSprite MAPSPRITE_BLOW
                  ac_setFacing UP
                  ac_updateSprite
                  ac_wait 8
@@ -303,7 +303,7 @@ byte_462AE:      ac_moveRel 65535,0
 word_462DA:      ac_branch
                 dc.w (byte_46282-word_462DA) & $FFFF
                  ac_soundCommand SFX_JUMP
-                 ac_setSprite MAPSPRITE_EFFECT1
+                 ac_setSprite MAPSPRITE_BLOW
                  ac_setFacing UP
                  ac_updateSprite
                  ac_wait 8

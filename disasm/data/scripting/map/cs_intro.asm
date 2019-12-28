@@ -7,22 +7,22 @@ IntroCutscene:
     ; command 38
     playSound $7
     cameraSpeed $30
-    newEntity $80,63,63,DOWN,31
-    newEntity $81,63,63,DOWN,119
-    newEntity $82,63,63,DOWN,121
-    newEntity $83,63,63,DOWN,116
-    newEntity $84,63,63,DOWN,115
-    newEntity $85,63,63,UP,61
-    newEntity $86,63,63,UP,61
-    newEntity $87,63,63,UP,61
-    newEntity $88,63,63,UP,61
-    newEntity $89,63,63,UP,61
-    newEntity $8A,63,63,UP,62
-    newEntity $8B,63,63,DOWN,60
-    newEntity $8C,63,63,DOWN,60
-    newEntity $8D,63,63,DOWN,60
-    newEntity $8E,63,63,DOWN,60
-    newEntity $8F,12,5,DOWN,62
+    newEntity $80,63,63,DOWN,MAPSPRITE_ADAM
+    newEntity $81,63,63,DOWN,MAPSPRITE_LYNX
+    newEntity $82,63,63,DOWN,MAPSPRITE_MISHAELA
+    newEntity $83,63,63,DOWN,MAPSPRITE_EIKU
+    newEntity $84,63,63,DOWN,MAPSPRITE_MAGUS
+    newEntity $85,63,63,UP,MAPSPRITE_BOLT
+    newEntity $86,63,63,UP,MAPSPRITE_BOLT
+    newEntity $87,63,63,UP,MAPSPRITE_BOLT
+    newEntity $88,63,63,UP,MAPSPRITE_BOLT
+    newEntity $89,63,63,UP,MAPSPRITE_BOLT
+    newEntity $8A,63,63,UP,MAPSPRITE_LASER_CANNON
+    newEntity $8B,63,63,DOWN,MAPSPRITE_BLAZE
+    newEntity $8C,63,63,DOWN,MAPSPRITE_BLAZE
+    newEntity $8D,63,63,DOWN,MAPSPRITE_BLAZE
+    newEntity $8E,63,63,DOWN,MAPSPRITE_BLAZE
+    newEntity $8F,12,5,DOWN,MAPSPRITE_CARAVAN
     newEntity $11,1,1,DOWN,ALLY_MAX
     newEntity $F,1,3,DOWN,ALLY_RIDION
     newEntity $1,1,4,DOWN,ALLY_MEAD
