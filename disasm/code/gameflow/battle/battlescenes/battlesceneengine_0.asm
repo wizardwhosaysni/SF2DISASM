@@ -2757,11 +2757,13 @@ loc_19826:
 sub_19838:
                 
                 move.w  d1,-(sp)
-                cmpi.w  #$76,d1 
+                ;cmpi.w  #$76,d1 
+                cmpi.w  #200,d1         ; updated starting index for special animations
                 bcc.s   loc_19850
                 cmpi.w  #1,d1
                 bne.s   loc_1984A
-                moveq   #$3C,d1 
+                ;moveq   #$3C,d1
+                moveq   #100,d1         ; updated starting index for dodge/block animation
                 bra.s   loc_1984C
 loc_1984A:
                 

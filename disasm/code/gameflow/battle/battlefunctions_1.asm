@@ -1102,7 +1102,7 @@ loc_245A4:
                 move.w  #3,d1
                 sub.w   d6,d1
                 clr.w   d2
-                move.w  #$3F,d3 
+                move.w  #MAPSPRITE_BLOW,d3         ; updated blow animation sprite index
                 jsr     (UpdateEntityProperties).l
                 cmpi.b  #7,((NUM_SPRITES_TO_LOAD-$1000000)).w
                 blt.s   loc_245C6

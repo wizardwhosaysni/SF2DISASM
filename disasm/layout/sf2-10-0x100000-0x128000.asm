@@ -1,6 +1,6 @@
 
 ; GAME SECTION 10 :
-; 0x100000..0x130000 : Backgrounds, invocation sprites, title screen
+; 0x100000..0x128000 : Backgrounds, invocation sprites, title screen
 ; FREE SPACE : 432 bytes.
 
 
@@ -13,4 +13,4 @@ p_pt_InvocationSprites:
                 includeIfVanillaRom "data\graphics\battles\backgrounds\entries.asm"    ; Backgrounds
                 includeIfExpandedRom "data\graphics\portraits\entries.asm"    ; Portraits
                 include "data\graphics\battles\spells\invocations\entries.asm"    ; Invocation sprites
-                align $130000
+                align $128000

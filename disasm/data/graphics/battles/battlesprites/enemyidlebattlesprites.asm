@@ -2,16 +2,19 @@
 ; ASM FILE data\graphics\battles\battlesprites\enemyidlebattlesprites.asm :
 ; 0x1FADD..0x1FAEA : Enemy Idle Battle Sprites
 EnemyBSpriteIdleAnimate:
-                dc.b 18                 ; IDs of enemy battle sprites which do not animate while idle
-                dc.b 19
-                dc.b 32
-                dc.b 34
-                dc.b 36
-                dc.b 37
-                dc.b 38
-                dc.b 39
-                dc.b 40
-                dc.b 42
-                dc.b 43
-                dc.b 49
+                dc.b ENEMYBATTLESPRITE_HYDRA                 ; IDs of enemy battle sprites which do not animate while idle
+                dc.b ENEMYBATTLESPRITE_PYRO_HYDRA
+                dc.b ENEMYBATTLESPRITE_HUNTER_GOBLIN
+                dc.b ENEMYBATTLESPRITE_DARK_SNIPER
+                dc.b ENEMYBATTLESPRITE_BRASS_LOADER
+                dc.b ENEMYBATTLESPRITE_BRASS_GUNNER
+                dc.b ENEMYBATTLESPRITE_DARK_MAGE
+                dc.b ENEMYBATTLESPRITE_MASTER_MAGE
+                dc.b ENEMYBATTLESPRITE_WITCH
+                dc.b ENEMYBATTLESPRITE_HIGH_WITCH
+                dc.b ENEMYBATTLESPRITE_PRIEST
+                dc.b ENEMYBATTLESPRITE_HIGH_PRIEST
+                dc.b ENEMYBATTLESPRITE_SHAMAN
+                dc.b ENEMYBATTLESPRITE_DARK_SHAMAN
+                dc.b ENEMYBATTLESPRITE_EVIL_STATUE
                 dc.b $FF

@@ -1,7 +1,8 @@
 
 ; GAME SECTION 11 :
-; 0x130000..0x180000 : Enemy battle sprites
+; 0x128000..0x180000 : Enemy battle sprites
 ; FREE SPACE : 429 bytes.
+
 
 
 p_pt_EnemyBattleSprites:
