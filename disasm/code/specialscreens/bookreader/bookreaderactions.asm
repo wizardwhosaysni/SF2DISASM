@@ -89,6 +89,7 @@ loc_74B4:
                 moveq   #1,d4
 loc_74DE:
                 
+                bsr.w   FadeOutToBlack  ; added fade out to manage VDP layout glitch when game intro was played
                 bra.w   MainLoop        
 
 	; End of function BookReaderNew
@@ -125,8 +126,11 @@ loc_74FE:
                 txt     $E0             ; "Now, good luck!{N}You have no time to waste!{W1}"
                 clsTxt
                 clr.b   ((DEACTIVATE_WINDOW_HIDING-$1000000)).w
+                
+                bsr.w   FadeOutToBlack  ; added fade out to manage VDP layout glitch when game intro was played              
+                
                 chkFlg  $58             ; checks if a game has been saved for copying purposes ? (or if saved from battle?)
-                beq.s   loc_753A
+                beq.s   loc_753A                
                 jsr     j_BattleLoop
                 bra.w   loc_75C8        
 loc_753A:

@@ -1,9 +1,8 @@
 
 
 bbcs_01:        
-                
-                setF $1C2+1
-                loadMapFadeIn 1,6,8
+                setF $1C2+1 
+                mapLoad 1,6,8
                 fadeInB
                 yesNo
                 executeSubroutine removeIanFromParty

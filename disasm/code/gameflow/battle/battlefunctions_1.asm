@@ -9,7 +9,6 @@
 
 BattleLoop:
                 
-                jsr     FadeOutToBlackAll(pc)
                 clr.b   ((PLAYER_TYPE-$1000000)).w
                 setFlg  $18F            ; Set after first battle's cutscene OR first save? Checked at witch screens
                 chkFlg  $58             ; checks if a game has been saved for copying purposes ? (or if saved from battle?)
