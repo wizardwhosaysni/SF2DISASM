@@ -17,4 +17,8 @@
                 ;dc.b 1
                 ;dc.w $184
                 ;dc.l rbcs_battle40_2
+                dc.b 4
+                dc.b 0
+                dc.w $181
+                dc.l rbcs_battle04_1
                 dc.w $FFFF

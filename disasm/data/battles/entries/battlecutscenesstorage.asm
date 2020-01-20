@@ -8,6 +8,7 @@
                 include "data\battles\entries\sffc-battle03\cs_beforebattle.asm"
                 include "data\battles\entries\sffc-battle03\cs_afterbattle.asm" 
                 include "data\battles\entries\sffc-battle04\cs_beforebattle.asm"
+                include "data\battles\entries\sffc-battle04\cs_regiontriggered_1.asm" 
                 include "data\battles\entries\sffc-battle04\cs_afterbattle.asm" 
                 include "data\battles\entries\sffc-battle05\cs_beforebattle.asm"
                 include "data\battles\entries\sffc-battle05\cs_afterbattle.asm" 

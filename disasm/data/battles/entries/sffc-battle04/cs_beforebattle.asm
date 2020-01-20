@@ -6,4 +6,5 @@ bbcs_04:
                 loadMapFadeIn 4,6,8
                 fadeInB
                 yesNo
+                setF $180              
                 csc_end     
