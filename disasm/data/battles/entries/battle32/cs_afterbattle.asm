@@ -2,7 +2,7 @@
 ; ASM FILE data\battles\entries\battle32\cs_afterbattle.asm :
 ; 0x4CDB4..0x4CF0C : Cutscene after battle 32
 abcs_battle32:  textCursor $B25
-                loadMapFadeIn 74,5,20
+                loadMapFadeIn MAP_OVERWORLD_MOUN_AND_MITULA,5,20
                 loadMapEntities ce_4CEEC
                 setActscriptWait ALLY_BOWIE,eas_Init
                 setActscriptWait ALLY_PETER,eas_Init
@@ -73,7 +73,7 @@ csub_4CEE4:
                 moveq   #$17,d0
                 jmp     j_LeaveBattleParty
 
-	; End of function csub_4CEE4
+    ; End of function csub_4CEE4
 
 ce_4CEEC:       mainEntity 10,25,UP
                 entity 11,25,UP,ALLY_PETER,eas_Init

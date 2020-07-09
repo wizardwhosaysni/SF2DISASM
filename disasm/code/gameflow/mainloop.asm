@@ -4,12 +4,12 @@
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = map idx
+; In: D0 = map index
 ;     D1 = player X coord
 ;     D2 = player Y coord
 ;     D3 = player facing
 ;     D4 = ???
-;     D7 = battle idx (FFFF for none)
+;     D7 = battle index ($FFFF for none)
 ; ...more
 
 MainLoop:
@@ -31,5 +31,5 @@ loc_75E4:
                 jsr     j_ExplorationLoop
                 bra.s   loc_75C8        ; Return in case of warp event
 
-	; End of function MainLoop
+    ; End of function MainLoop
 

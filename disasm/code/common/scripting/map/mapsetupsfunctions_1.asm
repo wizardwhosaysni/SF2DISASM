@@ -20,7 +20,7 @@ loc_47514:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function RunMapSetupInitFunction
+    ; End of function RunMapSetupInitFunction
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -71,7 +71,7 @@ loc_47576:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function RunMapSetupZoneEvent
+    ; End of function RunMapSetupZoneEvent
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -80,7 +80,7 @@ RunMapSetupItemEvent:
                 
                 movem.l d0-d5/d7-a1,-(sp)
                 clr.w   ((SPEECH_SFX-$1000000)).w
-                andi.w  #ITEM_MASK_IDX,d4
+                andi.w  #ITEMENTRY_MASK_INDEX,d4
                 move.b  d2,((byte_FFB651-$1000000)).w
                 moveq   #0,d6
                 bsr.w   GetCurrentMapSetup
@@ -136,12 +136,12 @@ loc_4760A:
                 movem.l (sp)+,d0-d5/d7-a1
                 rts
 
-	; End of function RunMapSetupItemEvent
+    ; End of function RunMapSetupItemEvent
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = entity event idx
+; In: D0 = entity event index
 
 RunMapSetupEntityEvent:
                 
@@ -155,7 +155,7 @@ RunMapSetupEntityEvent:
                 clr.w   d7
 loc_47638:
                 
-                ; event check loop: see if next event matches idx
+                ; event check loop: see if next event matches index
                 cmpi.b  #$FD,(a0,d7.w)
                 bne.s   loc_4764A       ; not default case
                 ; "default" case reached; execute this event
@@ -182,9 +182,9 @@ loc_4765E:
                 bsr.w   LoadAndDisplayCurrentPortrait
 loc_47670:
                 
-                ; get entity idx that will trigger this event
+                ; get entity index that will trigger this event
                 movem.w (sp)+,d1-d2
-                lea     ((ENTITY_EVENT_IDX_LIST-$1000000)).w,a1
+                lea     ((ENTITY_EVENT_INDEX_LIST-$1000000)).w,a1
                 tst.b   d0
                 bpl.s   loc_47680
                 subi.b  #$60,d0 
@@ -227,7 +227,7 @@ loc_476D6:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function RunMapSetupEntityEvent
+    ; End of function RunMapSetupEntityEvent
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -239,12 +239,12 @@ sub_476DC:
                 dc.l VInt_UpdateEntities
                 bra.w   ExecuteMapScript
 
-	; End of function sub_476DC
+    ; End of function sub_476DC
 
 
 ; =============== S U B R O U T I N E =======================================
 
-;     Get index of current portrait for textbox and load it.
+; Get index of current portrait for dialogue window and load it
 
 LoadAndDisplayCurrentPortrait:
                 
@@ -259,7 +259,7 @@ loc_476FC:
                 movem.w (sp)+,d0-d2
                 rts
 
-	; End of function LoadAndDisplayCurrentPortrait
+    ; End of function LoadAndDisplayCurrentPortrait
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -279,7 +279,7 @@ loc_4771A:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function RunMapSetupAreaDescription
+    ; End of function RunMapSetupAreaDescription
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -337,7 +337,7 @@ loc_4778C:
                 addq.w  #6,d7
                 bra.s   loc_4772C
 
-	; End of function DisplayAreaDescription
+    ; End of function DisplayAreaDescription
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -354,7 +354,7 @@ return_4779C:
                 
                 rts
 
-	; End of function GetMapSetupEntityList
+    ; End of function GetMapSetupEntityList
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -400,7 +400,7 @@ loc_477E2:
                 movem.l (sp)+,d0-d1/a1
                 rts
 
-	; End of function GetCurrentMapSetup
+    ; End of function GetCurrentMapSetup
 
 ms_Void:        dc.w $FFFF
 
@@ -416,7 +416,7 @@ MoveEntityOutOfMap:
                 movem.l (sp)+,d0-d3
                 rts
 
-	; End of function MoveEntityOutOfMap
+    ; End of function MoveEntityOutOfMap
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -429,7 +429,7 @@ MakeEntityWalk:
                 move.l  (sp)+,d0
                 rts
 
-	; End of function MakeEntityWalk
+    ; End of function MakeEntityWalk
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -446,7 +446,7 @@ sub_4781A:
                 movem.l (sp)+,d0-d3
                 rts
 
-	; End of function sub_4781A
+    ; End of function sub_4781A
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -466,7 +466,7 @@ sub_47832:
                 movem.l (sp)+,d0-d3
                 rts
 
-	; End of function sub_47832
+    ; End of function sub_47832
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -518,5 +518,5 @@ loc_478C0:
                 movem.l (sp)+,d1/d6-d7
                 rts
 
-	; End of function CheckRandomBattle
+    ; End of function CheckRandomBattle
 

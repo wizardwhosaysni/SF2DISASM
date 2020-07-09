@@ -100,7 +100,7 @@ cs_5CC26:       entityFlashWhite ALLY_BOWIE,$32
                 setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
                 csWait 30
                 executeSubroutine FadeOutToWhite
-                mapLoad 64,0,0
+                mapLoad MAP_MAGIC_TUNNEL_PIPE,0,0
                 loadEntitiesFromMapSetup 5,4,UP
                 executeSubroutine csub_5CDDC
                 setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
@@ -130,7 +130,7 @@ cs_5CC26:       entityFlashWhite ALLY_BOWIE,$32
                 csWait 40
                 executeSubroutine sub_5CDF8
                 csWait 2
-                mapLoad 63,3,3
+                mapLoad MAP_MAGIC_TUNNEL_HUB,3,3
                 loadEntitiesFromMapSetup 8,7,UP
                 setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
                 executeSubroutine FadeInFromWhite
@@ -143,7 +143,7 @@ cs_5CCF6:       entityFlashWhite ALLY_BOWIE,$32
                 setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
                 csWait 30
                 executeSubroutine FadeOutToWhite
-                mapLoad 64,0,0
+                mapLoad MAP_MAGIC_TUNNEL_PIPE,0,0
                 loadEntitiesFromMapSetup 5,4,UP
                 executeSubroutine sub_5CDE4
                 setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
@@ -173,7 +173,7 @@ cs_5CCF6:       entityFlashWhite ALLY_BOWIE,$32
                 csWait 40
                 executeSubroutine sub_5CDF8
                 csWait 2
-                mapLoad 63,5,17
+                mapLoad MAP_MAGIC_TUNNEL_HUB,5,17
                 loadEntitiesFromMapSetup 10,21,UP
                 setActscript ALLY_BOWIE,eas_RotateRightHighSpeed
                 executeSubroutine FadeInFromWhite
@@ -194,7 +194,7 @@ csub_5CDDC:
                 move.b  #$A9,((MAP_AREA_LAYER2_AUTOSCROLL_Y-$1000000)).w
                 rts
 
-	; End of function csub_5CDDC
+    ; End of function csub_5CDDC
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -204,7 +204,7 @@ sub_5CDE4:
                 move.b  #$57,((MAP_AREA_LAYER2_AUTOSCROLL_Y-$1000000)).w 
                 rts
 
-	; End of function sub_5CDE4
+    ; End of function sub_5CDE4
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -214,7 +214,7 @@ sub_5CDEC:
                 subq.b  #4,((MAP_AREA_LAYER2_AUTOSCROLL_Y-$1000000)).w
                 rts
 
-	; End of function sub_5CDEC
+    ; End of function sub_5CDEC
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -224,7 +224,7 @@ sub_5CDF2:
                 addq.b  #4,((MAP_AREA_LAYER2_AUTOSCROLL_Y-$1000000)).w
                 rts
 
-	; End of function sub_5CDF2
+    ; End of function sub_5CDF2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -234,5 +234,5 @@ sub_5CDF8:
                 clr.b   ((MAP_AREA_LAYER2_AUTOSCROLL_Y-$1000000)).w
                 rts
 
-	; End of function sub_5CDF8
+    ; End of function sub_5CDF8
 

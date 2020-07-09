@@ -66,11 +66,11 @@ sub_44074:
                 jmp     sub_45B84(pc)
 sub_44078:                
                 jmp     sub_474EE(pc)
-j_RunEntityEvent:                
+j_RunMapSetupEntityEvent:                
                 jmp     RunMapSetupEntityEvent(pc)
 j_RunMapSetupZoneEvent:                
                 jmp     RunMapSetupZoneEvent(pc)
-j_ExecuteEntityEvent_0:                
+j_RunMapSetupEntityEvent_0:                
                 jmp     RunMapSetupEntityEvent(pc)
 ; triggers a map setup function according to up to 4 criterias in d1-d4
 j_RunMapSetupItemEvent:                
@@ -116,22 +116,17 @@ j_ClearEntities:
                 include "code\common\scripting\entity\entityfunctions_1.asm"    ; Entity functions
                 include "data\battles\global\battleneutralentities.asm"    ; Battle entities which are not force members or enemies
                 include "data\scripting\entity\eas_battleneutralentities.asm"    ; Entity actscripts for battle entities which are not force members or enemies
-                includeIfVanillaRom "code\common\scripting\entity\getallymapsprite.asm"    ; Get ally map sprite ID function
-                includeIfVanillaRom "data\stats\allies\allymapsprites.asm"    ; Ally map sprite IDs
-                includeIfVanillaRom "code\common\scripting\entity\getcombatantmapsprite.asm"    ; Get combatant map sprite ID function
-                includeIfExpandedRom "code\common\scripting\entity\getallymapsprite-expanded.asm"
-                includeIfExpandedRom "code\common\scripting\entity\getcombatantmapsprite-expanded.asm"
-                includeIfExpandedRom "data\stats\allies\allymapsprites-expanded.asm"
-                include "data\stats\enemies\enemymapsprites.asm"    ; Enemy map sprite IDs
-                wordAlignIfExpandedRom
+                include "code\common\scripting\entity\getallymapsprite.asm"    ; Get ally map sprite index function
+                include "data\stats\allies\allymapsprites.asm"    ; Ally map sprite indexes table
+                include "code\common\scripting\entity\getcombatantmapsprite.asm"    ; Get combatant map sprite index function
+                include "data\stats\enemies\enemymapsprites.asm"    ; Enemy map sprite indexes table
+                wordAlign
                 include "code\common\scripting\entity\entityfunctions_2.asm"    ; Entity functions
                 include "data\scripting\entity\eas_main.asm"    ; Main entity actscripts
                 include "code\common\scripting\entity\entityfunctions_3.asm"    ; Entity functions
                 include "code\common\scripting\map\vehiclefunctions.asm"    ; Mapscripts and functions for Caravan and Raft
-                includeIfVanillaRom "code\common\scripting\entity\getentityportaitandspeechsound.asm"    ; Get entity portrait and speech sound IDs function
-                includeIfVanillaRom "data\spritedialogproperties.asm"    ; Sprite dialog properties
-                includeIfExpandedRom "code\common\scripting\entity\getentityportaitandspeechsound-expanded.asm"
-                includeIfExpandedRom "data\spritedialogproperties-expanded.asm"
+                include "code\common\scripting\entity\getentityportaitandspeechsound.asm"    ; Get entity portrait and speech sfx indexes function
+                include "data\spritedialogproperties.asm"    ; Sprite dialog properties
                 include "code\common\scripting\entity\entityfunctions_4.asm"    ; Entity functions
                 include "data\scripting\entity\eas_actions.asm"    ; Entity scripts for cutscene actions
                 include "code\common\scripting\map\mapscriptengine_1.asm"    ; Mapscript engine, part 1
@@ -152,7 +147,7 @@ j_ClearEntities:
                 include "data\battles\battleendcutscenes.asm"    ; Enemy defeated cutscenes
                 include "code\gameflow\battle\battleendcutscenesend.asm"    ; Battle end cutscenes function end
                 include "data\battles\global\enemyleaderpresence.asm"    ; Enemy leader presence table
-                wordAlignIfExpandedRom
+                wordAlign
                 include "code\gameflow\battle\afterbattlecutscenesstart.asm"    ; After battle cutscenes function start
                 include "data\battles\afterbattlecutscenes.asm"    ; After battle cutscenes
                 include "code\gameflow\battle\afterbattlecutscenesend.asm"    ; After battle cutscenes function end
@@ -171,6 +166,5 @@ j_ClearEntities:
                 include data\battles\entries\battlecutscenesstorage.asm
                 include "code\common\stats\items\itemfunctions_s7_0.asm"    ; Unidentified item functions
                 include "data\maps\mapsetups.asm"    ; Map setups table
-                ;includeIfVanillaRom data\maps\mapsetupsstorage.asm
                 include data\maps\mapsetupsstorage.asm
                 align $64000

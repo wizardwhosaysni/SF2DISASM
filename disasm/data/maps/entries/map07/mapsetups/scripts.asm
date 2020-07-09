@@ -123,7 +123,7 @@ cs_55A36:       textCursor $4AE
                 entityActionsWait ALLY_BOWIE
                  moveDown 18
                 endActions
-                warp $6,$B,$1,$3
+                warp MAP_NEW_GRANSEAL,11,1,DOWN
                 csc_end
 cs_55BEE:       textCursor $4E1
                 setActscriptWait ALLY_PETER,eas_Init
@@ -368,7 +368,7 @@ loc_55F34:
                 lea     (PALETTE_1_BASE).l,a0
                 jmp     (sub_19C8).w    
 
-	; End of function csub_55EF4
+    ; End of function csub_55EF4
 
 plt_55F6A:      dc.w $E0C
                 dc.w $A08
@@ -391,5 +391,5 @@ sub_55F82:
                 lea     ((PALETTE_1_BACKUP-$1000000)).w,a0
                 jmp     (sub_19C8).w    
 
-	; End of function sub_55F82
+    ; End of function sub_55F82
 

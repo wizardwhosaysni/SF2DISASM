@@ -23,7 +23,7 @@ byte_52476:
                 setFlg  $263            ; Set after prison wake-up sequence IF 0297 is *not* also set
                 rts
 
-	; End of function ms_map17_InitFunction
+    ; End of function ms_map17_InitFunction
 
 cs_5247C:       setBlocks 48,7,1,1,48,8
                 setBlocks 62,20,1,2,48,20
@@ -50,7 +50,7 @@ cs_5249E:       playSound $FD
                 nextSingleText $0,ALLY_CHESTER ; "What is Ground Seal?{N}Please tell me!{W1}"
                 nextText $C0,132        ; "I heard King Galam say{N}those words.{W2}"
                 nextSingleText $C0,132  ; "I just know that something{N}is being concealed.{W1}"
-                loadMapFadeIn 17,52,1
+                loadMapFadeIn MAP_GALAM_CASTLE_INNER,52,1
                 csWait 1
                 playSound MUSIC_CASTLE
                 fadeInB

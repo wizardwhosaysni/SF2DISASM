@@ -6,10 +6,8 @@
 
 EndGame:
                 
-                enableSram              
                 bset    #7,(SAVE_FLAGS).l
-                disableSram
-                jsr     (DisableDisplayAndVInt).w
+                jsr     (DisableDisplayAndInterrupts).w
                 movea.l (p_WitchEndTiles).l,a0
                 lea     (FF6802_LOADING_SPACE).l,a1
                 move.l  a1,-(sp)
@@ -18,7 +16,7 @@ EndGame:
                 lea     ($2000).w,a1
                 move.w  #$2000,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 movea.l (p_WitchEndLayout).l,a0
                 lea     (PLANE_B_LAYOUT).l,a1
                 move.w  #$800,d7
@@ -27,14 +25,14 @@ EndGame:
                 lea     ($E000).l,a1
                 move.w  #$400,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 lea     (PLANE_A_MAP_LAYOUT).l,a0
                 move.l  #$21382139,$21E(a0)
                 move.l  #$21422143,$25E(a0)
                 lea     ($C000).l,a1
                 move.w  #$380,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 movea.l (p_plt_WitchEnd).l,a0
                 lea     (PALETTE_1_BASE).l,a1
                 moveq   #$20,d7 
@@ -55,7 +53,7 @@ EndGame:
                 clsTxt
                 move.w  #$5A,d0 
                 jsr     (Sleep).w       
-                move.b  #2,((FADING_SETTING-$1000000)).w
+                move.b  #OUT_TO_BLACK,((FADING_SETTING-$1000000)).w
                 clr.w   ((FADING_TIMER-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
@@ -81,14 +79,14 @@ EndGame:
                 trap    #VINT_FUNCTIONS
                 dc.w VINTS_REMOVE
                 dc.l VInt_FallingJewels
-                jsr     (DisableDisplayAndVInt).w
+                jsr     (DisableDisplayAndInterrupts).w
                 lea     (PLANE_A_MAP_LAYOUT).l,a0
                 clr.l   $21E(a0)
                 clr.l   $25E(a0)
                 lea     ($C000).l,a1
                 move.w  #$380,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 movea.l (p_JewelEndScreenTiles).l,a0
                 lea     (FF6802_LOADING_SPACE).l,a1
                 move.l  a1,-(sp)
@@ -97,7 +95,7 @@ EndGame:
                 lea     ($2000).w,a1
                 move.w  #$2000,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 movea.l (p_JewelEndScreenLayout).l,a0
                 lea     (PLANE_B_LAYOUT).l,a1
                 move.w  #$800,d7
@@ -106,13 +104,13 @@ EndGame:
                 lea     ($E000).l,a1
                 move.w  #$400,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 movea.l (p_plt_JewelsEndScreen).l,a0
                 lea     (PALETTE_1_BASE).l,a1
                 moveq   #$40,d7 
                 jsr     (CopyBytes).w   
                 jsr     (EnableDisplayAndInterrupts).w
-                move.b  #1,((FADING_SETTING-$1000000)).w
+                move.b  #IN_FROM_BLACK,((FADING_SETTING-$1000000)).w
                 clr.w   ((FADING_TIMER-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
@@ -136,7 +134,7 @@ EndGame:
                 nop
                 moveq   #$78,d0 
                 jsr     (Sleep).w       
-                move.b  #1,((FADING_SETTING-$1000000)).w
+                move.b  #IN_FROM_BLACK,((FADING_SETTING-$1000000)).w
                 clr.w   ((FADING_TIMER-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
@@ -165,13 +163,13 @@ loc_27C2C:
                 jsr     (FadeOutToWhite).w
                 trap    #VINT_FUNCTIONS
                 dc.w VINTS_CLEAR
-                jsr     (DisableDisplayAndVInt).w
+                jsr     (DisableDisplayAndInterrupts).w
                 move    #$2700,sr
                 movea.l (InitStack).w,sp
                 movea.l (p_Start).w,a0  
                 jmp     (a0)            ; reset
 
-	; End of function EndGame
+    ; End of function EndGame
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -193,7 +191,7 @@ sub_27C64:
                 addq.w  #1,d0
                 rts
 
-	; End of function sub_27C64
+    ; End of function sub_27C64
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -201,11 +199,11 @@ sub_27C64:
 VInt_FallingJewels:
                 
                 subq.w  #1,(VERTICAL_SCROLL_DATA).l
-                jsr     (UpdateVDPVScrollData).w
-                jsr     (EnableDMAQueueProcessing).w
+                jsr     (UpdateVdpVScrollData).w
+                jsr     (EnableDmaQueueProcessing).w
                 rts
 
-	; End of function VInt_FallingJewels
+    ; End of function VInt_FallingJewels
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -283,12 +281,12 @@ loc_27D6A:
                 lea     ($E000).l,a1
                 move.w  #$200,d0
                 moveq   #2,d1
-                jsr     (ApplyVIntVramDMA).w
-                jsr     (EnableDMAQueueProcessing).w
+                jsr     (ApplyVIntVramDma).w
+                jsr     (EnableDmaQueueProcessing).w
 loc_27D8A:
                 
                 unlk    a6
                 rts
 
-	; End of function VInt_WitchEndBlink
+    ; End of function VInt_WitchEndBlink
 

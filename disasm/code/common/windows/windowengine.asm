@@ -28,7 +28,7 @@ loc_47F4:
                 clr.w   ((TIMER_WINDOW_INDEX-$1000000)).w
                 rts
 
-	; End of function InitWindowProperties
+    ; End of function InitWindowProperties
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -82,7 +82,7 @@ loc_485E:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function CreateWindow
+    ; End of function CreateWindow
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -113,7 +113,7 @@ loc_4898:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function SetWindowDestination
+    ; End of function SetWindowDestination
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -133,7 +133,7 @@ loc_48B0:
                 movem.w (sp)+,d0-d1/d7
                 rts
 
-	; End of function FixWindowsPositions
+    ; End of function FixWindowsPositions
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -148,7 +148,7 @@ sub_48BE:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function sub_48BE
+    ; End of function sub_48BE
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -165,24 +165,28 @@ CopyPlaneALayoutForWindows:
                 movem.l (sp)+,a0-a1
                 rts
 
-	; End of function CopyPlaneALayoutForWindows
+    ; End of function CopyPlaneALayoutForWindows
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; D0=Windows index, D1=Destination, D2=Anim max
+; In: D0 = window slot
+;     D1 = destination
+;     D2 = animation length
 
-MoveWindowWithSFX:
+MoveWindowWithSfx:
                 
                  
                 sndCom  SFX_MENU_SWITCH
 
-	; End of function MoveWindowWithSFX
+    ; End of function MoveWindowWithSfx
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; D0=Windows index, D1=Destination, D2=Anim max
+; In: D0 = window slot
+;     D1 = destination
+;     D2 = animation length
 
 MoveWindow:
                 
@@ -207,12 +211,12 @@ loc_4914:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function MoveWindow
+    ; End of function MoveWindow
 
 
 ; =============== S U B R O U T I N E =======================================
 
-ClearWindowAndUpdateEndPtr:
+ClearWindowAndUpdateEndPointer:
                 
                 movem.l d0-d4/a0-a1,-(sp)
                 bsr.w   GetWindowInfo   
@@ -250,7 +254,7 @@ loc_4972:
                 movem.l (sp)+,d0-d4/a0-a1
                 rts
 
-	; End of function ClearWindowAndUpdateEndPtr
+    ; End of function ClearWindowAndUpdateEndPointer
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -262,7 +266,7 @@ WaitForWindowMovementEnd:
                 bne.s   WaitForWindowMovementEnd
                 rts
 
-	; End of function WaitForWindowMovementEnd
+    ; End of function WaitForWindowMovementEnd
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -382,14 +386,14 @@ loc_4AA2:
                 lea     ($C000).l,a1    ; Update VDP Plane A
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
-                bsr.w   EnableDMAQueueProcessing
+                bsr.w   ApplyVIntVramDma
+                bsr.w   EnableDmaQueueProcessing
                 clr.b   ((byte_FFA8FF-$1000000)).w
 return_4AC6:
                 
                 rts
 
-	; End of function VInt_UpdateWindows
+    ; End of function VInt_UpdateWindows
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -460,7 +464,7 @@ loc_4B52:
                 movem.l (sp)+,a0-a1
                 rts
 
-	; End of function sub_4AC8
+    ; End of function sub_4AC8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -523,7 +527,7 @@ loc_4BE0:
                 movem.l (sp)+,a0-a1
                 rts
 
-	; End of function sub_4B5C
+    ; End of function sub_4B5C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -561,7 +565,7 @@ return_4C36:
                 
                 rts
 
-	; End of function sub_4BEA
+    ; End of function sub_4BEA
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -575,7 +579,7 @@ GetWindowInfo:
                 adda.w  d0,a0
                 rts
 
-	; End of function GetWindowInfo
+    ; End of function GetWindowInfo
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -601,5 +605,5 @@ GetWindowTileAddress:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function GetWindowTileAddress
+    ; End of function GetWindowTileAddress
 

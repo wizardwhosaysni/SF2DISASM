@@ -2,45 +2,36 @@
 ; ASM FILE data\graphics\tech\windowlayouts\namecharacterentrywindowlayout.asm :
 ; 0x16204..0x1623A : Name character entry window layout
 NameEntryWindowLayout:
-                dc.w $C060
-                dc.w $C061
-                dc.w $C061
-                dc.w $C061
-                dc.w $C061
-                dc.w $C061
-                dc.w $C061
-                dc.w $C061
                 
-                if (EIGHT_CHARACTERS_MEMBER_NAMES=1)
-                dc.w $C061
-                endif
+                ; 1st line
+                dc.w VDPTILE_WINDOW_CORNER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_CORNER|VDPTILE_MIRRORED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
                 
-                dc.w $C860
-                dc.w $C070
-                dc.w $C05F
-                dc.w $C05F
-                dc.w $C05F
-                dc.w $C05F
-                dc.w $C05F
-                dc.w $C05F
-                dc.w $C05F
+                ; 2nd line
+                dc.w VDPTILE_WINDOW_VERTICAL_BORDER|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_ASCII_UNDERSCORE|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_ASCII_UNDERSCORE|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_ASCII_UNDERSCORE|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_ASCII_UNDERSCORE|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_ASCII_UNDERSCORE|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_ASCII_UNDERSCORE|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_ASCII_UNDERSCORE|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_VERTICAL_BORDER|VDPTILE_MIRRORED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
                 
-                if (EIGHT_CHARACTERS_MEMBER_NAMES=1)
-                dc.w $C05F
-                endif
-                
-                dc.w $C870
-                dc.w $D060
-                dc.w $D061
-                dc.w $D061
-                dc.w $D061
-                dc.w $D061
-                dc.w $D061
-                dc.w $D061
-                dc.w $D061
-                
-                if (EIGHT_CHARACTERS_MEMBER_NAMES=1)
-                dc.w $D061
-                endif
-                
-                dc.w $D860
+                ; 3rd line
+                dc.w VDPTILE_WINDOW_CORNER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_HORIZONTAL_BORDER|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT
+                dc.w VDPTILE_WINDOW_CORNER|VDPTILE_MIRRORED_BIT|VDPTILE_FLIPPED_BIT|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT

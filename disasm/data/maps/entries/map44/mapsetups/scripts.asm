@@ -72,7 +72,7 @@ Map21_DefaultZoneEvent:
                 setCamDest 11,13
                 executeSubroutine csub_54714
                 csWait 120
-                loadMapFadeIn 66,28,26
+                loadMapFadeIn MAP_OVERWORLD_GRANS_GRANSEAL,28,26
                 loadMapEntities ce_54736
                 setActscriptWait ALLY_BOWIE,eas_Init
                 setSprite ALLY_BOWIE,MAPSPRITE_BOAT
@@ -106,7 +106,7 @@ Map21_DefaultZoneEvent:
                 csWait 90
                 setQuake 0
                 csWait 120
-                warp $49,$1A,$D,$0
+                warp MAP_OVERWORLD_NEW_GRANSEAL_SHORE,26,13,RIGHT
                 clearF $280             ; Set after the end of battle 7's long sequence, cleared at docks?
                 csc_end
 
@@ -130,7 +130,7 @@ loc_54726:
                 dbf     d7,loc_54726
                 rts
 
-	; End of function csub_54714
+    ; End of function csub_54714
 
 ce_54736:       mainEntity 34,33,RIGHT
                 dc.w $FFFF

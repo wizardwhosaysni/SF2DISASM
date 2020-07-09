@@ -14,7 +14,7 @@ return_615E4:
                 
                 rts
 
-	; End of function ms_map59_flag21F_InitFunction
+    ; End of function ms_map59_flag21F_InitFunction
 
 cs_615E6:       textCursor $EB0
                 setCameraEntity 65535
@@ -1111,7 +1111,7 @@ cs_62658:       setQuake 5
                 playSound $FD
                 fadeOutB
                 setQuake 0
-                mapLoad 3,0,0
+                mapLoad MAP_GRANSEAL,0,0
                 resetMap
                 fadeInB
                 reloadMap 0,0
@@ -1121,7 +1121,7 @@ cs_62658:       setQuake 5
                 clearF $180             ; Set after Bowie obtains the jewel of light/evil... whichever it is
                 clearF $181             ; Set after Bowie obtains King Galam's jewel
                 resetForceBattleStats
-                warp $3,$38,$3,$3
+                warp MAP_GRANSEAL,56,3,DOWN
                 csc_end
 
 ; =============== S U B R O U T I N E =======================================
@@ -1132,5 +1132,5 @@ csub_6269C:
                 jsr     j_ClosePortraitEyes
                 rts
 
-	; End of function csub_6269C
+    ; End of function csub_6269C
 

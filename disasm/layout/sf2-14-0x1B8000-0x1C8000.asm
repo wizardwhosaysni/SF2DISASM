@@ -9,7 +9,7 @@ p_pt_BattleSceneGrounds:
 p_pt_WeaponSprites:
                 dc.l pt_WeaponSprites
 p_plt_BattleSceneWeaponColors:
-                dc.l plt_WeaponPalettes
+                dc.l WeaponPalette00
 p_pt_SpellGraphics:
                 dc.l pt_SpellGraphics
 p_plt_Witch:    dc.l plt_Witch
@@ -19,11 +19,10 @@ p_plt_WitchEnd: dc.l plt_WitchEnd
 p_WitchEndLayout:
                 dc.l WitchEndLayout
 p_WitchEndTiles:dc.l WitchEndTiles
-                includeIfVanillaRom "data\graphics\battles\grounds\entries.asm"    ; Grounds
-                includeIfVanillaRom "data\graphics\battles\weapons\entries.asm"    ; Weapons
-plt_WeaponPalettes:
-                incbin "data/graphics/battles/weapons/weaponpalettes.bin"
-                includeIfVanillaRom "data\graphics\battles\spells\entries.asm"    ; Spell Graphics
+                include "data\graphics\battles\grounds\entries.asm"    ; Grounds
+                include "data\graphics\battles\weapons\entries.asm"    ; Weapons
+                include "data\graphics\battles\weapons\palettes\entries.asm"    ; WeaponPalettes
+                include "data\graphics\battles\spells\entries.asm"    ; Spell Graphics
                 include "code\specialscreens\witch\graphics.asm"    ; Witch Screen
                 include "code\specialscreens\witchend\graphics.asm"    ; Witch End Screen
                 align $1C8000

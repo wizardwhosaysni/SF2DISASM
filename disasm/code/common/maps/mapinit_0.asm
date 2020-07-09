@@ -4,9 +4,11 @@
 
 ; =============== S U B R O U T I N E =======================================
 
-; Alters map index if certain flags are set (Granseal, Pacalon, etc)
-; In: D0 = map idx
-; Out: D0 = new map idx
+; Alter map index if certain flags are set (Granseal, Pacalon, etc)
+; 
+;       In: D0 = map index
+; 
+;       Out: D0 = new map index
 
 CheckMapSwitch:
                 
@@ -32,5 +34,5 @@ loc_7982:
                 movem.l (sp)+,d1-d2/a0
                 rts
 
-	; End of function CheckMapSwitch
+    ; End of function CheckMapSwitch
 

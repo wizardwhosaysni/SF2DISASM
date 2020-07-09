@@ -35,7 +35,7 @@ loc_7428:
                 jsr     j_NameCharacter
                 btst    #7,(SAVE_FLAGS).l ; "Game completed" bit
                 beq.w   byte_7476       
-                btst    #INPUT_A_START,((P1_INPUT-$1000000)).w
+                btst    #INPUT_BIT_START,((P1_INPUT-$1000000)).w
                 beq.w   byte_7476       
                 moveq   #1,d0
                 moveq   #$1B,d7
@@ -81,18 +81,17 @@ loc_74B4:
                 move.b  #3,((CURRENT_MAP-$1000000)).w
                 move.b  #3,((EGRESS_MAP_INDEX-$1000000)).w
                 bsr.w   SaveGame
-                disableSram
                 clsTxt
-                move.b  #3,d0           ; HARDCODED new game starting map
+                move.b  #MAP_GRANSEAL,d0 ; HARDCODED new game starting map
                 move.w  #$38,d1 ; HARDCODED main entity starting X
                 move.w  #3,d2           ; HARDCODED main entity starting Y
-                move.w  #3,d3           ; HARDCODED main entity starting facing
+                move.w  #DOWN,d3        ; HARDCODED main entity starting facing
                 moveq   #1,d4
 loc_74DE:
                 
                 bra.w   MainLoop        
 
-	; End of function WitchNew
+    ; End of function WitchNew
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -120,7 +119,6 @@ loc_74FE:
                 subq.w  #1,d0
                 move.w  d0,((SAVE_SLOT_INDEX-$1000000)).w
                 bsr.w   LoadGame
-                disableSram
                 txt     $E2             ; "{NAME;0}, yes!  I knew it!{W2}"
                 bsr.w   CheatModeConfiguration
                 txt     $E0             ; "Now, good luck!{N}You have no time to waste!{W1}"
@@ -139,7 +137,7 @@ loc_753A:
                 moveq   #$FFFFFFFF,d4
                 bra.w   loc_75E0        
 
-	; End of function WitchLoad
+    ; End of function WitchLoad
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -158,7 +156,7 @@ WitchCopy:
                 txt     $E4             ; "Hee, hee!  It's done.{W2}"
                 bra.w   byte_73C2       
 
-	; End of function WitchCopy
+    ; End of function WitchCopy
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -194,5 +192,5 @@ loc_7590:
                 txt     $E7             ; "Hee, hee!  It's gone!{W2}"
                 bra.w   byte_73C2       
 
-	; End of function WitchDel
+    ; End of function WitchDel
 

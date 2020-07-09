@@ -4,8 +4,8 @@
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = from map idx
-; Out: D0 = to map idx
+; In: D0 = from map index
+; Out: D0 = to map index
 ;      D1 = X
 ;      D2 = Y
 ;      D3 = facing
@@ -26,7 +26,7 @@ loc_75FC:
                 moveq   #1,d1
                 moveq   #1,d2
                 moveq   #1,d3
-                conditionalPc lea,SavepointMapCoordinates,a0
+                lea     SavepointMapCoordinates(pc), a0
 loc_7608:
                 
                 cmpi.b  #$FF,(a0)
@@ -45,7 +45,7 @@ byte_7620:
                 
                 chkFlg  $40             ; Raft is unlocked
                 beq.s   loc_764A
-                conditionalPc lea,RaftResetMapCoordinates-4,a0 ; Some egress locations imply to put the raft back in an initial place
+                lea RaftResetMapCoordinates-4(pc),a0 ; Some egress locations imply to put the raft back in an initial place
 loc_762A:
                 
                 addq.l  #4,a0
@@ -63,5 +63,5 @@ loc_764A:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function GetSavePointForMap
+    ; End of function GetSavePointForMap
 

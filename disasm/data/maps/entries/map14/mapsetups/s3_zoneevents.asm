@@ -16,7 +16,7 @@ Map14_DefaultZoneEvent:
                 
                 rts
 
-	; End of function Map14_ZoneEvent0
+    ; End of function Map14_ZoneEvent0
 
 cs_58E5C:       textCursor $8D5
                 nextText $FF,255        ; "Bring up the plank?"
@@ -42,5 +42,5 @@ cs_58E5C:       textCursor $8D5
                 entityActionsWait 133
                  moveDown 3
                 endActions
-                warp $E,$D,$B,$3
+                warp MAP_SHIP_DAMAGED,13,11,DOWN
 cs_58EB8:       csc_end

@@ -4,10 +4,10 @@
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = map idx (if not supplied, will be pulled from CURRENT_MAP)
+; In: D0 = map index (if not supplied, will be pulled from CURRENT_MAP)
 ;     D1 = player X coord to check
 ;     D2 = player Y coord to check
-; Out: D7 = battle idx to trigger (FFFF if none)
+; Out: D7 = battle index to trigger ($FFFF if none)
 ; ...more
 
 CheckBattle:
@@ -22,7 +22,7 @@ CheckBattle:
                 move.b  ((CURRENT_MAP-$1000000)).w,d0
 loc_79B2:
                 
-                conditionalPc lea,BattleMapCoordinates,a0
+                lea     BattleMapCoordinates(pc), a0
                 moveq   #44,d6          ; HARDCODED number of battles
                 clr.w   d7
 loc_79BA:
@@ -70,5 +70,5 @@ loc_7A30:
                 movem.l (sp)+,d1-d6/a0
                 rts
 
-	; End of function CheckBattle
+    ; End of function CheckBattle
 

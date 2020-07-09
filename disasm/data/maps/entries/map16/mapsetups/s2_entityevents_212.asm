@@ -31,7 +31,7 @@ Map16_212_EntityEvent0:
                 txt     $DA1            ; "He was running around and{N}crying for somebody to kill{N}him.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent0
+    ; End of function Map16_212_EntityEvent0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -42,7 +42,7 @@ Map16_212_EntityEvent1:
                 txt     $DA2            ; "{NAME;28} went south.{N}He was acting strange.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent1
+    ; End of function Map16_212_EntityEvent1
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -53,7 +53,7 @@ Map16_212_EntityEvent2:
                 txt     $DA3            ; "King Galam has not returned{N}from the war against{N}Granseal.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent2
+    ; End of function Map16_212_EntityEvent2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -65,7 +65,7 @@ Map16_212_EntityEvent3:
                 txt     $DA5            ; "He jumped off the top of the{N}castle, but he didn't die!{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent3
+    ; End of function Map16_212_EntityEvent3
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -77,7 +77,7 @@ Map16_212_EntityEvent4:
                 txt     $DA7            ; "I hope he's alive...{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent4
+    ; End of function Map16_212_EntityEvent4
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -89,7 +89,7 @@ Map16_212_EntityEvent5:
                 txt     $DA9            ; "He said that he heard the{N}sound of a piano playing.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent5
+    ; End of function Map16_212_EntityEvent5
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -100,7 +100,7 @@ Map16_212_EntityEvent6:
                 txt     $DAA            ; "From Granseal?  I didn't{N}know anyone survived that{N}earthquake.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent6
+    ; End of function Map16_212_EntityEvent6
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -111,7 +111,7 @@ Map16_212_EntityEvent7:
                 txt     $DAB            ; "The priest of Yeel liked the{N}piano.  The ghost may be him.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent7
+    ; End of function Map16_212_EntityEvent7
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -122,7 +122,7 @@ Map16_212_EntityEvent8:
                 txt     $DAC            ; "Do you know about the stautue{N}of the devil?  It appeared{N}at the Ancient Tower.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent8
+    ; End of function Map16_212_EntityEvent8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -130,20 +130,20 @@ Map16_212_EntityEvent8:
 Map16_212_EntityEvent9:
                 
                 move.b  #$1D,((CURRENT_SHOP_INDEX-$1000000)).w
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 rts
 
-	; End of function Map16_212_EntityEvent9
+    ; End of function Map16_212_EntityEvent9
 
 
 ; =============== S U B R O U T I N E =======================================
 
 Map16_212_EntityEvent10:
                 
-                jsr     j_ChurchActions
+                jsr     j_ChurchMenuActions
                 rts
 
-	; End of function Map16_212_EntityEvent10
+    ; End of function Map16_212_EntityEvent10
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -155,7 +155,7 @@ Map16_212_EntityEvent11:
                 txt     $DAE            ; "Nobody returned from that{N}trip.  I didn't go. I was{N}smart!{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent11
+    ; End of function Map16_212_EntityEvent11
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -166,7 +166,7 @@ Map16_212_EntityEvent12:
                 txt     $DB1            ; "I...I saw them...many devils{N}came from the tower....{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent12
+    ; End of function Map16_212_EntityEvent12
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -177,7 +177,7 @@ Map16_212_EntityEvent13:
                 txt     $DB6            ; "Good weapons and armor, huh?{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent13
+    ; End of function Map16_212_EntityEvent13
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -191,7 +191,7 @@ Map16_212_EntityEvent14:
                 txt     $FF2            ; "A hole.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent14
+    ; End of function Map16_212_EntityEvent14
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -199,10 +199,10 @@ Map16_212_EntityEvent14:
 Map16_212_EntityEvent15:
                 
                 move.b  #$E,((CURRENT_SHOP_INDEX-$1000000)).w
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 rts
 
-	; End of function Map16_212_EntityEvent15
+    ; End of function Map16_212_EntityEvent15
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -214,7 +214,7 @@ Map16_212_EntityEvent16:
                 txt     $DB4            ; "Impossible.  It's buried in{N}the ground and there is no{N}door.{W1}"
                 rts
 
-	; End of function Map16_212_EntityEvent16
+    ; End of function Map16_212_EntityEvent16
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -226,5 +226,5 @@ Map16_212_DefaultEntityEvent:
                 
                 rts
 
-	; End of function Map16_212_EntityEvent17
+    ; End of function Map16_212_EntityEvent17
 

@@ -92,10 +92,10 @@ loc_1AC362:
                 lea     ($2000).w,a1    ; ?
                 move.w  #$800,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 rts
 
-	; End of function LoadEndCreditsFont
+    ; End of function LoadEndCreditsFont
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -137,7 +137,7 @@ loc_1AC3C4:
                 bra.w   loc_1AC434
 loc_1AC3DC:
                 
-                jsr     GetEnemyAITargetPos
+                jsr     GetEnemyAITargetPosition
                 clr.w   d5
                 cmp.w   d3,d1
                 bge.s   loc_1AC3EC
@@ -187,12 +187,12 @@ loc_1AC434:
                 movem.l (sp)+,d0/d5-a6
                 rts
 
-	; End of function sub_1AC38E
+    ; End of function sub_1AC38E
 
 
 ; =============== S U B R O U T I N E =======================================
 
-GetEnemyAITargetMoveList:
+GetMoveListForEnemyTarget:
                 
                 movem.l d0-a6,-(sp)
                 move.b  d0,d7
@@ -214,7 +214,7 @@ loc_1AC456:
                 bra.w   loc_1AC4EA
 loc_1AC46A:
                 
-                jsr     GetEnemyAITargetPos
+                jsr     GetEnemyAITargetPosition
                 clr.l   d5
                 clr.l   d6
                 move.w  d1,d5
@@ -265,7 +265,7 @@ loc_1AC4EA:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function GetEnemyAITargetMoveList
+    ; End of function GetMoveListForEnemyTarget
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -306,7 +306,7 @@ loc_1AC52C:
                 bra.w   loc_1AC5A4
 loc_1AC540:
                 
-                jsr     GetEnemyAITargetPos
+                jsr     GetEnemyAITargetPosition
                 move.w  d1,d5
                 move.w  d2,d6
                 lea     (BATTLE_TERRAIN).l,a0
@@ -332,13 +332,13 @@ loc_1AC576:
                 dbf     d3,loc_1AC55C
                 adda.w  #$30,a0 
                 dbf     d4,loc_1AC554
-                lea     unk_1AC848(pc), a0
+                lea     byte_1AC848(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
-                lea     unk_1AC84B(pc), a0
+                lea     byte_1AC84B(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
-                lea     unk_1AC854(pc), a0
+                lea     byte_1AC854(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
 loc_1AC5A4:
@@ -346,7 +346,7 @@ loc_1AC5A4:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_1AC4F0
+    ; End of function sub_1AC4F0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -375,7 +375,7 @@ loc_1AC5C4:
                 bra.w   loc_1AC64E
 loc_1AC5D8:
                 
-                bsr.w   GetEnemyAITargetPos
+                bsr.w   GetEnemyAITargetPosition
                 move.w  d1,d5
                 move.w  d2,d6
                 move.w  #$2F,d4 
@@ -401,19 +401,19 @@ loc_1AC60C:
                 dbf     d3,loc_1AC5F2
                 adda.w  #$30,a0 
                 dbf     d4,loc_1AC5EA
-                lea     unk_1AC848(pc), a0
+                lea     byte_1AC848(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
-                lea     unk_1AC84B(pc), a0
+                lea     byte_1AC84B(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
-                lea     unk_1AC854(pc), a0
+                lea     byte_1AC854(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
-                lea     unk_1AC865(pc), a0
+                lea     byte_1AC865(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
-                lea     unk_1AC87E(pc), a0
+                lea     byte_1AC87E(pc), a0
                 nop
                 bsr.w   sub_1AC7FE      
 loc_1AC64E:
@@ -421,7 +421,7 @@ loc_1AC64E:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_1AC5AA
+    ; End of function sub_1AC5AA
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -457,7 +457,7 @@ loc_1AC684:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function ClearTerrainListObstructions
+    ; End of function ClearTerrainListObstructions
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -516,7 +516,7 @@ loc_1AC722:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_1AC69A
+    ; End of function sub_1AC69A
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -598,7 +598,7 @@ loc_1AC7E6:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_1AC728
+    ; End of function sub_1AC728
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -634,95 +634,95 @@ loc_1AC83C:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function sub_1AC7FE
+    ; End of function sub_1AC7FE
 
-unk_1AC848:     dc.b   1                ; AI-related data
-                dc.b   0
-                dc.b   0
-unk_1AC84B:     dc.b   4                ; AI-related data
-                dc.b   0
-                dc.b   1
-                dc.b   1
-                dc.b   0
-                dc.b   0
+byte_1AC848:    dc.b 1                  ; AI-related data
+                dc.b 0
+                dc.b 0
+byte_1AC84B:    dc.b 4                  ; AI-related data
+                dc.b 0
+                dc.b 1
+                dc.b 1
+                dc.b 0
+                dc.b 0
                 dc.b $FF
                 dc.b $FF
-                dc.b   0
-unk_1AC854:     dc.b   8                ; AI-related data
-                dc.b   0
-                dc.b $FE 
+                dc.b 0
+byte_1AC854:    dc.b 8                  ; AI-related data
+                dc.b 0
+                dc.b $FE
                 dc.b $FF
                 dc.b $FF
-                dc.b $FE 
-                dc.b   0
+                dc.b $FE
+                dc.b 0
                 dc.b $FF
-                dc.b   1
-                dc.b   0
-                dc.b   2
-                dc.b   1
-                dc.b   1
-                dc.b   2
-                dc.b   0
-                dc.b   1
+                dc.b 1
+                dc.b 0
+                dc.b 2
+                dc.b 1
+                dc.b 1
+                dc.b 2
+                dc.b 0
+                dc.b 1
                 dc.b $FF
-unk_1AC865:     dc.b  $C                ; AI-related data
-                dc.b   0
-                dc.b $FD 
+byte_1AC865:    dc.b $C                 ; AI-related data
+                dc.b 0
+                dc.b $FD
                 dc.b $FF
-                dc.b $FE 
-                dc.b $FE 
+                dc.b $FE
+                dc.b $FE
                 dc.b $FF
-                dc.b $FD 
-                dc.b   0
-                dc.b $FE 
-                dc.b   1
+                dc.b $FD
+                dc.b 0
+                dc.b $FE
+                dc.b 1
                 dc.b $FF
-                dc.b   2
-                dc.b   0
-                dc.b   3
-                dc.b   1
-                dc.b   2
-                dc.b   2
-                dc.b   1
-                dc.b   3
-                dc.b   0
-                dc.b   2
+                dc.b 2
+                dc.b 0
+                dc.b 3
+                dc.b 1
+                dc.b 2
+                dc.b 2
+                dc.b 1
+                dc.b 3
+                dc.b 0
+                dc.b 2
                 dc.b $FF
-                dc.b   1
-                dc.b $FE 
-unk_1AC87E:     dc.b $10                ; AI-related data
-                dc.b   0
-                dc.b $FC 
+                dc.b 1
+                dc.b $FE
+byte_1AC87E:    dc.b $10                ; AI-related data
+                dc.b 0
+                dc.b $FC
                 dc.b $FF
-                dc.b $FD 
-                dc.b $FE 
-                dc.b $FE 
-                dc.b $FD 
+                dc.b $FD
+                dc.b $FE
+                dc.b $FE
+                dc.b $FD
                 dc.b $FF
-                dc.b $FC 
-                dc.b   0
-                dc.b $FD 
-                dc.b   1
-                dc.b $FE 
-                dc.b   2
+                dc.b $FC
+                dc.b 0
+                dc.b $FD
+                dc.b 1
+                dc.b $FE
+                dc.b 2
                 dc.b $FF
-                dc.b   3
-                dc.b   0
-                dc.b   4
-                dc.b   1
-                dc.b   3
-                dc.b   2
-                dc.b   2
-                dc.b   3
-                dc.b   1
-                dc.b   4
-                dc.b   0
-                dc.b   3
+                dc.b 3
+                dc.b 0
+                dc.b 4
+                dc.b 1
+                dc.b 3
+                dc.b 2
+                dc.b 2
+                dc.b 3
+                dc.b 1
+                dc.b 4
+                dc.b 0
+                dc.b 3
                 dc.b $FF
-                dc.b   2
-                dc.b $FE 
-                dc.b   1
-                dc.b $FD 
+                dc.b 2
+                dc.b $FE
+                dc.b 1
+                dc.b $FD
                 dc.b $FF
 
 ; =============== S U B R O U T I N E =======================================
@@ -852,24 +852,24 @@ loc_1AC9AC:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_1AC8A0
+    ; End of function sub_1AC8A0
 
 byte_1AC9B8:    dc.b 3                  ; AI-related data, 3 entries, for battles 36, 43 and 0
                 dc.b BATTLE_VERSUS_PRISM_FLOWERS
                 dc.b BATTLE_VERSUS_ZEON
                 dc.b BATTLE_VERSUS_ALL_BOSSES
-off_1AC9BC:     dc.l unk_1AC9C8         
-                dc.l unk_1AC9E0         
-                dc.l unk_1AC9F0         
-unk_1AC9C8:     dc.b $FF                ; Prism Flowers battle
-                dc.b   3
-                dc.b   0
-                dc.b   0
-                dc.b   1
-                dc.b   2
-                dc.b   1
-                dc.b   2
-                dc.b   1
+off_1AC9BC:     dc.l byte_1AC9C8        
+                dc.l byte_1AC9E0        
+                dc.l byte_1AC9F0        
+byte_1AC9C8:    dc.b $FF                ; Prism Flowers battle
+                dc.b 3
+                dc.b 0
+                dc.b 0
+                dc.b 1
+                dc.b 2
+                dc.b 1
+                dc.b 2
+                dc.b 1
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
@@ -885,34 +885,33 @@ unk_1AC9C8:     dc.b $FF                ; Prism Flowers battle
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
-unk_1AC9E0:     dc.b $FF                ; Zeon Battle
+byte_1AC9E0:    dc.b $FF                ; Zeon Battle
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
-                dc.b   0
+                dc.b 0
                 dc.b $FF
                 dc.b $FF
-                dc.b   2
-                dc.b $FF
-                dc.b $FF
-                dc.b $FF
+                dc.b 2
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
-                dc.b $FF
-                dc.b $FF
-unk_1AC9F0:     dc.b $FF                ; Secret Bonus Battle
+                dc.w $FFFF
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
+byte_1AC9F0:    dc.b $FF                ; Secret Bonus Battle
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
                 dc.b $FF
-                dc.b   0
-                dc.b   2
+                dc.b $FF
+                dc.b $FF
+                dc.b $FF
+                dc.b 0
+                dc.b 2
 
 ; =============== S U B R O U T I N E =======================================
 
@@ -928,7 +927,7 @@ sub_1AC9FC:
 loc_1ACA0C:
                 
                 move.w  d0,d7
-                move.b  #3,d1
+                move.b  #BATTLESPRITESET_SUBSECTION_AI_REGIONS,d1
                 bsr.w   GetBattleSpriteSetSubsection
                 cmp.b   d1,d7
                 ble.s   loc_1ACA1E
@@ -967,7 +966,7 @@ loc_1ACA6A:
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function sub_1AC9FC
+    ; End of function sub_1AC9FC
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1024,7 +1023,7 @@ loc_1ACAD0:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_1ACA72
+    ; End of function sub_1ACA72
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1154,7 +1153,7 @@ loc_1ACC1A:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_1ACAD6
+    ; End of function sub_1ACAD6
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1406,7 +1405,7 @@ loc_1ACE2A:
                 ori     #1,ccr
                 bra.w   loc_1ACD32
 
-	; End of function sub_1ACC26
+    ; End of function sub_1ACC26
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1423,7 +1422,7 @@ CheckTriggerRegionFlag:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function CheckTriggerRegionFlag
+    ; End of function CheckTriggerRegionFlag
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1432,7 +1431,7 @@ UpdateTriggeredRegionsAndAI:
                 
                 movem.l d0-a6,-(sp)
                 move.w  d0,d7
-                move.w  #3,d1
+                move.w  #BATTLESPRITESET_SUBSECTION_AI_REGIONS,d1
                 bsr.w   GetBattleSpriteSetSubsection
                 tst.w   d1
                 bne.s   loc_1ACE60
@@ -1521,7 +1520,7 @@ loc_1ACF2A:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function UpdateTriggeredRegionsAndAI
+    ; End of function UpdateTriggeredRegionsAndAI
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1609,14 +1608,15 @@ loc_1ACFEA:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function GetListOfSpawningEnemies
+    ; End of function GetListOfSpawningEnemies
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = char idx
-;     D4 = char idx (same as D0)
-; Out: D0 = 0000 if activated and dead, FFFF if not
+; In: D0 = character index
+;     D4 = character index (same as D0)
+; 
+; Out: D0 = 0000 if activated and dead, $FFFF if not
 
 UpdateEnemyActivationIfDead:
                 
@@ -1667,7 +1667,7 @@ loc_1AD088:
                 movem.l (sp)+,d1-a6
                 rts
 
-	; End of function UpdateEnemyActivationIfDead
+    ; End of function UpdateEnemyActivationIfDead
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1686,7 +1686,7 @@ GetRandomValueSigned:
                 movem.l (sp)+,d0-d5/a0-a6
                 rts
 
-	; End of function GetRandomValueSigned
+    ; End of function GetRandomValueSigned
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1719,7 +1719,7 @@ loc_1AD0D4:
                 movem.l (sp)+,d0-d5/a0-a6
                 rts
 
-	; End of function RandomUnderD6
+    ; End of function RandomUnderD6
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1729,7 +1729,7 @@ loc_1AD0D4:
 LoadBattleTerrainData:
                 
                 movem.l d0-d6/a0-a5,-(sp)
-                conditionalPc lea,pt_BattleTerrainData,a0
+                lea     pt_BattleTerrainData(pc), a0
                 nop
                 lea     ((CURRENT_BATTLE-$1000000)).w,a1
                 clr.l   d1
@@ -1741,5 +1741,5 @@ LoadBattleTerrainData:
                 movem.l (sp)+,d0-d6/a0-a5
                 rts
 
-	; End of function LoadBattleTerrainData
+    ; End of function LoadBattleTerrainData
 

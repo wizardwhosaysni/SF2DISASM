@@ -4,9 +4,11 @@
 
 ; =============== S U B R O U T I N E =======================================
 
+; Horizontal interrupt
+
 HInt:
                 
                 rte
 
-	; End of function HInt
+    ; End of function HInt
 

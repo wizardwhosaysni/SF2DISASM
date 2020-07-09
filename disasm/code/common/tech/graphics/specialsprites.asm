@@ -37,7 +37,7 @@ LoadSpecialSprite:
                 move.w  rjt_25C5A(pc,d1.w),d1
                 jmp     rjt_25C5A(pc,d1.w)
 
-	; End of function LoadSpecialSprite
+    ; End of function LoadSpecialSprite
 
 rjt_25C5A:      dc.w LoadBattleSpecialSprite-rjt_25C5A
                 dc.w LoadBattleSpecialSprite-rjt_25C5A
@@ -60,10 +60,10 @@ LoadBattleSpecialSprite:
                 lea     ($AF00).l,a1
                 move.w  #$480,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 bra.w   loc_25CB0
 
-	; End of function LoadBattleSpecialSprite
+    ; End of function LoadBattleSpecialSprite
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -77,14 +77,14 @@ LoadExplorationSpecialSprite:
                 lea     ($A3C0).l,a1
                 move.w  #$A20,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
+                jsr     (ApplyImmediateVramDma).w
                 bra.w   *+4
 loc_25CB0:
                 
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function LoadExplorationSpecialSprite
+    ; End of function LoadExplorationSpecialSprite
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -92,16 +92,16 @@ loc_25CB0:
 sub_25CB6:
                 
                 movem.l d0-d2/a0-a1,-(sp)
-                conditionalPc lea,(SpecialSprites_EvilSpirit+$20),a0
+                lea     (SpecialSprites_EvilSpirit+$20)(pc), a0
                 tst.w   d0
                 beq.s   loc_25CD2
                 cmpi.b  #1,d0
                 bne.s   loc_25CCE
-                conditionalPc lea,SpecialSprites_EvilSpiritAlt,a0
+                lea     SpecialSprites_EvilSpiritAlt(pc), a0
                 bra.s   loc_25CD2
 loc_25CCE:
                 
-                conditionalPc lea,(SpecialSprites_Zeon+$20),a0
+                lea     (SpecialSprites_Zeon+$20)(pc), a0
 loc_25CD2:
                 
                 lea     (FF6802_LOADING_SPACE).l,a1
@@ -111,12 +111,12 @@ loc_25CD2:
                 lea     ($AF00).l,a1
                 move.w  #$480,d0
                 moveq   #2,d1
-                jsr     (ApplyVIntVramDMA).w
-                jsr     (EnableDMAQueueProcessing).w
+                jsr     (ApplyVIntVramDma).w
+                jsr     (EnableDmaQueueProcessing).w
                 movem.l (sp)+,d0-d2/a0-a1
                 rts
 
-	; End of function sub_25CB6
+    ; End of function sub_25CB6
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -143,7 +143,7 @@ loc_25D0E:
                 move.w  rjt_SpecialSpriteUpdate(pc,d6.w),d6
                 jmp     rjt_SpecialSpriteUpdate(pc,d6.w)
 
-	; End of function UpdateSpecialSprites
+    ; End of function UpdateSpecialSprites
 
 rjt_SpecialSpriteUpdate:
                 dc.w UpdateBattleSpecialSprite-rjt_SpecialSpriteUpdate
@@ -164,11 +164,11 @@ UpdateBattleSpecialSprite:
                 move.b  ENTITYDEF_OFFSET_ANIMCOUNTER(a0),d2
                 cmpi.b  #$F,d2
                 ble.s   loc_25D56
-                lea     byte_2784C(pc), a2
+                lea     word_2784C(pc), a2
                 bra.s   loc_25D5A
 loc_25D56:
                 
-                lea     byte_2786C(pc), a2
+                lea     word_2786C(pc), a2
 loc_25D5A:
                 
                 btst    #4,ENTITYDEF_OFFSET_FLAGS_B(a0)
@@ -203,7 +203,7 @@ loc_25D7E:
                 dbf     d7,loc_25D7E
                 bra.w   loc_25DF0
 
-	; End of function UpdateBattleSpecialSprite
+    ; End of function UpdateBattleSpecialSprite
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -253,5 +253,5 @@ loc_25DF0:
                 movem.l (sp)+,d0-d2/d7-a2
                 rts
 
-	; End of function UpdateExplorationSpecialSprite
+    ; End of function UpdateExplorationSpecialSprite
 

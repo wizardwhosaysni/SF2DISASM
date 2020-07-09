@@ -59,7 +59,7 @@ loc_4F53C:
                 movem.l (sp)+,d1-d5/a0
                 rts
 
-	; End of function GetMandatoryItem
+    ; End of function GetMandatoryItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -81,7 +81,7 @@ loc_4F56A:
                 movem.w (sp)+,d1-d2
                 rts
 
-	; End of function RemoveItemFromInventory
+    ; End of function RemoveItemFromInventory
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -93,7 +93,7 @@ DiscardItem:
                 jsr     j_UpdateForce
                 lea     ((TARGET_CHARACTERS_INDEX_LIST-$1000000)).w,a0
                 lea     (INDEX_LIST).l,a1
-                move.w  ((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w,(INDEX_LIST_ENTRIES_NUM).l
+                move.w  ((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w,(INDEX_LIST_ENTRIES_NUMBER).l
                 move.w  ((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w,d7
                 subq.w  #1,d7
 loc_4F596:
@@ -114,7 +114,7 @@ loc_4F5B6:
                 move.w  d2,-4(a6)
                 move.w  -4(a6),d1
                 jsr     j_GetItemDefAddress
-                move.l  8(a0),-$A(a6)
+                move.l  ITEMDEF_OFFSET_TYPE(a0),-$A(a6)
                 move.b  -$A(a6),d1
                 andi.b  #$10,d1
                 cmpi.b  #0,d1
@@ -190,5 +190,5 @@ loc_4F6CE:
                 movem.l (sp)+,d7-a1
                 rts
 
-	; End of function DiscardItem
+    ; End of function DiscardItem
 

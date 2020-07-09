@@ -9,7 +9,7 @@ TitleScreen:
                 jmp     *+4(pc)
 loc_10000C:
                 
-                jsr     (DisableDisplayAndVInt).w
+                jsr     (DisableDisplayAndInterrupts).w
                 jsr     (ClearVsramAndSprites).w
                 move.w  #$8C00,d0
                 jsr     (SetVdpReg).w
@@ -21,19 +21,19 @@ loc_10000C:
                 jsr     (SetVdpReg).w
                 move.w  #$8B00,d0
                 jsr     (SetVdpReg).w
-                conditionalPc lea,TitleScreenTiles,a0
+                lea     TitleScreenTiles(pc), a0
                 lea     (FF6802_LOADING_SPACE).l,a1
                 jsr     (LoadCompressedData).w
                 lea     (FF6802_LOADING_SPACE).l,a0
                 lea     ($2000).w,a1
                 move.w  #$1000,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
-                conditionalPc lea,TitleScreenLayoutA,a0
+                jsr     (ApplyImmediateVramDma).w
+                lea     TitleScreenLayoutA(pc), a0
                 lea     (PLANE_A_MAP_LAYOUT).l,a1
                 move.w  #$700,d7
                 jsr     (CopyBytes).w   
-                conditionalPc lea,TitleScreenLayoutA,a0
+                lea     TitleScreenLayoutA(pc), a0
                 lea     (byte_FFC358).l,a1
                 moveq   #$10,d7
                 jsr     (CopyBytes).w   
@@ -46,8 +46,8 @@ loc_10000C:
                 lea     ($C000).l,a1
                 move.w  #$380,d0
                 moveq   #2,d1
-                jsr     (ApplyImmediateVramDMA).w
-                conditionalPc lea,TitleScreenLayoutB,a0
+                jsr     (ApplyImmediateVramDma).w
+                lea     TitleScreenLayoutB(pc), a0
                 lea     (SPRITE_05).l,a1
                 moveq   #$A,d7
 loc_1000B8:
@@ -88,7 +88,7 @@ loc_100104:
                 addq.l  #2,a0
                 dbf     d6,loc_1000BC
                 dbf     d7,loc_1000B8
-                conditionalPc lea,plt_TitleScreen,a0
+                lea     plt_TitleScreen(pc), a0
                 lea     (PALETTE_1_BASE).l,a1
                 move.w  #$80,d7 
                 jsr     (CopyBytes).w   
@@ -104,8 +104,8 @@ loc_100104:
                 jsr     (UpdateBackgroundHScrollData).w
                 move.w  #0,d6
                 jsr     (UpdateForegroundHScrollData).w
-                jsr     (EnableDMAQueueProcessing).w
-                move.b  #1,((FADING_SETTING-$1000000)).w
+                jsr     (EnableDmaQueueProcessing).w
+                move.b  #IN_FROM_BLACK,((FADING_SETTING-$1000000)).w
                 clr.w   ((FADING_TIMER-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
@@ -114,7 +114,7 @@ loc_100104:
                 bsr.w   WaitForPlayer1InputStart
                 moveq   #$20,d0 
                 bsr.w   TitleScreenLoop1
-                move.b  #1,((FADING_SETTING-$1000000)).w
+                move.b  #IN_FROM_BLACK,((FADING_SETTING-$1000000)).w
                 clr.w   ((FADING_TIMER-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
@@ -123,7 +123,7 @@ loc_100104:
                 bsr.w   TitleScreenLoop1
                 moveq   #$32,d0 
                 bsr.w   WaitForPlayer1InputStart
-                move.b  #1,((FADING_SETTING-$1000000)).w
+                move.b  #IN_FROM_BLACK,((FADING_SETTING-$1000000)).w
                 clr.w   ((FADING_TIMER-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  ((FADING_COUNTER_MAX-$1000000)).w,((FADING_COUNTER-$1000000)).w
@@ -147,7 +147,7 @@ loc_1001EC:
                 clr.w   d0
                 rts
 
-	; End of function TitleScreen
+    ; End of function TitleScreen
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -157,13 +157,13 @@ loc_1001EC:
 WaitForPlayer1InputStart:
                 
                 jsr     (WaitForVInt).w
-                btst    #7,((P1_INPUT-$1000000)).w
+                btst    #INPUT_BIT_START,((P1_INPUT-$1000000)).w
                 bne.w   TitleScreenEnd
                 subq.w  #1,d0
                 bne.s   WaitForPlayer1InputStart
                 rts
 
-	; End of function WaitForPlayer1InputStart
+    ; End of function WaitForPlayer1InputStart
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -176,15 +176,15 @@ TitleScreenLoop1:
                 subq.w  #1,(VERTICAL_SCROLL_DATA+2).l
 loc_10022C:
                 
-                jsr     (UpdateVDPVScrollData).w
-                jsr     (WaitForDMAQueueProcessing).w
-                btst    #INPUT_A_START,((P1_INPUT-$1000000)).w
+                jsr     (UpdateVdpVScrollData).w
+                jsr     (WaitForDmaQueueProcessing).w
+                btst    #INPUT_BIT_START,((P1_INPUT-$1000000)).w
                 bne.w   TitleScreenEnd
                 subq.w  #1,d0
                 bne.s   TitleScreenLoop1
                 rts
 
-	; End of function TitleScreenLoop1
+    ; End of function TitleScreenLoop1
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -192,7 +192,7 @@ loc_10022C:
 TitleScreenLoop2:
                 
                 movem.w d0,-(sp)
-                conditionalPc lea,TitleScreenLayoutA,a0
+                lea     TitleScreenLayoutA(pc), a0
                 ext.l   d0
                 divs.w  #$1E,d0
                 swap    d0
@@ -209,17 +209,17 @@ loc_100260:
                 lea     ($C000).l,a1
                 move.w  #$380,d0
                 moveq   #2,d1
-                jsr     (ApplyVIntVramDMA).w
-                jsr     (EnableDMAQueueProcessing).w
+                jsr     (ApplyVIntVramDma).w
+                jsr     (EnableDmaQueueProcessing).w
                 movem.w (sp)+,d0
                 jsr     (WaitForVInt).w
-                btst    #INPUT_A_START,((P1_INPUT-$1000000)).w
+                btst    #INPUT_BIT_START,((P1_INPUT-$1000000)).w
                 bne.w   TitleScreenEnd
                 subq.w  #1,d0
                 bne.s   TitleScreenLoop2
                 rts
 
-	; End of function TitleScreenLoop2
+    ; End of function TitleScreenLoop2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -232,10 +232,10 @@ TitleScreenEnd:
                 jsr     (UpdateForegroundVScrollData).w
                 jsr     (UpdateBackgroundHScrollData).w
                 jsr     (UpdateForegroundHScrollData).w
-                jsr     (EnableDMAQueueProcessing).w
+                jsr     (EnableDmaQueueProcessing).w
                 jsr     (FadeOutToBlack).w
                 moveq   #$FFFFFFFF,d0
                 rts
 
-	; End of function TitleScreenEnd
+    ; End of function TitleScreenEnd
 

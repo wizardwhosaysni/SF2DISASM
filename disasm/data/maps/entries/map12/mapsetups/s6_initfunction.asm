@@ -20,7 +20,7 @@ return_57D20:
                 
                 rts
 
-	; End of function ms_map12_InitFunction
+    ; End of function ms_map12_InitFunction
 
 cs_57D22:       textCursor $C7D
                 cameraSpeed $30
@@ -87,5 +87,5 @@ cs_57D22:       textCursor $C7D
                 entityActionsWait FOLLOWER_B
                  moveDown 5
                 endActions
-                warp $44,$37,$2C,$3
+                warp MAP_OVERWORLD_AROUND_ELVEN_VILLAGE,55,44,DOWN
                 csc_end

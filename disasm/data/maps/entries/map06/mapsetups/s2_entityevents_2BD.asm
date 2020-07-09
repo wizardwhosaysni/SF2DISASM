@@ -35,7 +35,7 @@ byte_549D0:
                 cmpi.b  #1,((byte_FFB651-$1000000)).w
                 bne.s   byte_549EC      
                 move.b  #$11,((CURRENT_SHOP_INDEX-$1000000)).w
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 bra.s   loc_549F0
 byte_549EC:
                 
@@ -48,7 +48,7 @@ loc_549F2:
                 cmpi.b  #1,((byte_FFB651-$1000000)).w
                 bne.s   byte_54A08      
                 move.b  #$17,((CURRENT_SHOP_INDEX-$1000000)).w
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 bra.s   return_54A0C
 byte_54A08:
                 
@@ -57,7 +57,7 @@ return_54A0C:
                 
                 rts
 
-	; End of function Map6_EntityEvent0
+    ; End of function Map6_EntityEvent0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -86,7 +86,7 @@ return_54A32:
                 
                 rts
 
-	; End of function Map6_EntityEvent1
+    ; End of function Map6_EntityEvent1
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -124,7 +124,7 @@ return_54A68:
                 
                 rts
 
-	; End of function Map6_EntityEvent2
+    ; End of function Map6_EntityEvent2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -161,7 +161,7 @@ return_54A9A:
                 
                 rts
 
-	; End of function Map6_EntityEvent3
+    ; End of function Map6_EntityEvent3
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -187,7 +187,7 @@ loc_54ABA:
                 
                 cmpi.b  #1,((byte_FFB651-$1000000)).w
                 bne.s   byte_54ACA      
-                jsr     j_ChurchActions
+                jsr     j_ChurchMenuActions
                 bra.s   loc_54ACE
 byte_54ACA:
                 
@@ -197,12 +197,12 @@ loc_54ACE:
                 bra.s   return_54AD6
 loc_54AD0:
                 
-                jsr     j_ChurchActions
+                jsr     j_ChurchMenuActions
 return_54AD6:
                 
                 rts
 
-	; End of function Map6_EntityEvent4
+    ; End of function Map6_EntityEvent4
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -230,7 +230,7 @@ byte_54AF4:
                 cmpi.b  #1,((byte_FFB651-$1000000)).w
                 bne.s   byte_54B10      
                 move.b  #2,((CURRENT_SHOP_INDEX-$1000000)).w
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 bra.s   loc_54B18
 byte_54B10:
                 
@@ -244,7 +244,7 @@ loc_54B1A:
                 cmpi.b  #1,((byte_FFB651-$1000000)).w
                 bne.s   byte_54B30      
                 move.b  #8,((CURRENT_SHOP_INDEX-$1000000)).w
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 bra.s   return_54B34
 byte_54B30:
                 
@@ -253,7 +253,7 @@ return_54B34:
                 
                 rts
 
-	; End of function Map6_EntityEvent5
+    ; End of function Map6_EntityEvent5
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -280,7 +280,7 @@ return_54B52:
                 
                 rts
 
-	; End of function Map6_EntityEvent6
+    ; End of function Map6_EntityEvent6
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -315,7 +315,7 @@ return_54B7C:
                 
                 rts
 
-	; End of function Map6_EntityEvent7
+    ; End of function Map6_EntityEvent7
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -343,7 +343,7 @@ return_54B9E:
                 
                 rts
 
-	; End of function Map6_EntityEvent8
+    ; End of function Map6_EntityEvent8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -362,7 +362,7 @@ return_54BB0:
                 
                 rts
 
-	; End of function Map6_EntityEvent9
+    ; End of function Map6_EntityEvent9
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -383,7 +383,7 @@ return_54BCA:
                 
                 rts
 
-	; End of function Map6_EntityEvent10
+    ; End of function Map6_EntityEvent10
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -420,7 +420,7 @@ return_54BFC:
                 
                 rts
 
-	; End of function Map6_EntityEvent11
+    ; End of function Map6_EntityEvent11
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -439,7 +439,7 @@ return_54C0E:
                 
                 rts
 
-	; End of function Map6_EntityEvent12
+    ; End of function Map6_EntityEvent12
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -515,7 +515,7 @@ return_54CC4:
                 
                 rts
 
-	; End of function Map6_EntityEvent13
+    ; End of function Map6_EntityEvent13
 
 cs_54CC6:       setFacing FOLLOWER_B,UP
                 nod FOLLOWER_B

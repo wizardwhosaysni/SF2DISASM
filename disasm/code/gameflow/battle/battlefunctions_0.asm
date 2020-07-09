@@ -72,7 +72,7 @@ byte_22C5A:
                 txt     $DC3            ; "{W1}"
                 rts
 
-	; End of function LevelUpCutscene
+    ; End of function LevelUpCutscene
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -91,7 +91,7 @@ sub_22C60:
                 andi.w  #3,d3
                 rts
 
-	; End of function sub_22C60
+    ; End of function sub_22C60
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -131,7 +131,7 @@ loc_22CC2:
                 dbf     d0,loc_22CC2
                 movem.l (sp)+,d0/a0
                 move.b  #2,((FADING_PALETTE_BITMAP-$1000000)).w
-                move.b  #5,((FADING_SETTING-$1000000)).w
+                move.b  #PULSATING_1,((FADING_SETTING-$1000000)).w
                 clr.b   ((FADING_POINTER-$1000000)).w
                 move.b  #1,((FADING_COUNTER-$1000000)).w
                 bra.w   loc_22D56
@@ -158,7 +158,7 @@ GetBattleMapProperties:
                 divs.w  #$180,d7
                 rts
 
-	; End of function CreateMoveableRangeForUnit
+    ; End of function CreateMoveableRangeForUnit
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -196,7 +196,7 @@ return_22D70:
                 
                 rts
 
-	; End of function ClearFadingBlockRange
+    ; End of function ClearFadingBlockRange
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -212,7 +212,7 @@ HideUnitCursor:
                 movem.l (sp)+,d0/a0
                 rts
 
-	; End of function HideUnitCursor
+    ; End of function HideUnitCursor
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -241,7 +241,7 @@ loc_22DD2:
                 
                 jsr     (WaitForVInt).w
                 move.b  ((CURRENT_PLAYER_INPUT-$1000000)).w,d0
-                andi.w  #$70,d0 
+                andi.w  #INPUT_B|INPUT_C|INPUT_A,d0
                 beq.s   loc_22DD2
                 move.w  $C(a0),d2
                 move.w  $E(a0),d3
@@ -259,7 +259,7 @@ loc_22DD2:
                 move.b  #$FF,((VIEW_TARGET_ENTITY-$1000000)).w
                 rts
 
-	; End of function ControlUnitCursor
+    ; End of function ControlUnitCursor
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -295,7 +295,7 @@ loc_22E68:
                 bsr.w   UpdateControlledUnitPos
                 jsr     (WaitForVInt).w
                 move.b  ((CURRENT_PLAYER_INPUT-$1000000)).w,d4
-                andi.w  #$70,d4 
+                andi.w  #INPUT_B|INPUT_C|INPUT_A,d4
                 beq.s   loc_22E68
                 clr.b   (a0,d0.w)
                 move.b  $11(a1),d0
@@ -320,7 +320,7 @@ loc_22E68:
                 movem.l (sp)+,d0-d1/a0-a1
                 rts
 
-	; End of function ControlBattleUnit
+    ; End of function ControlBattleUnit
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -336,7 +336,7 @@ UpdateControlledUnitPos:
                 addi.w  #$C0,d3 
                 ext.l   d3
                 divs.w  #$180,d3
-                move.w  ((MOVING_BATTLE_ENTITY_IDX-$1000000)).w,d0
+                move.w  ((MOVING_BATTLE_ENTITY_INDEX-$1000000)).w,d0
                 jsr     j_GetXPos
                 move.w  d1,-(sp)
                 jsr     j_GetYPos
@@ -353,7 +353,7 @@ UpdateControlledUnitPos:
                 movem.w (sp)+,d0-d3
                 rts
 
-	; End of function UpdateControlledUnitPos
+    ; End of function UpdateControlledUnitPos
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -363,7 +363,7 @@ GetEntityCombatantNumber:
                 bsr.w   GetEntityNumberOfCombatant
                 rts
 
-	; End of function GetEntityCombatantNumber
+    ; End of function GetEntityCombatantNumber
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -375,7 +375,7 @@ GetEntityCombatantNumber:
 GetEntityNumberOfCombatant:
                 
                 move.l  a0,-(sp)
-                lea     ((ENTITY_EVENT_IDX_LIST-$1000000)).w,a0
+                lea     ((ENTITY_EVENT_INDEX_LIST-$1000000)).w,a0
                 tst.b   d0              ; test if d0 represents an enemy index ?
                 bpl.s   loc_22F3E
                 subi.b  #$60,d0 
@@ -386,21 +386,21 @@ loc_22F3E:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function GetEntityNumberOfCombatant
+    ; End of function GetEntityNumberOfCombatant
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = entity idx
-; Out: D0 = entity event idx
+; In: D0 = entity index
+; Out: D0 = entity event index
 
-GetEntityEventIdx:
+GetEntityEventIndex:
                 
                 movem.l d1/d7-a0,-(sp)
                 moveq   #$40,d7 
                 move.w  d0,d1
                 clr.w   d0
-                lea     ((ENTITY_EVENT_IDX_LIST-$1000000)).w,a0
+                lea     ((ENTITY_EVENT_INDEX_LIST-$1000000)).w,a0
 loc_22F58:
                 
                 cmp.b   (a0)+,d1
@@ -418,7 +418,7 @@ loc_22F70:
                 movem.l (sp)+,d1/d7-a0
                 rts
 
-	; End of function GetEntityEventIdx
+    ; End of function GetEntityEventIndex
 
 word_22F76:     dc.w $180
                 dc.w 0
@@ -550,7 +550,7 @@ loc_2308E:
                 movem.l (sp)+,d1/a1
                 rts
 
-	; End of function MoveBattleEntityByMoveString
+    ; End of function MoveBattleEntityByMoveString
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -630,7 +630,7 @@ loc_23186:
                 jsr     (WaitForVInt).w
                 cmpi.w  #1,d7
                 beq.s   loc_231E0
-                btst    #INPUT_A_UP,((CURRENT_PLAYER_INPUT-$1000000)).w
+                btst    #INPUT_BIT_UP,((CURRENT_PLAYER_INPUT-$1000000)).w
                 beq.s   loc_231A4
                 subq.w  #1,d1
                 bge.s   loc_231A0
@@ -641,7 +641,7 @@ loc_231A0:
                 bra.w   loc_23102
 loc_231A4:
                 
-                btst    #INPUT_A_LEFT,((CURRENT_PLAYER_INPUT-$1000000)).w
+                btst    #INPUT_BIT_LEFT,((CURRENT_PLAYER_INPUT-$1000000)).w
                 beq.s   loc_231B8
                 subq.w  #1,d1
                 bge.s   loc_231B4
@@ -652,7 +652,7 @@ loc_231B4:
                 bra.w   loc_23102
 loc_231B8:
                 
-                btst    #INPUT_A_DOWN,((CURRENT_PLAYER_INPUT-$1000000)).w
+                btst    #INPUT_BIT_DOWN,((CURRENT_PLAYER_INPUT-$1000000)).w
                 beq.s   loc_231CC
                 addq.w  #1,d1
                 cmp.w   d7,d1
@@ -663,7 +663,7 @@ loc_231C8:
                 bra.w   loc_23102
 loc_231CC:
                 
-                btst    #INPUT_A_RIGHT,((CURRENT_PLAYER_INPUT-$1000000)).w
+                btst    #INPUT_BIT_RIGHT,((CURRENT_PLAYER_INPUT-$1000000)).w
                 beq.s   loc_231E0
                 addq.w  #1,d1
                 cmp.w   d7,d1
@@ -674,21 +674,21 @@ loc_231DC:
                 bra.w   loc_23102
 loc_231E0:
                 
-                btst    #INPUT_A_B,((CURRENT_PLAYER_INPUT-$1000000)).w
+                btst    #INPUT_BIT_B,((CURRENT_PLAYER_INPUT-$1000000)).w
                 beq.s   loc_231F6
                 jsr     j_HideFighterMiniStatusWindow
                 move.w  #$FFFF,d0
                 bra.w   byte_2321E
 loc_231F6:
                 
-                btst    #INPUT_A_C,((CURRENT_PLAYER_INPUT-$1000000)).w
+                btst    #INPUT_BIT_C,((CURRENT_PLAYER_INPUT-$1000000)).w
                 beq.s   loc_23208
                 clr.w   d0
                 move.b  (a0,d1.w),d0
                 bra.w   byte_2321E
 loc_23208:
                 
-                btst    #INPUT_A_A,((CURRENT_PLAYER_INPUT-$1000000)).w
+                btst    #INPUT_BIT_A,((CURRENT_PLAYER_INPUT-$1000000)).w
                 beq.s   loc_2321A
                 clr.w   d0
                 move.b  (a0,d1.w),d0
@@ -703,7 +703,7 @@ byte_2321E:
                 movem.l (sp)+,d1-a0
                 rts
 
-	; End of function sub_230E2
+    ; End of function sub_230E2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -722,7 +722,7 @@ sub_2322C:
                 movem.l (sp)+,d0-a0
                 rts
 
-	; End of function sub_2322C
+    ; End of function sub_2322C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -754,12 +754,12 @@ sub_23256:
                 move.b  #$FF,((VIEW_TARGET_ENTITY-$1000000)).w
                 rts
 
-	; End of function sub_23256
+    ; End of function sub_23256
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = entity idx
+; In: D0 = entity index
 ; Out: D2 = entity X
 ;      D3 = entity Y
 
@@ -770,7 +770,7 @@ SetUnitCursorDestinationToNextCombatant:
                 jsr     j_GetYPos
                 move.w  d1,d3
 
-	; End of function SetUnitCursorDestinationToNextCombatant
+    ; End of function SetUnitCursorDestinationToNextCombatant
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -789,7 +789,7 @@ SetUnitCursorDestinationToNextBattleEntity:
                 mulu.w  #$180,d3
                 mulu.w  #$180,d4
                 mulu.w  #$180,d5
-                moveq   #ENTITYIDX_UNITCURSOR,d0
+                moveq   #ENTITY_UNITCURSOR_INDEX,d0
                 jsr     j_SetUnitCursorActscript
                 jsr     (WaitForVInt).w
                 lsl.w   #5,d0
@@ -907,7 +907,7 @@ loc_2340A:
                 jsr     (SetViewDest).w
                 rts
 
-	; End of function SetUnitCursorDestinationToNextBattleEntity
+    ; End of function SetUnitCursorDestinationToNextBattleEntity
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -948,7 +948,7 @@ loc_23448:
                 move.w  d5,6(a0)
                 rts
 
-	; End of function sub_23414
+    ; End of function sub_23414
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -963,7 +963,7 @@ SetEntityBlinkingFlag:
                 movem.l (sp)+,d0/a0
                 rts
 
-	; End of function SetEntityBlinkingFlag
+    ; End of function SetEntityBlinkingFlag
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -978,7 +978,7 @@ ClearEntityBlinkingFlag:
                 movem.l (sp)+,d0/a0
                 rts
 
-	; End of function ClearEntityBlinkingFlag
+    ; End of function ClearEntityBlinkingFlag
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -992,7 +992,7 @@ SetCameraDestInTiles:
                 jsr     (SetViewDest).w
                 rts
 
-	; End of function SetCameraDestInTiles
+    ; End of function SetCameraDestInTiles
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1004,12 +1004,12 @@ LoadUnitCursorTileData:
                 lea     UnitCursorTiles(pc), a0
                 lea     ($D000).l,a1
                 move.w  #$800,d0
-                jsr     (ApplyVIntVramDMAOnCompressedTiles).w
-                jsr     (EnableDMAQueueProcessing).w
+                jsr     (ApplyVIntVramDmaOnCompressedTiles).w
+                jsr     (EnableDmaQueueProcessing).w
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function LoadUnitCursorTileData
+    ; End of function LoadUnitCursorTileData
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1054,14 +1054,14 @@ loc_234DA:
                 adda.w  d1,a1
                 move.w  #$120,d0
                 moveq   #2,d1
-                jsr     (ApplyVIntVramDMA).w
-                jsr     (EnableDMAQueueProcessing).w
+                jsr     (ApplyVIntVramDma).w
+                jsr     (EnableDmaQueueProcessing).w
 loc_23538:
                 
                 movem.l (sp)+,d0-d2/a0-a1
                 rts
 
-	; End of function sub_234C8
+    ; End of function sub_234C8
 
 byte_2353E:     dc.b 0
                 dc.b 1
@@ -1077,12 +1077,12 @@ byte_2353E:     dc.b 0
 WaitForUnitCursor:
                 
                 move.l  d0,-(sp)
-                moveq   #ENTITYIDX_UNITCURSOR,d0
+                moveq   #ENTITY_UNITCURSOR_INDEX,d0
                 jsr     j_WaitForEntityToStopMoving
                 move.l  (sp)+,d0
                 rts
 
-	; End of function WaitForUnitCursor
+    ; End of function WaitForUnitCursor
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1112,7 +1112,7 @@ loc_23572:
                 movem.l (sp)+,d0-d2/d7-a1
                 rts
 
-	; End of function sub_23554
+    ; End of function sub_23554
 
 word_2358C:     dc.w $74
                 dc.w $F10
@@ -1218,7 +1218,7 @@ sub_2364C:
                 move.l  #$10F10,(SPRITE_08).l
                 rts
 
-	; End of function sub_2364C
+    ; End of function sub_2364C
 
 UnitCursorTiles:incbin "data/graphics/tech/unitcursortiles.bin"
 
@@ -1233,12 +1233,12 @@ FadeOut_WaitForP1Input:
                 move.w  (sp)+,d0
                 rts
 
-	; End of function FadeOut_WaitForP1Input
+    ; End of function FadeOut_WaitForP1Input
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = entity idx
+; In: D0 = entity index
 ;     D1 = x pos
 ;     D2 = y pos
 
@@ -1255,7 +1255,7 @@ SetEntityPosition:
                 movem.l (sp)+,d0/a0
                 rts
 
-	; End of function SetEntityPosition
+    ; End of function SetEntityPosition
 
 tbl_PixelOffsets_X:
                 dc.w $180
