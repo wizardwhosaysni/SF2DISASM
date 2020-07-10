@@ -6,12 +6,12 @@ PlayScrollingText:
       trap    #VINT_FUNCTIONS
       dc.w VINTS_CLEAR
       jsr     (WaitForVInt).w
-      jsr     (DisableDisplayAndVInt).w
+      jsr     (DisableDisplayAndInterrupts).w
       jsr     (ClearVsramAndSprites).w
       jsr     (EnableDisplayAndInterrupts).w
       jsr     (InitDisplay).w
       jsr   ScrollingTextClearPalette2
-      jsr     (DisableDisplayAndVInt).w
+      jsr     (DisableDisplayAndInterrupts).w
       jsr   LoadEndCreditsFont
       lea     (PLANE_B_LAYOUT).l,a1
       move.w  #$27C0,d1

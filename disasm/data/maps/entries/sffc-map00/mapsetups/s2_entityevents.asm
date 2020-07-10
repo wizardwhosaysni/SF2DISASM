@@ -44,7 +44,7 @@ SffcMap00_EntityEvent0:
                 beq.s   @shop 
                 move.b  #11,((CURRENT_SHOP_INDEX-$1000000)).w
 @shop:              
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 rts
 
 	; End of function Map00_EntityEvent0
@@ -89,7 +89,7 @@ SffcMap00_EntityEvent1:
                 beq.s   @shop 
                 move.b  #31,((CURRENT_SHOP_INDEX-$1000000)).w
 @shop:              
-                jsr     j_ShopActions
+                jsr     j_ShopMenuActions
                 rts
 
 	; End of function Map00_EntityEvent1
@@ -99,7 +99,7 @@ SffcMap00_EntityEvent1:
 
 SffcMap00_EntityEvent2:
                 
-                jsr     j_ChurchActions
+                jsr     j_ChurchMenuActions
                 rts
 
 	; End of function Map00_EntityEvent2

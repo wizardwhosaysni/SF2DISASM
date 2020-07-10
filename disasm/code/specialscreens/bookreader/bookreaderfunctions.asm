@@ -15,11 +15,11 @@ InitBookReaderSuspendVIntFunctions:
                 jsr     (UpdateForegroundVScrollData).w
                 jsr     (UpdateBackgroundVScrollData).w
                 jsr     (WaitForDMAQueueProcessing).w
-                bsr.w   DisableDisplayAndVInt
+                bsr.w   DisableDisplayAndInterrupts
                 bsr.w   ClearVsramAndSprites
                 bsr.w   EnableDisplayAndInterrupts
                 bsr.w   InitDisplay
-                bsr.w   DisableDisplayAndVInt
+                bsr.w   DisableDisplayAndInterrupts
                 clr.b   ((byte_FFB198-$1000000)).w
                 move.w  #$48,((SPEECH_SFX-$1000000)).w 
                 bsr.w   DisplayBookReaderScreen
@@ -48,7 +48,7 @@ InitBookReaderSuspendVIntFunctions:
 
 DisplayBookReaderScreen:
                 
-                jsr     (DisableDisplayAndVInt).w
+                jsr     (DisableDisplayAndInterrupts).w
                 movea.l (p_BookReaderTiles).l,a0
                 lea     (FF6802_LOADING_SPACE).l,a1
                 move.l  a1,-(sp)

@@ -1421,7 +1421,7 @@ WriteMemberListText:
                 move.w  -$10(a6),d0
                 jsr     GetCurrentHP
                 bsr.w   WriteStatValue_Wrapper
-                move.w  #VDPTILE_ASCII_SLASH|VDPTILE_PALETTE3|VDPTILE_PRIORITY,(a1)+
+                move.w  #VDPTILE_ASCII_SLASH|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT,(a1)+
                 move.w  -$10(a6),d0
                 jsr     GetMaxHP
                 bsr.w   WriteStatValue_Wrapper
@@ -1429,7 +1429,7 @@ WriteMemberListText:
                 move.w  -$10(a6),d0
                 jsr     GetCurrentMP
                 bsr.w   WriteStatValue_Wrapper
-                move.w  #VDPTILE_ASCII_SLASH|VDPTILE_PALETTE3|VDPTILE_PRIORITY,(a1)+
+                move.w  #VDPTILE_ASCII_SLASH|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT,(a1)+
                 move.w  -$10(a6),d0
                 jsr     GetMaxMP
                 bsr.w   WriteStatValue_Wrapper
@@ -1577,7 +1577,7 @@ WriteMemberListText:
 @writeNewATT:   macro
                 jsr     GetCurrentATT
                 bsr.w   WriteStatValue_Wrapper
-                move.w  #VDPTILE_HORIZONTAL_ARROW|VDPTILE_PALETTE3|VDPTILE_PRIORITY,(a1)+
+                move.w  #VDPTILE_HORIZONTAL_ARROW|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT,(a1)+
                 moveq   #STATS_DIGITS_NUMBER,d7
                 move.w  d2,d0
                 bsr.w   WriteStatValue
@@ -1607,7 +1607,7 @@ WriteMemberListText:
 @writeNewDEF:   macro
                 jsr     GetCurrentDEF
                 bsr.w   WriteStatValue_Wrapper
-                move.w  #VDPTILE_HORIZONTAL_ARROW|VDPTILE_PALETTE3|VDPTILE_PRIORITY,(a1)+
+                move.w  #VDPTILE_HORIZONTAL_ARROW|VDPTILE_PALETTE3|VDPTILE_PRIORITY_BIT,(a1)+
                 moveq   #STATS_DIGITS_NUMBER,d7
                 move.w  d3,d0
                 bsr.w   WriteStatValue

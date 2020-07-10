@@ -1,7 +1,7 @@
 
 ; ASM FILE data\stats\allies\classes\classtypes-sffcmd.asm :
 ; Class types table
-ClassTypesTable:
+tbl_ClassTypes:
                 ; enum ClassTypes : CLASSTYPE_*
     
                 classType BASE          ; Swordsman

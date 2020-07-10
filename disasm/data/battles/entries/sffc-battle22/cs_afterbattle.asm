@@ -56,7 +56,7 @@ abcs_battle22_EndGame:
                 jsr     (FadeOutToWhite).w
                 trap    #VINT_FUNCTIONS
                 dc.w VINTS_CLEAR
-                jsr     (DisableDisplayAndVInt).w
+                jsr     (DisableDisplayAndInterrupts).w
                 move    #$2700,sr
                 movea.l (InitStack).w,sp
                 movea.l (p_Start).w,a0  
