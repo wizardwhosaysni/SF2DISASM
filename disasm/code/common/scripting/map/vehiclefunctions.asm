@@ -1,6 +1,6 @@
 
 ; ASM FILE code\common\scripting\map\vehiclefunctions.asm :
-; 0x45268..0x45634 : Mapscripts and functions for Caravan and Raft
+; 0x45268..0x45638 : Mapscripts and functions for Caravan and Raft
 
 ; =============== S U B R O U T I N E =======================================
 
@@ -17,7 +17,7 @@ MapEventType2:
                 move.b  #1,((PLAYER_TYPE-$1000000)).w
                 rts
 
-	; End of function MapEventType2
+    ; End of function MapEventType2
 
 cs_45284:       setActscriptWait FOLLOWER_A,eas_452A4
                 setActscriptWait ALLY_IAN,eas_452B2
@@ -76,7 +76,7 @@ MapEventType4:
                 move.b  #0,((PLAYER_TYPE-$1000000)).w
                 rts
 
-	; End of function MapEventType4
+    ; End of function MapEventType4
 
 cs_45348:       setActscriptWait FOLLOWER_A,eas_45360
                 setSprite ALLY_IAN,ALLY_IAN
@@ -134,7 +134,7 @@ return_453F0:
                 
                 rts
 
-	; End of function MapEventType3
+    ; End of function MapEventType3
 
 cs_453F2:       setActscriptWait ALLY_IAN,eas_4540C
                 setPos 159,64,64,DOWN
@@ -147,7 +147,7 @@ nullsub_4540A:
                 
                 rts
 
-	; End of function nullsub_4540A
+    ; End of function nullsub_4540A
 
 eas_4540C:       ac_0E $1F,$0,$0
 byte_45414:      ac_wait 6
@@ -181,7 +181,7 @@ MapEventType5:
                 move.b  #0,((PLAYER_TYPE-$1000000)).w
                 rts
 
-	; End of function MapEventType5
+    ; End of function MapEventType5
 
 cs_45470:       setActscriptWait 159,eas_45360
                 setSprite ALLY_IAN,ALLY_IAN
@@ -229,7 +229,7 @@ loc_454DC:
                 movem.l (sp)+,d0-d1/a0
                 rts
 
-	; End of function sub_454AC
+    ; End of function sub_454AC
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -250,7 +250,7 @@ sub_454E4:
                 movem.l (sp)+,d0-d1/a0
                 rts
 
-	; End of function sub_454E4
+    ; End of function sub_454E4
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -348,3 +348,13 @@ eas_GrowOut:     ac_clonePos $1
                  ac_waitDest
 word_45630:      ac_branch
                 dc.w (eas_Idle-word_45630) & $FFFF
+
+; =============== S U B R O U T I N E =======================================
+
+sub_45634:
+                
+                clr.w   d0
+                rts
+
+    ; End of function sub_45634
+

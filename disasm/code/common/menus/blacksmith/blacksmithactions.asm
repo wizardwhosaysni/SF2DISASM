@@ -34,7 +34,7 @@ byte_21A7C:
                 movem.l (sp)+,d0-a5
                 rts
 
-	; End of function BlacksmithActions
+    ; End of function BlacksmithActions
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -42,7 +42,7 @@ byte_21A7C:
 sub_21A92:
                 
                 jsr     j_UpdateForce
-                move.w  ((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w,((INDEX_LIST_ENTRIES_NUM-$1000000)).w
+                move.w  ((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w,((INDEX_LIST_ENTRIES_NUMBER-$1000000)).w
                 lea     ((TARGET_CHARACTERS_INDEX_LIST-$1000000)).w,a0
                 lea     ((INDEX_LIST-$1000000)).w,a1
                 move.w  ((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w,d7
@@ -101,7 +101,7 @@ return_21B40:
                 
                 rts
 
-	; End of function sub_21A92
+    ; End of function sub_21A92
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -255,7 +255,7 @@ byte_21D1A:
                 cmpi.w  #$FFFF,d0
                 beq.s   byte_21CDE      
                 move.w  d0,-8(a6)
-                jsr     j_GetClass      
+                jsr     j_GetClass
                 move.w  d1,-$18(a6)
                 cmpi.w  #$C,d1
                 bcc.w   loc_21D5C
@@ -325,7 +325,7 @@ loc_21E30:
                 movem.l (sp)+,d0-d2
                 rts
 
-	; End of function sub_21B42
+    ; End of function sub_21B42
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -339,7 +339,7 @@ WaitForMusicResumeAndPlayerInput_Blacksmith:
                 move.w  (sp)+,d0
                 rts
 
-	; End of function WaitForMusicResumeAndPlayerInput_Blacksmith
+    ; End of function WaitForMusicResumeAndPlayerInput_Blacksmith
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -372,7 +372,7 @@ loc_21E88:
                 dbf     d7,loc_21E66
                 rts
 
-	; End of function sub_21E48
+    ; End of function sub_21E48
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -397,7 +397,7 @@ loc_21EB0:
                 movem.l (sp)+,d1-d2/d7-a0
                 rts
 
-	; End of function sub_21E8E
+    ; End of function sub_21E8E
 
 word_21EB6:     dc.w $F
                 dc.w $C
@@ -480,5 +480,5 @@ loc_21F5C:
                 movem.l (sp)+,d0-a0
                 rts
 
-	; End of function PickMithrilWeapon
+    ; End of function PickMithrilWeapon
 

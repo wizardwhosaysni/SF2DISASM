@@ -14,12 +14,12 @@ InitWitchSuspendVIntFunctions:
                 jsr     (UpdateBackgroundHScrollData).w
                 jsr     (UpdateForegroundVScrollData).w
                 jsr     (UpdateBackgroundVScrollData).w
-                jsr     (WaitForDMAQueueProcessing).w
-                bsr.w   DisableDisplayAndVInt
+                jsr     (WaitForDmaQueueProcessing).w
+                bsr.w   DisableDisplayAndInterrupts
                 bsr.w   ClearVsramAndSprites
                 bsr.w   EnableDisplayAndInterrupts
                 bsr.w   InitDisplay
-                bsr.w   DisableDisplayAndVInt
+                bsr.w   DisableDisplayAndInterrupts
                 clr.b   ((byte_FFB198-$1000000)).w
                 move.w  #$48,((SPEECH_SFX-$1000000)).w 
                 bsr.w   DisplayWitchScreen
@@ -41,14 +41,14 @@ InitWitchSuspendVIntFunctions:
                 dc.l VInt_WitchBlink
                 rts
 
-	; End of function InitWitchSuspendVIntFunctions
+    ; End of function InitWitchSuspendVIntFunctions
 
 
 ; =============== S U B R O U T I N E =======================================
 
 DisplayWitchScreen:
                 
-                jsr     (DisableDisplayAndVInt).w
+                jsr     (DisableDisplayAndInterrupts).w
                 movea.l (p_WitchTiles).l,a0
                 lea     (FF6802_LOADING_SPACE).l,a1
                 move.l  a1,-(sp)
@@ -57,7 +57,7 @@ DisplayWitchScreen:
                 lea     ($2000).w,a1
                 move.w  #$2000,d0
                 moveq   #2,d1
-                bsr.w   ApplyImmediateVramDMA
+                bsr.w   ApplyImmediateVramDma
                 movea.l (p_WitchLayout).l,a0
                 lea     (PLANE_B_LAYOUT).l,a1
                 move.w  #$800,d7
@@ -66,7 +66,7 @@ DisplayWitchScreen:
                 lea     ($E000).l,a1
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyImmediateVramDMA
+                bsr.w   ApplyImmediateVramDma
                 movea.l (p_plt_Witch).l,a0 ; Two palettes
                 lea     (PALETTE_1_BASE).l,a1
                 moveq   #$20,d7 ; Palette 1
@@ -79,7 +79,7 @@ DisplayWitchScreen:
                 move.w  #6,((word_FFB07C-$1000000)).w
                 rts
 
-	; End of function DisplayWitchScreen
+    ; End of function DisplayWitchScreen
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -92,7 +92,7 @@ sub_7CDC:
                 bsr.w   CopyBytes       
                 bra.w   QueueDmaForWitchLayout
 
-	; End of function sub_7CDC
+    ; End of function sub_7CDC
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -105,7 +105,7 @@ UpdateWitchHead:
                 move.w  #$707,d1
                 bsr.w   UpdateWitchLayoutZone
 
-	; End of function UpdateWitchHead
+    ; End of function UpdateWitchHead
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -116,11 +116,11 @@ QueueDmaForWitchLayout:
                 lea     ($E000).l,a1
                 move.w  #$220,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
-                bsr.w   WaitForDMAQueueProcessing
+                bsr.w   ApplyVIntVramDma
+                bsr.w   WaitForDmaQueueProcessing
                 rts
 
-	; End of function QueueDmaForWitchLayout
+    ; End of function QueueDmaForWitchLayout
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -149,7 +149,7 @@ loc_7D3C:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function UpdateWitchLayoutZone
+    ; End of function UpdateWitchLayoutZone
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -227,12 +227,12 @@ loc_7E16:
                 lea     ($E000).l,a1
                 move.w  #$200,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
-                bsr.w   EnableDMAQueueProcessing
+                bsr.w   ApplyVIntVramDma
+                bsr.w   EnableDmaQueueProcessing
 loc_7E36:
                 
                 unlk    a6
                 rts
 
-	; End of function VInt_WitchBlink
+    ; End of function VInt_WitchBlink
 

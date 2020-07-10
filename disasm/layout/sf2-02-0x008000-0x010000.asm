@@ -24,16 +24,20 @@
                 include "code\gameflow\battle\battleactionsengine_4.asm"    ; Battle actions engine
                 include "code\gameflow\battle\battlefieldengine_1.asm"    ; Battlefield engine
                 include "data\stats\spells\spellelements.asm"    ; Spell elements table
-                wordAlignIfExpandedRom
+                wordAlign
                 include "code\gameflow\battle\battlefieldengine_2.asm"    ; Battlefield engine
                 include "code\gameflow\battle\aiengine.asm"    ; AI engine
                 include "data\stats\spells\spellnames.asm"    ; Spell names
-                
                 if (PROJECT_SFFCMD=1)
                 include "data\stats\allies\allynames-sffcmd.asm"
-                else
-                include "data\stats\allies\allynames.asm"    ; Ally names
-                endif
-                
                 include "data\stats\enemies\enemynames.asm"    ; Enemy names
+                else
+                  if (CAPITALIZED_CHARACTER_NAMES=1)
+                  include "data\stats\allies\allynames-capitalized.asm"
+                  include "data\stats\enemies\enemynames-capitalized.asm"
+                  else
+                  include "data\stats\allies\allynames.asm"    ; Ally names
+                  include "data\stats\enemies\enemynames.asm"    ; Enemy names
+                  endif
+                endif
 algn_FF87:      align $8000

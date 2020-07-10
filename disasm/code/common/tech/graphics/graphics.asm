@@ -11,20 +11,21 @@ InitSprites:
                 movem.l d0-d1/a0,-(sp)
                 lea     (SPRITE_TABLE).l,a0
                 move.w  #1,d1
-loc_177E:
+@Loop:
                 
                 move.w  #1,(a0)+
                 move.w  d1,(a0)+
                 move.w  #1,(a0)+
                 move.w  #1,(a0)+
                 addq.w  #1,d1
-                dbf     d0,loc_177E
+                dbf     d0,@Loop
+                
                 subq.l  #6,a0
                 clr.w   (a0)
                 movem.l (sp)+,d0-d1/a0
                 rts
 
-	; End of function InitSprites
+    ; End of function InitSprites
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -71,7 +72,7 @@ loc_17E6:
                 movem.l (sp)+,d0/d2/a0
                 rts
 
-	; End of function sub_179C
+    ; End of function sub_179C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -96,7 +97,7 @@ sub_17EC:
                 movem.l (sp)+,d1/d3
                 rts
 
-	; End of function sub_17EC
+    ; End of function sub_17EC
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -123,7 +124,7 @@ sub_1812:
                 movem.l (sp)+,d1/d3
                 rts
 
-	; End of function sub_1812
+    ; End of function sub_1812
 
 byte_183C:      dc.b 6                  ; related to spell animations
                 dc.b $B
@@ -226,7 +227,7 @@ loc_18E8:
                 movem.l (sp)+,d0-d2
                 rts
 
-	; End of function sub_18C2
+    ; End of function sub_18C2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -276,7 +277,7 @@ loc_193C:
                 movem.l (sp)+,d0-d2
                 rts
 
-	; End of function sub_18EE
+    ; End of function sub_18EE
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -299,7 +300,7 @@ sub_1942:
                 movem.l (sp)+,d0-d2/d7-a1
                 rts
 
-	; End of function sub_1942
+    ; End of function sub_1942
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -323,7 +324,7 @@ loc_1982:
                 subq.w  #1,d0
                 rts
 
-	; End of function sub_196C
+    ; End of function sub_196C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -347,7 +348,7 @@ loc_19A8:
                 dbf     d7,loc_1996
                 rts
 
-	; End of function sub_198C
+    ; End of function sub_198C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -364,7 +365,7 @@ loc_19BC:
                 movem.l (sp)+,d0/a0
                 rts
 
-	; End of function sub_19B0
+    ; End of function sub_19B0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -385,7 +386,7 @@ sub_19C8:
                 movem.l (sp)+,d7-a1
                 rts
 
-	; End of function sub_19C8
+    ; End of function sub_19C8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -444,7 +445,7 @@ loc_1A1C:
                 move.b  d2,(a1)+
                 move.w  (sp)+,d7
                 dbf     d7,loc_1A1C
-                jsr     ApplyVIntCramDMA(pc)
+                jsr     ApplyVIntCramDma(pc)
                 tst.b   ((FADING_TIMER-$1000000)).w
                 bne.s   return_1A7E
                 lea     ((PALETTE_1_BACKUP-$1000000)).w,a0
@@ -454,7 +455,7 @@ return_1A7E:
                 
                 rts
 
-	; End of function sub_19F8
+    ; End of function sub_19F8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -463,7 +464,7 @@ nullsub_1A80:
                 
                 rts
 
-	; End of function nullsub_1A80
+    ; End of function nullsub_1A80
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -472,7 +473,7 @@ nullsub_1A82:
                 
                 rts
 
-	; End of function nullsub_1A82
+    ; End of function nullsub_1A82
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -967,7 +968,7 @@ loc_1E3E:
                 movem.l (sp)+,d0-a2/a5
                 rts
 
-	; End of function LoadSpriteData
+    ; End of function LoadSpriteData
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1401,5 +1402,5 @@ loc_20DA:
                 sub.l   a1,d0
                 rts
 
-	; End of function LoadCompressedData
+    ; End of function LoadCompressedData
 

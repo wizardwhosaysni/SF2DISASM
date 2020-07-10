@@ -42,8 +42,7 @@
                 include "code\gameflow\mainloop.asm"    ; Main loop
                 include "code\common\maps\egressinit.asm"    ; Egress map init function
                 include "code\gameflow\start\basetiles.asm"    ; Base tiles loading
-                includeIfVanillaRom "code\gameflow\special\battletest.asm"    ; Battle test functions
-                includeIfExpandedRom "code\gameflow\special\battletest-expanded.asm"
+                include "code\gameflow\special\battletest.asm"    ; Battle test functions
                 include "code\common\maps\mapinit_0.asm"    ; Map init functions
                 include "data\maps\global\flagswitchedmaps.asm"    ; Flag-switched maps
                 include "code\common\maps\getbattle.asm"    ; GetNextBattleOnMap function

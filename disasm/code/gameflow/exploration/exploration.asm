@@ -3,7 +3,7 @@
 ; 0x31CC..0x4544 : Exploration functions
                 rts
 
-	; End of function sub_3158
+    ; End of function sub_3158
 
 MapOffsetHashTable:
                 incbin "data/maps/global/mapoffsethashtable.bin"
@@ -52,7 +52,7 @@ loc_3690:
                 movem.w (sp)+,d0-d1/d3-d4/d6
                 rts
 
-	; End of function sub_364E
+    ; End of function sub_364E
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -62,7 +62,7 @@ SetViewDest:
                 movem.w d0-d7,-(sp)
                 bra.w   loc_36BE
 
-	; End of function SetViewDest
+    ; End of function SetViewDest
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -141,7 +141,7 @@ loc_3736:
                 movem.w (sp)+,d0-d7
                 rts
 
-	; End of function sub_36B2
+    ; End of function sub_36B2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -179,7 +179,7 @@ return_37B0:
                 
                 rts
 
-	; End of function sub_3758
+    ; End of function sub_3758
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -217,7 +217,7 @@ return_380A:
                 
                 rts
 
-	; End of function sub_37B2
+    ; End of function sub_37B2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -255,7 +255,7 @@ return_3864:
                 
                 rts
 
-	; End of function sub_380C
+    ; End of function sub_380C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -293,7 +293,7 @@ return_38BE:
                 
                 rts
 
-	; End of function sub_3866
+    ; End of function sub_3866
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -349,7 +349,7 @@ loc_392A:
                 movem.l (sp)+,d2-d3/a0
                 rts
 
-	; End of function sub_38C0
+    ; End of function sub_38C0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -781,7 +781,7 @@ loc_3D40:
                 
                 bset    #0,((VIEW_SCROLLING_PLANES_BITMAP-$1000000)).w
 
-	; End of function VInt_UpdateScrollingData
+    ; End of function VInt_UpdateScrollingData
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -801,11 +801,11 @@ FinalizeScrollDataUpdate:
                 add.w   d0,(VERTICAL_SCROLL_DATA+2).l
 loc_3D7E:
                 
-                bsr.w   UpdateVDPHScrollData
-                bsr.w   UpdateVDPVScrollData
+                bsr.w   UpdateVdpHScrollData
+                bsr.w   UpdateVdpVScrollData
                 rts
 
-	; End of function FinalizeScrollDataUpdate
+    ; End of function FinalizeScrollDataUpdate
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -818,7 +818,7 @@ GetRandomValue:
                 sub.w   d7,d0
                 rts
 
-	; End of function GetRandomValue
+    ; End of function GetRandomValue
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -837,7 +837,7 @@ return_3DAE:
                 
                 rts
 
-	; End of function sub_3D96
+    ; End of function sub_3D96
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -880,7 +880,7 @@ loc_3DE2:
                 movem.l (sp)+,d0-d7/a2
                 rts
 
-	; End of function CopyMapBlocks
+    ; End of function CopyMapBlocks
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -903,7 +903,7 @@ loc_3E10:
                 moveq   #$FFFFFFFF,d1   ; reload current map ?
                 bra.w   LoadMap         
 
-	; End of function ResetCurrentMap
+    ; End of function ResetCurrentMap
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1009,7 +1009,7 @@ loc_3F24:
                 addq.w  #1,d2
                 bra.w   loc_3E80
 
-	; End of function OpenDoor
+    ; End of function OpenDoor
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1090,7 +1090,7 @@ loc_3FE4:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function ToggleRoofOnMapLoad
+    ; End of function ToggleRoofOnMapLoad
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1196,7 +1196,7 @@ loc_40EA:
                 addq.w  #1,d2
                 bra.w   loc_4028
 
-	; End of function PerformMapBlockCopyScript
+    ; End of function PerformMapBlockCopyScript
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1234,7 +1234,7 @@ loc_4150:
                 movem.w (sp)+,d7
                 rts
 
-	; End of function csub_56632_0
+    ; End of function csub_56632_0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1251,7 +1251,7 @@ OpenChest:
 loc_416E:
                 
                 jsr     j_SetFlag
-                move.w  #MAP_BLOCKIDX_OPENCHEST,(a2,d0.w) ; set block idx to open chest
+                move.w  #MAP_BLOCKINDEX_OPEN_CHEST,(a2,d0.w) ; set block index to open chest
                 tst.b   ((MAP_AREA_LAYER_TYPE-$1000000)).w
                 beq.s   loc_4188
                 bset    #0,((VIEW_PLANE_UPDATE_TRIGGERS-$1000000)).w
@@ -1264,7 +1264,7 @@ loc_418E:
                 movem.l (sp)+,d0-d1/a2
                 rts
 
-	; End of function OpenChest
+    ; End of function OpenChest
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1276,7 +1276,7 @@ CloseChest:
                 tst.w   d0
                 blt.s   loc_41C0
                 jsr     j_ClearFlag
-                move.w  #MAP_BLOCKIDX_CLOSEDCHEST,(a2,d0.w)
+                move.w  #MAP_BLOCKINDEX_CLOSED_CHEST,(a2,d0.w)
                 tst.b   ((MAP_AREA_LAYER_TYPE-$1000000)).w
                 beq.s   loc_41BA
                 bset    #0,((VIEW_PLANE_UPDATE_TRIGGERS-$1000000)).w
@@ -1289,7 +1289,7 @@ loc_41C0:
                 movem.l (sp)+,d0-d1/a2
                 rts
 
-	; End of function CloseChest
+    ; End of function CloseChest
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1315,7 +1315,7 @@ loc_41F0:
                 movem.l (sp)+,d0-d1/a2
                 rts
 
-	; End of function CheckChestItem
+    ; End of function CheckChestItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1337,7 +1337,7 @@ loc_4214:
                 movem.l (sp)+,d0-d1/a2
                 rts
 
-	; End of function CheckNonChestItem
+    ; End of function CheckNonChestItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1354,7 +1354,7 @@ loc_422C:
                 movem.l (sp)+,d0-d1/a2
                 rts
 
-	; End of function RefillNonChestItem
+    ; End of function RefillNonChestItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1377,7 +1377,7 @@ GetChestItem:
                 movea.l $22(a2),a2      ; get address of current map's chest item data
                 bra.w   GetItem
 
-	; End of function GetChestItem
+    ; End of function GetChestItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1391,7 +1391,7 @@ GetNonChestItem:
                 movea.l (a2,d2.w),a2
                 movea.l $26(a2),a2      ; get address of current map's non-chest item data
 
-	; End of function GetNonChestItem
+    ; End of function GetNonChestItem
 
 
 ; START OF FUNCTION CHUNK FOR GetChestItem
@@ -1493,7 +1493,7 @@ loc_4340:
                 addq.l  #8,a2
                 bra.s   loc_4302
 
-	; End of function WarpIfSetAtPoint
+    ; End of function WarpIfSetAtPoint
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1518,7 +1518,7 @@ loc_435E:
                 move.w  ((VIEW_PLANE_A_X_COUNTER-$1000000)).w,d2
                 move.w  ((VIEW_PLANE_A_Y_COUNTER-$1000000)).w,d3
                 lea     (PLANE_A_MAP_LAYOUT).l,a1
-                bsr.w   sub_43F8
+                bsr.w   UpdateVdpPlane
                 movea.l ((WINDOW_LAYOUTS_END-$1000000)).w,a1
                 cmpa.l  #WINDOW_TILE_LAYOUTS,a1
                 bne.s   loc_439A
@@ -1526,14 +1526,14 @@ loc_435E:
                 lea     ($C000).l,a1    ; Update VDP Plane A layout data
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
+                bsr.w   ApplyVIntVramDma
 loc_439A:
                 
                 movem.w (sp)+,d7
                 movem.l (sp)+,a0-a1
                 rts
 
-	; End of function UpdateVdpPlaneA
+    ; End of function UpdateVdpPlaneA
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1558,22 +1558,22 @@ loc_43BE:
                 move.w  ((VIEW_PLANE_B_X_COUNTER-$1000000)).w,d2
                 move.w  ((VIEW_PLANE_B_Y_COUNTER-$1000000)).w,d3
                 lea     (PLANE_B_LAYOUT).l,a1
-                bsr.w   sub_43F8
+                bsr.w   UpdateVdpPlane
                 lea     (PLANE_B_LAYOUT).l,a0
                 lea     ($E000).l,a1    ; Update VDP Plane B layout data
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
+                bsr.w   ApplyVIntVramDma
                 movem.w (sp)+,d7
                 movem.l (sp)+,a0-a1
                 rts
 
-	; End of function UpdateVdpPlaneB
+    ; End of function UpdateVdpPlaneB
 
 
 ; =============== S U B R O U T I N E =======================================
 
-sub_43F8:
+UpdateVdpPlane:
                 
                 neg.w   d2
                 andi.w  #$FF,d2
@@ -1709,5 +1709,5 @@ loc_452A:
                 dbf     d7,loc_44B6
                 rts
 
-	; End of function sub_43F8
+    ; End of function UpdateVdpPlane
 

@@ -9,7 +9,7 @@ p_pt_BattleSceneGrounds:
 p_pt_WeaponSprites:
                 dc.l pt_WeaponSprites
 p_plt_BattleSceneWeaponColors:
-                dc.l plt_WeaponPalettes
+                dc.l WeaponPalette00
 p_pt_SpellGraphics:
                 dc.l pt_SpellGraphics
 p_plt_BookReader:    dc.l plt_BookReader
@@ -24,8 +24,7 @@ p_BookReaderTiles:   dc.l BookReaderTiles
 ;p_WitchEndTiles:dc.l WitchEndTiles
                 includeIfVanillaRom "data\graphics\battles\grounds\entries.asm"    ; Grounds
                 includeIfVanillaRom "data\graphics\battles\weapons\entries.asm"    ; Weapons
-plt_WeaponPalettes:
-                incbin "data/graphics/battles/weapons/weaponpalettes.bin"
+                includeIfVanillaRom "data\graphics\battles\weapons\palettes\entries.asm"    ; WeaponPalettes
                 includeIfVanillaRom "data\graphics\battles\spells\entries.asm"    ; Spell Graphics
                 include "code\specialscreens\bookreader\graphics.asm"    ; BookReader Screen
                 ;include "code\specialscreens\witch\graphics.asm"    ; Witch Screen

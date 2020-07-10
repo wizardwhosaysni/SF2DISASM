@@ -1,7 +1,9 @@
 
 ; ASM FILE data\stats\enemies\enemymapsprites.asm :
 ; 0x44AA4..0x44B4A : Enemy map sprite IDs
-EnemyMapSprites:; enum Mapsprites : MAPSPRITE_*
+tbl_EnemyMapSprites:
+                
+; Syntax        mapSprite index (enum Mapsprites : MAPSPRITE_*)
     
                 mapSprite OOZE              
                 mapSprite GOBLIN            
@@ -76,3 +78,4 @@ EnemyMapSprites:; enum Mapsprites : MAPSPRITE_*
                 mapSprite HIGH_WITCH        
                 mapSprite CANNON_KNIGHT     
                 mapSprite DARK_SHAMAN       
+

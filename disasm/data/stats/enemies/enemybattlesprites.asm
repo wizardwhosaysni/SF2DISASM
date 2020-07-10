@@ -1,8 +1,9 @@
 
 ; ASM FILE data\stats\enemies\enemybattlesprites.asm :
 ; 0x1F914..0x1F9E2 : Enemy battle sprites table
-EnemyBattleSpritesTable:
-                ; enemyBattleSprite enum EnemyBattleSprites : ENEMYBATTLESPRITE_*, Pallete ID
+tbl_EnemyBattleSprites:
+                
+; Syntax        enemyBattleSprite index, palette
     
                 enemyBattleSprite OOZE, 0                  
                 enemyBattleSprite GOBLIN, 0                
@@ -77,3 +78,4 @@ EnemyBattleSpritesTable:
                 enemyBattleSprite HIGH_WITCH, 0            
                 enemyBattleSprite CANNON_KNIGHT, 0         
                 enemyBattleSprite DARK_SHAMAN, 0
+

@@ -66,11 +66,11 @@ sub_44074:
                 jmp     sub_45B84(pc)
 sub_44078:                
                 jmp     sub_474EE(pc)
-j_RunEntityEvent:                
+j_RunMapSetupEntityEvent:                
                 jmp     RunMapSetupEntityEvent(pc)
 j_RunMapSetupZoneEvent:                
                 jmp     RunMapSetupZoneEvent(pc)
-j_ExecuteEntityEvent_0:                
+j_RunMapSetupEntityEvent_0:                
                 jmp     RunMapSetupEntityEvent(pc)
 ; triggers a map setup function according to up to 4 criterias in d1-d4
 j_RunMapSetupItemEvent:                
@@ -162,8 +162,7 @@ j_ClearEntities:
                 include "data\battles\battleendcutscenes.asm"    ; Enemy defeated cutscenes
                 include "code\gameflow\battle\battleendcutscenesend.asm"    ; Battle end cutscenes function end
                 include "data\battles\global\enemyleaderpresence.asm"    ; Enemy leader presence table
-                align 2
-                ;wordAlignIfExpandedRom
+                wordAlign
                 include "code\gameflow\battle\afterbattlecutscenesstart.asm"    ; After battle cutscenes function start
                 include "data\battles\afterbattlecutscenes.asm"    ; After battle cutscenes
                 include "code\gameflow\battle\afterbattlecutscenesend.asm"    ; After battle cutscenes function end

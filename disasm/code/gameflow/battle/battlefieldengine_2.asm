@@ -37,7 +37,7 @@ loc_C2C2:
                 movem.l (sp)+,d0-d2/d4-a6
                 rts
 
-	; End of function sub_C27A
+    ; End of function sub_C27A
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -48,7 +48,7 @@ GetMoveInfo:
                 
                 movem.l d1-d2/d5-a1,-(sp)
                 bsr.w   MemorizePath
-                lea     ((byte_FF4000+$400)).l,a2
+                lea     (byte_FF4400).l,a2
                 lea     (FF4D00_LOADING_SPACE).l,a3
                 lea     (BATTLE_TERRAIN).l,a4
                 lea     ((MOVE_COST_LIST-$1000000)).w,a5
@@ -62,7 +62,7 @@ GetMoveInfo:
                 movem.l (sp)+,d1-d2/d5-a1
                 rts
 
-	; End of function GetMoveInfo
+    ; End of function GetMoveInfo
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -77,25 +77,25 @@ GetWeaponRange:
                 bne.s   loc_C368
                 clr.l   d3
                 clr.l   d4
-                btst    #7,d0
+                btst    #COMBATANT_BIT_ENEMY,d0
                 bne.s   loc_C338
-                jsr     GetClass
-                cmpi.w  #$16,d1
+                jsr     GetClass        
+                cmpi.w  #CLASS_BRGN,d1
                 bne.s   loc_C338
                 move.w  #2,d3
                 move.w  #1,d4
                 bra.w   loc_C37A
 loc_C338:
                 
-                jsr     GetEnemyID
-                cmpi.b  #$3B,d1 
+                jsr     GetEnemyIndex   
+                cmpi.b  #ENEMY_KRAKEN_ARM,d1
                 bne.s   loc_C350
                 move.w  #2,d3
                 move.w  #1,d4
                 bra.w   loc_C37A
 loc_C350:
                 
-                cmpi.b  #$57,d1 
+                cmpi.b  #ENEMY_KRAKEN_HEAD,d1
                 bne.s   loc_C362
                 move.w  #3,d3
                 move.w  #1,d4
@@ -110,14 +110,14 @@ loc_C368:
                 jsr     GetItemDefAddress
                 clr.w   d3
                 clr.w   d4
-                move.b  4(a0),d3
-                move.b  5(a0),d4
+                move.b  ITEMDEF_OFFSET_MAX_RANGE(a0),d3
+                move.b  ITEMDEF_OFFSET_MIN_RANGE(a0),d4
 loc_C37A:
                 
                 movem.l (sp)+,d0-d2/d5-a6
                 rts
 
-	; End of function GetWeaponRange
+    ; End of function GetWeaponRange
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -126,12 +126,12 @@ GetSpellRange:
                 
                 movem.l d0-d2/d5-a6,-(sp)
                 jsr     GetSpellDefAddress
-                move.b  4(a0),d3
-                move.b  5(a0),d4
+                move.b  SPELLDEF_OFFSET_MAX_RANGE(a0),d3
+                move.b  SPELLDEF_OFFSET_MIN_RANGE(a0),d4
                 movem.l (sp)+,d0-d2/d5-a6
                 rts
 
-	; End of function GetSpellRange
+    ; End of function GetSpellRange
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -140,48 +140,48 @@ GetItemRange:
                 
                 movem.l d0-d2/d5-a6,-(sp)
                 jsr     GetItemDefAddress
-                move.b  4(a0),d3
-                move.b  5(a0),d4
+                move.b  ITEMDEF_OFFSET_MAX_RANGE(a0),d3
+                move.b  ITEMDEF_OFFSET_MIN_RANGE(a0),d4
                 movem.l (sp)+,d0-d2/d5-a6
                 rts
 
-	; End of function GetItemRange
+    ; End of function GetItemRange
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = combatant entry
-; Out: D1 = whether combatant is inflicted with MUDDLE 2
+; In: D0 = combatant index
+; Out: D1 = whether combatant is inflicted with MUDDLE 2 (0=no, 1=yes)
 
 CheckMuddled2:
                 
                 movem.l d0/d2-a6,-(sp)
                 bsr.w   GetStatus
                 move.w  d1,d2
-                andi.w  #$30,d1 
+                andi.w  #STATUSEFFECTS_MASK_MUDDLE1,d1
                 tst.w   d1
-                beq.s   loc_C3D6
+                beq.s   @NotMuddled1
                 move.w  d2,d1
-                andi.w  #8,d1
+                andi.w  #STATUSEFFECTS_MASK_MUDDLE2,d1
                 tst.w   d1
-                beq.s   loc_C3D2
+                beq.s   @NotMuddled2
                 move.w  #1,d1
-                bra.s   loc_C3D4
-loc_C3D2:
+                bra.s   @BothMuddled1and2
+@NotMuddled2:
                 
                 clr.w   d1
-loc_C3D4:
+@BothMuddled1and2:
                 
-                bra.s   loc_C3D8
-loc_C3D6:
+                bra.s   @Done
+@NotMuddled1:
                 
                 clr.w   d1
-loc_C3D8:
+@Done:
                 
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function CheckMuddled2
+    ; End of function CheckMuddled2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -200,7 +200,7 @@ GenerateTargetRangeLists:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function GenerateTargetRangeLists
+    ; End of function GenerateTargetRangeLists
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -234,13 +234,13 @@ loc_C43C:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function j_sub_C404_0
+    ; End of function j_sub_C404_0
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = item user
-;     D1 = item idx
+; In: D0 = user combatant index
+;     D1 = item index
 
 CreateItemRangeGrid:
                 
@@ -249,23 +249,24 @@ CreateItemRangeGrid:
                 bsr.w   ClearMovableGrid
                 move.w  #0,((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w
                 jsr     GetItemDefAddress
-                move.b  9(a0),d1
-                cmpi.b  #$3F,d1 
-                beq.s   loc_C472
+                move.b  ITEMDEF_OFFSET_USE_SPELL(a0),d1
+                cmpi.b  #SPELL_NOTHING,d1
+                beq.s   @Done
                 bsr.w   CreateSpellRangeGrid
-loc_C472:
+@Done:
                 
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function CreateItemRangeGrid
+    ; End of function CreateItemRangeGrid
 
 
 ; =============== S U B R O U T I N E =======================================
 
-;     Clear and update target/movable grids based on spell properties.
-;     In: D0 = spell user
-;         D1 = spell idx
+; Clear and update target/movable grids based on spell properties
+; 
+;       In: D0 = caster combatant index
+;           D1 = spell index
 
 CreateSpellRangeGrid:
                 
@@ -274,23 +275,23 @@ CreateSpellRangeGrid:
                 bsr.w   ClearMovableGrid
                 move.w  #0,((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w
                 jsr     GetSpellDefAddress
-                btst    #7,d0
+                btst    #COMBATANT_BIT_ENEMY,d0
                 bne.s   loc_C4AA
-                btst    #6,3(a0)
+                btst    #SPELLPROPS_BIT_TARGETING,SPELLDEF_OFFSET_PROPS(a0)
                 beq.s   loc_C4A4
                 bsr.w   MakeTargetListAllies
                 bra.s   loc_C4A8
 loc_C4A4:
                 
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
 loc_C4A8:
                 
                 bra.s   loc_C4BC
 loc_C4AA:
                 
-                btst    #6,3(a0)
+                btst    #SPELLPROPS_BIT_TARGETING,SPELLDEF_OFFSET_PROPS(a0)
                 beq.s   loc_C4B8
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
                 bra.s   loc_C4BC
 loc_C4B8:
                 
@@ -299,8 +300,8 @@ loc_C4BC:
                 
                 moveq   #$FFFFFFFF,d5
                 moveq   #0,d2
-                move.b  4(a0),d2
-                move.b  5(a0),d3
+                move.b  SPELLDEF_OFFSET_MAX_RANGE(a0),d2
+                move.b  SPELLDEF_OFFSET_MIN_RANGE(a0),d3
                 addq.b  #1,d2
                 lea     pt_SpellRanges(pc), a1
                 nop
@@ -317,7 +318,7 @@ loc_C4D8:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function CreateSpellRangeGrid
+    ; End of function CreateSpellRangeGrid
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -336,16 +337,17 @@ j_sub_C4E8_0:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function j_sub_C4E8_0
+    ; End of function j_sub_C4E8_0
 
 
 ; =============== S U B R O U T I N E =======================================
 
-;     Apply coord list at A0 and add any targets to target list.
-;     In: A0 = address of relative coord list
-;         D0 = current entity idx
-;         D1 = starting X coord
-;         D2 = starting Y coord
+; Apply coord list at A0 and add any targets to target list
+; 
+;       In: A0 = address of relative coord list
+;           D0 = current entity index
+;           D1 = starting X coord
+;           D2 = starting Y coord
 
 ApplyRelativeCoordListToGrids:
                 
@@ -398,7 +400,7 @@ loc_C58A:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function ApplyRelativeCoordListToGrids
+    ; End of function ApplyRelativeCoordListToGrids
 
 pt_SpellRanges: dc.l SpellRange0
                 dc.l SpellRange1
@@ -461,21 +463,21 @@ SpellRange3:    dc.b $C
 
 ; =============== S U B R O U T I N E =======================================
 
-j_sub_C5D6_0:
+CreateTargetGridFromUsedItem:
                 
                 movem.l d0-a6,-(sp)
                 move.w  #0,((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w
                 jsr     GetItemDefAddress
-                move.b  9(a0),d1
+                move.b  ITEMDEF_OFFSET_USE_SPELL(a0),d1
                 cmpi.b  #$FF,d1
-                beq.s   loc_C5F4
+                beq.s   @Done
                 bsr.w   CreateTargetGridFromSpell
-loc_C5F4:
+@Done:
                 
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function j_sub_C5D6_0
+    ; End of function CreateTargetGridFromUsedItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -485,7 +487,7 @@ j_sub_C5FA_0:
                 movem.l d0-a6,-(sp)
                 move.w  #0,((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w
                 jsr     GetItemDefAddress
-                move.b  9(a0),d1
+                move.b  ITEMDEF_OFFSET_USE_SPELL(a0),d1
                 cmpi.b  #$FF,d1
                 beq.s   loc_C618
                 bsr.w   CreateTargetGrid
@@ -494,7 +496,7 @@ loc_C618:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function j_sub_C5FA_0
+    ; End of function j_sub_C5FA_0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -509,7 +511,7 @@ loc_C62A:
                 
                 bsr.w   MakeTargetList
 
-	; End of function CreateTargetGridFromSpell
+    ; End of function CreateTargetGridFromSpell
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -519,12 +521,12 @@ CreateTargetGrid:
                 movem.l d0-a6,-(sp)
                 move.w  #0,((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w
                 jsr     GetSpellDefAddress
-                cmpi.b  #$C1,d1
+                cmpi.b  #SPELL_AURA|SPELL_LV4,d1
                 beq.w   loc_C678
-                cmpi.b  #$2A,d1 
+                cmpi.b  #SPELL_SHINE,d1
                 beq.w   loc_C678
                 moveq   #0,d2
-                move.b  6(a0),d2
+                move.b  SPELLDEF_OFFSET_RADIUS(a0),d2
                 addq.b  #1,d2
                 lea     pt_SpellRanges(pc), a1
                 move.w  d2,d4
@@ -557,7 +559,7 @@ loc_C688:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function CreateTargetGrid
+    ; End of function CreateTargetGrid
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -567,14 +569,14 @@ sub_C68E:
                 movem.l d0-a6,-(sp)
                 move.w  #0,((TARGET_CHARACTERS_INDEX_LIST_SIZE-$1000000)).w
                 lea     ((TARGET_CHARACTERS_INDEX_LIST-$1000000)).w,a0
-                move.w  #COM_ALLY_START,d0
+                move.w  #COMBATANT_ALLIES_START,d0
                 bra.s   loc_C6A4
 loc_C6A2:
                 
                 addq.w  #1,d0
 loc_C6A4:
                 
-                cmpi.w  #COM_ALLY_END,d0
+                cmpi.w  #COMBATANT_ALLIES_END,d0
                 bgt.s   loc_C6CE
                 jsr     GetXPos
                 cmpi.b  #$FF,d1
@@ -593,7 +595,7 @@ loc_C6CE:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_C68E
+    ; End of function sub_C68E
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -629,7 +631,7 @@ loc_C714:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_C6D4
+    ; End of function sub_C6D4
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -729,45 +731,45 @@ loc_C7EA:
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetClosestAttackPosition
+    ; End of function GetClosestAttackPosition
 
 
 ; =============== S U B R O U T I N E =======================================
 
 MakeTargetList:
                 
-                btst    #7,d0
-                bne.w   MakeTargetListMonsters ; generate list of targets: opposite alignment of D0
+                btst    #COMBATANT_BIT_ENEMY,d0
+                bne.w   MakeTargetListEnemies ; generate list of targets: opposite alignment of D0
 
-	; End of function MakeTargetList
+    ; End of function MakeTargetList
 
 
 ; =============== S U B R O U T I N E =======================================
 
-;     Clear target grid, then add allies.
+; Clear target grid, then add allies
 
 MakeTargetListAllies:
                 
                 movem.l d0-a0,-(sp)
                 bsr.w   ClearTargetGrid 
-                moveq   #COM_ALLY_START,d0
-                moveq   #COM_ALLIES_COUNTER,d7
+                moveq   #COMBATANT_ALLIES_START,d0
+                moveq   #COMBATANT_ALLIES_COUNTER,d7
                 bra.w   loc_C828
 
-	; End of function MakeTargetListAllies
+    ; End of function MakeTargetListAllies
 
 
 ; =============== S U B R O U T I N E =======================================
 
-MakeTargetListMonsters:
+MakeTargetListEnemies:
                 
                 movem.l d0-a0,-(sp)
                 bsr.w   ClearTargetGrid 
-                move.w  #COM_ENEMY_START,d0
-                moveq   #COM_ENEMIES_COUNTER,d7
+                move.w  #COMBATANT_ENEMIES_START,d0
+                moveq   #COMBATANT_ENEMIES_COUNTER,d7
                 bra.w   loc_C828
 
-	; End of function MakeTargetListMonsters
+    ; End of function MakeTargetListEnemies
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -776,8 +778,8 @@ MakeTargetListEverybody:
                 
                 movem.l d0-a0,-(sp)
                 bsr.s   MakeTargetListAllies
-                move.w  #COM_ENEMY_START,d0
-                moveq   #COM_ENEMIES_COUNTER,d7
+                move.w  #COMBATANT_ENEMIES_START,d0
+                moveq   #COMBATANT_ENEMIES_COUNTER,d7
 loc_C828:
                 
                 jsr     GetCurrentHP
@@ -806,38 +808,38 @@ loc_C86E:
                 movem.l (sp)+,d0-a0
                 rts
 
-	; End of function MakeTargetListEverybody
+    ; End of function MakeTargetListEverybody
 
 
 ; =============== S U B R O U T I N E =======================================
 
 UpdateTargetList:
                 
-                btst    #7,d0
-                beq.w   UpdateTargetListMonsters
+                btst    #COMBATANT_BIT_ENEMY,d0
+                beq.w   UpdateTargetListEnemies
 
-	; End of function UpdateTargetList
+    ; End of function UpdateTargetList
 
 
 ; =============== S U B R O U T I N E =======================================
 
-UpdateTargetListCharacters:
+UpdateTargetListAllies:
                 
                 movem.l d0-a0,-(sp)
-                moveq   #COM_ALLY_START,d0
-                moveq   #COM_ALLIES_COUNTER,d7
+                moveq   #COMBATANT_ALLIES_START,d0
+                moveq   #COMBATANT_ALLIES_COUNTER,d7
                 bra.w   loc_C898
 
-	; End of function UpdateTargetListCharacters
+    ; End of function UpdateTargetListAllies
 
 
 ; =============== S U B R O U T I N E =======================================
 
-UpdateTargetListMonsters:
+UpdateTargetListEnemies:
                 
                 movem.l d0-a0,-(sp)
-                move.w  #COM_ENEMY_START,d0
-                moveq   #COM_ENEMIES_COUNTER,d7
+                move.w  #COMBATANT_ENEMIES_START,d0
+                moveq   #COMBATANT_ENEMIES_COUNTER,d7
 loc_C898:
                 
                 jsr     GetCurrentHP
@@ -879,7 +881,7 @@ loc_C8F4:
                 movem.l (sp)+,d0-a0
                 rts
 
-	; End of function UpdateTargetListMonsters
+    ; End of function UpdateTargetListEnemies
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -887,8 +889,8 @@ loc_C8F4:
 sub_C900:
                 
                 movem.l d0-a0,-(sp)
-                move.w  #COM_ALLY_START,d0
-                moveq   #COM_ALLIES_COUNTER,d7
+                move.w  #COMBATANT_ALLIES_START,d0
+                moveq   #COMBATANT_ALLIES_COUNTER,d7
 loc_C90A:
                 
                 jsr     GetCurrentHP
@@ -917,7 +919,7 @@ loc_C94C:
                 movem.l (sp)+,d0-a0
                 rts
 
-	; End of function sub_C900
+    ; End of function sub_C900
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -953,7 +955,7 @@ loc_C992:
                 bsr.w   CheckMuddled2   
                 tst.b   d1
                 bne.s   loc_C9B6
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
                 bra.s   loc_C9BA
 loc_C9B6:
                 
@@ -970,14 +972,14 @@ loc_C9BC:
                 bra.s   loc_C9CE
 loc_C9CA:
                 
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
 loc_C9CE:
                 
                 move.l  (sp)+,d1
                 lea     (word_FF880A).l,a0
                 move.w  d2,(a0)
                 jsr     GetItemDefAddress
-                move.b  9(a0),d1
+                move.b  ITEMDEF_OFFSET_USE_SPELL(a0),d1
                 lea     ((byte_FF886E-$1000000)).w,a0
                 lea     ((byte_FF88FE-$1000000)).w,a1
                 lea     ((byte_FF898E-$1000000)).w,a2
@@ -1005,7 +1007,7 @@ loc_CA02:
                 bsr.w   CheckMuddled2   
                 tst.b   d1
                 bne.s   loc_CA38
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
                 bra.s   loc_CA3C
 loc_CA38:
                 
@@ -1022,7 +1024,7 @@ loc_CA3E:
                 bra.s   loc_CA50
 loc_CA4C:
                 
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
 loc_CA50:
                 
                 move.l  (sp)+,d1
@@ -1051,7 +1053,7 @@ loc_CA7A:
                 bsr.w   CheckMuddled2   
                 tst.b   d1
                 bne.s   loc_CAA2
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
                 bra.s   loc_CAA6
 loc_CAA2:
                 
@@ -1068,7 +1070,7 @@ loc_CAA8:
                 bra.s   loc_CABA
 loc_CAB6:
                 
-                bsr.w   MakeTargetListMonsters
+                bsr.w   MakeTargetListEnemies
 loc_CABA:
                 
                 move.l  (sp)+,d1
@@ -1089,7 +1091,7 @@ loc_CAE4:
                 movem.l (sp)+,d1-a2
                 rts
 
-	; End of function sub_C958
+    ; End of function sub_C958
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1117,7 +1119,7 @@ loc_CB12:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CAEA
+    ; End of function sub_CAEA
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1141,7 +1143,7 @@ loc_CB3A:
 loc_CB3E:
                 
                 move.l  d1,-(sp)
-                bsr.w   GetDifficulty
+                bsr.w   GetDifficulty   
                 mulu.w  #4,d1
                 add.w   d1,d2
                 move.l  (sp)+,d1
@@ -1154,7 +1156,7 @@ loc_CB3E:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CB18
+    ; End of function sub_CB18
 
 off_CB62:       dc.l sub_CCA0
                 dc.l sub_CCD4
@@ -1193,7 +1195,7 @@ loc_CBC0:
 loc_CBC4:
                 
                 move.l  d1,-(sp)
-                bsr.w   GetDifficulty
+                bsr.w   GetDifficulty   
                 mulu.w  #4,d1
                 add.w   d1,d2
                 move.l  (sp)+,d1
@@ -1224,7 +1226,7 @@ loc_CC04:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CBA2
+    ; End of function sub_CBA2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1233,7 +1235,7 @@ sub_CC0C:
                 
                 movem.l d0-d5/d7-a6,-(sp)
                 move.b  d1,d2
-                jsr     GetCurrentATK
+                jsr     GetCurrentATT
                 move.b  d2,d0
                 move.w  d1,d2
                 jsr     GetCurrentDEF
@@ -1243,7 +1245,7 @@ sub_CC0C:
 loc_CC28:
                 
                 move.w  d2,d6
-                jsr     GetMoveCost
+                jsr     GetLandEffectSetting
                 move.w  #$100,d2
                 tst.b   d1
                 beq.w   loc_CC4A
@@ -1258,13 +1260,14 @@ loc_CC4A:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CC0C
+    ; End of function sub_CC0C
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = target combatant idx
-;     D1 = spell idx
+; In: D0 = target combatant index
+;     D1 = spell index
+; 
 ; Out: D6 = adjusted power
 
 GetSpellPowerAdjustedForResistance:
@@ -1275,26 +1278,26 @@ GetSpellPowerAdjustedForResistance:
                 moveq   #0,d6
                 move.b  SPELLDEF_OFFSET_POWER(a0),d6
                 move.w  d6,d3
-                lsr.w   #2,d3
-                cmpi.b  #SPELLDEF_RESIST_MINOR,d2
-                bne.s   loc_CC74
-                sub.w   d3,d6
-loc_CC74:
+                lsr.w   #2,d3           ; D3 = spellPower/4
+                cmpi.b  #RESISTANCESETTING_MINOR,d2 ; check if target has minor resistance
+                bne.s   @CheckMajorResistance
+                sub.w   d3,d6           ; -25% spell power
+@CheckMajorResistance:
                 
-                cmpi.b  #SPELLDEF_RESIST_MAJOR,d2
-                bne.s   loc_CC7C
-                lsr.w   #1,d6
-loc_CC7C:
+                cmpi.b  #RESISTANCESETTING_MAJOR,d2
+                bne.s   @CheckWeakness
+                lsr.w   #1,d6           ; -50% spell power
+@CheckWeakness:
                 
-                cmpi.b  #SPELLDEF_RESIST_WEAKNESS,d2
-                bne.s   loc_CC84
-                add.w   d3,d6
-loc_CC84:
+                cmpi.b  #RESISTANCESETTING_WEAKNESS,d2
+                bne.s   @Done
+                add.w   d3,d6           ; +25% spell power
+@Done:
                 
                 movem.l (sp)+,d0-d5/d7-a0
                 rts
 
-	; End of function GetSpellPowerAdjustedForResistance
+    ; End of function GetSpellPowerAdjustedForResistance
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1311,7 +1314,7 @@ loc_CC9A:
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function sub_CC8A
+    ; End of function sub_CC8A
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1340,7 +1343,7 @@ loc_CCCA:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CCA0
+    ; End of function sub_CCA0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1379,7 +1382,7 @@ loc_CD0E:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CCD4
+    ; End of function sub_CCD4
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1388,7 +1391,7 @@ sub_CD18:
                 
                 movem.l d0-d5/d7-a6,-(sp)
                 moveq   #3,d6
-                jsr     j_randomUnderD6
+                jsr     j_RandomUnderD6
                 tst.b   d7
                 beq.w   loc_CD3C
                 move.b  d5,d0
@@ -1412,7 +1415,7 @@ loc_CD46:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CD18
+    ; End of function sub_CD18
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1434,13 +1437,13 @@ loc_CD62:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CD4C
+    ; End of function sub_CD4C
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = heal target char idx
-;     D4 = heal spell idx
+; In: D0 = heal target character index
+;     D4 = heal spell index
 
 sub_CD68:
                 
@@ -1482,7 +1485,7 @@ loc_CDC2:
                 lsl.w   #5,d1
                 add.w   d4,d1
                 jsr     GetSpellDefAddress
-                cmp.b   SPELLDEF_OFFSET_MPCOST(a0),d3 ; check if spell cost is more than current MP
+                cmp.b   SPELLDEF_OFFSET_MP_COST(a0),d3 ; check if spell cost is more than current MP
                 bcc.w   loc_CDDC
                 dbf     d2,loc_CDC2
 loc_CDDC:
@@ -1495,7 +1498,7 @@ loc_CDE4:
                 movem.l (sp)+,d0-d1/d3-a6
                 rts
 
-	; End of function sub_CD68
+    ; End of function sub_CD68
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1535,7 +1538,7 @@ loc_CE30:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CDEA
+    ; End of function sub_CDEA
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1575,7 +1578,7 @@ loc_CE80:
                 
                 clr.w   d0
                 move.b  d5,d0
-                bsr.w   GetClass
+                bsr.w   GetClass        
                 clr.w   d2
                 move.b  (a4,d1.w),d2
                 add.w   d2,d6
@@ -1584,7 +1587,7 @@ loc_CE90:
                 movem.l (sp)+,d0-d5/d7-a6
                 rts
 
-	; End of function sub_CE36
+    ; End of function sub_CE36
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1613,15 +1616,17 @@ loc_CECC:
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function sub_CE96
+    ; End of function sub_CE96
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Get highest usable level of spell D1, considering current MP and highest known level.
-; In: D0 = combatant idx
-;     D1 = spell idx
-; Out: D1 = spell idx
+; Get highest usable level of spell D1, considering current MP and highest known level
+; 
+;       In: D0 = combatant index
+;           D1 = spell index
+; 
+;       Out: D1 = spell index
 
 GetHighestUsableSpellLevel:
                 
@@ -1630,7 +1635,7 @@ GetHighestUsableSpellLevel:
                 jsr     GetCurrentMP
                 move.w  d1,d3
                 move.w  d2,d1
-                andi.w  #$3F,d1 
+                andi.w  #SPELLENTRY_MASK_INDEX,d1
                 lsr.w   #6,d2
                 andi.w  #3,d2
 loc_CEEC:
@@ -1640,29 +1645,30 @@ loc_CEEC:
                 lsl.w   #6,d1
                 add.w   d4,d1
                 jsr     GetSpellDefAddress
-                cmp.b   1(a0),d3
+                cmp.b   SPELLDEF_OFFSET_MP_COST(a0),d3
                 bcc.w   loc_CF08
                 dbf     d2,loc_CEEC
-                moveq   #$3F,d1 
+                moveq   #SPELL_NOTHING,d1
 loc_CF08:
                 
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function GetHighestUsableSpellLevel
+    ; End of function GetHighestUsableSpellLevel
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = combatant idx
-;     D1 = spell idx
-; Out: D1 = spell idx
+; In: D0 = combatant index
+;     D1 = spell index
+; 
+; Out: D1 = spell index
 ;      D2 = slot
 
 GetSlotContainingSpell:
                 
                 movem.l d0/d3-a6,-(sp)
-                andi.b  #$3F,d1 
+                andi.b  #SPELLENTRY_MASK_INDEX,d1
                 move.b  d1,d4
                 moveq   #0,d3
 loc_CF1A:
@@ -1670,54 +1676,55 @@ loc_CF1A:
                 move.w  d3,d1
                 jsr     GetSpellAndNumberOfSpells
                 move.w  d1,d2
-                andi.b  #$3F,d2 
+                andi.b  #SPELLENTRY_MASK_INDEX,d2
                 cmp.b   d4,d2
                 beq.w   loc_CF38
                 addq.w  #1,d3
                 cmpi.w  #4,d3
                 bcs.s   loc_CF1A
-                moveq   #$3F,d1 
+                moveq   #SPELL_NOTHING,d1
 loc_CF38:
                 
                 move.w  d3,d2
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetSlotContainingSpell
+    ; End of function GetSlotContainingSpell
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; In: D0 = combatant idx
-;     D1 = item idx
-; Out: D1 = item idx
+; In: D0 = combatant index
+;     D1 = item index
+; 
+; Out: D1 = item index
 ;      D2 = slot
 
 GetSlotContainingItem:
                 
                 movem.l d0/d3-a6,-(sp)
-                andi.w  #$7F,d1 
+                andi.w  #ITEMENTRY_MASK_INDEX,d1
                 move.w  d1,d4
                 moveq   #0,d3
 loc_CF4C:
                 
                 move.w  d3,d1
-                jsr     GetCharItemAtSlotAndNumberOfItems
+                jsr     GetItemAndNumberOfItems
                 move.w  d1,d2
-                andi.w  #$7F,d2 
+                andi.w  #ITEMENTRY_MASK_INDEX,d2
                 cmp.w   d4,d2
                 beq.w   loc_CF6C
                 addq.w  #1,d3
                 cmpi.w  #4,d3
                 bcs.s   loc_CF4C
-                move.w  #$7F,d1 
+                move.w  #ITEM_NOTHING,d1
 loc_CF6C:
                 
                 move.w  d3,d2
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetSlotContainingItem
+    ; End of function GetSlotContainingItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1727,7 +1734,7 @@ GetNextUsableAttackSpell:
                 movem.l d0/d3-a6,-(sp)
                 bsr.w   CheckMuddled2   
                 move.w  d1,d7
-                btst    #CHAR_BIT_ENEMY,d0
+                btst    #COMBATANT_BIT_ENEMY,d0
                 bne.s   loc_CF88
                 move.w  #1,d7
 loc_CF88:
@@ -1735,7 +1742,7 @@ loc_CF88:
                 move.w  d3,d1
                 jsr     GetSpellAndNumberOfSpells
                 move.w  d1,d4
-                andi.w  #SPELL_MASK_IDX,d4
+                andi.w  #SPELLENTRY_MASK_INDEX,d4
                 cmpi.w  #SPELL_NOTHING,d4
                 bne.s   loc_CFA0
                 bra.w   loc_CFFC
@@ -1744,7 +1751,7 @@ loc_CFA0:
                 tst.b   d7
                 beq.s   loc_CFEA
                 move.w  d1,d5
-                andi.b  #SPELL_MASK_IDX,d5
+                andi.b  #SPELLENTRY_MASK_INDEX,d5
                 cmpi.b  #SPELL_BLAZE,d5
                 bne.s   loc_CFB4
                 bra.w   loc_CFEA
@@ -1785,7 +1792,7 @@ loc_CFEA:
 loc_CFFC:
                 
                 addq.w  #1,d3
-                cmpi.w  #CHAR_SPELLSLOTS,d3
+                cmpi.w  #COMBATANT_SPELLSLOTS,d3
                 bcs.s   loc_CF88
                 move.w  #SPELL_NOTHING,d1
                 bra.w   loc_D012
@@ -1798,16 +1805,18 @@ loc_D012:
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetNextUsableAttackSpell
+    ; End of function GetNextUsableAttackSpell
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Get next healing spell known by combatant.
-; In: D0 = entity #
-;     D3 = starting spell slot
-; Out: D1 = spell idx
-;      D2 = spell slot
+; Get next healing spell known by combatant
+; 
+;       In: D0 = entity index
+;           D3 = starting spell slot
+; 
+;       Out: D1 = spell index
+;            D2 = spell slot
 
 GetNextHealingSpell:
                 
@@ -1817,23 +1826,23 @@ loc_D01C:
                 move.w  d3,d1
                 jsr     GetSpellAndNumberOfSpells
                 move.w  d1,d4
-                andi.w  #$3F,d4 
-                cmpi.w  #$3F,d4 
+                andi.w  #SPELLENTRY_MASK_INDEX,d4
+                cmpi.w  #SPELL_NOTHING,d4
                 bne.s   loc_D034
                 bra.w   loc_D04A
 loc_D034:
                 
                 jsr     GetSpellDefAddress
-                move.b  3(a0),d2
-                andi.b  #3,d2
-                cmpi.b  #1,d2
+                move.b  SPELLDEF_OFFSET_PROPS(a0),d2
+                andi.b  #SPELLPROPS_MASK_TYPE,d2
+                cmpi.b  #SPELLPROPS_TYPE_HEAL,d2
                 beq.w   loc_D05A
 loc_D04A:
                 
                 addq.w  #1,d3
                 cmpi.w  #4,d3
                 bcs.s   loc_D01C
-                move.w  #$3F,d1 
+                move.w  #SPELL_NOTHING,d1
                 bra.w   loc_D05C
 loc_D05A:
                 
@@ -1843,7 +1852,7 @@ loc_D05C:
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetNextHealingSpell
+    ; End of function GetNextHealingSpell
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1856,7 +1865,7 @@ loc_D066:
                 move.w  d3,d1
                 jsr     GetSpellAndNumberOfSpells
                 move.w  d1,d4
-                andi.w  #SPELL_MASK_IDX,d4
+                andi.w  #SPELLENTRY_MASK_INDEX,d4
                 cmpi.w  #SPELL_NOTHING,d4
                 bne.s   loc_D07E
                 bra.w   loc_D094
@@ -1870,7 +1879,7 @@ loc_D07E:
 loc_D094:
                 
                 addq.w  #1,d3
-                cmpi.w  #CHAR_SPELLSLOTS,d3
+                cmpi.w  #COMBATANT_SPELLSLOTS,d3
                 bcs.s   loc_D066
                 move.w  #SPELL_NOTHING,d1
                 bra.w   loc_D0A6
@@ -1882,30 +1891,32 @@ loc_D0A6:
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetNextStatusSpell
+    ; End of function GetNextStatusSpell
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Get the next item in combatant's inventory that can be used to cast BLAZE/FREEZE/BOLT/BLAST.
+; Get the next item in combatant's inventory that can be used to cast BLAZE/FREEZE/BOLT/BLAST
 ; <HARDCODED>
-; In: D0 = combatant idx
-;     D3 = starting item slot
-; Out: D1 = item idx
-;      D2 = item slot
+; 
+;       In: D0 = combatant index
+;           D3 = starting item slot
+; 
+;       Out: D1 = item index
+;            D2 = item slot
 
 GetNextUsableAttackItem:
                 
                 movem.l d0/d3-a6,-(sp)
                 bsr.w   CheckMuddled2   
                 move.w  d1,d6
-                btst    #CHAR_BIT_ENEMY,d0
+                btst    #COMBATANT_BIT_ENEMY,d0
                 bne.s   loc_D0C0
                 move.w  #1,d6
 loc_D0C0:
                 
                 move.w  d3,d1
-                jsr     GetCharItemAtSlotAndNumberOfItems
+                jsr     GetItemAndNumberOfItems
                 cmpi.w  #ITEM_NOTHING,d1
                 bne.s   loc_D0D2
                 bra.w   loc_D0DC
@@ -1916,25 +1927,25 @@ loc_D0D2:
 loc_D0DC:
                 
                 addq.w  #1,d3
-                cmpi.w  #CHAR_ITEMSLOTS,d3
+                cmpi.w  #COMBATANT_ITEMSLOTS,d3
                 bcs.s   loc_D0C0
                 bra.w   loc_D156
 loc_D0E8:
                 
-                btst    #ITEM_BIT_EQUIPPED,d1
+                btst    #ITEMENTRY_BIT_EQUIPPED,d1
                 bne.w   loc_D0F8
-                btst    #ITEM_BIT_ENEMYUSE,d1
+                btst    #ITEMENTRY_BIT_ENEMYUSE,d1
                 beq.w   loc_D156
 loc_D0F8:
                 
                 jsr     GetItemDefAddress
                 move.w  d1,d7
                 clr.w   d1
-                move.b  ITEMDEF_OFFSET_SPELL(a0),d1
+                move.b  ITEMDEF_OFFSET_USE_SPELL(a0),d1
                 tst.b   d6
                 beq.s   loc_D13C
                 move.w  d1,d5
-                andi.b  #SPELL_MASK_IDX,d5
+                andi.b  #SPELLENTRY_MASK_INDEX,d5
                 cmpi.b  #SPELL_BLAZE,d5
                 bne.s   loc_D11A
                 bra.w   loc_D13C
@@ -1973,17 +1984,19 @@ loc_D15A:
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetNextUsableAttackItem
+    ; End of function GetNextUsableAttackItem
 
 
 ; =============== S U B R O U T I N E =======================================
 
-; Get the next item in combatant's inventory that can be used to cast a healing spell.
+; Get the next item in combatant's inventory that can be used to cast a healing spell
 ; <HARDCODED>
-; In: D0 = combatant idx
-;     D3 = starting item slot
-; Out: D1 = item idx
-;      D2 = item slot
+; 
+;       In: D0 = combatant index
+;           D3 = starting item slot
+; 
+;       Out: D1 = item index
+;            D2 = item slot
 
 GetNextUsableHealingItem:
                 
@@ -1991,7 +2004,7 @@ GetNextUsableHealingItem:
 loc_D164:
                 
                 move.w  d3,d1
-                jsr     GetCharItemAtSlotAndNumberOfItems
+                jsr     GetItemAndNumberOfItems
                 cmpi.w  #ITEM_NOTHING,d1
                 bne.s   loc_D176
                 bra.w   loc_D1BA
@@ -2002,18 +2015,18 @@ loc_D176:
                 bcc.s   loc_D1BA
                 cmpi.b  #8,d7
                 beq.s   loc_D18E
-                btst    #ITEM_BIT_ENEMYUSE,d1
+                btst    #ITEMENTRY_BIT_ENEMYUSE,d1
                 beq.w   loc_D1BA
 loc_D18E:
                 
                 jsr     GetItemDefAddress
                 move.w  d1,d7
                 clr.w   d1
-                move.b  9(a0),d1
+                move.b  ITEMDEF_OFFSET_USE_SPELL(a0),d1
                 jsr     GetSpellDefAddress
-                move.b  3(a0),d2
-                andi.b  #3,d2
-                cmpi.b  #1,d2
+                move.b  SPELLDEF_OFFSET_PROPS(a0),d2
+                andi.b  #SPELLPROPS_MASK_TYPE,d2
+                cmpi.b  #SPELLPROPS_TYPE_HEAL,d2
                 bne.w   loc_D1BA
                 move.w  d3,d2
                 move.w  d7,d1
@@ -2023,13 +2036,13 @@ loc_D1BA:
                 addq.w  #1,d3
                 cmpi.w  #4,d3
                 bcs.s   loc_D164
-                move.w  #$7F,d1 
+                move.w  #ITEM_NOTHING,d1
 loc_D1C6:
                 
                 movem.l (sp)+,d0/d3-a6
                 rts
 
-	; End of function GetNextUsableHealingItem
+    ; End of function GetNextUsableHealingItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2043,7 +2056,7 @@ GetTargetsReachableByAttack:
                 bsr.w   GetWeaponRange  
                 bra.w   loc_D22E
 
-	; End of function GetTargetsReachableByAttack
+    ; End of function GetTargetsReachableByAttack
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2055,13 +2068,13 @@ GetTargetsReachableByItem:
                 lea     ((byte_FF886E-$1000000)).w,a2
                 lea     ((byte_FF88FE-$1000000)).w,a3
                 jsr     GetItemDefAddress
-                move.b  9(a0),d1
+                move.b  ITEMDEF_OFFSET_USE_SPELL(a0),d1
                 jsr     GetSpellDefAddress
-                move.b  4(a0),d3
-                move.b  5(a0),d4
+                move.b  SPELLDEF_OFFSET_MAX_RANGE(a0),d3
+                move.b  SPELLDEF_OFFSET_MIN_RANGE(a0),d4
                 bra.w   loc_D22E
 
-	; End of function GetTargetsReachableByItem
+    ; End of function GetTargetsReachableByItem
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2073,25 +2086,25 @@ GetTargetsReachableBySpell:
                 lea     ((byte_FF883E-$1000000)).w,a2
                 lea     ((byte_FF88CE-$1000000)).w,a3
                 jsr     GetSpellDefAddress
-                move.b  4(a0),d3
-                move.b  5(a0),d4
+                move.b  SPELLDEF_OFFSET_MAX_RANGE(a0),d3
+                move.b  SPELLDEF_OFFSET_MIN_RANGE(a0),d4
 loc_D22E:
                 
                 bsr.w   CheckMuddled2   
                 tst.b   d1
                 beq.s   loc_D23A
-                eori.b  #COM_TYPE_REALMASK,d0 ; flip enemy bit, to get the opposite type when muddled
+                eori.b  #COMBATANT_MASK_ENEMY_BIT,d0 ; flip enemy bit, to get the opposite type when muddled
 loc_D23A:
                 
                 btst    #7,d0
                 beq.s   loc_D248
-                moveq   #COM_ALLY_START,d0
-                move.w  #COM_ALLIES_COUNTER,d7
+                moveq   #COMBATANT_ALLIES_START,d0
+                move.w  #COMBATANT_ALLIES_COUNTER,d7
                 bra.s   loc_D250
 loc_D248:
                 
-                move.b  #COM_ENEMY_START,d0
-                move.w  #COM_ENEMIES_COUNTER,d7
+                move.b  #COMBATANT_ENEMIES_START,d0
+                move.w  #COMBATANT_ENEMIES_COUNTER,d7
 loc_D250:
                 
                 move.w  #0,(a1)
@@ -2122,33 +2135,37 @@ loc_D28A:
                 movem.l (sp)+,d0-d5/d7-a3
                 rts
 
-	; End of function GetTargetsReachableBySpell
+    ; End of function GetTargetsReachableBySpell
 
 
 ; =============== S U B R O U T I N E =======================================
 
-IsCharacterLessThanHalfHP:
+; In: D0 = combatant index
+; 
+; Out: carry clear if true
+
+IsCombatantAtLessThanHalfHP:
                 
                 movem.l d1-d2,-(sp)
                 jsr     GetCurrentHP
                 move.w  d1,d2
                 jsr     GetMaxHP
-                bra.w   loc_D2C8
+                bra.w   @Continue
                 movem.l d1-d2,-(sp)
                 move.w  d1,d2
                 jsr     GetMaxHP
-                bra.w   loc_D2C8
+                bra.w   @Continue
                 movem.l d1-d2,-(sp)
                 move.w  d1,d2
                 jsr     GetCurrentHP
-loc_D2C8:
+@Continue:
                 
                 add.w   d2,d2
                 cmp.w   d2,d1
                 movem.l (sp)+,d1-d2
                 rts
 
-	; End of function IsCharacterLessThanHalfHP
+    ; End of function IsCombatantAtLessThanHalfHP
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2167,7 +2184,7 @@ loc_D2E4:
                 jsr     GetMaxHP
                 bra.w   loc_D304
 
-	; End of function sub_D2D2
+    ; End of function sub_D2D2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2184,7 +2201,7 @@ loc_D304:
                 movem.l (sp)+,d1-d2
                 rts
 
-	; End of function sub_D2F8
+    ; End of function sub_D2F8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2197,7 +2214,7 @@ sub_D310:
                 jsr     GetMaxHP
                 bra.w   loc_D342
 
-	; End of function sub_D310
+    ; End of function sub_D310
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2209,7 +2226,7 @@ sub_D326:
                 jsr     GetMaxHP
                 bra.w   loc_D342
 
-	; End of function sub_D326
+    ; End of function sub_D326
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2220,7 +2237,7 @@ sub_D336:
                 move.w  d1,d2
                 jsr     GetCurrentHP
 
-	; End of function sub_D336
+    ; End of function sub_D336
 
 
 ; START OF FUNCTION CHUNK FOR sub_D310
@@ -2245,7 +2262,7 @@ sub_D34C:
                 jsr     GetMaxHP
                 bra.w   loc_D37E
 
-	; End of function sub_D34C
+    ; End of function sub_D34C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2266,7 +2283,7 @@ loc_D37E:
                 movem.l (sp)+,d1-d2
                 rts
 
-	; End of function sub_D362
+    ; End of function sub_D362
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2293,7 +2310,7 @@ loc_D3BC:
                 movem.l (sp)+,d1-d2
                 rts
 
-	; End of function sub_D38A
+    ; End of function sub_D38A
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2306,7 +2323,7 @@ sub_D3CA:
                 jsr     GetMaxMP
                 bra.w   loc_D3FC
 
-	; End of function sub_D3CA
+    ; End of function sub_D3CA
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2318,7 +2335,7 @@ sub_D3E0:
                 jsr     GetMaxMP
                 bra.w   loc_D3FC
 
-	; End of function sub_D3E0
+    ; End of function sub_D3E0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2329,7 +2346,7 @@ sub_D3F0:
                 move.w  d1,d2
                 jsr     GetCurrentMP
 
-	; End of function sub_D3F0
+    ; End of function sub_D3F0
 
 
 ; START OF FUNCTION CHUNK FOR sub_D3CA
@@ -2346,17 +2363,19 @@ loc_D3FC:
 
 ; =============== S U B R O U T I N E =======================================
 
+; Out: D1 = 0 if normal, 1 if hard, 2 if super, 3 if ouch
+
 GetDifficulty:
                 
                 movem.l d0/d2-a6,-(sp)
                 clr.w   d2
-                move.w  #$4E,d1 
+                move.w  #FLAG_INDEX_DIFFICULTY1,d1
                 bsr.w   CheckFlag
                 beq.s   loc_D41C
                 move.w  #1,d2
 loc_D41C:
                 
-                move.w  #$4F,d1 
+                move.w  #FLAG_INDEX_DIFFICULTY2,d1
                 bsr.w   CheckFlag
                 beq.s   loc_D428
                 addq.w  #2,d2
@@ -2366,7 +2385,7 @@ loc_D428:
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function GetDifficulty
+    ; End of function GetDifficulty
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2393,7 +2412,7 @@ loc_D458:
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function sub_D430
+    ; End of function sub_D430
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2452,7 +2471,7 @@ loc_D4DA:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_D460
+    ; End of function sub_D460
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2509,7 +2528,7 @@ loc_D55A:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_D4E0
+    ; End of function sub_D4E0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2594,7 +2613,7 @@ loc_D626:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_D560
+    ; End of function sub_D560
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2680,7 +2699,7 @@ loc_D6EC:
                 movem.l (sp)+,d0-a6
                 rts
 
-	; End of function sub_D62C
+    ; End of function sub_D62C
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2719,7 +2738,7 @@ loc_D732:
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function sub_D6F2
+    ; End of function sub_D6F2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2769,7 +2788,7 @@ loc_D7A2:
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function sub_D742
+    ; End of function sub_D742
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -2806,7 +2825,7 @@ loc_D7CC:
                 tst.w   d1
                 beq.s   loc_D814
                 move.b  (a0,d4.w),d0
-                bsr.w   GetCurrentATK
+                bsr.w   GetCurrentATT
                 move.w  #$FF,d0
                 sub.w   d1,d0
                 add.w   d0,d5
@@ -2824,7 +2843,7 @@ loc_D81C:
                 movem.l (sp)+,d0/d2-a6
                 rts
 
-	; End of function sub_D7AA
+    ; End of function sub_D7AA
 
 MoveTypeTerrainCosts:
                 incbin "data/battles/global/movetypeterraincosts.bin"
@@ -3225,7 +3244,7 @@ loc_DB40:
                 movem.l (sp)+,d0-a5
                 rts
 
-	; End of function MakeRangeLists
+    ; End of function MakeRangeLists
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3269,7 +3288,7 @@ loc_DB8A:
                 move.b  d1,(a3,d5.w)
                 rts
 
-	; End of function sub_DB48
+    ; End of function sub_DB48
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3281,7 +3300,7 @@ MakeBattleEntityCancelMoveString_0:
                 movem.l (sp)+,d0-d6/a0-a5
                 rts
 
-	; End of function MakeBattleEntityCancelMoveString_0
+    ; End of function MakeBattleEntityCancelMoveString_0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3487,7 +3506,7 @@ loc_DD0A:
                 move.b  #$FF,(a0)
                 rts
 
-	; End of function sub_DBA8
+    ; End of function sub_DBA8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3533,7 +3552,7 @@ loc_DD5A:
                 movem.l (sp)+,d0-d6/a0-a5
                 rts
 
-	; End of function sub_DD10
+    ; End of function sub_DD10
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3546,7 +3565,7 @@ AddAllToStack:
                 movem.l (sp)+,d0-a5
                 rts
 
-	; End of function AddAllToStack
+    ; End of function AddAllToStack
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3558,7 +3577,7 @@ j_makeEnemyMoveOrder:
                 movem.l (sp)+,d0-d6/a0-a5
                 rts
 
-	; End of function j_makeEnemyMoveOrder
+    ; End of function j_makeEnemyMoveOrder
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -3783,5 +3802,5 @@ loc_DEF6:
                 move.b  #$FF,(a0)
                 rts
 
-	; End of function MakeEnemyMoveOrder
+    ; End of function MakeEnemyMoveOrder
 

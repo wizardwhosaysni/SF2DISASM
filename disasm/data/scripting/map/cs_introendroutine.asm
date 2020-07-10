@@ -48,5 +48,5 @@ return_47F7C:
                 
                 rts
 
-	; End of function PlayIntroOrEndCutscene
+    ; End of function PlayIntroOrEndCutscene
 

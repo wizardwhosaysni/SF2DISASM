@@ -4,4 +4,4 @@
 RaftResetMapCoordinates:
                 ; Save point map, Raft map, Raft X, Raft Y
                 raftResetMapCoords 255, 0, 42, 15
-
+                raftResetMapCoords 255, MAP_OVERWORLD_PATH_TO_RIBBLE, 42, 15

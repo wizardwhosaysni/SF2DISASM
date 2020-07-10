@@ -12,12 +12,12 @@ ExplorationLoop:
                 clr.w   ((word_FFB196-$1000000)).w
 loc_257D0:
                 
-                jsr     HealAliveCharsAndImmortals
+                jsr     HealAliveCharactersAndImmortals
                 jsr     FadeOutToBlackAll(pc)
                 nop
                 move.b  #$FF,((VIEW_TARGET_ENTITY-$1000000)).w
                 move.w  d0,-(sp)
-                cmpi.b  #$FF,d0         ; map idx is FF, not provided
+                cmpi.b  #$FF,d0         ; map index is $FF, not provided
                 beq.s   loc_25828
                 move.b  d0,((CURRENT_MAP-$1000000)).w
                 move.b  #NOT_CURRENTLY_IN_BATTLE,((CURRENT_BATTLE-$1000000)).w
@@ -73,7 +73,7 @@ loc_25888:
                 
                 bra.s   loc_2586A       
 
-	; End of function ExplorationLoop
+    ; End of function ExplorationLoop
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -91,7 +91,7 @@ loc_25896:
                 movem.w (sp)+,d1/d7
                 rts
 
-	; End of function ClearMapTempFlags
+    ; End of function ClearMapTempFlags
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -126,7 +126,7 @@ loc_258CE:
                 movem.l (sp)+,d0-d3/a0
                 rts
 
-	; End of function sub_258A8
+    ; End of function sub_258A8
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -143,7 +143,7 @@ FadeOutToBlackAll:
                 dc.l VInt_UpdateScrollingData
                 rts
 
-	; End of function FadeOutToBlackAll
+    ; End of function FadeOutToBlackAll
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -158,7 +158,7 @@ return_2591A:
                 
                 rts
 
-	; End of function WaitForFadeToFinish
+    ; End of function WaitForFadeToFinish
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -182,14 +182,14 @@ loc_25930:
 loc_2593C:
                 
                 move.b  ((CURRENT_PLAYER_INPUT-$1000000)).w,d1
-                andi.w  #$60,d1 ; Check A/C buttons
+                andi.w  #INPUT_C|INPUT_A,d1 ; Check A/C buttons
                 beq.s   loc_25948
                 rts
 loc_25948:
                 
                 bra.s   loc_25930       
 
-	; End of function WaitForEvent
+    ; End of function WaitForEvent
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -212,7 +212,7 @@ ProcessMapEvent:
                 sndCom  SFX_BATTLEFIELD_DEATH
                 rts
 
-	; End of function ProcessMapEvent
+    ; End of function ProcessMapEvent
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -254,11 +254,11 @@ loc_259CC:
                 clr.w   d0
                 jsr     j_MakeEntityIdle
                 move.b  ((MAP_EVENT_PARAM_2-$1000000)).w,d0
-                cmpi.b  #$47,d0 
+                cmpi.b  #MAP_OVERWORLD_AROUND_PACALON,d0
                 bne.s   loc_259E8       ; HARDCODED check if map is overworld pacalon, switch if water not restored
                 chkFlg  $212            ; Battle 30 completed
                 beq.s   loc_259E8
-                move.w  #$4E,d0 
+                move.w  #MAP_OVERWORLD_PACALON_2,d0
 loc_259E8:
                 
                 move.b  d0,((CURRENT_MAP-$1000000)).w
@@ -286,7 +286,7 @@ loc_25A18:
                 jsr     sub_440AC
                 rts
 
-	; End of function ProcessMapEventType1_Warp
+    ; End of function ProcessMapEventType1_Warp
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -306,7 +306,7 @@ UpdatePlayerPosFromMapEvent:
                 movea.l (sp)+,a0
                 rts
 
-	; End of function UpdatePlayerPosFromMapEvent
+    ; End of function UpdatePlayerPosFromMapEvent
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -316,7 +316,7 @@ ProcessMapEventType2_GetIntoCaravan:
                 jsr     j_MapEventType2 
                 rts
 
-	; End of function ProcessMapEventType2_GetIntoCaravan
+    ; End of function ProcessMapEventType2_GetIntoCaravan
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -326,7 +326,7 @@ ProcessMapEventType3_GetIntoRaft:
                 jsr     j_MapEventType3
                 rts
 
-	; End of function ProcessMapEventType3_GetIntoRaft
+    ; End of function ProcessMapEventType3_GetIntoRaft
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -336,7 +336,7 @@ ProcessMapEventType4_GetOutOfCaravan:
                 jsr     j_MapEventType4
                 rts
 
-	; End of function ProcessMapEventType4_GetOutOfCaravan
+    ; End of function ProcessMapEventType4_GetOutOfCaravan
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -346,7 +346,7 @@ ProcessMapEventType5_GetOutOfRaft:
                 jsr     j_MapEventType5
                 rts
 
-	; End of function ProcessMapEventType5_GetOutOfRaft
+    ; End of function ProcessMapEventType5_GetOutOfRaft
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -380,5 +380,5 @@ ProcessMapEventType6_ZoneEvent:
                 jsr     j_RunMapSetupZoneEvent
                 rts
 
-	; End of function ProcessMapEventType6_ZoneEvent
+    ; End of function ProcessMapEventType6_ZoneEvent
 

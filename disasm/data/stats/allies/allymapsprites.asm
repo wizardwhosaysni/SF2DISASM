@@ -1,7 +1,9 @@
 
 ; ASM FILE data\stats\allies\allymapsprites.asm :
 ; 0x44A5E..0x44A7C : Ally map sprite IDs
-AllyMapSprites: ; enum Mapsprites : MAPSPRITE_*
+tbl_AllyMapSprites: 
+
+; Syntax        mapSprite index (enum Mapsprites : MAPSPRITE_*)
                     
                 mapSprite IAN_PROMO   ; IAN
                 mapSprite MEAD_PROMO ; MEAD
@@ -33,3 +35,4 @@ AllyMapSprites: ; enum Mapsprites : MAPSPRITE_*
                 ;mapSprite LEMON_SPECIAL ; CHAZ
                 ;mapSprite LEMON_SPECIAL ; LEMON
                 ;mapSprite CLAUDE_PROMO  ; CLAUDE
+

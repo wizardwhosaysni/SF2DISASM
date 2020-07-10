@@ -9,7 +9,7 @@ InitMapEntities:
                 movem.l d0-a5,-(sp)
                 bra.w   loc_440E2
 
-	; End of function InitMapEntities
+    ; End of function InitMapEntities
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -21,7 +21,7 @@ sub_440D4:
                 lsl.w   #2,d0
                 movea.l (a0,d0.w),a0
 
-	; End of function sub_440D4
+    ; End of function sub_440D4
 
 
 ; START OF FUNCTION CHUNK FOR InitMapEntities
@@ -31,7 +31,7 @@ loc_440E2:
                 mulu.w  #$180,d1
                 mulu.w  #$180,d2
                 bsr.w   ClearEntities   
-                lea     ((ENTITY_EVENT_IDX_LIST-$1000000)).w,a1
+                lea     ((ENTITY_EVENT_INDEX_LIST-$1000000)).w,a1
                 lea     $20(a1),a2
                 lea     ((FOLLOWERS_LIST-$1000000)).w,a3
                 movem.w d1-d3,-(sp)
@@ -62,7 +62,7 @@ loc_44104:
                 bra.s   loc_44104
 loc_44146:
                 
-                cmpi.b  #COM_ALLIES_NUM,d4
+                cmpi.b  #COMBATANT_ALLIES_NUMBER,d4
                 bcc.s   loc_44170
                 ext.w   d4
                 tst.b   (a1,d4.w)
@@ -151,7 +151,7 @@ byte_441F0:
                 moveq   #$3D,d4 
                 move.l  #eas_Standing,d5
                 clr.w   d6
-                lea     ((ENTITY_EVENT_IDX_LIST-$1000000)).w,a0
+                lea     ((ENTITY_EVENT_INDEX_LIST-$1000000)).w,a0
                 move.b  d0,$3F(a0)
                 move.w  d0,d6
                 bsr.w   DeclareNewEntity
@@ -163,7 +163,7 @@ byte_441F0:
                 bra.s   loc_44262
 loc_44248:
                 
-                lea     ((ENTITY_EVENT_IDX_LIST-$1000000)).w,a0
+                lea     ((ENTITY_EVENT_INDEX_LIST-$1000000)).w,a0
                 clr.b   $3F(a0)
                 lea     ((byte_FFACE2-$1000000)).w,a0
                 move.l  #$70007000,(a0)
@@ -173,7 +173,7 @@ loc_44262:
                 movem.l (sp)+,d0-a1
                 rts
 
-	; End of function sub_441AA
+    ; End of function sub_441AA
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -199,5 +199,5 @@ loc_44282:
                 movem.l (sp)+,d0-d1/a0
                 rts
 
-	; End of function IsOverworldMap
+    ; End of function IsOverworldMap
 

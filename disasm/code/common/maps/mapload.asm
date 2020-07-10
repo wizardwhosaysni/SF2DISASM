@@ -230,7 +230,7 @@ loc_227A:
                 move.w  d1,(a1)+
                 bra.w   loc_2114        
 
-	; End of function LoadMapLayoutData
+    ; End of function LoadMapLayoutData
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -299,7 +299,7 @@ loc_22E6:
                 move.l  (sp)+,d2
                 rts
 
-	; End of function ReadMapLayoutBarrelForBlockFlags
+    ; End of function ReadMapLayoutBarrelForBlockFlags
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -320,7 +320,7 @@ loc_2308:
                 ori.w   #$400,d4        ; get upper block value + 0x0400 for upper blocks offset
                 bra.w   loc_2324
 
-	; End of function SaveBlockToUpperStackMap
+    ; End of function SaveBlockToUpperStackMap
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -381,7 +381,7 @@ return_2370:
                 
                 rts
 
-	; End of function SaveBlockToLeftStackMap
+    ; End of function SaveBlockToLeftStackMap
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -656,7 +656,7 @@ loc_257A:
                 move.w  d3,(a1)+        ; output tile value
                 bra.w   loc_240A        
 
-	; End of function LoadMapBlocks
+    ; End of function LoadMapBlocks
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -678,8 +678,8 @@ ProcessMapTransition:
                 lea     ($2000).w,a1
                 move.w  #$800,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMAOnCompressedTiles
-                bsr.w   WaitForDMAQueueProcessing
+                bsr.w   ApplyVIntVramDmaOnCompressedTiles
+                bsr.w   WaitForDmaQueueProcessing
 loc_25E8:
                 
                 addq.l  #1,a5
@@ -692,8 +692,8 @@ loc_25E8:
                 lea     ($4000).w,a1
                 move.w  #$800,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMAOnCompressedTiles
-                bsr.w   WaitForDMAQueueProcessing
+                bsr.w   ApplyVIntVramDmaOnCompressedTiles
+                bsr.w   WaitForDmaQueueProcessing
 loc_260E:
                 
                 movea.l (p_pt_MapTiles).l,a0
@@ -705,8 +705,8 @@ loc_260E:
                 lea     ($5000).w,a1
                 move.w  #$800,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMAOnCompressedTiles
-                bsr.w   WaitForDMAQueueProcessing
+                bsr.w   ApplyVIntVramDmaOnCompressedTiles
+                bsr.w   WaitForDmaQueueProcessing
 loc_2632:
                 
                 addq.l  #1,a5
@@ -732,7 +732,7 @@ loc_2632:
                 dc.l 0
                 rts
 
-	; End of function ProcessMapTransition
+    ; End of function ProcessMapTransition
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -745,7 +745,7 @@ ApplyOverworldMapTransition:
                 move.w  rjt_OverworldMapTransition(pc,d0.w),d0
                 jmp     rjt_OverworldMapTransition(pc,d0.w)
 
-	; End of function ApplyOverworldMapTransition
+    ; End of function ApplyOverworldMapTransition
 
 rjt_OverworldMapTransition:
                 dc.w ApplyOverworldMapTransition_Right-rjt_OverworldMapTransition
@@ -801,8 +801,8 @@ loc_26E8:
                 lea     ($C000).l,a1
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
-                bsr.w   EnableDMAQueueProcessing
+                bsr.w   ApplyVIntVramDma
+                bsr.w   EnableDmaQueueProcessing
                 movem.l (sp)+,d0-d1/a0-a1
                 dbf     d7,loc_26C0
                 bsr.w   WaitForVInt
@@ -815,7 +815,7 @@ loc_26E8:
                 nop
                 rts
 
-	; End of function ApplyOverworldMapTransition_Right
+    ; End of function ApplyOverworldMapTransition_Right
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -868,8 +868,8 @@ loc_27AE:
                 lea     ($C000).l,a1
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
-                bsr.w   EnableDMAQueueProcessing
+                bsr.w   ApplyVIntVramDma
+                bsr.w   EnableDmaQueueProcessing
                 movem.l (sp)+,d0-d1/a0-a1
                 dbf     d7,loc_2786
                 bsr.w   WaitForVInt
@@ -882,7 +882,7 @@ loc_27AE:
                 nop
                 rts
 
-	; End of function ApplyOverworldMapTransition_Left
+    ; End of function ApplyOverworldMapTransition_Left
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -933,8 +933,8 @@ loc_2874:
                 lea     ($C000).l,a1
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
-                bsr.w   EnableDMAQueueProcessing
+                bsr.w   ApplyVIntVramDma
+                bsr.w   EnableDmaQueueProcessing
                 movem.l (sp)+,d0-d1/a0-a1
                 dbf     d7,loc_284C
                 bsr.w   WaitForVInt
@@ -947,7 +947,7 @@ loc_2874:
                 nop
                 rts
 
-	; End of function ApplyOverworldMapTransition_Up
+    ; End of function ApplyOverworldMapTransition_Up
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -998,8 +998,8 @@ loc_293A:
                 lea     ($C000).l,a1
                 move.w  #$400,d0
                 moveq   #2,d1
-                bsr.w   ApplyVIntVramDMA
-                bsr.w   EnableDMAQueueProcessing
+                bsr.w   ApplyVIntVramDma
+                bsr.w   EnableDmaQueueProcessing
                 movem.l (sp)+,d0-d1/a0-a1
                 dbf     d7,loc_2912
                 bsr.w   WaitForVInt
@@ -1012,7 +1012,7 @@ loc_293A:
                 nop
                 rts
 
-	; End of function ApplyOverworldMapTransition_Down
+    ; End of function ApplyOverworldMapTransition_Down
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1049,7 +1049,7 @@ loc_29D6:
                 movem.l (sp)+,d0-a0
                 rts
 
-	; End of function sub_29A2
+    ; End of function sub_29A2
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1118,7 +1118,7 @@ loc_2A86:
                 movem.l (sp)+,d0-d1/a0-a1/a5
                 rts
 
-	; End of function LoadMapTilesets
+    ; End of function LoadMapTilesets
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1169,7 +1169,7 @@ loc_2AD4:
                 lea     ($2000).w,a1
                 move.w  #$800,d0
                 moveq   #2,d1
-                bsr.w   ApplyImmediateVramDMA
+                bsr.w   ApplyImmediateVramDma
 loc_2B1C:
                 
                 tst.b   (a5)+
@@ -1178,7 +1178,7 @@ loc_2B1C:
                 lea     ($3000).w,a1
                 move.w  #$800,d0
                 moveq   #2,d1
-                bsr.w   ApplyImmediateVramDMA
+                bsr.w   ApplyImmediateVramDma
 loc_2B34:
                 
                 tst.b   (a5)+
@@ -1187,7 +1187,7 @@ loc_2B34:
                 lea     ($4000).w,a1
                 move.w  #$800,d0
                 moveq   #2,d1
-                bsr.w   ApplyImmediateVramDMA
+                bsr.w   ApplyImmediateVramDma
 loc_2B4C:
                 
                 tst.b   (a5)+
@@ -1198,7 +1198,7 @@ loc_2B4C:
                 moveq   #2,d1
 loc_2B60:
                 
-                bsr.w   ApplyImmediateVramDMA
+                bsr.w   ApplyImmediateVramDma
 loc_2B64:
                 
                 tst.b   (a5)+
@@ -1207,7 +1207,7 @@ loc_2B64:
                 lea     ($6000).w,a1
                 move.w  #$800,d0
                 moveq   #2,d1
-                bsr.w   ApplyImmediateVramDMA
+                bsr.w   ApplyImmediateVramDma
 loc_2B7C:
                 
                 bsr.w   LoadMapBlocksAndLayout ; load blocks and layout ?
@@ -1395,8 +1395,8 @@ loc_2CF6:
                 andi.w  #$FF,d3
                 move.w  d3,((VIEW_PLANE_B_Y_COUNTER-$1000000)).w
                 bsr.w   EnableDisplayAndInterrupts
-                bsr.w   UpdateVDPHScrollData
-                bsr.w   UpdateVDPVScrollData
+                bsr.w   UpdateVdpHScrollData
+                bsr.w   UpdateVdpVScrollData
                 bsr.w   InitWindowProperties
                 bsr.w   ToggleRoofOnMapLoad
                 bsr.w   WaitForVInt
@@ -1404,7 +1404,7 @@ loc_2CF6:
                 bsr.w   UpdateVdpPlaneB 
                 rts
 
-	; End of function LoadMap
+    ; End of function LoadMap
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1467,7 +1467,7 @@ return_2DEA:
                 
                 rts
 
-	; End of function LoadMapBlocksAndLayout
+    ; End of function LoadMapBlocksAndLayout
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1517,10 +1517,10 @@ loc_2E2C:
                 move.b  (a4)+,((MAP_AREA_LAYER_TYPE-$1000000)).w
                 move.b  (a4)+,((MAP_AREA_MUSIC_INDEX-$1000000)).w
                 movea.l (a5),a4
-                move.w  #1,((TILE_ANIM_COUNTER-$1000000)).w
-                move.l  $18(a5),((TILE_ANIM_DATA_ADDR-$1000000)).w
+                move.w  #1,((TILE_ANIMATION_COUNTER-$1000000)).w
+                move.l  $18(a5),((TILE_ANIMATION_DATA_ADDRESS-$1000000)).w
                 blt.s   return_2EBE
-                movea.l ((TILE_ANIM_DATA_ADDR-$1000000)).w,a1
+                movea.l ((TILE_ANIMATION_DATA_ADDRESS-$1000000)).w,a1
                 move.w  (a1)+,d0
                 movea.l (p_pt_MapTiles).l,a0
                 lsl.w   #2,d0
@@ -1534,13 +1534,13 @@ loc_2E2C:
                 lea     (byte_FF9B04).l,a1
                 lsl.w   #5,d7
                 bsr.w   CopyBytes       
-                addq.l  #4,((TILE_ANIM_DATA_ADDR-$1000000)).w
-                move.b  ((CURRENT_MAP-$1000000)).w,((TILE_ANIM_MAP_INDEX-$1000000)).w
+                addq.l  #4,((TILE_ANIMATION_DATA_ADDRESS-$1000000)).w
+                move.b  ((CURRENT_MAP-$1000000)).w,((TILE_ANIMATION_MAP_INDEX-$1000000)).w
 return_2EBE:
                 
                 rts
 
-	; End of function LoadMapArea
+    ; End of function LoadMapArea
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1578,7 +1578,7 @@ loc_2F04:
                 bne.s   loc_2F04
                 rts
 
-	; End of function sub_2EC0
+    ; End of function sub_2EC0
 
 
 ; =============== S U B R O U T I N E =======================================
@@ -1617,5 +1617,5 @@ loc_2F66:
                 move.w  (sp)+,d0
                 rts
 
-	; End of function sub_2F24
+    ; End of function sub_2F24
 

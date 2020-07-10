@@ -2,7 +2,6 @@
 ; ASM FILE data\scripting\map\cs_end.asm :
 ; 0x49058..0x494BC : End cutscene
 EndCutscene:    mapLoad 20,19,33
-                
                 fadeOutB
                 csc_end
                 
@@ -23,7 +22,7 @@ cs_4934A:       entityFlashWhite ALLY_IAN,$B4
                 showPortrait $0,ALLY_IAN
                 setQuake 32770
                 setQuake 16386
-                loadMapFadeIn 0,13,13
+                loadMapFadeIn MAP_OUTSIDE_MITULA,13,13
                 flashScreenWhite $3C
                 csc_end
                 flashScreenWhite $3C
@@ -75,7 +74,7 @@ sub_493EC:
                 moveq   #$78,d0 
                 rts
 
-	; End of function sub_493EC
+    ; End of function sub_493EC
 
                 updateDefeatedAllies
                 allyDefeated ALLY_RUBURAN

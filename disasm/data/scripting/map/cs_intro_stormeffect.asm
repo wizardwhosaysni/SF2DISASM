@@ -22,7 +22,7 @@ loc_49006:
                 
                 move.l  (a0)+,(a1)+     ; replace palette 1
                 dbf     d0,loc_49006    
-                jsr     (ApplyVIntCramDMA).w
+                jsr     (ApplyVIntCramDma).w
                 moveq   #$A,d0
                 jsr     (Sleep).w       
                 lea     ((PALETTE_1_BACKUP-$1000000)).w,a0
@@ -32,13 +32,13 @@ loc_49022:
                 
                 move.l  (a0)+,(a1)+     ; restore original palette
                 dbf     d0,loc_49022    
-                jsr     (ApplyVIntCramDMA).w
+                jsr     (ApplyVIntCramDma).w
                 moveq   #$A,d0
                 jsr     (Sleep).w       
                 movem.l (sp)+,d0/a0-a1
                 rts
 
-	; End of function ApplyStormEffect
+    ; End of function ApplyStormEffect
 
 plt_IntroStormEffect:
                 dc.w 0
