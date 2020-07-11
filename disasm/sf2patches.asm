@@ -11,3 +11,4 @@ EIGHT_CHARACTERS_MEMBER_NAMES: equ 1            ; 0 = OFF, 1 = ON
 FULL_CLASS_NAMES: equ 1                         ; 0 = OFF, 1 = ON
 BUGFIX_INCREASE_DOUBLE_RESETS_COUNTER: equ 0    ; 0 = OFF, 1 = ON
 BUGFIX_GODDESS_STAFF_DEALS_ABUSE: equ 0         ; 0 = OFF, 1 = ON
+CHAPTER_SCREEN: equ 1                           ; 0 = OFF, 1 = ON

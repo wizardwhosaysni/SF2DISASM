@@ -80,6 +80,13 @@ TextBankTreeData:
                 includeIfExpandedRom "data\graphics\battles\weapons\entries.asm"    ; Weapons
                 includeIfExpandedRom "data\graphics\battles\weapons\palettes\entries.asm"    ; WeaponPalettes
                 includeIfVanillaRom "code\specialscreens\credits\gamestaff.asm"    ; Game Staff
+                if (CHAPTER_SCREEN=1)
+                wordAlign
+                include code\specialscreens\chapter\chapter.asm
+                wordAlign
+                include code\specialscreens\chapter\graphics.asm
+                wordAlign
+                endif
 					      align $43000
 					      incbin "data\sound\cubesfx.bin"
                 ;alignIfExpandedRom $43800
